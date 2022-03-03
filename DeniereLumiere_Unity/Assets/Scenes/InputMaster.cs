@@ -22,9 +22,156 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
     {
         asset = InputActionAsset.FromJson(@"{
     ""name"": ""InputMaster"",
-    ""maps"": [],
-    ""controlSchemes"": []
+    ""maps"": [
+        {
+            ""name"": ""Joueur"",
+            ""id"": ""0ad3a9b2-b9bd-45ad-ada8-b2ec3a1e46fa"",
+            ""actions"": [
+                {
+                    ""name"": ""Saut"",
+                    ""type"": ""Button"",
+                    ""id"": ""48dfb224-ffcf-41a3-b58c-ac83e17e59cc"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Mouvement"",
+                    ""type"": ""Button"",
+                    ""id"": ""898e717c-9c68-4724-b042-9890da4267db"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""f0787fce-592d-4952-8d0d-ae751027c48d"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Saut"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""56bf572e-a153-4412-849d-07988c24602a"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Clavier et Souris"",
+                    ""action"": ""Saut"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Fleche"",
+                    ""id"": ""2706e42a-8483-40ce-a1fe-333ec39d751e"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Mouvement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""9bfa4a68-edd5-47aa-b8aa-136dfbc6943d"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Clavier et Souris"",
+                    ""action"": ""Mouvement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""bbe16e3a-88c1-4d3a-9b50-4a578ba8d7e4"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Clavier et Souris"",
+                    ""action"": ""Mouvement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""WASD"",
+                    ""id"": ""8f7ed519-a2f3-470e-97fe-cb5bf68adeef"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Mouvement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""2b2b01ea-87c9-4f11-b46b-5d47e5d57a49"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Clavier et Souris"",
+                    ""action"": ""Mouvement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""f969d6d2-8cc9-4277-bc8b-2fdf48c00b47"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Clavier et Souris"",
+                    ""action"": ""Mouvement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                }
+            ]
+        }
+    ],
+    ""controlSchemes"": [
+        {
+            ""name"": ""Clavier et Souris"",
+            ""bindingGroup"": ""Clavier et Souris"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Mouse>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                },
+                {
+                    ""devicePath"": ""<Keyboard>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Gamepad"",
+            ""bindingGroup"": ""Gamepad"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Gamepad>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        }
+    ]
 }");
+        // Joueur
+        m_Joueur = asset.FindActionMap("Joueur", throwIfNotFound: true);
+        m_Joueur_Saut = m_Joueur.FindAction("Saut", throwIfNotFound: true);
+        m_Joueur_Mouvement = m_Joueur.FindAction("Mouvement", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -79,5 +226,69 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
     public int FindBinding(InputBinding bindingMask, out InputAction action)
     {
         return asset.FindBinding(bindingMask, out action);
+    }
+
+    // Joueur
+    private readonly InputActionMap m_Joueur;
+    private IJoueurActions m_JoueurActionsCallbackInterface;
+    private readonly InputAction m_Joueur_Saut;
+    private readonly InputAction m_Joueur_Mouvement;
+    public struct JoueurActions
+    {
+        private @InputMaster m_Wrapper;
+        public JoueurActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Saut => m_Wrapper.m_Joueur_Saut;
+        public InputAction @Mouvement => m_Wrapper.m_Joueur_Mouvement;
+        public InputActionMap Get() { return m_Wrapper.m_Joueur; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(JoueurActions set) { return set.Get(); }
+        public void SetCallbacks(IJoueurActions instance)
+        {
+            if (m_Wrapper.m_JoueurActionsCallbackInterface != null)
+            {
+                @Saut.started -= m_Wrapper.m_JoueurActionsCallbackInterface.OnSaut;
+                @Saut.performed -= m_Wrapper.m_JoueurActionsCallbackInterface.OnSaut;
+                @Saut.canceled -= m_Wrapper.m_JoueurActionsCallbackInterface.OnSaut;
+                @Mouvement.started -= m_Wrapper.m_JoueurActionsCallbackInterface.OnMouvement;
+                @Mouvement.performed -= m_Wrapper.m_JoueurActionsCallbackInterface.OnMouvement;
+                @Mouvement.canceled -= m_Wrapper.m_JoueurActionsCallbackInterface.OnMouvement;
+            }
+            m_Wrapper.m_JoueurActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Saut.started += instance.OnSaut;
+                @Saut.performed += instance.OnSaut;
+                @Saut.canceled += instance.OnSaut;
+                @Mouvement.started += instance.OnMouvement;
+                @Mouvement.performed += instance.OnMouvement;
+                @Mouvement.canceled += instance.OnMouvement;
+            }
+        }
+    }
+    public JoueurActions @Joueur => new JoueurActions(this);
+    private int m_ClavieretSourisSchemeIndex = -1;
+    public InputControlScheme ClavieretSourisScheme
+    {
+        get
+        {
+            if (m_ClavieretSourisSchemeIndex == -1) m_ClavieretSourisSchemeIndex = asset.FindControlSchemeIndex("Clavier et Souris");
+            return asset.controlSchemes[m_ClavieretSourisSchemeIndex];
+        }
+    }
+    private int m_GamepadSchemeIndex = -1;
+    public InputControlScheme GamepadScheme
+    {
+        get
+        {
+            if (m_GamepadSchemeIndex == -1) m_GamepadSchemeIndex = asset.FindControlSchemeIndex("Gamepad");
+            return asset.controlSchemes[m_GamepadSchemeIndex];
+        }
+    }
+    public interface IJoueurActions
+    {
+        void OnSaut(InputAction.CallbackContext context);
+        void OnMouvement(InputAction.CallbackContext context);
     }
 }
