@@ -7,8 +7,9 @@ public class Joueur_Script : MonoBehaviour
     private Rigidbody2D rbJoueur;
     private PlayerInput piJoueur;
     private InputJoueur inputJoueur;
-    public float jumpforce;
-    public float speed;
+    public float forceSaut;
+    public float vitesse;
+    public float vitesseMaximale;
     
     void Awake()
     {
@@ -24,15 +25,26 @@ public class Joueur_Script : MonoBehaviour
 
     private void FixedUpdate()
     {
+        /* permet de lire le input du new input system*/
         Vector2 inputVector = inputJoueur.Player.Movement.ReadValue<Vector2>();
-        rbJoueur.AddForce(new Vector2(inputVector.x, 0) * speed);
+        rbJoueur.AddRelativeForce(new Vector2(inputVector.x * vitesse, 0f), ForceMode2D.Impulse);
+        /* permet au personnage de ne pas dépasser sa vitesse maximale*/
+        if (rbJoueur.velocity.x > vitesseMaximale || rbJoueur.velocity.x < -vitesseMaximale)
+        {
+            rbJoueur.velocity = new Vector2(inputVector.x * vitesseMaximale, rbJoueur.velocity.y);
+        }
+        /*ligne pour voir si le personnage ce déplace*/
+        if (rbJoueur.velocity.magnitude > 0)
+        {
+            Debug.Log(rbJoueur.velocity);
+        }  
     }
 
     void Jump(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            rbJoueur.AddForce(new Vector2(0, 1) * jumpforce);
+            rbJoueur.AddForce(new Vector2(0, 1 * forceSaut));
             Debug.Log("Jump was made " + context.phase);
         }
     }
