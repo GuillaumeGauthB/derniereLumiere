@@ -6,6 +6,8 @@ public class Joueur_Script : MonoBehaviour
 {
     private Rigidbody2D rbJoueur;
     private PlayerInput piJoueur;
+    private InputJoueur inputJoueur;
+    public float jumpforce;
     public float speed;
     
     void Awake()
@@ -13,29 +15,34 @@ public class Joueur_Script : MonoBehaviour
         rbJoueur = GetComponent<Rigidbody2D>();
         piJoueur = GetComponent<PlayerInput>();
 
-        InputJoueur inputJoueur = new InputJoueur();
+
+        inputJoueur = new InputJoueur();
         inputJoueur.Player.Enable();
         inputJoueur.Player.Jump.performed += Jump;
-        //inputJoueur.Player.Movement.performed += Movement();
     }
 
-    
-    
-    
+
+    private void FixedUpdate()
+    {
+        Vector2 inputVector = inputJoueur.Player.Movement.ReadValue<Vector2>();
+        rbJoueur.AddForce(new Vector2(inputVector.x, 0) * speed);
+    }
+
     void Jump(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
+            rbJoueur.AddForce(new Vector2(0, 1) * jumpforce);
             Debug.Log("Jump was made " + context.phase);
         }
     }
 
-    void Movement(InputAction.CallbackContext context)
+   /*void Movement(InputAction.CallbackContext context)
     {
         
-        Vector2 inputVector = context.ReadValue<Vector2>();
-        rbJoueur.AddForce(new Vector2(inputVector.x, inputVector.y) * speed);
+        
+        
         
         Debug.Log("Jump was made " + inputVector);
-    }
+    }*/
 }
