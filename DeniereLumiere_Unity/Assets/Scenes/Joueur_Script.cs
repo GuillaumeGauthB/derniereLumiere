@@ -15,17 +15,21 @@ public class Joueur_Script : MonoBehaviour
     private bool estAuSol;
     public float forceSaut;
     public float vitesse;
-    public float vitesseMaximale;
+    private float vitesseMaximale;
+    public float vitesseMaximaleMarche;
+    public float vitesseMaximaleCourrir;
     
     void Awake()
     {
         rbJoueur = GetComponent<Rigidbody2D>();
         piJoueur = GetComponent<PlayerInput>();
 
-
+        vitesseMaximale = vitesseMaximaleMarche;
         inputJoueur = new InputJoueur();
         inputJoueur.Player.Enable();
         inputJoueur.Player.Saut.performed += Saut;
+        /*inputJoueur.Player.Courrir.performed += Courrir;*/
+
     }
     private void Update()
     {
@@ -45,8 +49,9 @@ public class Joueur_Script : MonoBehaviour
         /*ligne pour voir si le personnage ce déplace*/
         if (rbJoueur.velocity.magnitude > 0)
         {
-            Debug.Log(rbJoueur.velocity);
-        }    
+            /*Debug.Log(rbJoueur.velocity);*/
+        }
+        
     }
 
     void Saut(InputAction.CallbackContext context)
@@ -60,4 +65,18 @@ public class Joueur_Script : MonoBehaviour
             Debug.Log("Jump was made " + context.phase);
         }
     }
+
+    /*void Courrir(InputAction.CallbackContext context)
+    {
+        Debug.Log(context.phase);
+        if (context.performed)
+        {
+            vitesseMaximale = vitesseMaximaleCourrir;
+            Debug.Log("course:True");
+        } else if (context.canceled)
+        {
+            Debug.Log("course:False");
+            vitesseMaximale = vitesseMaximaleMarche;
+        }
+    }*/
 }
