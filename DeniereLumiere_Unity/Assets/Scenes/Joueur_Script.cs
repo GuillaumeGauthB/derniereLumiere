@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+
+/*Script créé par Jonathan Mores*/
+/*Dernière modification 2022-03-09*/
 public class Joueur_Script : MonoBehaviour
 {
     private Rigidbody2D rbJoueur;
@@ -21,7 +24,6 @@ public class Joueur_Script : MonoBehaviour
         inputJoueur.Player.Enable();
         inputJoueur.Player.Jump.performed += Jump;
     }
-
 
     private void FixedUpdate()
     {
@@ -48,13 +50,4 @@ public class Joueur_Script : MonoBehaviour
             Debug.Log("Jump was made " + context.phase);
         }
     }
-
-   /*void Movement(InputAction.CallbackContext context)
-    {
-        
-        
-        
-        
-        Debug.Log("Jump was made " + inputVector);
-    }*/
 }
