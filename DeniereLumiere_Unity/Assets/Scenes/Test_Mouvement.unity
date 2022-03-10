@@ -343,7 +343,8 @@ MonoBehaviour:
     m_Bits: 8
   forceSaut: 1300
   vitesse: 2
-  vitesseMaximale: 7
+  vitesseMaximaleMarche: 5
+  vitesseMaximaleCourrir: 10
 --- !u!50 &185104250
 Rigidbody2D:
   serializedVersion: 4
