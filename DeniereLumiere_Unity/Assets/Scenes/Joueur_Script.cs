@@ -25,7 +25,7 @@ public class Joueur_Script : MonoBehaviour
 
         inputJoueur = new InputJoueur();
         inputJoueur.Player.Enable();
-        inputJoueur.Player.Jump.performed += Jump;
+        inputJoueur.Player.Saut.performed += Saut;
     }
     private void Update()
     {
@@ -35,7 +35,7 @@ public class Joueur_Script : MonoBehaviour
     private void FixedUpdate()
     {
         /* permet de lire le input du new input system*/
-        Vector2 inputVector = inputJoueur.Player.Movement.ReadValue<Vector2>();
+        Vector2 inputVector = inputJoueur.Player.Mouvement.ReadValue<Vector2>();
         rbJoueur.AddRelativeForce(new Vector2(inputVector.x * vitesse, 0f), ForceMode2D.Impulse);
         /* permet au personnage de ne pas dépasser sa vitesse maximale*/
         if (rbJoueur.velocity.x > vitesseMaximale || rbJoueur.velocity.x < -vitesseMaximale)
@@ -49,7 +49,7 @@ public class Joueur_Script : MonoBehaviour
         }    
     }
 
-    void Jump(InputAction.CallbackContext context)
+    void Saut(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
