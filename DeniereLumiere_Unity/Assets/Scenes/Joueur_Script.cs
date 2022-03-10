@@ -10,6 +10,9 @@ public class Joueur_Script : MonoBehaviour
     private Rigidbody2D rbJoueur;
     private PlayerInput piJoueur;
     private InputJoueur inputJoueur;
+    public Transform checkSol;
+    public LayerMask solLayer;
+    private bool estAuSol;
     public float forceSaut;
     public float vitesse;
     public float vitesseMaximale;
@@ -23,6 +26,10 @@ public class Joueur_Script : MonoBehaviour
         inputJoueur = new InputJoueur();
         inputJoueur.Player.Enable();
         inputJoueur.Player.Jump.performed += Jump;
+    }
+    private void Update()
+    {
+        estAuSol = Physics2D.OverlapCircle(checkSol.position, 0.5f, solLayer);
     }
 
     private void FixedUpdate()
@@ -39,14 +46,17 @@ public class Joueur_Script : MonoBehaviour
         if (rbJoueur.velocity.magnitude > 0)
         {
             Debug.Log(rbJoueur.velocity);
-        }  
+        }    
     }
 
     void Jump(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            rbJoueur.AddForce(new Vector2(0, 1 * forceSaut));
+            if(estAuSol == true)
+            {
+               rbJoueur.AddForce(new Vector2(0, 1 * forceSaut));
+            }   
             Debug.Log("Jump was made " + context.phase);
         }
     }
