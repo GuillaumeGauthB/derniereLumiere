@@ -14,11 +14,9 @@ public class LuciolesProjectiles : MonoBehaviour
     }
     private void Awake()
     {
-        //destination = Camera.main.ScreenToWorldPoint(GameObject.Find("Personnage").GetComponent<Inputs_Guillaume>().sourisPosition);
         if (GameObject.Find("Personnage").gameObject.transform.GetComponent<Inputs_Guillaume>().playerInput.currentControlScheme == "Clavier")
         {
-            destination = Camera.main.ScreenToWorldPoint(GameObject.Find("Personnage").GetComponent<Inputs_Guillaume>().sourisPosition);
-            destination -= new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
+            destination = GameObject.Find("Personnage").gameObject.transform.GetComponent<Inputs_Guillaume>().v_deplacementCible * 10f;
         }
         else
         {
@@ -29,7 +27,7 @@ public class LuciolesProjectiles : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(destination);
+        
         gameObject.GetComponent<Rigidbody2D>().velocity = destination;
     }
 }

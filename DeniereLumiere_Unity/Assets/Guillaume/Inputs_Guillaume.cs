@@ -12,15 +12,16 @@ public class Inputs_Guillaume : MonoBehaviour
         vitesseKnockback; // la vitesse a laquelle les ennemis sont poussers
     
     private LineRenderer c_lineRenderer; // Component du Line Renderer pour viser
-    public PlayerInput playerInput; // Input qui permet de changement de map
-    public Vector2 sourisPosition; // Position de la souris pour viser
+    public PlayerInput playerInput; // le playerinput
+    private Vector2 v_sourisPosition; // Position de la souris pour viser
 
     public GameObject projectile; // Le projectile de base du personnage
     private GameObject g_clone; // Le clone du projectile, va etre tirer sur les ennemis
 
-    private bool b_knockback;
-    public Vector2 v_deplacementCible;
+    private bool b_knockback; 
 
+    [Header("Pour autres scripts")]
+    public Vector2 v_deplacementCible;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +36,6 @@ public class Inputs_Guillaume : MonoBehaviour
     {
         if (context.started)
         {
-            Debug.Log("Attaque Physique");
             // Trigger l'animation (a faire)
             // Activer une variable qui va permettre la detection de collision quand l'attaque est performee
             gameObject.transform.Find("KnockbackAttaque").gameObject.SetActive(true);
@@ -49,7 +49,6 @@ public class Inputs_Guillaume : MonoBehaviour
     {
         if (context.canceled)
         {
-            //Debug.Log("Prep tir");
             playerInput.SwitchCurrentActionMap("TirLucioles");
         }
     }
@@ -57,20 +56,20 @@ public class Inputs_Guillaume : MonoBehaviour
     // Fonction qui gere le "visage" du tir de luciole
     public void AttaqueTirViser(InputAction.CallbackContext context)
     {
+        // Faire apparaitre le line renderer qui va sercir de 
         c_lineRenderer.enabled = true;
-        Debug.Log(context.ReadValue<Vector2>());
-        sourisPosition = context.ReadValue<Vector2>();
-        //Debug.Log(sourisPosition);
+        v_sourisPosition = Camera.main.ScreenToWorldPoint(context.ReadValue<Vector2>());
         
         c_lineRenderer.SetPosition(0, gameObject.transform.position);
         if(playerInput.currentControlScheme == "Clavier")
         {
-            c_lineRenderer.SetPosition(1, (Camera.main.ScreenToWorldPoint(sourisPosition)));
+            v_deplacementCible = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y) - new Vector2(v_sourisPosition.x, v_sourisPosition.y);
+            v_deplacementCible = v_deplacementCible.normalized * -1;
+            c_lineRenderer.SetPosition(1, v_sourisPosition);
         }
         else
         {
             v_deplacementCible = context.ReadValue<Vector2>() * 10f;
-            //v_deplacementCible += context.ReadValue<Vector2>();
             c_lineRenderer.SetPosition(1, new Vector3(v_deplacementCible.x, v_deplacementCible.y));
             
             if(context.ReadValue<Vector2>().x == 0 && context.ReadValue<Vector2>().y == 0)
@@ -89,7 +88,6 @@ public class Inputs_Guillaume : MonoBehaviour
     {
         if(context.canceled)
         {
-            //Debug.Log("Tir annuler");
             playerInput.SwitchCurrentActionMap("Mouvements-tests");
             c_lineRenderer.enabled = false;
         }
@@ -101,7 +99,6 @@ public class Inputs_Guillaume : MonoBehaviour
         if (context.started)
         {
             //Tirer la balle
-            //Debug.Log("la balle est tirer");
             g_clone = Instantiate(projectile.gameObject, projectile.transform.position, c_lineRenderer.transform.rotation);
             g_clone.SetActive(true);
         }

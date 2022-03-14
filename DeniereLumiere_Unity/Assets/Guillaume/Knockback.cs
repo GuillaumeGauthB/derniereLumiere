@@ -23,15 +23,12 @@ public class Knockback : MonoBehaviour
 
             v_posXEvP = other.transform.position.x - g_parent.transform.localPosition.x;
 
-            //Debug.Log(v_posXEvP);
             if (v_posXEvP <= 0)
             {
-                //Debug.Log("i hate it here x");
                 other.GetComponent<Rigidbody2D>().velocity += new Vector2(-5, 0);
             }
             else
             {
-                //Debug.Log("i hate it here y");
                 other.GetComponent<Rigidbody2D>().velocity += new Vector2(5, 0);
             }
 
@@ -45,7 +42,6 @@ public class Knockback : MonoBehaviour
             {
                 other.GetComponent<Rigidbody2D>().velocity += new Vector2(0, 5);
             }
-           // position ennemi - position personnage
 
         }
     }
