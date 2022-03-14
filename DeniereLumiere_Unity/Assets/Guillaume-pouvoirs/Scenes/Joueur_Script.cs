@@ -36,7 +36,7 @@ public class Joueur_Script : MonoBehaviour
 
     private float f_movX,
         f_directionDash,
-        f_cooldownDash = 10;
+        f_cooldownDash = 1;
 
     private Vector3 checkpoint;
     /* ================================================================================= Fin Modifs Guillaume    =====================================*/
@@ -63,35 +63,6 @@ public class Joueur_Script : MonoBehaviour
         {
             b_doubleSautPossible = true;
         }
-
-        // Sauvegarder la valeur du mouvement sur l'axe des x
-        f_movX = Input.GetAxis("Horizontal");
-
-        // Si le personnage est en train de dash...
-        if (estDash)
-        {
-            // Le déplacer et faire diminuer le temps
-            rbJoueur.velocity = transform.right * f_directionDash * forceDash;
-            presentTimerDash -= Time.deltaTime;
-            // Si le temps est égal à zéro...
-            if (presentTimerDash <= 0)
-            {
-                // Arrêter le dash et commencer le cooldown
-                estDash = false;
-                InvokeRepeating("Cooldown", 0, 1f);
-            }
-        }
-
-        // Si le cooldown vaut moins que 0, que le personnage ne peut dash et a le pouvoir...
-        if(f_cooldownDash <= 0 && !b_dashPossible && b_dashObtenu)
-        {
-            // Rendre le dash possible, réinitialiser le temps de cooldown et arrêter de le faire descendre
-            b_dashPossible = true;
-            f_cooldownDash = 10;
-            CancelInvoke("Cooldown");
-        }
-
-        Debug.Log(f_cooldownDash);
         /* ================================================================================= Fin Modifs Guillaume    =====================================*/
     }
 
@@ -115,6 +86,35 @@ public class Joueur_Script : MonoBehaviour
                 /*Debug.Log(rbJoueur.velocity);*/
             }
         }
+
+        // Sauvegarder la valeur du mouvement sur l'axe des x
+        f_movX = Input.GetAxis("Horizontal");
+
+        // Si le personnage est en train de dash...
+        if (estDash)
+        {
+            // Le déplacer et faire diminuer le temps
+            rbJoueur.velocity = transform.right * f_directionDash * forceDash;
+            presentTimerDash -= Time.deltaTime;
+            // Si le temps est égal à zéro...
+            if (presentTimerDash <= 0)
+            {
+                // Arrêter le dash et commencer le cooldown
+                estDash = false;
+                InvokeRepeating("Cooldown", 0, 1f);
+            }
+        }
+
+        // Si le cooldown vaut moins que 0, que le personnage ne peut dash et a le pouvoir...
+        if (f_cooldownDash <= 0 && !b_dashPossible && b_dashObtenu)
+        {
+            // Rendre le dash possible, réinitialiser le temps de cooldown et arrêter de le faire descendre
+            b_dashPossible = true;
+            f_cooldownDash = 1;
+            CancelInvoke("Cooldown");
+        }
+
+        //Debug.Log(f_cooldownDash);
         /* ================================================================================= Fin Modifs Guillaume    =====================================*/
 
     }
@@ -148,7 +148,7 @@ public class Joueur_Script : MonoBehaviour
             estDash = true;
             presentTimerDash = commencerTimerDash;
             rbJoueur.velocity = Vector2.zero;
-            f_directionDash = (int)f_movX;
+            f_directionDash = f_movX;
             b_dashPossible = false;
         }
     }

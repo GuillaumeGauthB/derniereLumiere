@@ -71,7 +71,18 @@ public partial class @InputJoueur : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Clavier"",
+                    ""action"": ""Saut"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""849d9ef0-9ad1-4ef3-8c3d-da9846bb0d89"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Manette"",
                     ""action"": ""Saut"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -93,7 +104,7 @@ public partial class @InputJoueur : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Clavier"",
                     ""action"": ""Mouvement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -104,7 +115,7 @@ public partial class @InputJoueur : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/leftArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Clavier"",
                     ""action"": ""Mouvement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -115,7 +126,7 @@ public partial class @InputJoueur : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Clavier"",
                     ""action"": ""Mouvement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -126,7 +137,62 @@ public partial class @InputJoueur : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/rightArrow"",
                     ""interactions"": """",
                     ""processors"": """",
+                    ""groups"": ""Clavier"",
+                    ""action"": ""Mouvement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""25038ebb-71ed-4837-9e33-052e874ddd6a"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
                     ""groups"": """",
+                    ""action"": ""Mouvement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""729d7db3-2ae0-49c0-a77e-b1d269d3ec01"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Manette"",
+                    ""action"": ""Mouvement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""53cd64d3-5473-4db7-aa2b-7e424615ef77"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Manette"",
+                    ""action"": ""Mouvement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""e371f5c2-4e77-4569-8786-12c9cf39d382"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Manette"",
+                    ""action"": ""Mouvement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""ddfb498e-1d00-499d-b652-40c97415b50d"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Manette"",
                     ""action"": ""Mouvement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -137,7 +203,18 @@ public partial class @InputJoueur : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/shift"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Clavier"",
+                    ""action"": ""Courrir"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""35304405-25df-477c-a4f6-cf6904423891"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Manette"",
                     ""action"": ""Courrir"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -145,10 +222,21 @@ public partial class @InputJoueur : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""f9d33f93-dcf7-4366-ad26-1244779b2420"",
-                    ""path"": ""<Keyboard>/leftShift"",
+                    ""path"": ""<Keyboard>/tab"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Clavier"",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1cde8aa0-76f2-45b3-9beb-f4c1d461d3cc"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Manette"",
                     ""action"": ""Dash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -156,7 +244,35 @@ public partial class @InputJoueur : IInputActionCollection2, IDisposable
             ]
         }
     ],
-    ""controlSchemes"": []
+    ""controlSchemes"": [
+        {
+            ""name"": ""Clavier"",
+            ""bindingGroup"": ""Clavier"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Keyboard>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                },
+                {
+                    ""devicePath"": ""<Mouse>"",
+                    ""isOptional"": true,
+                    ""isOR"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Manette"",
+            ""bindingGroup"": ""Manette"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Gamepad>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        }
+    ]
 }");
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
@@ -276,6 +392,24 @@ public partial class @InputJoueur : IInputActionCollection2, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
+    private int m_ClavierSchemeIndex = -1;
+    public InputControlScheme ClavierScheme
+    {
+        get
+        {
+            if (m_ClavierSchemeIndex == -1) m_ClavierSchemeIndex = asset.FindControlSchemeIndex("Clavier");
+            return asset.controlSchemes[m_ClavierSchemeIndex];
+        }
+    }
+    private int m_ManetteSchemeIndex = -1;
+    public InputControlScheme ManetteScheme
+    {
+        get
+        {
+            if (m_ManetteSchemeIndex == -1) m_ManetteSchemeIndex = asset.FindControlSchemeIndex("Manette");
+            return asset.controlSchemes[m_ManetteSchemeIndex];
+        }
+    }
     public interface IPlayerActions
     {
         void OnSaut(InputAction.CallbackContext context);
