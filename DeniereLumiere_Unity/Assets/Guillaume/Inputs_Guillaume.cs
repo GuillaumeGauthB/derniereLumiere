@@ -12,20 +12,22 @@ public class Inputs_Guillaume : MonoBehaviour
         vitesseKnockback; // la vitesse a laquelle les ennemis sont poussers
     
     private LineRenderer c_lineRenderer; // Component du Line Renderer pour viser
-    private PlayerInput c_playerInput; // Input qui permet de changement de map
+    public PlayerInput playerInput; // Input qui permet de changement de map
     public Vector2 sourisPosition; // Position de la souris pour viser
 
     public GameObject projectile; // Le projectile de base du personnage
     private GameObject g_clone; // Le clone du projectile, va etre tirer sur les ennemis
 
     private bool b_knockback;
+    public Vector2 v_deplacementCible;
 
     // Start is called before the first frame update
     void Start()
     {
         c_lineRenderer = gameObject.GetComponent<LineRenderer>();
-        c_playerInput = gameObject.GetComponent<PlayerInput>();
+        playerInput = gameObject.GetComponent<PlayerInput>();
         c_lineRenderer.enabled = false;
+        playerInput.neverAutoSwitchControlSchemes = false;
     }
 
     // Fonction qui gere l'attaque corps a corps du personnage
@@ -45,10 +47,10 @@ public class Inputs_Guillaume : MonoBehaviour
     // Fonction qui gere le debut du "visage" du tir de lucioles ansi que son tir
     public void DeclencherTir(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (context.canceled)
         {
             //Debug.Log("Prep tir");
-            c_playerInput.SwitchCurrentActionMap("TirLucioles");
+            playerInput.SwitchCurrentActionMap("TirLucioles");
         }
     }
 
@@ -56,9 +58,30 @@ public class Inputs_Guillaume : MonoBehaviour
     public void AttaqueTirViser(InputAction.CallbackContext context)
     {
         c_lineRenderer.enabled = true;
+        Debug.Log(context.ReadValue<Vector2>());
         sourisPosition = context.ReadValue<Vector2>();
         //Debug.Log(sourisPosition);
-        c_lineRenderer.SetPosition(0, (Camera.main.ScreenToWorldPoint(sourisPosition)));
+        
+        c_lineRenderer.SetPosition(0, gameObject.transform.position);
+        if(playerInput.currentControlScheme == "Clavier")
+        {
+            c_lineRenderer.SetPosition(1, (Camera.main.ScreenToWorldPoint(sourisPosition)));
+        }
+        else
+        {
+            v_deplacementCible = context.ReadValue<Vector2>() * 10f;
+            //v_deplacementCible += context.ReadValue<Vector2>();
+            c_lineRenderer.SetPosition(1, new Vector3(v_deplacementCible.x, v_deplacementCible.y));
+            
+            if(context.ReadValue<Vector2>().x == 0 && context.ReadValue<Vector2>().y == 0)
+            {
+                c_lineRenderer.enabled = false;
+            }
+            else
+            {
+                c_lineRenderer.enabled = true;
+            }
+        }
     }
 
     // Fonction qui gere l'annulation du tir durant son "visage"
@@ -67,7 +90,7 @@ public class Inputs_Guillaume : MonoBehaviour
         if(context.canceled)
         {
             //Debug.Log("Tir annuler");
-            c_playerInput.SwitchCurrentActionMap("Mouvements-tests");
+            playerInput.SwitchCurrentActionMap("Mouvements-tests");
             c_lineRenderer.enabled = false;
         }
     }
