@@ -4,23 +4,25 @@ using UnityEngine;
 
 public class LuciolesProjectiles : MonoBehaviour
 {
-    public Vector2 destination;
-    public float vitesse;
+    /* Projectiles de luciole
+      Par : Guillaume Gauthier-Benoit
+      Dernière modification : 14/03/2022
+    */
+    private Vector2 v_destination; // Le déplacement du projectile
+    public float vitesse; // La vitesse du projectile
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        //destination = transform.parent.gameObject.GetComponent<Inputs_Guillaume>().
-    }
     private void Awake()
     {
+        // Si le joueur joue avec un clavier...
         if (GameObject.Find("Personnage").gameObject.transform.GetComponent<Inputs_Guillaume>().playerInput.currentControlScheme == "Clavier")
         {
-            destination = GameObject.Find("Personnage").gameObject.transform.GetComponent<Inputs_Guillaume>().v_deplacementCible * 10f;
+            // Multiplier la direction par la vitesse
+            v_destination = GameObject.Find("Personnage").gameObject.transform.GetComponent<Inputs_Guillaume>().v_deplacementCible * vitesse;
         }
         else
         {
-            destination = new Vector2(GameObject.Find("Personnage").gameObject.transform.GetComponent<Inputs_Guillaume>().v_deplacementCible.x - gameObject.transform.position.x, GameObject.Find("Personnage").gameObject.transform.GetComponent<Inputs_Guillaume>().v_deplacementCible.y - gameObject.transform.position.y);
+            // Sinon, le déplacer avec la direction
+            v_destination = new Vector2(GameObject.Find("Personnage").gameObject.transform.GetComponent<Inputs_Guillaume>().v_deplacementCible.x - gameObject.transform.position.x, GameObject.Find("Personnage").gameObject.transform.GetComponent<Inputs_Guillaume>().v_deplacementCible.y - gameObject.transform.position.y);
         }
     }
 
@@ -28,6 +30,6 @@ public class LuciolesProjectiles : MonoBehaviour
     void Update()
     {
         
-        gameObject.GetComponent<Rigidbody2D>().velocity = destination;
+        gameObject.GetComponent<Rigidbody2D>().velocity = v_destination;
     }
 }

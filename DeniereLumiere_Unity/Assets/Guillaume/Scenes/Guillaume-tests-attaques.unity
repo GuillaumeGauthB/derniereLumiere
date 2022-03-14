@@ -425,7 +425,6 @@ MonoBehaviour:
   knockbackCoup: 0
   vitesseKnockback: 5
   playerInput: {fileID: 0}
-  sourisPosition: {x: 0, y: 0}
   projectile: {fileID: 1498667767}
   v_deplacementCible: {x: 0, y: 0}
 --- !u!114 &294466592
@@ -1071,8 +1070,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f07d102e8e29b2c4ca593d78f759f287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destination: {x: 0, y: 0}
-  vitesse: 1.46
+  vitesse: 10
 --- !u!50 &1498667771
 Rigidbody2D:
   serializedVersion: 4
