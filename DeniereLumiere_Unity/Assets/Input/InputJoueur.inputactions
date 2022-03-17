@@ -31,6 +31,15 @@
                     "processors": "",
                     "interactions": "Hold",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Accroupir",
+                    "type": "Button",
+                    "id": "235ef93c-4304-470b-8cf4-7983ce2d7279",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -168,12 +177,34 @@
                 },
                 {
                     "name": "",
-                    "id": "492246c6-8055-4124-8933-98d729c63b3f",
+                    "id": "c55a3d39-4bec-4f5c-b7eb-09b497d7b201",
                     "path": "<Keyboard>/shift",
-                    "interactions": "Press",
+                    "interactions": "Press(behavior=2)",
                     "processors": "",
                     "groups": "",
                     "action": "Courrir",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c1c12614-8fb1-486c-8fcf-bd489c060e89",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Accroupir",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6f293f86-3cfc-46a8-af50-270aa705c889",
+                    "path": "<Keyboard>/s",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Accroupir",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -53,6 +53,15 @@ public partial class @InputJoueur : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": ""Hold"",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Accroupir"",
+                    ""type"": ""Button"",
+                    ""id"": ""235ef93c-4304-470b-8cf4-7983ce2d7279"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -190,12 +199,34 @@ public partial class @InputJoueur : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""492246c6-8055-4124-8933-98d729c63b3f"",
+                    ""id"": ""c55a3d39-4bec-4f5c-b7eb-09b497d7b201"",
                     ""path"": ""<Keyboard>/shift"",
-                    ""interactions"": ""Press"",
+                    ""interactions"": ""Press(behavior=2)"",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Courrir"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c1c12614-8fb1-486c-8fcf-bd489c060e89"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Accroupir"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6f293f86-3cfc-46a8-af50-270aa705c889"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Accroupir"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -209,6 +240,7 @@ public partial class @InputJoueur : IInputActionCollection2, IDisposable
         m_Player_Saut = m_Player.FindAction("Saut", throwIfNotFound: true);
         m_Player_Mouvement = m_Player.FindAction("Mouvement", throwIfNotFound: true);
         m_Player_Courrir = m_Player.FindAction("Courrir", throwIfNotFound: true);
+        m_Player_Accroupir = m_Player.FindAction("Accroupir", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -271,6 +303,7 @@ public partial class @InputJoueur : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Saut;
     private readonly InputAction m_Player_Mouvement;
     private readonly InputAction m_Player_Courrir;
+    private readonly InputAction m_Player_Accroupir;
     public struct PlayerActions
     {
         private @InputJoueur m_Wrapper;
@@ -278,6 +311,7 @@ public partial class @InputJoueur : IInputActionCollection2, IDisposable
         public InputAction @Saut => m_Wrapper.m_Player_Saut;
         public InputAction @Mouvement => m_Wrapper.m_Player_Mouvement;
         public InputAction @Courrir => m_Wrapper.m_Player_Courrir;
+        public InputAction @Accroupir => m_Wrapper.m_Player_Accroupir;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -296,6 +330,9 @@ public partial class @InputJoueur : IInputActionCollection2, IDisposable
                 @Courrir.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCourrir;
                 @Courrir.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCourrir;
                 @Courrir.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCourrir;
+                @Accroupir.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAccroupir;
+                @Accroupir.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAccroupir;
+                @Accroupir.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAccroupir;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -309,6 +346,9 @@ public partial class @InputJoueur : IInputActionCollection2, IDisposable
                 @Courrir.started += instance.OnCourrir;
                 @Courrir.performed += instance.OnCourrir;
                 @Courrir.canceled += instance.OnCourrir;
+                @Accroupir.started += instance.OnAccroupir;
+                @Accroupir.performed += instance.OnAccroupir;
+                @Accroupir.canceled += instance.OnAccroupir;
             }
         }
     }
@@ -318,5 +358,6 @@ public partial class @InputJoueur : IInputActionCollection2, IDisposable
         void OnSaut(InputAction.CallbackContext context);
         void OnMouvement(InputAction.CallbackContext context);
         void OnCourrir(InputAction.CallbackContext context);
+        void OnAccroupir(InputAction.CallbackContext context);
     }
 }

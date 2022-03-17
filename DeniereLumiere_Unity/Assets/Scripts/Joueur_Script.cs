@@ -9,6 +9,9 @@ public class Joueur_Script : MonoBehaviour
 {
     /***********Bool***********/
     private bool b_estAuSol;
+    private bool course;
+    public bool accroupir;
+    private bool b_JoueurSurPlateforme;
 
     /********Raccourcis********/
     private Rigidbody2D rb_Joueur;
@@ -34,8 +37,8 @@ public class Joueur_Script : MonoBehaviour
         i_inputJoueur = new InputJoueur();
         i_inputJoueur.Player.Enable();
         i_inputJoueur.Player.Saut.performed += Saut;
-        /*inputJoueur.Player.Courrir.performed += Courrir;*/
-
+        i_inputJoueur.Player.Courrir.performed += Courrir;
+        i_inputJoueur.Player.Accroupir.performed += Accroupir;
     }
     private void Update()
     {
@@ -50,7 +53,6 @@ public class Joueur_Script : MonoBehaviour
         /* permet au personnage de ne pas dépasser sa vitesse maximale*/
         if (rb_Joueur.velocity.x > f_vitesseMaximale || rb_Joueur.velocity.x < -f_vitesseMaximale)
         {
-            f_vitesseMaximale = vitesseMaximaleMarche;
             rb_Joueur.velocity = new Vector2(inputVector.x * f_vitesseMaximale, rb_Joueur.velocity.y);
         }
         /*ligne pour voir si le personnage ce déplace*/
@@ -58,17 +60,17 @@ public class Joueur_Script : MonoBehaviour
         {
             /*Debug.Log(rb_Joueur.velocity);*/
         }
-        
+
     }
 
     void Saut(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            if(b_estAuSol == true)
+            if (b_estAuSol == true && !accroupir)
             {
-               rb_Joueur.AddForce(new Vector2(0, 1 * forceSaut));
-            }   
+                rb_Joueur.AddForce(new Vector2(0, 1 * forceSaut));
+            }
             Debug.Log("Jump was made " + context.phase);
         }
     }
@@ -78,12 +80,41 @@ public class Joueur_Script : MonoBehaviour
         Debug.Log(context.phase);
         if (context.performed)
         {
-            f_vitesseMaximale = vitesseMaximaleCourrir;
-            Debug.Log("course:True");
-        } else if (context.canceled)
+            if (course == false)
+            {
+                f_vitesseMaximale = vitesseMaximaleCourrir;
+                course = true;
+            }
+            else
+            {
+                f_vitesseMaximale = vitesseMaximaleMarche;
+                course = false;
+            }
+        }
+    }
+
+    void Accroupir(InputAction.CallbackContext context)
+    {
+        Debug.Log(context.phase);
+        if (context.performed)
         {
-            Debug.Log("course:False");
-            f_vitesseMaximale = vitesseMaximaleMarche;
-        };
+            if (accroupir == false)
+            {
+                accroupir = true;
+            }
+            else
+            {
+                accroupir = false;
+            }
+        }
+    }
+
+    public void voirSiJoueurSurPlateforme(Collision2D collision, bool value)
+    {
+        var player = collision.gameObject.GetComponent<Joueur_Script>();
+        if (player != null)
+        {
+            b_JoueurSurPlateforme = value;
+        }
     }
 }
