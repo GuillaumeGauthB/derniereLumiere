@@ -9,7 +9,7 @@ public class Obstacle : MonoBehaviour
         if (collision.gameObject.GetComponent<Joueur_Script>().estDash)
         {
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
-            Invoke("MettreCollider", 1f);
+            Invoke("MettreCollider", 0.5f);
         }
     }
 

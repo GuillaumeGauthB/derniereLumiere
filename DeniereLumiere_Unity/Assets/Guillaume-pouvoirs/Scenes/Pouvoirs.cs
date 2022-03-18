@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-/*Script créé par Jonathan Mores*/
-/*Dernière modification 2022-03-09*/
-public class Joueur_Script : MonoBehaviour
+/*Script créé par Jonathan Mores et Guillaume Gauthier-Benoit*/
+/*Dernière modification 2022-03-17*/
+public class Pouvoirs : MonoBehaviour
 {
     private Rigidbody2D rbJoueur;
     private PlayerInput piJoueur;
