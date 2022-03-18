@@ -1,0 +1,112 @@
+{
+    "name": "testText",
+    "maps": [
+        {
+            "name": "Texte",
+            "id": "dfb9224e-6393-4b57-9494-4eb49ebc3ae3",
+            "actions": [
+                {
+                    "name": "LireText",
+                    "type": "Button",
+                    "id": "4280e4ab-1130-4367-ba36-6071f6f36734",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "28d05462-8811-4a41-baf4-1f62a29cfd1b",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "clavier",
+                    "action": "LireText",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c58493a9-f334-4fd5-862c-8fde3aa82eec",
+                    "path": "<Gamepad>/dpad/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "manette",
+                    "action": "LireText",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "LectureTexte",
+            "id": "ccca3e46-25c6-418c-a2f9-d0c6fa00aa33",
+            "actions": [
+                {
+                    "name": "Skip Texte",
+                    "type": "Button",
+                    "id": "45ac4db9-1a68-4539-bf30-6d5c4fc59ae9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "81772e06-abf5-448a-a294-a098df5f2a84",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "clavier",
+                    "action": "Skip Texte",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6367d3d2-d420-4261-9e1d-01a1eda7dd4a",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "manette",
+                    "action": "Skip Texte",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "clavier",
+            "bindingGroup": "clavier",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "manette",
+            "bindingGroup": "manette",
+            "devices": [
+                {
+                    "devicePath": "<Gamepad>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
