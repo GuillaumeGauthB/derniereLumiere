@@ -7,6 +7,9 @@ using UnityEngine.InputSystem;
 /*Dernière modification 2022-03-09*/
 public class Joueur_Script : MonoBehaviour
 {
+    /***********GameObject***********/
+    public GameObject sprite;
+
     /***********Bool***********/
     private bool b_estAuSol;
     private bool course;
@@ -54,13 +57,25 @@ public class Joueur_Script : MonoBehaviour
         if (rb_Joueur.velocity.x > f_vitesseMaximale || rb_Joueur.velocity.x < -f_vitesseMaximale)
         {
             rb_Joueur.velocity = new Vector2(inputVector.x * f_vitesseMaximale, rb_Joueur.velocity.y);
+            sprite.GetComponent<Animator>().SetBool("Course", true);
+        }
+        else
+        {
+            sprite.GetComponent<Animator>().SetBool("Course", false);
+        }
+        if (rb_Joueur.velocity.x < 0)
+        {
+            sprite.GetComponent<SpriteRenderer>().flipX = true;
+        } else if(rb_Joueur.velocity.x > 0)
+        {
+            sprite.GetComponent<SpriteRenderer>().flipX = false;
         }
         /*ligne pour voir si le personnage ce déplace*/
         if (rb_Joueur.velocity.magnitude > 0)
         {
             /*Debug.Log(rb_Joueur.velocity);*/
         }
-
+        
     }
 
     void Saut(InputAction.CallbackContext context)
@@ -74,7 +89,7 @@ public class Joueur_Script : MonoBehaviour
             Debug.Log("Jump was made " + context.phase);
         }
     }
-
+   
     void Courrir(InputAction.CallbackContext context)
     {
         Debug.Log(context.phase);
