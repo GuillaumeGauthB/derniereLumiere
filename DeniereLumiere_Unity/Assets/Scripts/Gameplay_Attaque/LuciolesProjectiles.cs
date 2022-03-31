@@ -14,15 +14,15 @@ public class LuciolesProjectiles : MonoBehaviour
     private void Awake()
     {
         // Si le joueur joue avec un clavier...
-        if (GameObject.Find("Personnage").gameObject.transform.GetComponent<Inputs_Guillaume>().playerInput.currentControlScheme == "Clavier")
+        if (GameObject.Find("Beepo").gameObject.transform.GetComponent<Inputs_Guillaume>().playerInput.currentControlScheme == "Keyboard")
         {
             // Multiplier la direction par la vitesse
-            v_destination = GameObject.Find("Personnage").gameObject.transform.GetComponent<Inputs_Guillaume>().v_deplacementCible * vitesse;
+            v_destination = GameObject.Find("Beepo").gameObject.transform.GetComponent<Inputs_Guillaume>().v_deplacementCible * vitesse;
         }
         else
         {
             // Sinon, le déplacer avec la direction
-            v_destination = new Vector2(GameObject.Find("Personnage").gameObject.transform.GetComponent<Inputs_Guillaume>().v_deplacementCible.x - gameObject.transform.position.x, GameObject.Find("Personnage").gameObject.transform.GetComponent<Inputs_Guillaume>().v_deplacementCible.y - gameObject.transform.position.y);
+            v_destination = new Vector2(GameObject.Find("Beepo").gameObject.transform.GetComponent<Inputs_Guillaume>().v_deplacementCible.x - gameObject.transform.position.x, GameObject.Find("Beepo").gameObject.transform.GetComponent<Inputs_Guillaume>().v_deplacementCible.y - gameObject.transform.position.y);
         }
     }
 

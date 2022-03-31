@@ -10,11 +10,11 @@ public class Inputs_Guillaume : MonoBehaviour
       Dernière modification : 14/03/2022
     */
 
-    public int 
+    public int
         degatTir, // Les points de degats faits par le tir de luciole
         knockbackCoup, // le knockback du coup fait par l'attaque corps a corps
         vitesseKnockback; // la vitesse a laquelle les ennemis sont poussers
-    
+
     private LineRenderer c_lineRenderer; // Component du Line Renderer pour viser
     public PlayerInput playerInput; // le playerinput
     private Vector2 v_sourisPosition; // Position de la souris pour viser
@@ -22,7 +22,8 @@ public class Inputs_Guillaume : MonoBehaviour
     public GameObject projectile; // Le projectile de base du personnage
     private GameObject g_clone; // Le clone du projectile, va etre tirer sur les ennemis
 
-    private bool b_knockback; 
+    private bool b_knockback;
+    public bool declencherTir;
 
     [Header("Pour autres scripts")]
     public Vector2 v_deplacementCible;
@@ -56,6 +57,7 @@ public class Inputs_Guillaume : MonoBehaviour
         // Lorsque le bouton est relaché...
         if (context.canceled)
         {
+            declencherTir = true;
             // Changer le map du personnage à TirLucioles
             playerInput.SwitchCurrentActionMap("TirLucioles");
         }
@@ -72,7 +74,7 @@ public class Inputs_Guillaume : MonoBehaviour
         c_lineRenderer.SetPosition(0, gameObject.transform.position);
 
         // Si le joueur joue avec le clavier...
-        if(playerInput.currentControlScheme == "Clavier")
+        if (playerInput.currentControlScheme == "Keyboard")
         {
             // Prendre la direction de la souris et le normalizer
             v_deplacementCible = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y) - new Vector2(v_sourisPosition.x, v_sourisPosition.y);
@@ -88,9 +90,9 @@ public class Inputs_Guillaume : MonoBehaviour
             v_deplacementCible = context.ReadValue<Vector2>() * 10f;
             // Dessiner la position finale du viseur
             c_lineRenderer.SetPosition(1, new Vector3(v_deplacementCible.x, v_deplacementCible.y));
-            
+
             // Si la position du joystick est egal a 0 en x et en y...
-            if(context.ReadValue<Vector2>().x == 0 && context.ReadValue<Vector2>().y == 0)
+            if (context.ReadValue<Vector2>().x == 0 && context.ReadValue<Vector2>().y == 0)
             {
                 // Désactiver le viseur
                 c_lineRenderer.enabled = false;
@@ -107,10 +109,11 @@ public class Inputs_Guillaume : MonoBehaviour
     public void AnnulerTirViser(InputAction.CallbackContext context)
     {
         // Si le bouton est laché...
-        if(context.canceled)
+        if (context.canceled)
         {
+            declencherTir = false;
             // Changer la map au mouvement et désactiver le viseur
-            playerInput.SwitchCurrentActionMap("Mouvements-tests");
+            playerInput.SwitchCurrentActionMap("Player");
             c_lineRenderer.enabled = false;
         }
     }

@@ -2,6 +2,107 @@
     "name": "InputJoueur",
     "maps": [
         {
+            "name": "TirLucioles",
+            "id": "e1382296-a909-4f6c-9f0b-5d3b33868d00",
+            "actions": [
+                {
+                    "name": "Position Souris",
+                    "type": "Value",
+                    "id": "29c1b2fd-480f-4583-b489-5e2d3c71ab8e",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Tir",
+                    "type": "Button",
+                    "id": "165ca871-36c6-4e5a-ba29-ade70b3fb8b8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Annuler Tir",
+                    "type": "Button",
+                    "id": "4f5f0462-3fb4-47c2-b02b-ecb4d1166a0d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "f1dd64c5-2cdc-42ed-8bf5-16ffe99515b9",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Clavier;Keyboard",
+                    "action": "Position Souris",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "910417dd-bdb8-45b0-be37-23380deb1358",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Manette;Gamepad",
+                    "action": "Position Souris",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "80dde9d8-8b98-454d-b66d-bf611fe4a2a3",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Clavier;Keyboard",
+                    "action": "Tir",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1c9cfe16-e1e6-4d7b-800c-be455923cb74",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Manette;Gamepad",
+                    "action": "Tir",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f944f14e-760d-4604-9bb1-4ef979d323ad",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Clavier;Keyboard",
+                    "action": "Annuler Tir",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d63fea5e-c923-463b-b86d-586e04945706",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Manette;Gamepad",
+                    "action": "Annuler Tir",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
             "name": "Player",
             "id": "29192838-daa3-4fb7-9d7f-5f9ee2ca1685",
             "actions": [
@@ -40,6 +141,33 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Attaque Physique",
+                    "type": "Button",
+                    "id": "13a79382-c2dc-46d5-b47c-cf73a6f3a1c2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Dash",
+                    "type": "Button",
+                    "id": "f632c3a4-0877-4b0b-8925-d2b1836056d1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Enclencher Tir",
+                    "type": "Button",
+                    "id": "a49a9d94-930b-4743-ad87-a82ff828f806",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -49,7 +177,7 @@
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard",
                     "action": "Saut",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -60,7 +188,7 @@
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Gamepad",
                     "action": "Saut",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -82,7 +210,7 @@
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard",
                     "action": "Mouvement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -93,7 +221,7 @@
                     "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard",
                     "action": "Mouvement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -104,7 +232,7 @@
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard",
                     "action": "Mouvement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -115,7 +243,7 @@
                     "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard",
                     "action": "Mouvement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -137,7 +265,7 @@
                     "path": "<Gamepad>/leftStick/left",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Gamepad",
                     "action": "Mouvement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -148,7 +276,7 @@
                     "path": "<Gamepad>/dpad/left",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Gamepad",
                     "action": "Mouvement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -159,7 +287,7 @@
                     "path": "<Gamepad>/leftStick/right",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Gamepad",
                     "action": "Mouvement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -170,7 +298,7 @@
                     "path": "<Gamepad>/dpad/right",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Gamepad",
                     "action": "Mouvement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -181,7 +309,18 @@
                     "path": "<Keyboard>/shift",
                     "interactions": "Press(behavior=2)",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard",
+                    "action": "Courrir",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1946a964-248d-4de9-bd8c-6036262c1a1c",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
                     "action": "Courrir",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -192,7 +331,7 @@
                     "path": "<Keyboard>/downArrow",
                     "interactions": "Press(behavior=2)",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard",
                     "action": "Accroupir",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -203,13 +342,118 @@
                     "path": "<Keyboard>/s",
                     "interactions": "Press(behavior=2)",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard",
                     "action": "Accroupir",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6587b868-2667-453c-9c52-8f2c585e3a96",
+                    "path": "<Gamepad>/leftStick/down",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Accroupir",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5a44de47-9219-45da-bdb0-30164dd8d640",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Attaque Physique",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8388a101-c8da-409e-a189-a260dcf1cf67",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Attaque Physique",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ae02edbc-02eb-478b-b1a6-7c509a2ac906",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f5132bb4-3a01-47c8-b795-7b94e25b2997",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b1c28b2a-139e-462b-99c8-7c7bdbdd5704",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Enclencher Tir",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a6a5e249-9f84-4ea2-9c9e-6607eec9ef1c",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Enclencher Tir",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
             ]
         }
     ],
-    "controlSchemes": []
+    "controlSchemes": [
+        {
+            "name": "Keyboard",
+            "bindingGroup": "Keyboard",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Gamepad",
+            "bindingGroup": "Gamepad",
+            "devices": [
+                {
+                    "devicePath": "<Gamepad>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
 }

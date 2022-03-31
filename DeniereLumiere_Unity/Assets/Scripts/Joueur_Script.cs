@@ -81,7 +81,8 @@ public class Joueur_Script : MonoBehaviour
 
     private void FixedUpdate()
         {
-        if (!estDash) { 
+        //GetComponent<PlayerInput>().currentActionMap.ToString() != "TirLucioles"
+        if (!estDash && !GetComponent<Inputs_Guillaume>().declencherTir) { 
             /* permet de lire le input du new input system*/
             Vector2 inputVector = i_inputJoueur.Player.Mouvement.ReadValue<Vector2>();
             rb_Joueur.AddRelativeForce(new Vector2(inputVector.x * vitesseAcceleration, 0f), ForceMode2D.Impulse);
@@ -142,9 +143,14 @@ public class Joueur_Script : MonoBehaviour
     {
         if (context.performed)
         {
-            if (b_estAuSol == true && !accroupir)
+            if (b_estAuSol == true && !accroupir && b_doubleSautPossible && b_doubleSautObtenu)
             {
                 rb_Joueur.AddForce(new Vector2(0, 1 * forceSaut));
+            }
+            else if (!b_estAuSol && b_doubleSautPossible && b_doubleSautObtenu)
+            {
+                rb_Joueur.AddForce(new Vector2(0, 1 * forceSaut));
+                b_doubleSautPossible = false;
             }
             Debug.Log("Jump was made " + context.phase);
         }
