@@ -206,6 +206,7 @@ GameObject:
   - component: {fileID: 6805169629179704511}
   - component: {fileID: 6805169629179704510}
   - component: {fileID: 6805169629179704513}
+  - component: {fileID: -6060841888685177329}
   m_Layer: 3
   m_Name: PlateformePetite
   m_TagString: Untagged
@@ -327,6 +328,19 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &-6060841888685177329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6805169629179704509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d01403a37c2952d429f1efd41b2ec52f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joueur: {fileID: 8155892874675826130, guid: a5370d42b6dd2d241b377e5e0e6c91a5, type: 3}
 --- !u!1 &9194523070042497367
 GameObject:
   m_ObjectHideFlags: 0

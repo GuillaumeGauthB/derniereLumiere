@@ -122,6 +122,7 @@ GameObject:
   - component: {fileID: 7685203286967242041}
   - component: {fileID: 7685203286967242040}
   - component: {fileID: 7685203286967242055}
+  - component: {fileID: 3138695694117315393}
   m_Layer: 3
   m_Name: PlateformeGrande
   m_TagString: Untagged
@@ -243,6 +244,19 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &3138695694117315393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7685203286967242043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d01403a37c2952d429f1efd41b2ec52f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joueur: {fileID: 8155892874675826130, guid: a5370d42b6dd2d241b377e5e0e6c91a5, type: 3}
 --- !u!1001 &915274918468015542
 PrefabInstance:
   m_ObjectHideFlags: 0

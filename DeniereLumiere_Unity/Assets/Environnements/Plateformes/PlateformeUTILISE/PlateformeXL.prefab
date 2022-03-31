@@ -530,6 +530,7 @@ GameObject:
   - component: {fileID: 3915635223202114534}
   - component: {fileID: 3915635223202114535}
   - component: {fileID: 3915635223202114456}
+  - component: {fileID: 8055157694884798333}
   m_Layer: 3
   m_Name: PlateformeXL
   m_TagString: Untagged
@@ -653,6 +654,19 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &8055157694884798333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3915635223202114532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d01403a37c2952d429f1efd41b2ec52f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joueur: {fileID: 8155892874675826130, guid: a5370d42b6dd2d241b377e5e0e6c91a5, type: 3}
 --- !u!1 &7561648241523650647
 GameObject:
   m_ObjectHideFlags: 0

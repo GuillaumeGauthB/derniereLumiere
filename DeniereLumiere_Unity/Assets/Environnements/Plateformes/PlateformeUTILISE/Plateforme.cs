@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Plateforme : MonoBehaviour
 {
-    public GameObject joueur;
+    
     private Collider2D c_Collider;
     
     // Start is called before the first frame update
@@ -16,17 +16,19 @@ public class Plateforme : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject == joueur)
+        Debug.Log(collision.gameObject.name);
+        if (collision.gameObject.name.Contains("Beepo"))
         {
-            joueur.GetComponent<Joueur_Script>().voirSiJoueurSurPlateforme(collision, true);
+            
+            collision.gameObject.GetComponent<Joueur_Script>().voirSiJoueurSurPlateforme(collision, true);
         }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject == joueur)
+        if (collision.gameObject.name.Contains("Beepo"))
         {
-            joueur.GetComponent<Joueur_Script>().voirSiJoueurSurPlateforme(collision, false);
+            collision.gameObject.GetComponent<Joueur_Script>().voirSiJoueurSurPlateforme(collision, false);
         }
     }
 }
