@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-/*Script créé par Jonathan Mores*/
-/*Dernière modification 2022-03-09*/
+/*Script cr?? par Jonathan Mores*/
+/*Derni?re modification 2022-03-09*/
 public class Joueur_Script : MonoBehaviour
 {
     /***********GameObject***********/
@@ -86,7 +86,7 @@ public class Joueur_Script : MonoBehaviour
             /* permet de lire le input du new input system*/
             Vector2 inputVector = i_inputJoueur.Player.Mouvement.ReadValue<Vector2>();
             rb_Joueur.AddRelativeForce(new Vector2(inputVector.x * vitesseAcceleration, 0f), ForceMode2D.Impulse);
-            /* permet au personnage de ne pas dépasser sa vitesse maximale*/
+            /* permet au personnage de ne pas d?passer sa vitesse maximale*/
             if (rb_Joueur.velocity.x > f_vitesseMaximale || rb_Joueur.velocity.x < -f_vitesseMaximale)
             {
                 rb_Joueur.velocity = new Vector2(inputVector.x * f_vitesseMaximale, rb_Joueur.velocity.y);
@@ -103,7 +103,7 @@ public class Joueur_Script : MonoBehaviour
             {
                 sprite.GetComponent<SpriteRenderer>().flipX = false;
             }
-            /*ligne pour voir si le personnage ce déplace*/
+            /*ligne pour voir si le personnage ce d?place*/
             if (rb_Joueur.velocity.magnitude > 0)
             {
                 /*Debug.Log(rb_Joueur.velocity);*/
@@ -115,13 +115,13 @@ public class Joueur_Script : MonoBehaviour
         // Si le personnage est en train de dash...
         if (estDash)
         {
-            // Le déplacer et faire diminuer le temps
+            // Le d?placer et faire diminuer le temps
             rb_Joueur.velocity = transform.right * f_directionDash * forceDash;
             presentTimerDash -= Time.deltaTime;
-            // Si le temps est égal à zéro...
+            // Si le temps est ?gal ? z?ro...
             if (presentTimerDash <= 0)
             {
-                // Arrêter le dash et commencer le cooldown
+                // Arr?ter le dash et commencer le cooldown
                 estDash = false;
                 InvokeRepeating("Cooldown", 0, 1f);
             }
@@ -129,7 +129,7 @@ public class Joueur_Script : MonoBehaviour
         // Si le cooldown vaut moins que 0, que le personnage ne peut dash et a le pouvoir...
         if (f_cooldownDash <= 0 && !b_dashPossible && b_dashObtenu)
         {
-            // Rendre le dash possible, réinitialiser le temps de cooldown et arrêter de le faire descendre
+            // Rendre le dash possible, r?initialiser le temps de cooldown et arr?ter de le faire descendre
             b_dashPossible = true;
             f_cooldownDash = 1;
             CancelInvoke("Cooldown");
@@ -190,11 +190,11 @@ public class Joueur_Script : MonoBehaviour
         }
     }
 
-    // Fonction gérant les dash
+    // Fonction g?rant les dash
     public void Dash(InputAction.CallbackContext context)
     {
         Debug.Log(f_movX);
-        // Si le bouton est appuyé, qu'il peut dash, que le pouvoir est obtenu, et que son mouvement sur l'axe des x n'est pas 0...
+        // Si le bouton est appuy?, qu'il peut dash, que le pouvoir est obtenu, et que son mouvement sur l'axe des x n'est pas 0...
         if (context.started && b_dashPossible && b_dashObtenu && f_movX != 0)
         {
             //le faire dash
@@ -206,7 +206,7 @@ public class Joueur_Script : MonoBehaviour
         }
     }
 
-    // Fonction gérant les cooldowns des pouvoirs (va devoir être retravaillée)
+    // Fonction g?rant les cooldowns des pouvoirs (va devoir ?tre retravaill?e)
     void Cooldown()
     {
         if (!b_dashPossible && f_cooldownDash >= 0)
@@ -232,7 +232,7 @@ public class Joueur_Script : MonoBehaviour
         }
     }*/
 
-    // Fonction détectant les collisions
+    // Fonction d?tectant les collisions
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // Si le personnage entre en collision avec un checkpoint, sauvegarder sa position
