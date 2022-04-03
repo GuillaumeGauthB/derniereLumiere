@@ -10,8 +10,6 @@ public class Joueur_Script : MonoBehaviour
     /***********GameObject***********/
     public GameObject sprite;
 
-   
-
     /***********Bool***********/
     private bool b_estAuSol;
     private bool course;
@@ -152,7 +150,6 @@ public class Joueur_Script : MonoBehaviour
                 rb_Joueur.AddForce(new Vector2(0, 1 * forceSaut));
                 b_doubleSautPossible = false;
             }
-            Debug.Log("Jump was made " + context.phase);
         }
     }
    
@@ -176,7 +173,6 @@ public class Joueur_Script : MonoBehaviour
 
     void Accroupir(InputAction.CallbackContext context)
     {
-        Debug.Log(context.phase);
         if (context.performed)
         {
             if (accroupir == false)
@@ -244,14 +240,6 @@ public class Joueur_Script : MonoBehaviour
         if (collision.tag == "mort")
         {
             transform.position = checkpoint;
-        }
-    }
-    public void voirSiJoueurSurPlateforme(Collision2D collision, bool value)
-    {
-        var player = collision.gameObject.GetComponent<Joueur_Script>();
-        if (player != null)
-        {
-            b_JoueurSurPlateforme = value;
         }
     }
 }

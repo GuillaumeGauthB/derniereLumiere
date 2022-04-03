@@ -11792,6 +11792,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1914388443}
     m_Modifications:
+    - target: {fileID: -6060841888685177329, guid: 228133a6bbadf4ea988be0e69e04ffb8, type: 3}
+      propertyPath: Joueur
+      value: 
+      objectReference: {fileID: 748525190}
     - target: {fileID: 6805169629179704509, guid: 228133a6bbadf4ea988be0e69e04ffb8, type: 3}
       propertyPath: m_Name
       value: PlateformePetite (2)
