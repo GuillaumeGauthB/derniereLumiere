@@ -10,8 +10,6 @@ public class Joueur_Script : MonoBehaviour
     /***********GameObject***********/
     public GameObject sprite;
 
-   
-
     /***********Bool***********/
     private bool b_estAuSol;
     private bool course;
@@ -21,6 +19,7 @@ public class Joueur_Script : MonoBehaviour
     /********Raccourcis********/
     private Rigidbody2D rb_Joueur;
     private InputJoueur i_inputJoueur;
+    private Animator a_Joueur;
 
     /********Transform********/
     public Transform checkSol;
@@ -55,10 +54,11 @@ public class Joueur_Script : MonoBehaviour
         f_cooldownDash = 1;
 
     private Vector3 checkpoint;
-   
+
 
     void Awake()
     {
+        a_Joueur = sprite.GetComponent<Animator>();
         rb_Joueur = GetComponent<Rigidbody2D>();
         f_vitesseMaximale = vitesseMaximaleMarche;
         i_inputJoueur = new InputJoueur();
@@ -69,20 +69,26 @@ public class Joueur_Script : MonoBehaviour
     }
     private void Update()
     {
-        b_estAuSol = Physics2D.OverlapCircle(checkSol.position, 0.5f, solLayer);
+        b_estAuSol = Physics2D.OverlapCircle(checkSol.position, 0.3f, solLayer);
         /* ================================================================================= Modifications Guillaume =====================================*/
         // Si le personnage est au sol, permettre un double saut
         if (b_estAuSol)
         {
+            a_Joueur.SetBool("estAuSol", true);
             b_doubleSautPossible = true;
+        }
+        else
+        {
+            a_Joueur.SetBool("estAuSol", false);
         }
         /* ================================================================================= Fin Modifs Guillaume    =====================================*/
     }
 
     private void FixedUpdate()
-        {
+    {
         //GetComponent<PlayerInput>().currentActionMap.ToString() != "TirLucioles"
-        if (!estDash && !GetComponent<Inputs_Guillaume>().declencherTir) { 
+        if (!estDash && !GetComponent<Inputs_Guillaume>().declencherTir)
+        {
             /* permet de lire le input du new input system*/
             Vector2 inputVector = i_inputJoueur.Player.Mouvement.ReadValue<Vector2>();
             rb_Joueur.AddRelativeForce(new Vector2(inputVector.x * vitesseAcceleration, 0f), ForceMode2D.Impulse);
@@ -91,6 +97,7 @@ public class Joueur_Script : MonoBehaviour
             {
                 rb_Joueur.velocity = new Vector2(inputVector.x * f_vitesseMaximale, rb_Joueur.velocity.y);
                 sprite.GetComponent<Animator>().SetBool("Course", true);
+
             }
             else
             {
@@ -99,7 +106,8 @@ public class Joueur_Script : MonoBehaviour
             if (rb_Joueur.velocity.x < 0)
             {
                 sprite.GetComponent<SpriteRenderer>().flipX = true;
-            } else if(rb_Joueur.velocity.x > 0)
+            }
+            else if (rb_Joueur.velocity.x > 0)
             {
                 sprite.GetComponent<SpriteRenderer>().flipX = false;
             }
@@ -146,16 +154,19 @@ public class Joueur_Script : MonoBehaviour
             if (b_estAuSol == true && !accroupir && b_doubleSautPossible && b_doubleSautObtenu)
             {
                 rb_Joueur.AddForce(new Vector2(0, 1 * forceSaut));
+                a_Joueur.SetTrigger("Saut");
+                a_Joueur.SetBool("Atteri", false);
             }
             else if (!b_estAuSol && b_doubleSautPossible && b_doubleSautObtenu)
             {
                 rb_Joueur.AddForce(new Vector2(0, 1 * forceSaut));
                 b_doubleSautPossible = false;
+                a_Joueur.SetTrigger("Saut");
+                a_Joueur.SetBool("Atteri", false);
             }
-            Debug.Log("Jump was made " + context.phase);
         }
     }
-   
+
     void Courrir(InputAction.CallbackContext context)
     {
         Debug.Log(context.phase);
@@ -176,7 +187,6 @@ public class Joueur_Script : MonoBehaviour
 
     void Accroupir(InputAction.CallbackContext context)
     {
-        Debug.Log(context.phase);
         if (context.performed)
         {
             if (accroupir == false)
@@ -246,12 +256,12 @@ public class Joueur_Script : MonoBehaviour
             transform.position = checkpoint;
         }
     }
-    public void voirSiJoueurSurPlateforme(Collision2D collision, bool value)
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        var player = collision.gameObject.GetComponent<Joueur_Script>();
-        if (player != null)
+        if (b_estAuSol == true)
         {
-            b_JoueurSurPlateforme = value;
+            a_Joueur.SetBool("Atteri", true);
         }
     }
 }
