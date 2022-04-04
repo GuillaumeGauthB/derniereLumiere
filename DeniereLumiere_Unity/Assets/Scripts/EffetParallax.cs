@@ -21,7 +21,7 @@ public class EffetParallax : MonoBehaviour
         v_posOrigin = transform.position;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         //Avoir le decalage entre la posistion orignale et la position de la cible en X et Y
         f_decalageX = getDistanceEntre2PointsSurUnAxe(v_posOrigin.x, cible.transform.position.x);

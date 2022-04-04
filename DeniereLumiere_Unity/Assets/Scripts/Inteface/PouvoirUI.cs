@@ -25,9 +25,9 @@ public class PouvoirUI : MonoBehaviour
     public bool peutUtiliserPouvoir;
 
     //Debug Inputs
-    /*private void Update()
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha5))
         {
             utiliserPouvoir();
         }
@@ -35,7 +35,7 @@ public class PouvoirUI : MonoBehaviour
         {
             resetPouvoir();
         }
-    }*/
+    }
 
 
     private void Start()
