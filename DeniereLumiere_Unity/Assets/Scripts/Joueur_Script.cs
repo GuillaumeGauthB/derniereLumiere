@@ -7,13 +7,11 @@ public class Joueur_Script : MonoBehaviour
 {
     /* Script principal du personnage
       Par : Jonathan Mores et Guillaume Gauthier-Benoit
-      Dernière modification : 03/04/2022
+      DerniÃ¨re modification : 03/04/2022
     */
 
     /***********GameObject***********/
     public GameObject sprite; // Le sprite du personnage
-
-   
 
     /***********Bool***********/
     private bool b_estAuSol; // Variable boolean pour determiner si le personnage est au sol
@@ -22,8 +20,11 @@ public class Joueur_Script : MonoBehaviour
     private bool b_JoueurSurPlateforme; // Variable pour determiner si le personnage est sur une plateforme
 
     /********Raccourcis********/
+
     private Rigidbody2D rb_Joueur; // le rigidbody du joueur
     private InputJoueur i_inputJoueur; // Le player input du joueur
+    private Animator a_Joueur; // L'Animator du Sprite du joueur
+
 
     /********Transform********/
     public Transform checkSol; // La position pour determinee si le joueur est au sol
@@ -56,13 +57,13 @@ public class Joueur_Script : MonoBehaviour
     private float f_movX, // Variables privees pertinentes pour l'utilisation du dash
         f_directionDash,
         f_cooldownDash = 1;
-
+        
     private Vector3 checkpoint; // La position du checkpoint
    
-
     void Awake()
     {
         // Assignation des variables et des c# events
+        a_Joueur = sprite.GetComponent<Animator>();
         rb_Joueur = GetComponent<Rigidbody2D>();
         f_vitesseMaximale = vitesseMaximaleMarche;
         i_inputJoueur = new InputJoueur();
@@ -75,25 +76,38 @@ public class Joueur_Script : MonoBehaviour
     {
         // Verifier si le personnage est sur le sol
         b_estAuSol = Physics2D.OverlapCircle(checkSol.position, 0.5f, solLayer);
+
+        /* ================================================================================= Modifications Guillaume =====================================*/
+
         // Si le personnage est au sol, permettre un double saut
         if (b_estAuSol)
         {
+            a_Joueur.SetBool("estAuSol", true);
             b_doubleSautPossible = true;
         }
+
     }
 
     private void FixedUpdate()
         {
         // Si le personnage n'est pas en mode de dash ou en mode de tir, permettre le deplacement
         if (!estDash && !GetComponent<Inputs_Guillaume>().declencherTir) { 
+
+        else
+        {
+            a_Joueur.SetBool("estAuSol", false);
+        }
+        /* ================================================================================= Fin Modifs Guillaume    =====================================*/
+
             /* permet de lire le input du new input system*/
             Vector2 inputVector = i_inputJoueur.Player.Mouvement.ReadValue<Vector2>();
             rb_Joueur.AddRelativeForce(new Vector2(inputVector.x * vitesseAcceleration, 0f), ForceMode2D.Impulse);
-            /* permet au personnage de ne pas dépasser sa vitesse maximale*/
+            /* permet au personnage de ne pas dÃ©passer sa vitesse maximale*/
             if (rb_Joueur.velocity.x > f_vitesseMaximale || rb_Joueur.velocity.x < -f_vitesseMaximale)
             {
                 rb_Joueur.velocity = new Vector2(inputVector.x * f_vitesseMaximale, rb_Joueur.velocity.y);
                 sprite.GetComponent<Animator>().SetBool("Course", true);
+
             }
             else
             {
@@ -102,11 +116,12 @@ public class Joueur_Script : MonoBehaviour
             if (rb_Joueur.velocity.x < 0)
             {
                 sprite.GetComponent<SpriteRenderer>().flipX = true;
-            } else if(rb_Joueur.velocity.x > 0)
+            }
+            else if (rb_Joueur.velocity.x > 0)
             {
                 sprite.GetComponent<SpriteRenderer>().flipX = false;
             }
-            /*ligne pour voir si le personnage ce déplace*/
+            /*ligne pour voir si le personnage ce dÃ©place*/
             if (rb_Joueur.velocity.magnitude > 0)
             {
                 /*Debug.Log(rb_Joueur.velocity);*/
@@ -118,13 +133,13 @@ public class Joueur_Script : MonoBehaviour
         // Si le personnage est en train de dash...
         if (estDash)
         {
-            // Le déplacer et faire diminuer le temps
+            // Le dÃ©placer et faire diminuer le temps
             rb_Joueur.velocity = transform.right * f_directionDash * forceDash;
             presentTimerDash -= Time.deltaTime;
-            // Si le temps est égal à zéro...
+            // Si le temps est Ã©gal Ã  zÃ©ro...
             if (presentTimerDash <= 0)
             {
-                // Arrêter le dash et commencer le cooldown
+                // ArrÃªter le dash et commencer le cooldown
                 estDash = false;
                 InvokeRepeating("Cooldown", 0, 1f);
             }
@@ -132,7 +147,7 @@ public class Joueur_Script : MonoBehaviour
         // Si le cooldown vaut moins que 0, que le personnage ne peut dash et a le pouvoir...
         if (f_cooldownDash <= 0 && !b_dashPossible && b_dashObtenu)
         {
-            // Rendre le dash possible, réinitialiser le temps de cooldown et arrêter de le faire descendre
+            // Rendre le dash possible, rÃ©initialiser le temps de cooldown et arrÃªter de le faire descendre
             b_dashPossible = true;
             f_cooldownDash = 1;
             CancelInvoke("Cooldown");
@@ -150,6 +165,8 @@ public class Joueur_Script : MonoBehaviour
             {
                 // Faire sauter le personnage
                 rb_Joueur.AddForce(new Vector2(0, 1 * forceSaut));
+                a_Joueur.SetTrigger("Saut");
+                a_Joueur.SetBool("Atteri", false);
             }
             // Si le personnage n'est pas sur le sol et peut faire un double saut...
             else if (!b_estAuSol && b_doubleSautPossible && b_doubleSautObtenu)
@@ -157,12 +174,14 @@ public class Joueur_Script : MonoBehaviour
                 // Faire sauter le personnage et empecher de faire un autre saut
                 rb_Joueur.AddForce(new Vector2(0, 1 * forceSaut));
                 b_doubleSautPossible = false;
+                a_Joueur.SetTrigger("Saut");
+                a_Joueur.SetBool("Atteri", false);
             }
-            Debug.Log("Jump was made " + context.phase);
         }
     }
    
     // La fonction gerant la course du personnage
+
     void Courrir(InputAction.CallbackContext context)
     {
         // Lorsque l'action est performee
@@ -189,6 +208,7 @@ public class Joueur_Script : MonoBehaviour
     // Fonction gerant l'accroupissement du personnage
     void Accroupir(InputAction.CallbackContext context)
     {
+
         // Si l'action est performee...
         Debug.Log(context.phase);
         if (context.performed)
@@ -205,11 +225,11 @@ public class Joueur_Script : MonoBehaviour
         }
     }
 
-    // Fonction gérant les dash
+    // Fonction gÃ©rant les dash
     public void Dash(InputAction.CallbackContext context)
     {
         Debug.Log(f_movX);
-        // Si le bouton est appuyé, qu'il peut dash, que le pouvoir est obtenu, et que son mouvement sur l'axe des x n'est pas 0...
+        // Si le bouton est appuyÃ©, qu'il peut dash, que le pouvoir est obtenu, et que son mouvement sur l'axe des x n'est pas 0...
         if (context.started && b_dashPossible && b_dashObtenu && f_movX != 0)
         {
             //faire le dash
@@ -221,7 +241,7 @@ public class Joueur_Script : MonoBehaviour
         }
     }
 
-    // Fonction gérant les cooldowns des pouvoirs (va devoir être retravaillée)
+    // Fonction gÃ©rant les cooldowns des pouvoirs (va devoir Ãªtre retravaillÃ©e)
     void Cooldown()
     {
         // Si le cooldown du dash est plus grand ou egal a 0 et que le dash n'est pas possible 
@@ -245,7 +265,7 @@ public class Joueur_Script : MonoBehaviour
         }
     }*/
 
-    // Fonction détectant les collisions
+    // Fonction dÃ©tectant les collisions
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // Si le personnage entre en collision avec un checkpoint, sauvegarder sa position
@@ -259,14 +279,15 @@ public class Joueur_Script : MonoBehaviour
             transform.position = checkpoint;
         }
     }
-    
+
     // Fonction qui determine si le joueur se trouve sur le sol
     public void voirSiJoueurSurPlateforme(Collision2D collision, bool value)
+    private void OnCollisionEnter2D(Collision2D collision)
+
     {
-        var player = collision.gameObject.GetComponent<Joueur_Script>();
-        if (player != null)
+        if (b_estAuSol == true)
         {
-            b_JoueurSurPlateforme = value;
+            a_Joueur.SetBool("Atteri", true);
         }
     }
 }
