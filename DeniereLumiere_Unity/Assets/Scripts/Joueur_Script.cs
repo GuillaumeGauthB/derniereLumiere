@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-/*Script créé par Jonathan Mores*/
-/*Dernière modification 2022-03-09*/
 public class Joueur_Script : MonoBehaviour
 {
+    /* Script principal du personnage
+      Par : Jonathan Mores et Guillaume Gauthier-Benoit
+      Dernière modification : 03/04/2022
+    */
+
     /***********GameObject***********/
     public GameObject sprite;
 
@@ -35,26 +38,26 @@ public class Joueur_Script : MonoBehaviour
     public float vitesseMaximaleCourrir;
     private float f_vitesseMaximale;
 
-    /********Variabe a Guillaume********/
-    public static bool b_doubleSautObtenu = true,
+    /********Variables a Guillaume********/
+    public static bool b_doubleSautObtenu = true, // Variables determinant quels pouvoirs sont obtenus
         b_dashObtenu = true,
         b_stunObtenu = true,
         b_tirObtenu;
-    private bool b_doubleSautPossible,
+    private bool b_doubleSautPossible, // Variables determinant si les differents pouvoirs peuvent etre utilisers
         b_dashPossible = true,
         b_stunPossible;
 
-    public float forceDash,
+    public float forceDash, // Variables publics pertinentes pour l'utilisation du dash
         commencerTimerDash,
         presentTimerDash;
 
-    public bool estDash;
+    public bool estDash; // Variable determinant si le personnage est en cours de dash ou pas
 
-    private float f_movX,
+    private float f_movX, // Variables privees pertinentes pour l'utilisation du dash
         f_directionDash,
         f_cooldownDash = 1;
 
-    private Vector3 checkpoint;
+    private Vector3 checkpoint; // La position du checkpoint
    
 
     void Awake()

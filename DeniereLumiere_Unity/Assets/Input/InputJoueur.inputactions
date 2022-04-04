@@ -2,107 +2,6 @@
     "name": "InputJoueur",
     "maps": [
         {
-            "name": "TirLucioles",
-            "id": "e1382296-a909-4f6c-9f0b-5d3b33868d00",
-            "actions": [
-                {
-                    "name": "Position Souris",
-                    "type": "Value",
-                    "id": "29c1b2fd-480f-4583-b489-5e2d3c71ab8e",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "Tir",
-                    "type": "Button",
-                    "id": "165ca871-36c6-4e5a-ba29-ade70b3fb8b8",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Annuler Tir",
-                    "type": "Button",
-                    "id": "4f5f0462-3fb4-47c2-b02b-ecb4d1166a0d",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "f1dd64c5-2cdc-42ed-8bf5-16ffe99515b9",
-                    "path": "<Mouse>/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Clavier;Keyboard",
-                    "action": "Position Souris",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "910417dd-bdb8-45b0-be37-23380deb1358",
-                    "path": "<Gamepad>/rightStick",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Manette;Gamepad",
-                    "action": "Position Souris",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "80dde9d8-8b98-454d-b66d-bf611fe4a2a3",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Clavier;Keyboard",
-                    "action": "Tir",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "1c9cfe16-e1e6-4d7b-800c-be455923cb74",
-                    "path": "<Gamepad>/rightTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Manette;Gamepad",
-                    "action": "Tir",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "f944f14e-760d-4604-9bb1-4ef979d323ad",
-                    "path": "<Mouse>/rightButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Clavier;Keyboard",
-                    "action": "Annuler Tir",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "d63fea5e-c923-463b-b86d-586e04945706",
-                    "path": "<Gamepad>/buttonEast",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Manette;Gamepad",
-                    "action": "Annuler Tir",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                }
-            ]
-        },
-        {
             "name": "Player",
             "id": "29192838-daa3-4fb7-9d7f-5f9ee2ca1685",
             "actions": [
@@ -421,6 +320,107 @@
                     "processors": "",
                     "groups": "",
                     "action": "Enclencher Tir",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "TirLucioles",
+            "id": "e1382296-a909-4f6c-9f0b-5d3b33868d00",
+            "actions": [
+                {
+                    "name": "Position Souris",
+                    "type": "Value",
+                    "id": "29c1b2fd-480f-4583-b489-5e2d3c71ab8e",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Tir",
+                    "type": "Button",
+                    "id": "165ca871-36c6-4e5a-ba29-ade70b3fb8b8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Annuler Tir",
+                    "type": "Button",
+                    "id": "4f5f0462-3fb4-47c2-b02b-ecb4d1166a0d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "f1dd64c5-2cdc-42ed-8bf5-16ffe99515b9",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Clavier;Keyboard",
+                    "action": "Position Souris",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "910417dd-bdb8-45b0-be37-23380deb1358",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Manette;Gamepad",
+                    "action": "Position Souris",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "80dde9d8-8b98-454d-b66d-bf611fe4a2a3",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Clavier;Keyboard",
+                    "action": "Tir",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1c9cfe16-e1e6-4d7b-800c-be455923cb74",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Manette;Gamepad",
+                    "action": "Tir",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f944f14e-760d-4604-9bb1-4ef979d323ad",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Clavier;Keyboard",
+                    "action": "Annuler Tir",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d63fea5e-c923-463b-b86d-586e04945706",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Manette;Gamepad",
+                    "action": "Annuler Tir",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

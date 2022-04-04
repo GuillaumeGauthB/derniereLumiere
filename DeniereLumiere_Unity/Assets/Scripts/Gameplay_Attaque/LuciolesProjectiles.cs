@@ -6,7 +6,7 @@ public class LuciolesProjectiles : MonoBehaviour
 {
     /* Projectiles de luciole
       Par : Guillaume Gauthier-Benoit
-      Dernière modification : 14/03/2022
+      Dernière modification : 03/04/2022
     */
     private Vector2 v_destination; // Le déplacement du projectile
     public float vitesse; // La vitesse du projectile
@@ -29,20 +29,13 @@ public class LuciolesProjectiles : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // Deplacer le projectile dans la direction du tir
         gameObject.GetComponent<Rigidbody2D>().velocity = v_destination;
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.layer == 3)
-        {
-            Destroy(gameObject);
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // Lorsque le projectile entre en contact avec la layer du sol, detruire le projectile
         if (collision.gameObject.layer == 3)
         {
             Destroy(gameObject);

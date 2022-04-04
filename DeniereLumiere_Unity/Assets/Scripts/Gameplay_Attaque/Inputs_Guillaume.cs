@@ -7,7 +7,7 @@ public class Inputs_Guillaume : MonoBehaviour
 {
     /* Attaques physique et de tir du personnage
       Par : Guillaume Gauthier-Benoit
-      Dernière modification : 14/03/2022
+      Dernière modification : 03/04/2022
     */
 
     public int
@@ -22,11 +22,12 @@ public class Inputs_Guillaume : MonoBehaviour
     public GameObject projectile; // Le projectile de base du personnage
     private GameObject g_clone; // Le clone du projectile, va etre tirer sur les ennemis
 
-    private bool b_knockback;
-    public bool declencherTir;
+    private bool b_knockback; // Variable permettant le cooldown de l'attaque de knockback
+    public bool declencherTir; // Variable empechant le deplacement lorsque le mode de tir est actif
 
     [Header("Pour autres scripts")]
-    public Vector2 v_deplacementCible;
+    public Vector2 v_deplacementCible; // Variable determinant la direction dans laquelle le projectile est tirer
+
     // Start is called before the first frame update
     void Start()
     {
@@ -86,10 +87,12 @@ public class Inputs_Guillaume : MonoBehaviour
         {
             //Si le joueur joue avec une manette...
 
-            // Utiliser la position du curseur * 10 pour le tir
-            v_deplacementCible = context.ReadValue<Vector2>() * 10f;
+            // Utiliser la position du curseur * 10 pour le tir et mettre la valeur de v_deplacement relative a la position du personnage
+            v_deplacementCible = context.ReadValue<Vector2>() * 15f;
+            v_deplacementCible = gameObject.transform.position + new Vector3(v_deplacementCible.x, v_deplacementCible.y);
+
             // Dessiner la position finale du viseur
-            c_lineRenderer.SetPosition(1, new Vector3(v_deplacementCible.x, v_deplacementCible.y));
+            c_lineRenderer.SetPosition(1, new Vector3(v_deplacementCible.x, v_deplacementCible.y, 0));
 
             // Si la position du joystick est egal a 0 en x et en y...
             if (context.ReadValue<Vector2>().x == 0 && context.ReadValue<Vector2>().y == 0)
