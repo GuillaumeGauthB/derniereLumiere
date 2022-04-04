@@ -31,10 +31,10 @@ public class Inputs_Guillaume : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        c_lineRenderer = gameObject.GetComponent<LineRenderer>();
-        playerInput = gameObject.GetComponent<PlayerInput>();
-        c_lineRenderer.enabled = false;
-        playerInput.neverAutoSwitchControlSchemes = false;
+        c_lineRenderer = gameObject.GetComponent<LineRenderer>(); // Assigner le LineRenderer a c_lineRenderer
+        playerInput = gameObject.GetComponent<PlayerInput>(); // Assigner le PlayerInput a playerInput
+        c_lineRenderer.enabled = false; // Desactiver le LineRenderer
+        playerInput.neverAutoSwitchControlSchemes = false; // Permettre le changement automatique du control scheme 
     }
 
     // Fonction qui gere l'attaque corps a corps du personnage
@@ -44,7 +44,6 @@ public class Inputs_Guillaume : MonoBehaviour
         if (context.started)
         {
             // Trigger l'animation (a faire)
-            // Activer une variable qui va permettre la detection de collision quand l'attaque est performee
             // Activer le knockback de l'attaque
             gameObject.transform.Find("KnockbackAttaque").gameObject.SetActive(true);
 
@@ -52,12 +51,14 @@ public class Inputs_Guillaume : MonoBehaviour
     }
 
     #region Tir
+
     // Fonction qui gere le debut du "visage" du tir de lucioles ansi que son tir
     public void DeclencherTir(InputAction.CallbackContext context)
     {
         // Lorsque le bouton est relaché...
         if (context.canceled)
         {
+            // Creer une variable empechant les deplacements lorsque le mode de tir est activer
             declencherTir = true;
             // Changer le map du personnage à TirLucioles
             playerInput.SwitchCurrentActionMap("TirLucioles");

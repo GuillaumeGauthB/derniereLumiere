@@ -11,32 +11,32 @@ public class Joueur_Script : MonoBehaviour
     */
 
     /***********GameObject***********/
-    public GameObject sprite;
+    public GameObject sprite; // Le sprite du personnage
 
    
 
     /***********Bool***********/
-    private bool b_estAuSol;
-    private bool course;
-    public bool accroupir;
-    private bool b_JoueurSurPlateforme;
+    private bool b_estAuSol; // Variable boolean pour determiner si le personnage est au sol
+    private bool course; // Variable pour determiner si le personnage est en mode de course
+    public bool accroupir; // Variable pour determiner si le personnage est en mode accoupit
+    private bool b_JoueurSurPlateforme; // Variable pour determiner si le personnage est sur une plateforme
 
     /********Raccourcis********/
-    private Rigidbody2D rb_Joueur;
-    private InputJoueur i_inputJoueur;
+    private Rigidbody2D rb_Joueur; // le rigidbody du joueur
+    private InputJoueur i_inputJoueur; // Le player input du joueur
 
     /********Transform********/
-    public Transform checkSol;
+    public Transform checkSol; // La position pour determinee si le joueur est au sol
 
     /********Layer Mask********/
-    public LayerMask solLayer;
+    public LayerMask solLayer; // La layer du sol111
 
     /********Float********/
-    public float forceSaut;
-    public float vitesseAcceleration;
-    public float vitesseMaximaleMarche;
-    public float vitesseMaximaleCourrir;
-    private float f_vitesseMaximale;
+    public float forceSaut; // La force du saut
+    public float vitesseAcceleration; // La vitesse d'acceleration du deplacement 
+    public float vitesseMaximaleMarche; // La vitesse maximale de la marche
+    public float vitesseMaximaleCourrir; // La vitesse maximale de la course
+    private float f_vitesseMaximale; // La vitesse maximale de la marche ou de la course
 
     /********Variables a Guillaume********/
     public static bool b_doubleSautObtenu = true, // Variables determinant quels pouvoirs sont obtenus
@@ -62,6 +62,7 @@ public class Joueur_Script : MonoBehaviour
 
     void Awake()
     {
+        // Assignation des variables et des c# events
         rb_Joueur = GetComponent<Rigidbody2D>();
         f_vitesseMaximale = vitesseMaximaleMarche;
         i_inputJoueur = new InputJoueur();
@@ -72,19 +73,18 @@ public class Joueur_Script : MonoBehaviour
     }
     private void Update()
     {
+        // Verifier si le personnage est sur le sol
         b_estAuSol = Physics2D.OverlapCircle(checkSol.position, 0.5f, solLayer);
-        /* ================================================================================= Modifications Guillaume =====================================*/
         // Si le personnage est au sol, permettre un double saut
         if (b_estAuSol)
         {
             b_doubleSautPossible = true;
         }
-        /* ================================================================================= Fin Modifs Guillaume    =====================================*/
     }
 
     private void FixedUpdate()
         {
-        //GetComponent<PlayerInput>().currentActionMap.ToString() != "TirLucioles"
+        // Si le personnage n'est pas en mode de dash ou en mode de tir, permettre le deplacement
         if (!estDash && !GetComponent<Inputs_Guillaume>().declencherTir) { 
             /* permet de lire le input du new input system*/
             Vector2 inputVector = i_inputJoueur.Player.Mouvement.ReadValue<Vector2>();
@@ -137,21 +137,24 @@ public class Joueur_Script : MonoBehaviour
             f_cooldownDash = 1;
             CancelInvoke("Cooldown");
         }
-
-        //Debug.Log(f_cooldownDash);
-        /* ================================================================================= Fin Modifs Guillaume    =====================================*/
     }
 
+    // La fonction gerant l'activation du saut
     void Saut(InputAction.CallbackContext context)
     {
+        // Lorsque l'action est performee...
         if (context.performed)
         {
-            if (b_estAuSol == true && !accroupir && b_doubleSautPossible && b_doubleSautObtenu)
+            // si le personnage est au sol et n'est pas accroupit...
+            if (b_estAuSol == true && !accroupir)
             {
+                // Faire sauter le personnage
                 rb_Joueur.AddForce(new Vector2(0, 1 * forceSaut));
             }
+            // Si le personnage n'est pas sur le sol et peut faire un double saut...
             else if (!b_estAuSol && b_doubleSautPossible && b_doubleSautObtenu)
             {
+                // Faire sauter le personnage et empecher de faire un autre saut
                 rb_Joueur.AddForce(new Vector2(0, 1 * forceSaut));
                 b_doubleSautPossible = false;
             }
@@ -159,29 +162,38 @@ public class Joueur_Script : MonoBehaviour
         }
     }
    
+    // La fonction gerant la course du personnage
     void Courrir(InputAction.CallbackContext context)
     {
+        // Lorsque l'action est performee
         Debug.Log(context.phase);
         if (context.performed)
         {
+            // Si le personnage n'est pas en mode de course
             if (course == false)
             {
+                // Changer la vitesse maximale et activer la variable de course
                 f_vitesseMaximale = vitesseMaximaleCourrir;
                 course = true;
             }
+            // Sinon
             else
             {
+                // Changer la vitesse maximale et desactiver la course
                 f_vitesseMaximale = vitesseMaximaleMarche;
                 course = false;
             }
         }
     }
 
+    // Fonction gerant l'accroupissement du personnage
     void Accroupir(InputAction.CallbackContext context)
     {
+        // Si l'action est performee...
         Debug.Log(context.phase);
         if (context.performed)
         {
+            // Activer ou desactiver l'accroupissement
             if (accroupir == false)
             {
                 accroupir = true;
@@ -200,7 +212,7 @@ public class Joueur_Script : MonoBehaviour
         // Si le bouton est appuyé, qu'il peut dash, que le pouvoir est obtenu, et que son mouvement sur l'axe des x n'est pas 0...
         if (context.started && b_dashPossible && b_dashObtenu && f_movX != 0)
         {
-            //le faire dash
+            //faire le dash
             estDash = true;
             presentTimerDash = commencerTimerDash;
             rb_Joueur.velocity = Vector2.zero;
@@ -212,14 +224,12 @@ public class Joueur_Script : MonoBehaviour
     // Fonction gérant les cooldowns des pouvoirs (va devoir être retravaillée)
     void Cooldown()
     {
+        // Si le cooldown du dash est plus grand ou egal a 0 et que le dash n'est pas possible 
         if (!b_dashPossible && f_cooldownDash >= 0)
         {
+            // Diminuer la valeur du cooldown de dash
             f_cooldownDash -= 1;
         }
-        /*if (!b_dashPossible)
-        {
-            b_dashPossible = true;
-        }*/
     }
     /*void Courrir(InputAction.CallbackContext context)
     {
@@ -249,6 +259,8 @@ public class Joueur_Script : MonoBehaviour
             transform.position = checkpoint;
         }
     }
+    
+    // Fonction qui determine si le joueur se trouve sur le sol
     public void voirSiJoueurSurPlateforme(Collision2D collision, bool value)
     {
         var player = collision.gameObject.GetComponent<Joueur_Script>();
