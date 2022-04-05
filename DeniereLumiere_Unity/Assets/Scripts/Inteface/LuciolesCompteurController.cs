@@ -13,6 +13,19 @@ public class LuciolesCompteurController : MonoBehaviour
 
     private int i_compteur;
 
+
+    /*private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            ajouterLucioles(1);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            diminuerLucioles(1);
+        }
+    }*/
+
     // Fonction qui permet d'additioner de nouvelles lucioles au nombre déjà établi
     public void ajouterLucioles(int nbreLucioleAjoute)
     {
