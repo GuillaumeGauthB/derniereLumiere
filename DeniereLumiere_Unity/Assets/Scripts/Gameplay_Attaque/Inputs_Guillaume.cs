@@ -7,7 +7,7 @@ public class Inputs_Guillaume : MonoBehaviour
 {
     /* Attaques physique et de tir du personnage
       Par : Guillaume Gauthier-Benoit
-      Dernière modification : 14/03/2022
+      Dernière modification : 03/04/2022
     */
 
     public int
@@ -22,18 +22,19 @@ public class Inputs_Guillaume : MonoBehaviour
     public GameObject projectile; // Le projectile de base du personnage
     private GameObject g_clone; // Le clone du projectile, va etre tirer sur les ennemis
 
-    private bool b_knockback;
-    public bool declencherTir;
+    private bool b_knockback; // Variable permettant le cooldown de l'attaque de knockback
+    public bool declencherTir; // Variable empechant le deplacement lorsque le mode de tir est actif
 
     [Header("Pour autres scripts")]
-    public Vector2 v_deplacementCible;
+    public Vector2 v_deplacementCible; // Variable determinant la direction dans laquelle le projectile est tirer
+
     // Start is called before the first frame update
     void Start()
     {
-        c_lineRenderer = gameObject.GetComponent<LineRenderer>();
-        playerInput = gameObject.GetComponent<PlayerInput>();
-        c_lineRenderer.enabled = false;
-        playerInput.neverAutoSwitchControlSchemes = false;
+        c_lineRenderer = gameObject.GetComponent<LineRenderer>(); // Assigner le LineRenderer a c_lineRenderer
+        playerInput = gameObject.GetComponent<PlayerInput>(); // Assigner le PlayerInput a playerInput
+        c_lineRenderer.enabled = false; // Desactiver le LineRenderer
+        playerInput.neverAutoSwitchControlSchemes = false; // Permettre le changement automatique du control scheme 
     }
 
     // Fonction qui gere l'attaque corps a corps du personnage
@@ -43,7 +44,6 @@ public class Inputs_Guillaume : MonoBehaviour
         if (context.started)
         {
             // Trigger l'animation (a faire)
-            // Activer une variable qui va permettre la detection de collision quand l'attaque est performee
             // Activer le knockback de l'attaque
             gameObject.transform.Find("KnockbackAttaque").gameObject.SetActive(true);
 
@@ -51,12 +51,14 @@ public class Inputs_Guillaume : MonoBehaviour
     }
 
     #region Tir
+
     // Fonction qui gere le debut du "visage" du tir de lucioles ansi que son tir
     public void DeclencherTir(InputAction.CallbackContext context)
     {
         // Lorsque le bouton est relaché...
         if (context.canceled)
         {
+            // Creer une variable empechant les deplacements lorsque le mode de tir est activer
             declencherTir = true;
             // Changer le map du personnage à TirLucioles
             playerInput.SwitchCurrentActionMap("TirLucioles");
@@ -86,10 +88,12 @@ public class Inputs_Guillaume : MonoBehaviour
         {
             //Si le joueur joue avec une manette...
 
-            // Utiliser la position du curseur * 10 pour le tir
-            v_deplacementCible = context.ReadValue<Vector2>() * 10f;
+            // Utiliser la position du curseur * 10 pour le tir et mettre la valeur de v_deplacement relative a la position du personnage
+            v_deplacementCible = context.ReadValue<Vector2>() * 15f;
+            v_deplacementCible = gameObject.transform.position + new Vector3(v_deplacementCible.x, v_deplacementCible.y);
+
             // Dessiner la position finale du viseur
-            c_lineRenderer.SetPosition(1, new Vector3(v_deplacementCible.x, v_deplacementCible.y));
+            c_lineRenderer.SetPosition(1, new Vector3(v_deplacementCible.x, v_deplacementCible.y, 0));
 
             // Si la position du joystick est egal a 0 en x et en y...
             if (context.ReadValue<Vector2>().x == 0 && context.ReadValue<Vector2>().y == 0)
