@@ -9,6 +9,8 @@ public class CameraController : MonoBehaviour
     public float decalageX;
     public float decalageY;
 
+    public float tempsChangementZoneCamera;
+
     [Header("Limites du collider sur l'axe des X")]
     public float limiteOuestCollider;
     public float limiteEstCollider;
@@ -26,13 +28,7 @@ public class CameraController : MonoBehaviour
     private float f_limiteNord;
     private float f_limiteSud;
 
-    [Header("Anciennes Limites de la camera sur l'axe des X")]
-    private float f_ancienneLimiteOuest;
-    private float f_ancienneLimiteEst;
-
-    [Header("Anciennes Limites de la camera sur l'axe des Y")]
-    private float f_ancienneLimiteNord;
-    private float f_ancienneLimiteSud;
+    private Coroutine transition;
 
     private Transform t_cam;
 
@@ -80,17 +76,32 @@ public class CameraController : MonoBehaviour
 
     public void setNewLimits(float ouest, float est, float nord, float sud)
     {
-        float height = 2f * GetComponent<Camera>().orthographicSize;
-        float width = height * GetComponent<Camera>().aspect;
 
+         if (transition != null ) StopCoroutine(transition);
         Debug.Log("Nouvelles limites!");
 
-        f_ancienneLimiteOuest = limiteOuestCollider;
-        f_ancienneLimiteEst = limiteEstCollider;
-        f_ancienneLimiteNord = limiteNordCollider;
-        f_ancienneLimiteSud = limiteSudCollider;
+        transition = StartCoroutine(transitionZoneCamera(ouest, est, nord, sud));
 
 
+        
+    }
+    public IEnumerator transitionZoneCamera(float ouest, float est, float nord, float sud)
+    {
+        float timeToStart = Time.time;
+        float height = 2f * GetComponent<Camera>().orthographicSize;
+        float width = height * GetComponent<Camera>().aspect;
+        while (limiteOuestCollider != ouest && limiteEstCollider != est && limiteNordCollider != nord && limiteSudCollider != sud)
+        {
+            limiteOuestCollider = Mathf.Lerp(limiteOuestCollider, ouest, (Time.time - timeToStart) / tempsChangementZoneCamera);
+            f_limiteOuest = limiteOuestCollider + width / 2;
+            limiteEstCollider = Mathf.Lerp(limiteEstCollider, est, (Time.time - timeToStart) / tempsChangementZoneCamera);
+            f_limiteEst = limiteEstCollider - width / 2;
+            limiteNordCollider = Mathf.Lerp(limiteNordCollider, nord, (Time.time - timeToStart) / tempsChangementZoneCamera);
+            f_limiteNord = limiteNordCollider;
+            limiteSudCollider = Mathf.Lerp(limiteSudCollider, sud, (Time.time - timeToStart) / tempsChangementZoneCamera);
+            f_limiteSud = limiteSudCollider + height / 2;
+            yield return null;
+        }
         limiteOuestCollider = ouest;
         limiteEstCollider = est;
         limiteNordCollider = nord;
@@ -100,5 +111,6 @@ public class CameraController : MonoBehaviour
         f_limiteEst = limiteEstCollider - width / 2;
         f_limiteNord = limiteNordCollider;
         f_limiteSud = limiteSudCollider + height / 2;
+        yield return new WaitForSeconds(0f);
     }
 }

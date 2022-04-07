@@ -8,6 +8,7 @@ public class limiteurCameraController : MonoBehaviour
     {
         if (collision.gameObject.tag == "limiteurCamera")
         {
+            
             collision.GetComponent<limiteurCamera>().setNouvellesLimitesGlobales();
         }
     }
