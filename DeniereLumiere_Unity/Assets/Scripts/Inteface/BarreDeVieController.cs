@@ -27,7 +27,7 @@ public class BarreDeVieController : MonoBehaviour
         c_sliderVieDelayed = sliderVieDelayed.GetComponent<Slider>();
     }
 
-    /*private void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
@@ -37,7 +37,7 @@ public class BarreDeVieController : MonoBehaviour
         {
             infligerDegatsBarreDeVie(20);
         }
-    }*/
+    }
 
     // Fonction utilisé pour faire l'animation de l'ajout de vie
     public void soignerBarreDeVie(float vieAjout)
