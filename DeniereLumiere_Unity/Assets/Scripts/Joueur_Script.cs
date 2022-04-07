@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-/*Script créé par Jonathan Mores*/
-/*Dernière modification 2022-03-09*/
+/*Script cr?? par Jonathan Mores*/
+/*Derni?re modification 2022-03-09*/
 public class Joueur_Script : MonoBehaviour
 {
     /* Script principal du personnage
       Par : Jonathan Mores et Guillaume Gauthier-Benoit
-      Dernière modification : 03/04/2022
+      Derni?re modification : 03/04/2022
     */
 
     /***********GameObject***********/
@@ -62,6 +62,10 @@ public class Joueur_Script : MonoBehaviour
 
     private Vector3 checkpoint; // La position du checkpoint
 
+    public GameObject doubleSautUIPouvoir;
+    public GameObject dashUIPouvoir;
+
+
     void Awake()
     {
         // Assignation des variables et des c# events
@@ -77,12 +81,12 @@ public class Joueur_Script : MonoBehaviour
     private void Update()
     {
         // Verifier si le personnage est sur le sol
-        b_estAuSol = Physics2D.OverlapCircle(checkSol.position, 0.5f, solLayer);
+        b_estAuSol = Physics2D.OverlapCircle(checkSol.position, 0.3f, solLayer);
 
         /* ================================================================================= Modifications Guillaume =====================================*/
 
         // Si le personnage est au sol, permettre un double saut
-        if (b_estAuSol)
+        if (b_estAuSol && doubleSautUIPouvoir.GetComponent<PouvoirUI>().peutUtiliserPouvoir)
         {
             a_Joueur.SetBool("estAuSol", true);
             b_doubleSautPossible = true;
@@ -97,7 +101,7 @@ public class Joueur_Script : MonoBehaviour
             /* permet de lire le input du new input system*/
             Vector2 inputVector = i_inputJoueur.Player.Mouvement.ReadValue<Vector2>();
             rb_Joueur.AddRelativeForce(new Vector2(inputVector.x * vitesseAcceleration, 0f), ForceMode2D.Impulse);
-            /* permet au personnage de ne pas dépasser sa vitesse maximale*/
+            /* permet au personnage de ne pas d?passer sa vitesse maximale*/
             if (rb_Joueur.velocity.x > f_vitesseMaximale || rb_Joueur.velocity.x < -f_vitesseMaximale)
             {
                 rb_Joueur.velocity = new Vector2(inputVector.x * f_vitesseMaximale, rb_Joueur.velocity.y);
@@ -115,7 +119,7 @@ public class Joueur_Script : MonoBehaviour
             {
                 sprite.GetComponent<SpriteRenderer>().flipX = false;
             }
-            /*ligne pour voir si le personnage ce déplace*/
+            /*ligne pour voir si le personnage ce d?place*/
             if (rb_Joueur.velocity.magnitude > 0)
             {
                 /*Debug.Log(rb_Joueur.velocity);*/
@@ -127,22 +131,24 @@ public class Joueur_Script : MonoBehaviour
         // Si le personnage est en train de dash...
         if (estDash)
         {
-            // Le déplacer et faire diminuer le temps
+            // Le d?placer et faire diminuer le temps
             rb_Joueur.velocity = transform.right * f_directionDash * forceDash;
             presentTimerDash -= Time.deltaTime;
-            // Si le temps est égal à zéro...
+            // Si le temps est ?gal ? z?ro...
             if (presentTimerDash <= 0)
             {
-                // Arrêter le dash et commencer le cooldown
+                // Arr?ter le dash et commencer le cooldown
                 estDash = false;
                 InvokeRepeating("Cooldown", 0, 1f);
             }
         }
         // Si le cooldown vaut moins que 0, que le personnage ne peut dash et a le pouvoir...
-        if (f_cooldownDash <= 0 && !b_dashPossible && b_dashObtenu)
+        if (f_cooldownDash <= 0 && !b_dashPossible && b_dashObtenu && dashUIPouvoir.GetComponent<PouvoirUI>().peutUtiliserPouvoir)
         {
-            // Rendre le dash possible, réinitialiser le temps de cooldown et arrêter de le faire descendre
+            // Rendre le dash possible, r?initialiser le temps de cooldown et arr?ter de le faire descendre
             b_dashPossible = true;
+            dashUIPouvoir.GetComponent<PouvoirUI>().peutUtiliserPouvoir = true;
+
             f_cooldownDash = 1;
             CancelInvoke("Cooldown");
         }
@@ -165,9 +171,12 @@ public class Joueur_Script : MonoBehaviour
             // Si le personnage n'est pas sur le sol et peut faire un double saut...
             else if (!b_estAuSol && b_doubleSautPossible && b_doubleSautObtenu)
             {
+                //Utiliser le double saut dans le UI
+                doubleSautUIPouvoir.GetComponent<PouvoirUI>().utiliserPouvoir();
                 // Faire sauter le personnage et empecher de faire un autre saut
                 rb_Joueur.AddForce(new Vector2(0, 1 * forceSaut));
                 b_doubleSautPossible = false;
+                doubleSautUIPouvoir.GetComponent<PouvoirUI>().peutUtiliserPouvoir = false;
                 a_Joueur.SetTrigger("Saut");
                 a_Joueur.SetBool("Atteri", false);
             }
@@ -219,23 +228,25 @@ public class Joueur_Script : MonoBehaviour
         }
     }
 
-    // Fonction gérant les dash
+    // Fonction g?rant les dash
     public void Dash(InputAction.CallbackContext context)
     {
         Debug.Log(f_movX);
-        // Si le bouton est appuyé, qu'il peut dash, que le pouvoir est obtenu, et que son mouvement sur l'axe des x n'est pas 0...
+        // Si le bouton est appuy?, qu'il peut dash, que le pouvoir est obtenu, et que son mouvement sur l'axe des x n'est pas 0...
         if (context.started && b_dashPossible && b_dashObtenu && f_movX != 0)
         {
             //faire le dash
+            dashUIPouvoir.GetComponent<PouvoirUI>().utiliserPouvoir();
             estDash = true;
             presentTimerDash = commencerTimerDash;
             rb_Joueur.velocity = Vector2.zero;
             f_directionDash = f_movX;
+            dashUIPouvoir.GetComponent<PouvoirUI>().peutUtiliserPouvoir = false;
             b_dashPossible = false;
         }
     }
 
-    // Fonction gérant les cooldowns des pouvoirs (va devoir être retravaillée)
+    // Fonction g?rant les cooldowns des pouvoirs (va devoir ?tre retravaill?e)
     void Cooldown()
     {
         // Si le cooldown du dash est plus grand ou egal a 0 et que le dash n'est pas possible 
@@ -259,7 +270,7 @@ public class Joueur_Script : MonoBehaviour
         }
     }*/
 
-    // Fonction détectant les collisions
+    // Fonction d?tectant les collisions
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // Si le personnage entre en collision avec un checkpoint, sauvegarder sa position
