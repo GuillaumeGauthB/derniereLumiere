@@ -4,29 +4,27 @@ using UnityEngine;
 
 public class ComportementSuivre : StateMachineBehaviour
 {
-    private Transform t_joueurPos;
-    public float vitesse;
+    /** Script de poursuite des ennemis
+     * Créé par Guillaume Gauthier-Benoît
+     * Dernière modification: 07/04/22
+     */
+
+    private Transform t_joueurPos; // le transform du joueur
+    public float vitesse; // la vitesse de deplacement
 
     [Header("Distance avant que l'ennemi entre en surveillance")]
-    public float distancePersoEnnemiSurveillance;
+    public float distancePersoEnnemiSurveillance; // la distance provoquant un changement de state
 
-    private Transform t_checkSol;
-    private bool b_surSol;
-    private RaycastHit2D infoRaycast,
-        infoRaycastDroit,
-        infoRaycastGauche;
-    private Vector3 v_tailleCollider;
-    private Vector3 v_tailleColliderNeg;
+    private RaycastHit2D infoRaycast; // le raycast touchant le sol
+    private Vector3 v_tailleCollider,   // les différentes extrémitées du sol
+        v_tailleColliderNeg; 
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        //animator.transform.position = new Vector2(animator.transform.position.x, ComportementIdle.posOri.y);
-        //t_checkSol = animator.transform;
+        // Set les valeurs correctement
         t_joueurPos = GameObject.Find("Beepo").transform;
         infoRaycast = Physics2D.Raycast(animator.transform.position, Vector2.down);
-        infoRaycastGauche = Physics2D.Raycast(animator.transform.position, Vector2.left);
-        infoRaycastDroit = Physics2D.Raycast(animator.transform.position, Vector2.right);
         v_tailleCollider = infoRaycast.collider.bounds.extents + infoRaycast.collider.bounds.center - new Vector3(animator.GetComponent<Collider2D>().bounds.extents.x, 0, 0);
         v_tailleColliderNeg = infoRaycast.collider.bounds.center - infoRaycast.collider.bounds.extents + new Vector3(animator.GetComponent<Collider2D>().bounds.extents.x, 0, 0);
     }
@@ -34,16 +32,17 @@ public class ComportementSuivre : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        // faire en sorte que l'ennemi suive le personnage
         animator.transform.position = Vector2.MoveTowards(animator.transform.position, new Vector2(t_joueurPos.position.x, animator.transform.position.y), vitesse * Time.deltaTime);
-        //animator.transform.position
         
+        // Si le personnage s'éloigne trop loin de l'ennemi, le faire passer à l'état de surveillance
         if (Vector2.Distance(animator.transform.position, t_joueurPos.position) > distancePersoEnnemiSurveillance)
         {
             animator.SetBool("estSuivre", false);
             animator.SetBool("estSurveille", false);
         }
 
-        
+        // Lorsque l'ennemi atteint une des extrémitées du sol, le garder à ce point et l'empêcher de continuer à avancer
         if(v_tailleCollider.x <= animator.transform.position.x)
         {
             animator.transform.position = new Vector2(v_tailleCollider.x, animator.transform.position.y);
@@ -53,25 +52,10 @@ public class ComportementSuivre : StateMachineBehaviour
             animator.transform.position = new Vector2(v_tailleColliderNeg.x, animator.transform.position.y);
         }
         Debug.DrawRay(animator.transform.position, Vector2.down, Color.red);
-
-        // Detection des collisions a droite et a gauche
-
-        /*if (infoRaycastDroit)
-        {
-            Debug.Log(infoRaycastDroit.collider.bounds.extents.x - infoRaycastDroit.collider.bounds.center.x);
-            if (infoRaycastDroit.collider.gameObject.layer == 3)
-            {
-                animator.transform.position = new Vector3(infoRaycastDroit.collider.bounds.extents.x - infoRaycastDroit.collider.bounds.center.x + animator.GetComponent<Collider2D>().bounds.extents.x, 0, 0);
-            }
-        }
-        else if (infoRaycastGauche)
-        {
-            if (infoRaycastGauche.collider.gameObject.layer == 3)
-            {
-                animator.transform.position = new Vector3(infoRaycastGauche.collider.bounds.extents.x + infoRaycastGauche.collider.bounds.center.x - animator.GetComponent<Collider2D>().bounds.extents.x, 0, 0);
-            }
-        }*/
     }
+
+
+
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

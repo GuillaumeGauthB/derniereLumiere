@@ -4,40 +4,39 @@ using UnityEngine;
 
 public class ComportementSurveillance : StateMachineBehaviour
 {
+    /** Script de surveillance des ennemis
+     * Créé par Guillaume Gauthier-Benoît
+     * Dernière modification: 07/04/22
+     */
     [Header("Distance avant que l'ennemi entre en idle")]
-    public float distancePersoEnnemiIdle;
+    public float distancePersoEnnemiIdle; // Distance avant que l'ennemi entre en idle
     [Header("Distance avant que l'ennemi entre en poursuite")]
-    public float distancePersoEnnemiSuivre;
+    public float distancePersoEnnemiSuivre; // Distance avant que l'ennemi entre en poursuite
 
-    public Transform t_joueurPos;
-    public float vitesse;
+    public Transform t_joueurPos; // Transform du joueur
+    public float vitesse; // vitesse de l'ennemi
 
-    private RaycastHit2D infoRaycast,
-        infoRaycastDroit,
-        infoRaycastGauche;
-    private Vector3 v_tailleCollider;
-    private Vector3 v_tailleColliderNeg;
+    private RaycastHit2D infoRaycast;   // raycast pour le sol
+    private Vector3 v_tailleCollider,   // les différentes extrémitées du sol
+        v_tailleColliderNeg;
 
-    private bool oriDirection = true;
+    private bool oriDirection = true; // Valeur boolean pour savoir si l'ennemi va dans sa direction originale ou pas
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        // Setter les valeurs des variables
         t_joueurPos = GameObject.Find("Beepo").transform;
         infoRaycast = Physics2D.Raycast(animator.transform.position, Vector2.down);
-        infoRaycastGauche = Physics2D.Raycast(animator.transform.position, Vector2.left);
-        infoRaycastDroit = Physics2D.Raycast(animator.transform.position, Vector2.right);
         v_tailleCollider = infoRaycast.collider.bounds.extents + infoRaycast.collider.bounds.center - new Vector3(animator.GetComponent<Collider2D>().bounds.extents.x, 0, 0);
         v_tailleColliderNeg = infoRaycast.collider.bounds.center - infoRaycast.collider.bounds.extents + new Vector3(animator.GetComponent<Collider2D>().bounds.extents.x, 0, 0);
-        //animator.transform.position = new Vector2(animator.transform.position.x, ComportementIdle.posOri.y);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        //animator.transform.position = new Vector2(animator.transform.position.x, animator.transform.position.y) * (vitesse * Time.deltaTime);
-        //animator.transform.position = Vector2.MoveTowards(animator.transform.position, new Vector2(t_joueurPos.position.x, animator.transform.position.y), vitesse * Time.deltaTime);
         
-        // Deplacement a droite et a gauche
+        // Si l'ennemi va dans sa direction originale, le déplacer dans cette direction, sinon, le déplacer dans la direction opposée
         if (oriDirection)
         {
             animator.transform.position = Vector3.MoveTowards(animator.transform.position, new Vector3(v_tailleCollider.x, animator.transform.position.y, animator.transform.position.z), vitesse * Time.deltaTime);
@@ -47,18 +46,19 @@ public class ComportementSurveillance : StateMachineBehaviour
             animator.transform.position = Vector3.MoveTowards(animator.transform.position, new Vector3(v_tailleColliderNeg.x, animator.transform.position.y, animator.transform.position.z), vitesse * Time.deltaTime);
         }
 
-        // Changement de state
+        // Lorsque le personnage est assez loin de l'ennemi, le mettre en idle
        if (Vector2.Distance(animator.transform.position, t_joueurPos.position) >= distancePersoEnnemiIdle)
         {
             animator.SetBool("estSurveille", false);
             animator.SetBool("estSuivre", false);
         }
+       // Ou lorsque le personnage est assez près, le mettre en mode de poursuite
         else if(Vector2.Distance(animator.transform.position, t_joueurPos.position) <= distancePersoEnnemiSuivre)
         {
             animator.SetBool("estSuivre", true);
         }
 
-        // BLoquer le personnage au bout du collider de son sol
+        // Lorsque l'ennemi atteint une des extrémitées du sol, le garder à ce point et l'empêcher de continuer à avancer
         if (v_tailleCollider.x <= animator.transform.position.x)
         {
             animator.transform.position = new Vector2(v_tailleCollider.x, animator.transform.position.y);
@@ -70,6 +70,8 @@ public class ComportementSurveillance : StateMachineBehaviour
             oriDirection = true;
         }
         Debug.DrawRay(animator.transform.position, Vector2.left, Color.red);
+
+
 
         // Detection des collisions a droite et a gauche
         /*if (infoRaycastDroit)
