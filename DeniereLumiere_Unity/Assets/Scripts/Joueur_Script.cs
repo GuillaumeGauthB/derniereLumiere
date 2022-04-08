@@ -46,7 +46,7 @@ public class Joueur_Script : MonoBehaviour
         b_dashObtenu = true,
         b_stunObtenu = true,
         b_tirObtenu;
-    private bool b_doubleSautPossible, // Variables determinant si les differents pouvoirs peuvent etre utilisers
+    private bool b_doubleSautPossible, // Variables determinant si les differents pouvoirs peuvent etre utilises
         b_dashPossible = true,
         b_stunPossible;
 
@@ -77,6 +77,8 @@ public class Joueur_Script : MonoBehaviour
         i_inputJoueur.Player.Saut.performed += Saut;
         i_inputJoueur.Player.Courrir.performed += Courrir;
         i_inputJoueur.Player.Accroupir.performed += Accroupir;
+
+
     }
     private void Update()
     {
@@ -214,7 +216,7 @@ public class Joueur_Script : MonoBehaviour
 
         // Si l'action est performee...
         Debug.Log(context.phase);
-        if (context.performed)
+        if (context.performed && !GetComponent<Inputs_Guillaume>().declencherTir)
         {
             // Activer ou desactiver l'accroupissement
             if (accroupir == false)

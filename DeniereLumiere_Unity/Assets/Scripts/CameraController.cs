@@ -32,9 +32,23 @@ public class CameraController : MonoBehaviour
 
     private Transform t_cam;
 
-    private void Start()
+    private void Awake()
     {
         t_cam = transform;
+        t_cam.position = new Vector3(
+           cible.transform.position.x,
+           cible.transform.position.y,
+           t_cam.position.z
+       );
+
+    }
+
+
+    private void Start()
+    {
+        
+    
+
     }
 
     private void FixedUpdate()
