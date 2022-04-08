@@ -5,7 +5,12 @@ using UnityEngine;
 public class ComportementIdle : StateMachineBehaviour
 {
     private Transform t_joueurPos;
-    public float distancePersoEnnemi;
+
+    static public Vector2 posOri;
+    static public bool test;
+
+    [Header("Distance avant que l'ennemi entre en surveillance")]
+    public float distancePersoEnnemiSurveillance;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -16,11 +21,8 @@ public class ComportementIdle : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if(Vector2.Distance(animator.transform.position, t_joueurPos.position) <= distancePersoEnnemi)
-        {
-            animator.SetBool("estSuivre", true);
-        }
-        else if(Vector2.Distance(animator.transform.position, t_joueurPos.position) > distancePersoEnnemi)
+        //Debug.Log(animator.GetComponent<Collider2D>().bounds.extents);
+        if(Vector2.Distance(animator.transform.position, t_joueurPos.position) < distancePersoEnnemiSurveillance)
         {
             animator.SetBool("estSurveille", true);
         }

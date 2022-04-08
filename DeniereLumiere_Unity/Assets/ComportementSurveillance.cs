@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class ComportementSurveillance : StateMachineBehaviour
 {
-    public float distancePersoEnnemiSurv,
-        distancePersoEnnemiIdl;
-    private Transform t_joueurPos;
+    [Header("Distance avant que l'ennemi entre en idle")]
+    public float distancePersoEnnemiIdle;
+    [Header("Distance avant que l'ennemi entre en poursuite")]
+    public float distancePersoEnnemiSuivre;
+
+    public Transform t_joueurPos;
     public float vitesse;
 
     private RaycastHit2D infoRaycast,
@@ -20,12 +23,12 @@ public class ComportementSurveillance : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         t_joueurPos = GameObject.Find("Beepo").transform;
-        animator.SetBool("estSuivre", false);
         infoRaycast = Physics2D.Raycast(animator.transform.position, Vector2.down);
         infoRaycastGauche = Physics2D.Raycast(animator.transform.position, Vector2.left);
         infoRaycastDroit = Physics2D.Raycast(animator.transform.position, Vector2.right);
         v_tailleCollider = infoRaycast.collider.bounds.extents + infoRaycast.collider.bounds.center - new Vector3(animator.GetComponent<Collider2D>().bounds.extents.x, 0, 0);
         v_tailleColliderNeg = infoRaycast.collider.bounds.center - infoRaycast.collider.bounds.extents + new Vector3(animator.GetComponent<Collider2D>().bounds.extents.x, 0, 0);
+        //animator.transform.position = new Vector2(animator.transform.position.x, ComportementIdle.posOri.y);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -33,22 +36,29 @@ public class ComportementSurveillance : StateMachineBehaviour
     {
         //animator.transform.position = new Vector2(animator.transform.position.x, animator.transform.position.y) * (vitesse * Time.deltaTime);
         //animator.transform.position = Vector2.MoveTowards(animator.transform.position, new Vector2(t_joueurPos.position.x, animator.transform.position.y), vitesse * Time.deltaTime);
+        
+        // Deplacement a droite et a gauche
         if (oriDirection)
         {
-            animator.transform.position = Vector2.MoveTowards(animator.transform.position, new Vector2(v_tailleCollider.x, animator.transform.position.y), vitesse * Time.deltaTime);
+            animator.transform.position = Vector3.MoveTowards(animator.transform.position, new Vector3(v_tailleCollider.x, animator.transform.position.y, animator.transform.position.z), vitesse * Time.deltaTime);
         }
         else
         {
-            animator.transform.position = Vector2.MoveTowards(animator.transform.position, new Vector2(v_tailleColliderNeg.x, animator.transform.position.y), vitesse * Time.deltaTime);
+            animator.transform.position = Vector3.MoveTowards(animator.transform.position, new Vector3(v_tailleColliderNeg.x, animator.transform.position.y, animator.transform.position.z), vitesse * Time.deltaTime);
         }
 
-
-        if (Vector2.Distance(animator.transform.position, t_joueurPos.position) >= distancePersoEnnemiIdl)
+        // Changement de state
+       if (Vector2.Distance(animator.transform.position, t_joueurPos.position) >= distancePersoEnnemiIdle)
         {
             animator.SetBool("estSurveille", false);
             animator.SetBool("estSuivre", false);
         }
+        else if(Vector2.Distance(animator.transform.position, t_joueurPos.position) <= distancePersoEnnemiSuivre)
+        {
+            animator.SetBool("estSuivre", true);
+        }
 
+        // BLoquer le personnage au bout du collider de son sol
         if (v_tailleCollider.x <= animator.transform.position.x)
         {
             animator.transform.position = new Vector2(v_tailleCollider.x, animator.transform.position.y);
@@ -59,32 +69,32 @@ public class ComportementSurveillance : StateMachineBehaviour
             animator.transform.position = new Vector2(v_tailleColliderNeg.x, animator.transform.position.y);
             oriDirection = true;
         }
-        Debug.DrawRay(animator.transform.position, Vector2.down, Color.red);
+        Debug.DrawRay(animator.transform.position, Vector2.left, Color.red);
 
         // Detection des collisions a droite et a gauche
-        if (infoRaycastDroit)
+        /*if (infoRaycastDroit)
         {
+            
             if (infoRaycastDroit.collider.gameObject.layer == 3)
             {
-                animator.transform.position = infoRaycastDroit.collider.bounds.extents - infoRaycastDroit.collider.bounds.center + new Vector3(animator.GetComponent<Collider2D>().bounds.extents.x, 0, 0);
-                oriDirection = true;
+                Debug.Log(infoRaycastDroit.collider.bounds.extents.x - infoRaycastDroit.collider.bounds.center.x);
+                animator.transform.position = new Vector3(infoRaycastDroit.collider.bounds.extents.x - infoRaycastDroit.collider.bounds.center.x + animator.GetComponent<Collider2D>().bounds.extents.x, 0, 0);
             }
         }
         else if (infoRaycastGauche)
         {
             if (infoRaycastGauche.collider.gameObject.layer == 3)
             {
-                animator.transform.position = infoRaycastGauche.collider.bounds.extents + infoRaycastGauche.collider.bounds.center - new Vector3(animator.GetComponent<Collider2D>().bounds.extents.x, 0, 0);
-                oriDirection = false;
+                animator.transform.position = new Vector3(infoRaycastGauche.collider.bounds.extents.x + infoRaycastGauche.collider.bounds.center.x - animator.GetComponent<Collider2D>().bounds.extents.x, 0, 0);
             }
-        }
+        }*/
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        
-    }
+    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    //{
+    //   
+    //}
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

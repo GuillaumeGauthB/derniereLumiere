@@ -23,36 +23,17 @@ public class Knockback : MonoBehaviour
         // Si le collider entre en collision avec un objet avec le tag ennemi...
         if (other.tag == "ennemi")
         {
-            // Déterminer la position générale en x de l'ennemi
-            v_posXEvP = other.transform.position.x - g_parent.transform.localPosition.x;
-
-            // Si la valeur est plus petite que 0...
-            if (v_posXEvP <= 0)
+            //Vector2.Distance(gameObject.transform.position, other.gameObject.transform.position)
+            v_posXEvP = Vector2.Distance(new Vector2(g_parent.transform.position.x, 0), new Vector2(other.gameObject.transform.position.x, 0));
+            if(g_parent.transform.position.x  <= other.gameObject.transform.position.x)
             {
-                // Pousser l'ennemi vers l'arrière
-                other.GetComponent<Rigidbody2D>().velocity += new Vector2(-5, 0);
+                other.GetComponent<Rigidbody2D>().AddForce(new Vector2(v_posXEvP * 10, 30f));
             }
             else
             {
-                // Sinon, le pousser vers l'avant
-                other.GetComponent<Rigidbody2D>().velocity += new Vector2(5, 0);
+                other.GetComponent<Rigidbody2D>().AddForce(new Vector2(-v_posXEvP * 10, 30f));
             }
-            
-            // Déterminer la position générale en y de l'ennemi
-            v_posYEvP = other.transform.position.y - g_parent.transform.localPosition.y;
-
-            // Si la valeur est plus petite que 0...
-            if(v_posYEvP <= 0)
-            {
-                // Le pousser vers le bas
-                other.GetComponent<Rigidbody2D>().velocity += new Vector2(0, -5);
-            }
-            else
-            {
-                // Sinon, le pousser vers le haut
-                other.GetComponent<Rigidbody2D>().velocity += new Vector2(0, 5);
-            }
-
+            Debug.Log(v_posXEvP);
         }
     }
 }

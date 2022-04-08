@@ -32,16 +32,20 @@ public class degatEnnemi : MonoBehaviour
             // desactiver les animations
             // desactiver les colliders
             // detruire gameObject apres l'animation
+            Destroy(gameObject);
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag.Contains("projectilePerso"))
         {
             ennemiVie -= 1;
+            //gameObject
             Debug.Log(collision.gameObject.tag);
             Debug.Log(ennemiVie);
             Destroy(collision.gameObject);
         }
+
     }
 }
