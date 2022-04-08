@@ -17,21 +17,29 @@ public class ComportementSuivre : StateMachineBehaviour
 
     private RaycastHit2D infoRaycast; // le raycast touchant le sol
     private Vector3 v_tailleCollider,   // les différentes extrémitées du sol
-        v_tailleColliderNeg; 
+        v_tailleColliderNeg;
+
+    private int i_layerMask;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         // Set les valeurs correctement
+        i_layerMask = LayerMask.GetMask("Sol");
         t_joueurPos = GameObject.Find("Beepo").transform;
-        infoRaycast = Physics2D.Raycast(animator.transform.position, Vector2.down);
-        v_tailleCollider = infoRaycast.collider.bounds.extents + infoRaycast.collider.bounds.center - new Vector3(animator.GetComponent<Collider2D>().bounds.extents.x, 0, 0);
-        v_tailleColliderNeg = infoRaycast.collider.bounds.center - infoRaycast.collider.bounds.extents + new Vector3(animator.GetComponent<Collider2D>().bounds.extents.x, 0, 0);
+        infoRaycast = Physics2D.Raycast(animator.transform.position, Vector2.down, 3, i_layerMask);
+        if (infoRaycast)
+        {
+            v_tailleCollider = infoRaycast.collider.bounds.extents + infoRaycast.collider.bounds.center - new Vector3(animator.GetComponent<Collider2D>().bounds.extents.x, 0, 0);
+            v_tailleColliderNeg = infoRaycast.collider.bounds.center - infoRaycast.collider.bounds.extents + new Vector3(animator.GetComponent<Collider2D>().bounds.extents.x, 0, 0);
+        }
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+    
+
         // faire en sorte que l'ennemi suive le personnage
         animator.transform.position = Vector2.MoveTowards(animator.transform.position, new Vector2(t_joueurPos.position.x, animator.transform.position.y), vitesse * Time.deltaTime);
         

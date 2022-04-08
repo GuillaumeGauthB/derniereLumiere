@@ -19,6 +19,7 @@ public class ComportementSurveillance : StateMachineBehaviour
     private RaycastHit2D infoRaycast;   // raycast pour le sol
     private Vector3 v_tailleCollider,   // les différentes extrémitées du sol
         v_tailleColliderNeg;
+    private int i_layerMask;
 
     private bool oriDirection = true; // Valeur boolean pour savoir si l'ennemi va dans sa direction originale ou pas
 
@@ -26,16 +27,21 @@ public class ComportementSurveillance : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         // Setter les valeurs des variables
+        i_layerMask = LayerMask.GetMask("Sol");
         t_joueurPos = GameObject.Find("Beepo").transform;
-        infoRaycast = Physics2D.Raycast(animator.transform.position, Vector2.down);
-        v_tailleCollider = infoRaycast.collider.bounds.extents + infoRaycast.collider.bounds.center - new Vector3(animator.GetComponent<Collider2D>().bounds.extents.x, 0, 0);
-        v_tailleColliderNeg = infoRaycast.collider.bounds.center - infoRaycast.collider.bounds.extents + new Vector3(animator.GetComponent<Collider2D>().bounds.extents.x, 0, 0);
+        infoRaycast = Physics2D.Raycast(animator.transform.position, Vector2.down, 10000, i_layerMask);
+        if (infoRaycast)
+        {
+            v_tailleCollider = infoRaycast.collider.bounds.extents + infoRaycast.collider.bounds.center - new Vector3(animator.GetComponent<Collider2D>().bounds.extents.x, 0, 0);
+            v_tailleColliderNeg = infoRaycast.collider.bounds.center - infoRaycast.collider.bounds.extents + new Vector3(animator.GetComponent<Collider2D>().bounds.extents.x, 0, 0);
+        }
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        
+        //Debug.Log(infoRaycast.collider.gameObject.layer);
+
         // Si l'ennemi va dans sa direction originale, le déplacer dans cette direction, sinon, le déplacer dans la direction opposée
         if (oriDirection)
         {
@@ -69,7 +75,7 @@ public class ComportementSurveillance : StateMachineBehaviour
             animator.transform.position = new Vector2(v_tailleColliderNeg.x, animator.transform.position.y);
             oriDirection = true;
         }
-        Debug.DrawRay(animator.transform.position, Vector2.left, Color.red);
+        Debug.DrawRay(animator.transform.position, Vector2.down, Color.red);
 
 
 
