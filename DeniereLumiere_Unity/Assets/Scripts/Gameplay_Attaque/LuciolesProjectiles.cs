@@ -13,8 +13,10 @@ public class LuciolesProjectiles : MonoBehaviour
 
     private void Awake()
     {
+        // Multiplier la direction par la vitesse
+        v_destination = GameObject.Find("Beepo").gameObject.transform.GetComponent<Inputs_Guillaume>().v_deplacementCible * vitesse;
         // Si le joueur joue avec un clavier...
-        if (GameObject.Find("Beepo").gameObject.transform.GetComponent<Inputs_Guillaume>().playerInput.currentControlScheme == "Keyboard")
+        /*if (GameObject.Find("Beepo").gameObject.transform.GetComponent<Inputs_Guillaume>().playerInput.currentControlScheme == "Keyboard")
         {
             // Multiplier la direction par la vitesse
             v_destination = GameObject.Find("Beepo").gameObject.transform.GetComponent<Inputs_Guillaume>().v_deplacementCible * vitesse;
@@ -23,7 +25,7 @@ public class LuciolesProjectiles : MonoBehaviour
         {
             // Sinon, le déplacer avec la direction
             v_destination = new Vector2(GameObject.Find("Beepo").gameObject.transform.GetComponent<Inputs_Guillaume>().v_deplacementCible.x - gameObject.transform.position.x, GameObject.Find("Beepo").gameObject.transform.GetComponent<Inputs_Guillaume>().v_deplacementCible.y - gameObject.transform.position.y);
-        }
+        }*/
     }
 
     // Update is called once per frame

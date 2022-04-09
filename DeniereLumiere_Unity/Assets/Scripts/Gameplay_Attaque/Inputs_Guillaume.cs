@@ -27,12 +27,16 @@ public class Inputs_Guillaume : MonoBehaviour
 
     public AudioClip sonTir; // Variable permettant de jouer un son lorsque l'on tire
 
+    
+
     [Header("Pour autres scripts")]
     public Vector2 v_deplacementCible; // Variable determinant la direction dans laquelle le projectile est tirer
 
+    
     // Start is called before the first frame update
     void Start()
     {
+        
         c_lineRenderer = gameObject.GetComponent<LineRenderer>(); // Assigner le LineRenderer a c_lineRenderer
         playerInput = gameObject.GetComponent<PlayerInput>(); // Assigner le PlayerInput a playerInput
         c_lineRenderer.enabled = false; // Desactiver le LineRenderer
@@ -71,6 +75,8 @@ public class Inputs_Guillaume : MonoBehaviour
     // Fonction qui gere le "visage" du tir de luciole
     public void AttaqueTirViser(InputAction.CallbackContext context)
     {
+        Debug.Log(playerInput.currentControlScheme);
+        
         // Faire apparaitre le line renderer qui va servir de viseur
         c_lineRenderer.enabled = true;
         // Sauvegarder la valeur dans le monde de la position de la souris
@@ -78,16 +84,23 @@ public class Inputs_Guillaume : MonoBehaviour
         // Dessiner l'origine du viseur
         c_lineRenderer.SetPosition(0, gameObject.transform.position);
 
+        // Prendre la direction de la souris et le normalizer
+        v_deplacementCible = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y) - new Vector2(v_sourisPosition.x, v_sourisPosition.y);
+        v_deplacementCible = v_deplacementCible.normalized * -1;
+        // Dessiner la position finale du viseur
+        c_lineRenderer.SetPosition(1, v_sourisPosition);
+
+
         // Si le joueur joue avec le clavier...
-        if (playerInput.currentControlScheme == "Keyboard")
+        /*if (playerInput.currentControlScheme == "Keyboard")
         {
             // Prendre la direction de la souris et le normalizer
             v_deplacementCible = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y) - new Vector2(v_sourisPosition.x, v_sourisPosition.y);
             v_deplacementCible = v_deplacementCible.normalized * -1;
             // Dessiner la position finale du viseur
             c_lineRenderer.SetPosition(1, v_sourisPosition);
-        }
-        else if (playerInput.currentControlScheme == "Gamepad")
+        }*/
+        /*else if (playerInput.currentControlScheme == "Gamepad")
         {
             //Si le joueur joue avec une manette...
 
@@ -109,7 +122,7 @@ public class Inputs_Guillaume : MonoBehaviour
                 // Sinon, activer le viseur
                 c_lineRenderer.enabled = true;
             }
-        }
+        }*/
     }
 
     // Fonction qui gere l'annulation du tir durant son "visage"
