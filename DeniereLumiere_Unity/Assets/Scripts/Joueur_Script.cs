@@ -281,9 +281,10 @@ public class Joueur_Script : MonoBehaviour
             checkpoint = transform.position;
         }
         // Si le personnage entre en contact avec une zone de mort, on le place au checkpoint
-        if (collision.tag == "mort")
+        if (collision.tag == "tombe")
         {
             transform.position = checkpoint;
+
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
