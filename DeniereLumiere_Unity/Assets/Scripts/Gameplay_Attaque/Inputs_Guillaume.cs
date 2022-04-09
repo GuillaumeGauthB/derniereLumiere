@@ -87,7 +87,7 @@ public class Inputs_Guillaume : MonoBehaviour
             // Dessiner la position finale du viseur
             c_lineRenderer.SetPosition(1, v_sourisPosition);
         }
-        else
+        else if (playerInput.currentControlScheme == "Gamepad")
         {
             //Si le joueur joue avec une manette...
 

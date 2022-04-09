@@ -97,7 +97,7 @@ public class Joueur_Script : MonoBehaviour
     }
 
     private void FixedUpdate()
-    {
+    {   
         if (!estDash && !GetComponent<Inputs_Guillaume>().declencherTir)
         {
             /* permet de lire le input du new input system*/
