@@ -11,6 +11,7 @@ public class degatEnnemi : MonoBehaviour
 
     public float ennemiVie; // La vie de l'ennemi
     public bool ennemiMort; // Le status de vie de l'ennemi
+    public AudioClip sonMort;
 
     private void Start()
     {
@@ -28,21 +29,7 @@ public class degatEnnemi : MonoBehaviour
 
     private void Update()
     {
-        // Lorsque l'ennemi n'a plus de vie, le tuer
-        if (ennemiVie <= 0)
-        {
-            ennemiMort = true;
-        }
-
-        // Lorsqu'il est mort, faire les actions nécessasire avant de le détruire
-        if (ennemiMort)
-        {
-            // desactiver les mouvements et le UI (?)
-            // desactiver les animations
-            // desactiver les colliders
-            // detruire gameObject apres l'animation
-            Destroy(gameObject);
-        }
+       
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -53,6 +40,28 @@ public class degatEnnemi : MonoBehaviour
             // lui enlever de la vie et détruire le projectile
             ennemiVie -= 1;
             Destroy(collision.gameObject);
+            // Lorsque l'ennemi n'a plus de vie, le tuer
+            if (ennemiVie <= 0)
+            {
+                ennemiMort = true;
+            
+
+            // Lorsqu'il est mort, faire les actions nécessasire avant de le détruire
+            
+                // desactiver les mouvements et le UI (?)
+                // desactiver les animations
+                // desactiver les colliders
+                // detruire gameObject apres l'animation
+                // joue le son de mort de l'ennemi si il existe
+                if (sonMort)
+                {
+                    GetComponent<AudioSource>().PlayOneShot(sonMort);
+                }
+                gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                gameObject.GetComponent<Collider2D>().enabled = false;
+                gameObject.GetComponent<Animator>().enabled = false;
+                Destroy(gameObject, 2f);
+            }
         }
 
     }

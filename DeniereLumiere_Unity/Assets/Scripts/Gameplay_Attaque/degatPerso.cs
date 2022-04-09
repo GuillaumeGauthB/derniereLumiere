@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class degatPerso : MonoBehaviour
 {
@@ -9,11 +10,13 @@ public class degatPerso : MonoBehaviour
      * Dernière modification: 07/04/22
      */
 
+    public GameObject BarreDeVie;
     private float f_posXEvP; //position ennemi vs personnage en x
     public bool knockbackPerso, // valeurs boolean des effets
         invincible,
         mort;
     public float viePerso; // vie initiale du personnage
+    public AudioClip sonDegats;
 
     // Update is called once per frame
     void Update()
@@ -22,12 +25,22 @@ public class degatPerso : MonoBehaviour
         if(viePerso <= 0)
         {
             mort = true;
+            
+        }
+        if (mort == true)
+        {
+            SceneManager.LoadScene("MenuJeu");
         }
     }
 
     // Fonction de collisions
     private void OnCollisionEnter2D(Collision2D collision)
-    {
+    {   
+        if(collision.gameObject.tag == "mort")
+        {
+            mort = true;
+        }
+
         // Lorsque le personnage entre en collision avec un objet avec le tag boss ou ennemi...
         if(collision.gameObject.tag == "ennemi" || collision.gameObject.tag == "boss")
         {
@@ -35,8 +48,11 @@ public class degatPerso : MonoBehaviour
             if (!invincible)
             {
                 viePerso--;
+                GetComponent<AudioSource>().PlayOneShot(sonDegats);
+                BarreDeVie.GetComponent<BarreDeVieController>().infligerDegatsBarreDeVie(10f);
                 invincible = true;
                 Invoke("Invincibilite", 2);
+                
             }
 
             // Donner du knockback au personnage dépendamment de la position du personnage vs l'ennemi, qui va se désactiver après 0.5 secondes

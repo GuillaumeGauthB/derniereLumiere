@@ -25,6 +25,8 @@ public class Inputs_Guillaume : MonoBehaviour
     private bool b_knockback; // Variable permettant le cooldown de l'attaque de knockback
     public bool declencherTir; // Variable empechant le deplacement lorsque le mode de tir est actif
 
+    public AudioClip sonTir; // Variable permettant de jouer un son lorsque l'on tire
+
     [Header("Pour autres scripts")]
     public Vector2 v_deplacementCible; // Variable determinant la direction dans laquelle le projectile est tirer
 
@@ -58,6 +60,7 @@ public class Inputs_Guillaume : MonoBehaviour
         // Lorsque le bouton est relaché...
         if (context.canceled)
         {
+            
             // Creer une variable empechant les deplacements lorsque le mode de tir est activer
             declencherTir = true;
             // Changer le map du personnage à TirLucioles
@@ -128,6 +131,7 @@ public class Inputs_Guillaume : MonoBehaviour
         // Lorsque le bouton est appuyé
         if (context.started)
         {
+            GetComponent<AudioSource>().PlayOneShot(sonTir);
             // Cloner et activer la balle
             g_clone = Instantiate(projectile.gameObject, projectile.transform.position, c_lineRenderer.transform.rotation);
             g_clone.SetActive(true);
