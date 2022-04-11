@@ -76,7 +76,7 @@ public class Inputs_Guillaume : MonoBehaviour
     // Fonction qui gere le "visage" du tir de luciole
     public void AttaqueTirViser(InputAction.CallbackContext context)
     {
-        //Debug.Log(playerInput.currentControlScheme);
+        Debug.Log(playerInput.currentControlScheme);
         Debug.Log(context);
         // Faire apparaitre le line renderer qui va servir de viseur
         c_lineRenderer.enabled = true;
