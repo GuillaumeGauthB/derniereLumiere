@@ -21,6 +21,7 @@ public class Inputs_Guillaume : MonoBehaviour
 
     public GameObject projectile; // Le projectile de base du personnage
     private GameObject g_clone; // Le clone du projectile, va etre tirer sur les ennemis
+    public GameObject flecheViser;
 
     private bool b_knockback; // Variable permettant le cooldown de l'attaque de knockback
     public bool declencherTir; // Variable empechant le deplacement lorsque le mode de tir est actif
@@ -76,7 +77,7 @@ public class Inputs_Guillaume : MonoBehaviour
     public void AttaqueTirViser(InputAction.CallbackContext context)
     {
         Debug.Log(playerInput.currentControlScheme);
-        
+        Debug.Log(context);
         // Faire apparaitre le line renderer qui va servir de viseur
         c_lineRenderer.enabled = true;
         // Sauvegarder la valeur dans le monde de la position de la souris
@@ -90,6 +91,10 @@ public class Inputs_Guillaume : MonoBehaviour
         // Dessiner la position finale du viseur
         c_lineRenderer.SetPosition(1, v_sourisPosition);
 
+        
+        
+        flecheViser.transform.rotation = Quaternion.LookRotation(Vector3.forward, v_deplacementCible );
+        flecheViser.transform.rotation *= Quaternion.Euler(0, 0, 90);
 
         // Si le joueur joue avec le clavier...
         /*if (playerInput.currentControlScheme == "Keyboard")
