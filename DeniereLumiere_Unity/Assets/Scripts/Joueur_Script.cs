@@ -39,7 +39,7 @@ public class Joueur_Script : MonoBehaviour
     public float vitesseAcceleration; // La vitesse d'acceleration du deplacement 
     public float vitesseMaximaleMarche; // La vitesse maximale de la marche
     public float vitesseMaximaleCourrir; // La vitesse maximale de la course
-    private float f_vitesseMaximale; // La vitesse maximale de la marche ou de la course
+    private float f_vitesseMaximale; // La vitesse maximale de la marche ou de la cours
 
     /********Variables a Guillaume********/
     public static bool b_doubleSautObtenu = true, // Variables determinant quels pouvoirs sont obtenus
@@ -64,6 +64,7 @@ public class Joueur_Script : MonoBehaviour
 
     public GameObject doubleSautUIPouvoir;
     public GameObject dashUIPouvoir;
+    
 
 
     void Awake()
