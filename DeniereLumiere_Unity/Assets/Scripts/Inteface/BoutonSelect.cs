@@ -15,6 +15,7 @@ public class BoutonSelect : MonoBehaviour, ISelectHandler, IPointerEnterHandler 
     // Fonction de Unity.EvenSystems qui permet de détecter lorsque le gameobject est pointé par le curseur
     public void OnPointerEnter(PointerEventData eventData)
     {
+        Debug.Log(gameObject);
         entrerSelect();
     }
     // Active les icones lorsque la fonction est appelée
@@ -26,8 +27,6 @@ public class BoutonSelect : MonoBehaviour, ISelectHandler, IPointerEnterHandler 
     // Trouve les icones et les activent
     private void envoyerPositionParticules()
     {
-        Debug.Log(particules);
-        particules.GetComponent<ParticuleSystemeMenu>().setNouvellePosition(transform.position.y);
+        if (particules.activeInHierarchy) particules.GetComponent<ParticuleSystemeMenu>().setNouvellePosition(transform.position.y);
     }
-
 }
