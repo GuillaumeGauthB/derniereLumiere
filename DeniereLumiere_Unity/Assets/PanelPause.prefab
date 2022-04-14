@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 918260112492962618}
   - component: {fileID: 918260112492962628}
   - component: {fileID: 918260112492962629}
+  - component: {fileID: 8843968728049806533}
+  - component: {fileID: 6908416964945344787}
   m_Layer: 5
   m_Name: PanelPause
   m_TagString: Untagged
@@ -77,6 +79,39 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &8843968728049806533
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918260112492962619}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 42fec5bc5db2048c28a20b1f4007ca0b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6908416964945344787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918260112492962619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb1d6f16e93a846c581c89ddc62d0a10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particules: {fileID: 0}
 --- !u!1 &918260113610867665
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,9 +146,9 @@ RectTransform:
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 4, y: -73}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchorMax: {x: 0.5101819, y: 1}
+  m_AnchoredPosition: {x: 1.7090716, y: -44}
+  m_SizeDelta: {x: 195.41814, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &918260113610867666
 CanvasRenderer:
@@ -248,10 +283,10 @@ RectTransform:
   m_Father: {fileID: 4251970141359171337}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 224}
+  m_SizeDelta: {x: 85.4909, y: 85.490906}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &4251970141359171338
 GameObject:
@@ -278,7 +313,7 @@ RectTransform:
   m_GameObject: {fileID: 4251970141359171338}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.726, y: 0.726, z: 0.726}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4251970141684000603}
@@ -290,7 +325,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.0000011938}
   m_SizeDelta: {x: 450, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &4251970141684000596
@@ -326,10 +361,10 @@ RectTransform:
   m_Father: {fileID: 4251970141359171337}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.000013033313}
-  m_SizeDelta: {x: 450, y: 450}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -0.0000076293945, y: 192.3545}
+  m_SizeDelta: {x: 384.709, y: 384.709}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4251970141684000601
 CanvasRenderer:
@@ -402,10 +437,10 @@ RectTransform:
   m_Father: {fileID: 4251970141359171337}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.7879, y: 3.7239256}
-  m_SizeDelta: {x: 371.286, y: 367.0303}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 198}
+  m_SizeDelta: {x: 317.4158, y: 313.7775}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4251970141843361650
 CanvasRenderer:
@@ -462,7 +497,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2701489053665086685, guid: a21d567cab5ad430ea51738e066a1f74, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2701489053665086685, guid: a21d567cab5ad430ea51738e066a1f74, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -471,7 +506,7 @@ PrefabInstance:
     - target: {fileID: 2701489053665086685, guid: a21d567cab5ad430ea51738e066a1f74, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 918260112492962619}
+      objectReference: {fileID: 6908416964945344787}
     - target: {fileID: 2701489053665086685, guid: a21d567cab5ad430ea51738e066a1f74, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -486,7 +521,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2701489053665086685, guid: a21d567cab5ad430ea51738e066a1f74, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActive
+      value: DepauserJeu
       objectReference: {fileID: 0}
     - target: {fileID: 2701489053665086685, guid: a21d567cab5ad430ea51738e066a1f74, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -494,7 +529,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2701489053665086685, guid: a21d567cab5ad430ea51738e066a1f74, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+      value: Pause, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2701489053665086685, guid: a21d567cab5ad430ea51738e066a1f74, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
