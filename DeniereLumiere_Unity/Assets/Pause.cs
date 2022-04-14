@@ -20,7 +20,7 @@ public class Pause : MonoBehaviour
     {
         GetComponent<Animator>().SetBool("EnPause", true);
         Time.timeScale = 0;
-
+        Cursor.visible = true;
     }
     public void DepauserJeu()
     {
