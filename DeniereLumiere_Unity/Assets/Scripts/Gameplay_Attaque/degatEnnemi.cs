@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class degatEnnemi : MonoBehaviour
 {
-    /** Script de dégât des ennemis
-     * Créé par Guillaume Gauthier-Benoît
-     * Dernière modification: 07/04/22
+    /** Script de d?g?t des ennemis
+     * Cr?? par Guillaume Gauthier-Beno?t
+     * Derni?re modification: 07/04/22
      */
 
     public float ennemiVie; // La vie de l'ennemi
@@ -37,7 +37,7 @@ public class degatEnnemi : MonoBehaviour
         // Lorsque l'ennemi entre en collision avec un projectile du perso...
         if (collision.gameObject.tag.Contains("projectilePerso"))
         {
-            // lui enlever de la vie et détruire le projectile
+            // lui enlever de la vie et d?truire le projectile
             ennemiVie -= 1;
             Destroy(collision.gameObject);
             // Lorsque l'ennemi n'a plus de vie, le tuer
@@ -46,7 +46,7 @@ public class degatEnnemi : MonoBehaviour
                 ennemiMort = true;
             
 
-            // Lorsqu'il est mort, faire les actions nécessasire avant de le détruire
+            // Lorsqu'il est mort, faire les actions n?cessasire avant de le d?truire
             
                 // desactiver les mouvements et le UI (?)
                 // desactiver les animations

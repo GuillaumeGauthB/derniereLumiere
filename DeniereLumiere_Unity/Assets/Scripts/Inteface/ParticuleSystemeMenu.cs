@@ -15,16 +15,16 @@ public class ParticuleSystemeMenu : MonoBehaviour
     }
     private IEnumerator transitionPosition(float nouvellePos)
     {
-        float timeToStart = Time.time;
+        float timeToStart = Time.realtimeSinceStartup;
         Vector3 posDepart = transform.position;
         Vector3 posCible = new Vector3(transform.position.x, nouvellePos + decalage, transform.position.z);
         while (posDepart != posCible)
         {
-            posDepart = Vector3.Lerp(posDepart, posCible, (Time.time - timeToStart)/tempsAnimation);
+            posDepart = Vector3.Lerp(posDepart, posCible, (Time.realtimeSinceStartup - timeToStart)/tempsAnimation);
             transform.position = posDepart;
             yield return null;
         }
-        yield return new WaitForSeconds(0f);
+        yield return new WaitForSecondsRealtime(0f);
     }
 
 }
