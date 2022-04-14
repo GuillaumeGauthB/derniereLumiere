@@ -24,6 +24,156 @@ public partial class @InputJoueur : IInputActionCollection2, IDisposable
     ""name"": ""InputJoueur"",
     ""maps"": [
         {
+            ""name"": ""TirLucioles"",
+            ""id"": ""e1382296-a909-4f6c-9f0b-5d3b33868d00"",
+            ""actions"": [
+                {
+                    ""name"": ""Position Souris"",
+                    ""type"": ""Value"",
+                    ""id"": ""29c1b2fd-480f-4583-b489-5e2d3c71ab8e"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Tir"",
+                    ""type"": ""Button"",
+                    ""id"": ""165ca871-36c6-4e5a-ba29-ade70b3fb8b8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Annuler Tir"",
+                    ""type"": ""Button"",
+                    ""id"": ""4f5f0462-3fb4-47c2-b02b-ecb4d1166a0d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ChangerClavier"",
+                    ""type"": ""Button"",
+                    ""id"": ""f824336d-c6af-4e46-a16d-ba8ee54d3a58"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""ChangerManette"",
+                    ""type"": ""Button"",
+                    ""id"": ""59273020-8d23-417f-8b9a-bd2a9746cb10"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Position Manette"",
+                    ""type"": ""Value"",
+                    ""id"": ""8ab15790-7411-4e0d-8d89-3428995fa581"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""f9da9772-4f73-40cf-a354-3b3dc063680f"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Position Souris"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1c9cfe16-e1e6-4d7b-800c-be455923cb74"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Manette"",
+                    ""action"": ""Tir"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2f46c6d7-b0f6-44a2-a21c-cba95f87dc6d"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Tir"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f944f14e-760d-4604-9bb1-4ef979d323ad"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Clavier;Keyboard"",
+                    ""action"": ""Annuler Tir"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d63fea5e-c923-463b-b86d-586e04945706"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Manette;Gamepad"",
+                    ""action"": ""Annuler Tir"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fd1b8092-fe78-4dbc-b4c3-f119243622d5"",
+                    ""path"": ""<Keyboard>/anyKey"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangerClavier"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7ef9a41c-2172-4d00-9313-71da4d36a927"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangerManette"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e5b3f7aa-7479-47ce-bf61-0fab2ad5fbe6"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Position Manette"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
             ""name"": ""Player"",
             ""id"": ""29192838-daa3-4fb7-9d7f-5f9ee2ca1685"",
             ""actions"": [
@@ -35,6 +185,24 @@ public partial class @InputJoueur : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ChangerManette"",
+                    ""type"": ""Button"",
+                    ""id"": ""6a159ab3-d7cb-4ab5-8a75-8bdfa296892d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ChangerClavier"",
+                    ""type"": ""Button"",
+                    ""id"": ""120a735b-b904-4ec2-bfff-e06ae9316316"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 },
                 {
                     ""name"": ""Mouvement"",
@@ -344,105 +512,26 @@ public partial class @InputJoueur : IInputActionCollection2, IDisposable
                     ""action"": ""Enclencher Tir"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""TirLucioles"",
-            ""id"": ""e1382296-a909-4f6c-9f0b-5d3b33868d00"",
-            ""actions"": [
-                {
-                    ""name"": ""Position Souris"",
-                    ""type"": ""Value"",
-                    ""id"": ""29c1b2fd-480f-4583-b489-5e2d3c71ab8e"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
                 },
-                {
-                    ""name"": ""Tir"",
-                    ""type"": ""Button"",
-                    ""id"": ""165ca871-36c6-4e5a-ba29-ade70b3fb8b8"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Annuler Tir"",
-                    ""type"": ""Button"",
-                    ""id"": ""4f5f0462-3fb4-47c2-b02b-ecb4d1166a0d"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                }
-            ],
-            ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""f1dd64c5-2cdc-42ed-8bf5-16ffe99515b9"",
-                    ""path"": ""<Mouse>/position"",
+                    ""id"": ""115c7c50-2b94-4725-91b1-4778ab15b135"",
+                    ""path"": ""<Keyboard>/anyKey"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Clavier;Keyboard"",
-                    ""action"": ""Position Souris"",
+                    ""groups"": """",
+                    ""action"": ""ChangerClavier"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""910417dd-bdb8-45b0-be37-23380deb1358"",
-                    ""path"": ""<Gamepad>/rightStick"",
+                    ""id"": ""05eb7cf0-a733-4dc8-9e68-5ffb094d0ed7"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Manette;Gamepad"",
-                    ""action"": ""Position Souris"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""80dde9d8-8b98-454d-b66d-bf611fe4a2a3"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Clavier;Keyboard"",
-                    ""action"": ""Tir"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""1c9cfe16-e1e6-4d7b-800c-be455923cb74"",
-                    ""path"": ""<Gamepad>/rightTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Manette;Gamepad"",
-                    ""action"": ""Tir"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""f944f14e-760d-4604-9bb1-4ef979d323ad"",
-                    ""path"": ""<Mouse>/rightButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Clavier;Keyboard"",
-                    ""action"": ""Annuler Tir"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""d63fea5e-c923-463b-b86d-586e04945706"",
-                    ""path"": ""<Gamepad>/buttonEast"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Manette;Gamepad"",
-                    ""action"": ""Annuler Tir"",
+                    ""groups"": """",
+                    ""action"": ""ChangerManette"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -474,20 +563,25 @@ public partial class @InputJoueur : IInputActionCollection2, IDisposable
         }
     ]
 }");
+        // TirLucioles
+        m_TirLucioles = asset.FindActionMap("TirLucioles", throwIfNotFound: true);
+        m_TirLucioles_PositionSouris = m_TirLucioles.FindAction("Position Souris", throwIfNotFound: true);
+        m_TirLucioles_Tir = m_TirLucioles.FindAction("Tir", throwIfNotFound: true);
+        m_TirLucioles_AnnulerTir = m_TirLucioles.FindAction("Annuler Tir", throwIfNotFound: true);
+        m_TirLucioles_ChangerClavier = m_TirLucioles.FindAction("ChangerClavier", throwIfNotFound: true);
+        m_TirLucioles_ChangerManette = m_TirLucioles.FindAction("ChangerManette", throwIfNotFound: true);
+        m_TirLucioles_PositionManette = m_TirLucioles.FindAction("Position Manette", throwIfNotFound: true);
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Saut = m_Player.FindAction("Saut", throwIfNotFound: true);
+        m_Player_ChangerManette = m_Player.FindAction("ChangerManette", throwIfNotFound: true);
+        m_Player_ChangerClavier = m_Player.FindAction("ChangerClavier", throwIfNotFound: true);
         m_Player_Mouvement = m_Player.FindAction("Mouvement", throwIfNotFound: true);
         m_Player_Courrir = m_Player.FindAction("Courrir", throwIfNotFound: true);
         m_Player_Accroupir = m_Player.FindAction("Accroupir", throwIfNotFound: true);
         m_Player_AttaquePhysique = m_Player.FindAction("Attaque Physique", throwIfNotFound: true);
         m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
         m_Player_EnclencherTir = m_Player.FindAction("Enclencher Tir", throwIfNotFound: true);
-        // TirLucioles
-        m_TirLucioles = asset.FindActionMap("TirLucioles", throwIfNotFound: true);
-        m_TirLucioles_PositionSouris = m_TirLucioles.FindAction("Position Souris", throwIfNotFound: true);
-        m_TirLucioles_Tir = m_TirLucioles.FindAction("Tir", throwIfNotFound: true);
-        m_TirLucioles_AnnulerTir = m_TirLucioles.FindAction("Annuler Tir", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -544,10 +638,85 @@ public partial class @InputJoueur : IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
+    // TirLucioles
+    private readonly InputActionMap m_TirLucioles;
+    private ITirLuciolesActions m_TirLuciolesActionsCallbackInterface;
+    private readonly InputAction m_TirLucioles_PositionSouris;
+    private readonly InputAction m_TirLucioles_Tir;
+    private readonly InputAction m_TirLucioles_AnnulerTir;
+    private readonly InputAction m_TirLucioles_ChangerClavier;
+    private readonly InputAction m_TirLucioles_ChangerManette;
+    private readonly InputAction m_TirLucioles_PositionManette;
+    public struct TirLuciolesActions
+    {
+        private @InputJoueur m_Wrapper;
+        public TirLuciolesActions(@InputJoueur wrapper) { m_Wrapper = wrapper; }
+        public InputAction @PositionSouris => m_Wrapper.m_TirLucioles_PositionSouris;
+        public InputAction @Tir => m_Wrapper.m_TirLucioles_Tir;
+        public InputAction @AnnulerTir => m_Wrapper.m_TirLucioles_AnnulerTir;
+        public InputAction @ChangerClavier => m_Wrapper.m_TirLucioles_ChangerClavier;
+        public InputAction @ChangerManette => m_Wrapper.m_TirLucioles_ChangerManette;
+        public InputAction @PositionManette => m_Wrapper.m_TirLucioles_PositionManette;
+        public InputActionMap Get() { return m_Wrapper.m_TirLucioles; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(TirLuciolesActions set) { return set.Get(); }
+        public void SetCallbacks(ITirLuciolesActions instance)
+        {
+            if (m_Wrapper.m_TirLuciolesActionsCallbackInterface != null)
+            {
+                @PositionSouris.started -= m_Wrapper.m_TirLuciolesActionsCallbackInterface.OnPositionSouris;
+                @PositionSouris.performed -= m_Wrapper.m_TirLuciolesActionsCallbackInterface.OnPositionSouris;
+                @PositionSouris.canceled -= m_Wrapper.m_TirLuciolesActionsCallbackInterface.OnPositionSouris;
+                @Tir.started -= m_Wrapper.m_TirLuciolesActionsCallbackInterface.OnTir;
+                @Tir.performed -= m_Wrapper.m_TirLuciolesActionsCallbackInterface.OnTir;
+                @Tir.canceled -= m_Wrapper.m_TirLuciolesActionsCallbackInterface.OnTir;
+                @AnnulerTir.started -= m_Wrapper.m_TirLuciolesActionsCallbackInterface.OnAnnulerTir;
+                @AnnulerTir.performed -= m_Wrapper.m_TirLuciolesActionsCallbackInterface.OnAnnulerTir;
+                @AnnulerTir.canceled -= m_Wrapper.m_TirLuciolesActionsCallbackInterface.OnAnnulerTir;
+                @ChangerClavier.started -= m_Wrapper.m_TirLuciolesActionsCallbackInterface.OnChangerClavier;
+                @ChangerClavier.performed -= m_Wrapper.m_TirLuciolesActionsCallbackInterface.OnChangerClavier;
+                @ChangerClavier.canceled -= m_Wrapper.m_TirLuciolesActionsCallbackInterface.OnChangerClavier;
+                @ChangerManette.started -= m_Wrapper.m_TirLuciolesActionsCallbackInterface.OnChangerManette;
+                @ChangerManette.performed -= m_Wrapper.m_TirLuciolesActionsCallbackInterface.OnChangerManette;
+                @ChangerManette.canceled -= m_Wrapper.m_TirLuciolesActionsCallbackInterface.OnChangerManette;
+                @PositionManette.started -= m_Wrapper.m_TirLuciolesActionsCallbackInterface.OnPositionManette;
+                @PositionManette.performed -= m_Wrapper.m_TirLuciolesActionsCallbackInterface.OnPositionManette;
+                @PositionManette.canceled -= m_Wrapper.m_TirLuciolesActionsCallbackInterface.OnPositionManette;
+            }
+            m_Wrapper.m_TirLuciolesActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @PositionSouris.started += instance.OnPositionSouris;
+                @PositionSouris.performed += instance.OnPositionSouris;
+                @PositionSouris.canceled += instance.OnPositionSouris;
+                @Tir.started += instance.OnTir;
+                @Tir.performed += instance.OnTir;
+                @Tir.canceled += instance.OnTir;
+                @AnnulerTir.started += instance.OnAnnulerTir;
+                @AnnulerTir.performed += instance.OnAnnulerTir;
+                @AnnulerTir.canceled += instance.OnAnnulerTir;
+                @ChangerClavier.started += instance.OnChangerClavier;
+                @ChangerClavier.performed += instance.OnChangerClavier;
+                @ChangerClavier.canceled += instance.OnChangerClavier;
+                @ChangerManette.started += instance.OnChangerManette;
+                @ChangerManette.performed += instance.OnChangerManette;
+                @ChangerManette.canceled += instance.OnChangerManette;
+                @PositionManette.started += instance.OnPositionManette;
+                @PositionManette.performed += instance.OnPositionManette;
+                @PositionManette.canceled += instance.OnPositionManette;
+            }
+        }
+    }
+    public TirLuciolesActions @TirLucioles => new TirLuciolesActions(this);
+
     // Player
     private readonly InputActionMap m_Player;
     private IPlayerActions m_PlayerActionsCallbackInterface;
     private readonly InputAction m_Player_Saut;
+    private readonly InputAction m_Player_ChangerManette;
+    private readonly InputAction m_Player_ChangerClavier;
     private readonly InputAction m_Player_Mouvement;
     private readonly InputAction m_Player_Courrir;
     private readonly InputAction m_Player_Accroupir;
@@ -559,6 +728,8 @@ public partial class @InputJoueur : IInputActionCollection2, IDisposable
         private @InputJoueur m_Wrapper;
         public PlayerActions(@InputJoueur wrapper) { m_Wrapper = wrapper; }
         public InputAction @Saut => m_Wrapper.m_Player_Saut;
+        public InputAction @ChangerManette => m_Wrapper.m_Player_ChangerManette;
+        public InputAction @ChangerClavier => m_Wrapper.m_Player_ChangerClavier;
         public InputAction @Mouvement => m_Wrapper.m_Player_Mouvement;
         public InputAction @Courrir => m_Wrapper.m_Player_Courrir;
         public InputAction @Accroupir => m_Wrapper.m_Player_Accroupir;
@@ -577,6 +748,12 @@ public partial class @InputJoueur : IInputActionCollection2, IDisposable
                 @Saut.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSaut;
                 @Saut.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSaut;
                 @Saut.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSaut;
+                @ChangerManette.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChangerManette;
+                @ChangerManette.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChangerManette;
+                @ChangerManette.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChangerManette;
+                @ChangerClavier.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChangerClavier;
+                @ChangerClavier.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChangerClavier;
+                @ChangerClavier.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChangerClavier;
                 @Mouvement.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMouvement;
                 @Mouvement.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMouvement;
                 @Mouvement.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMouvement;
@@ -602,6 +779,12 @@ public partial class @InputJoueur : IInputActionCollection2, IDisposable
                 @Saut.started += instance.OnSaut;
                 @Saut.performed += instance.OnSaut;
                 @Saut.canceled += instance.OnSaut;
+                @ChangerManette.started += instance.OnChangerManette;
+                @ChangerManette.performed += instance.OnChangerManette;
+                @ChangerManette.canceled += instance.OnChangerManette;
+                @ChangerClavier.started += instance.OnChangerClavier;
+                @ChangerClavier.performed += instance.OnChangerClavier;
+                @ChangerClavier.canceled += instance.OnChangerClavier;
                 @Mouvement.started += instance.OnMouvement;
                 @Mouvement.performed += instance.OnMouvement;
                 @Mouvement.canceled += instance.OnMouvement;
@@ -624,55 +807,6 @@ public partial class @InputJoueur : IInputActionCollection2, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
-
-    // TirLucioles
-    private readonly InputActionMap m_TirLucioles;
-    private ITirLuciolesActions m_TirLuciolesActionsCallbackInterface;
-    private readonly InputAction m_TirLucioles_PositionSouris;
-    private readonly InputAction m_TirLucioles_Tir;
-    private readonly InputAction m_TirLucioles_AnnulerTir;
-    public struct TirLuciolesActions
-    {
-        private @InputJoueur m_Wrapper;
-        public TirLuciolesActions(@InputJoueur wrapper) { m_Wrapper = wrapper; }
-        public InputAction @PositionSouris => m_Wrapper.m_TirLucioles_PositionSouris;
-        public InputAction @Tir => m_Wrapper.m_TirLucioles_Tir;
-        public InputAction @AnnulerTir => m_Wrapper.m_TirLucioles_AnnulerTir;
-        public InputActionMap Get() { return m_Wrapper.m_TirLucioles; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(TirLuciolesActions set) { return set.Get(); }
-        public void SetCallbacks(ITirLuciolesActions instance)
-        {
-            if (m_Wrapper.m_TirLuciolesActionsCallbackInterface != null)
-            {
-                @PositionSouris.started -= m_Wrapper.m_TirLuciolesActionsCallbackInterface.OnPositionSouris;
-                @PositionSouris.performed -= m_Wrapper.m_TirLuciolesActionsCallbackInterface.OnPositionSouris;
-                @PositionSouris.canceled -= m_Wrapper.m_TirLuciolesActionsCallbackInterface.OnPositionSouris;
-                @Tir.started -= m_Wrapper.m_TirLuciolesActionsCallbackInterface.OnTir;
-                @Tir.performed -= m_Wrapper.m_TirLuciolesActionsCallbackInterface.OnTir;
-                @Tir.canceled -= m_Wrapper.m_TirLuciolesActionsCallbackInterface.OnTir;
-                @AnnulerTir.started -= m_Wrapper.m_TirLuciolesActionsCallbackInterface.OnAnnulerTir;
-                @AnnulerTir.performed -= m_Wrapper.m_TirLuciolesActionsCallbackInterface.OnAnnulerTir;
-                @AnnulerTir.canceled -= m_Wrapper.m_TirLuciolesActionsCallbackInterface.OnAnnulerTir;
-            }
-            m_Wrapper.m_TirLuciolesActionsCallbackInterface = instance;
-            if (instance != null)
-            {
-                @PositionSouris.started += instance.OnPositionSouris;
-                @PositionSouris.performed += instance.OnPositionSouris;
-                @PositionSouris.canceled += instance.OnPositionSouris;
-                @Tir.started += instance.OnTir;
-                @Tir.performed += instance.OnTir;
-                @Tir.canceled += instance.OnTir;
-                @AnnulerTir.started += instance.OnAnnulerTir;
-                @AnnulerTir.performed += instance.OnAnnulerTir;
-                @AnnulerTir.canceled += instance.OnAnnulerTir;
-            }
-        }
-    }
-    public TirLuciolesActions @TirLucioles => new TirLuciolesActions(this);
     private int m_KeyboardSchemeIndex = -1;
     public InputControlScheme KeyboardScheme
     {
@@ -691,20 +825,25 @@ public partial class @InputJoueur : IInputActionCollection2, IDisposable
             return asset.controlSchemes[m_GamepadSchemeIndex];
         }
     }
+    public interface ITirLuciolesActions
+    {
+        void OnPositionSouris(InputAction.CallbackContext context);
+        void OnTir(InputAction.CallbackContext context);
+        void OnAnnulerTir(InputAction.CallbackContext context);
+        void OnChangerClavier(InputAction.CallbackContext context);
+        void OnChangerManette(InputAction.CallbackContext context);
+        void OnPositionManette(InputAction.CallbackContext context);
+    }
     public interface IPlayerActions
     {
         void OnSaut(InputAction.CallbackContext context);
+        void OnChangerManette(InputAction.CallbackContext context);
+        void OnChangerClavier(InputAction.CallbackContext context);
         void OnMouvement(InputAction.CallbackContext context);
         void OnCourrir(InputAction.CallbackContext context);
         void OnAccroupir(InputAction.CallbackContext context);
         void OnAttaquePhysique(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
         void OnEnclencherTir(InputAction.CallbackContext context);
-    }
-    public interface ITirLuciolesActions
-    {
-        void OnPositionSouris(InputAction.CallbackContext context);
-        void OnTir(InputAction.CallbackContext context);
-        void OnAnnulerTir(InputAction.CallbackContext context);
     }
 }

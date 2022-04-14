@@ -13955,6 +13955,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7253312892810265962, guid: f174b2f331f8d486695efa137920e60d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -86.03906
+      objectReference: {fileID: 0}
+    - target: {fileID: 7253312892810265962, guid: f174b2f331f8d486695efa137920e60d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f174b2f331f8d486695efa137920e60d, type: 3}
 --- !u!1 &1833128410
@@ -16338,10 +16346,10 @@ GameObject:
   - component: {fileID: 1351166482239765022}
   - component: {fileID: 1351166482239765023}
   - component: {fileID: 1351166482239765017}
+  - component: {fileID: 7201189397155427844}
   - component: {fileID: 1351166482239765016}
   - component: {fileID: 7201189397155427845}
   - component: {fileID: 7201189397155427853}
-  - component: {fileID: 7201189397155427844}
   - component: {fileID: 1351166482239765015}
   - component: {fileID: 7651667232272200409}
   - component: {fileID: 7651667232272200408}
@@ -16415,19 +16423,19 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: a93f6f19-5f42-4576-8907-c479334a803f
-    m_ActionName: Player/Saut[/Keyboard/space,/DualShock4GamepadHID/buttonSouth]
+    m_ActionName: Player/Saut[/Keyboard/space]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 6003782c-b8c9-482a-bbfc-bf0cffc0b091
-    m_ActionName: Player/Mouvement[/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow,/DualShock4GamepadHID/leftStick/left,/DualShock4GamepadHID/dpad/left,/DualShock4GamepadHID/leftStick/right,/DualShock4GamepadHID/dpad/right]
+    m_ActionName: Player/Mouvement[/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: c4fe28c2-f638-44c3-b011-1b0e34c54549
-    m_ActionName: Player/Courrir[/Keyboard/shift,/DualShock4GamepadHID/leftTrigger]
+    m_ActionName: Player/Courrir[/Keyboard/shift]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 235ef93c-4304-470b-8cf4-7983ce2d7279
-    m_ActionName: Player/Accroupir[/Keyboard/downArrow,/Keyboard/s,/DualShock4GamepadHID/leftStick/down]
+    m_ActionName: Player/Accroupir[/Keyboard/downArrow,/Keyboard/s]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7201189397155427844}
@@ -16443,71 +16451,11 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: 13a79382-c2dc-46d5-b47c-cf73a6f3a1c2
-    m_ActionName: Player/Attaque Physique[/Mouse/leftButton,/DualShock4GamepadHID/buttonWest]
+    m_ActionName: Player/Attaque Physique[/Mouse/leftButton]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1351166482239765020}
-        m_TargetAssemblyTypeName: Joueur_Script, Assembly-CSharp
-        m_MethodName: Dash
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: f632c3a4-0877-4b0b-8925-d2b1836056d1
-    m_ActionName: Player/Dash[/Keyboard/f,/DualShock4GamepadHID/rightTrigger]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7201189397155427844}
-        m_TargetAssemblyTypeName: Inputs_Guillaume, Assembly-CSharp
-        m_MethodName: AttaqueTirViser
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 29c1b2fd-480f-4583-b489-5e2d3c71ab8e
-    m_ActionName: TirLucioles/Position Souris[/Mouse/position,/DualShock4GamepadHID/rightStick]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7201189397155427844}
-        m_TargetAssemblyTypeName: Inputs_Guillaume, Assembly-CSharp
-        m_MethodName: AttaqueTir
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 165ca871-36c6-4e5a-ba29-ade70b3fb8b8
-    m_ActionName: TirLucioles/Tir[/Mouse/leftButton,/DualShock4GamepadHID/rightTrigger]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7201189397155427844}
-        m_TargetAssemblyTypeName: Inputs_Guillaume, Assembly-CSharp
-        m_MethodName: AnnulerTirViser
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 4f5f0462-3fb4-47c2-b02b-ecb4d1166a0d
-    m_ActionName: TirLucioles/Annuler Tir[/Mouse/rightButton,/DualShock4GamepadHID/buttonEast]
+    m_ActionName: Player/Dash[/Keyboard/f]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7201189397155427844}
@@ -16523,7 +16471,135 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: a49a9d94-930b-4743-ad87-a82ff828f806
-    m_ActionName: Player/Enclencher Tir[/Mouse/rightButton,/DualShock4GamepadHID/rightShoulder,/DualShock4GamepadHID1/rightShoulder]
+    m_ActionName: Player/Enclencher Tir[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7201189397155427844}
+        m_TargetAssemblyTypeName: Inputs_Guillaume, Assembly-CSharp
+        m_MethodName: AttaqueTirViser
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 29c1b2fd-480f-4583-b489-5e2d3c71ab8e
+    m_ActionName: TirLucioles/Position Souris[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7201189397155427844}
+        m_TargetAssemblyTypeName: Inputs_Guillaume, Assembly-CSharp
+        m_MethodName: AttaqueTir
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 165ca871-36c6-4e5a-ba29-ade70b3fb8b8
+    m_ActionName: TirLucioles/Tir[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7201189397155427844}
+        m_TargetAssemblyTypeName: Inputs_Guillaume, Assembly-CSharp
+        m_MethodName: AnnulerTirViser
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4f5f0462-3fb4-47c2-b02b-ecb4d1166a0d
+    m_ActionName: TirLucioles/Annuler Tir[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1351166482239765020}
+        m_TargetAssemblyTypeName: Joueur_Script, Assembly-CSharp
+        m_MethodName: ChangerClavier
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f824336d-c6af-4e46-a16d-ba8ee54d3a58
+    m_ActionName: TirLucioles/ChangerClavier[/Keyboard/anyKey]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1351166482239765020}
+        m_TargetAssemblyTypeName: Joueur_Script, Assembly-CSharp
+        m_MethodName: ChangerManette
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 59273020-8d23-417f-8b9a-bd2a9746cb10
+    m_ActionName: TirLucioles/ChangerManette
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1351166482239765020}
+        m_TargetAssemblyTypeName: Joueur_Script, Assembly-CSharp
+        m_MethodName: ChangerManette
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 6a159ab3-d7cb-4ab5-8a75-8bdfa296892d
+    m_ActionName: Player/ChangerManette
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1351166482239765020}
+        m_TargetAssemblyTypeName: Joueur_Script, Assembly-CSharp
+        m_MethodName: ChangerClavier
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 120a735b-b904-4ec2-bfff-e06ae9316316
+    m_ActionName: Player/ChangerClavier[/Keyboard/anyKey]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7201189397155427844}
+        m_TargetAssemblyTypeName: Inputs_Guillaume, Assembly-CSharp
+        m_MethodName: ManetteTir
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8ab15790-7411-4e0d-8d89-3428995fa581
+    m_ActionName: TirLucioles/Position Manette[/DualShock4GamepadHID/rightStick,/DualShock4GamepadHID1/rightStick]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -16557,6 +16633,7 @@ MonoBehaviour:
   estDash: 0
   doubleSautUIPouvoir: {fileID: 2065389179}
   dashUIPouvoir: {fileID: 503181170}
+  modeSouris: 0
 --- !u!61 &1351166482239765022
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22243,6 +22320,7 @@ MonoBehaviour:
   projectile: {fileID: 7201189397014701875}
   flecheViser: {fileID: 162514301}
   declencherTir: 0
+  controllerScheme: 0
   sonTir: {fileID: 8300000, guid: 64419f40023a8164dad23cb35b13bf5e, type: 3}
   v_deplacementCible: {x: 0, y: 0}
 --- !u!120 &7201189397155427845
