@@ -69,17 +69,21 @@ public class Inputs_Guillaume : MonoBehaviour
                 // Prendre la direction de la souris et le normalizer
                 v_deplacementCible = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y) - new Vector2(v_sourisPosition.x, v_sourisPosition.y);
                 v_deplacementCible = v_deplacementCible.normalized * -1;
+                flecheViser.transform.rotation = Quaternion.LookRotation(Vector3.forward, v_deplacementCible);
+                flecheViser.transform.rotation *= Quaternion.Euler(0, 0, 90);
             }
             else
             {
+            
                 //Si le joueur joue avec une manette...
                 // Utiliser la position du curseur * 15 pour le tir et mettre la valeur de v_deplacement relative a la position du personnage
-                v_deplacementCible = gameObject.transform.position + new Vector3(zoneViseGamepad.x , zoneViseGamepad.x ,0)*15f;
+                v_deplacementCible = gameObject.transform.position + new Vector3(zoneViseGamepad.x , zoneViseGamepad.y ,0f)*15f;
                 //v_deplacementCible = gameObject.transform.position + new Vector3(v_deplacementCible.x, v_deplacementCible.y, 0);
+                flecheViser.transform.rotation = Quaternion.LookRotation(Vector3.forward, zoneViseGamepad);
+                flecheViser.transform.rotation *= Quaternion.Euler(0, 0, 90);
 
             }
-            flecheViser.transform.rotation = Quaternion.LookRotation(Vector3.forward, v_deplacementCible);
-            flecheViser.transform.rotation *= Quaternion.Euler(0, 0, 90);
+            
         }
         else
         {
