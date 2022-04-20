@@ -17,7 +17,13 @@ public class degatPerso : MonoBehaviour
         mort;
     public float viePerso; // vie initiale du personnage
     public AudioClip sonDegats;
+    public Color couleurDegat,
+        couleurOri;
 
+    private void Start()
+    {
+        couleurOri = gameObject.transform.Find("Sprite").GetComponent<SpriteRenderer>().color;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -51,6 +57,7 @@ public class degatPerso : MonoBehaviour
                 GetComponent<AudioSource>().PlayOneShot(sonDegats);
                 BarreDeVie.GetComponent<BarreDeVieController>().infligerDegatsBarreDeVie(10f);
                 invincible = true;
+                ChangerCouleurRouge();
                 Invoke("Invincibilite", 2);
                 
             }
@@ -79,5 +86,20 @@ public class degatPerso : MonoBehaviour
     void Invincibilite()
     {
         invincible = false;
+    }
+
+    void ChangerCouleurRouge()
+    {
+        gameObject.transform.Find("Sprite").GetComponent<SpriteRenderer>().color = couleurDegat;
+        Invoke("ChangerCouleurOri", 0.35f);
+    }
+
+    void ChangerCouleurOri()
+    {
+        gameObject.transform.Find("Sprite").GetComponent<SpriteRenderer>().color = couleurOri;
+        if (invincible)
+        {
+            Invoke("ChangerCouleurRouge", 0.35f);
+        }
     }
 }

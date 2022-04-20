@@ -22485,6 +22485,8 @@ MonoBehaviour:
   mort: 0
   viePerso: 10
   sonDegats: {fileID: 8300000, guid: a0d6ab2cb382b9343b99bd360e53c5d4, type: 3}
+  couleurDegat: {r: 1, g: 0, b: 0, a: 1}
+  couleurOri: {r: 1, g: 1, b: 1, a: 0}
 --- !u!82 &7651667232272200409
 AudioSource:
   m_ObjectHideFlags: 0
