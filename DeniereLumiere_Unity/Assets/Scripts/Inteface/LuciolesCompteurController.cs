@@ -13,7 +13,10 @@ public class LuciolesCompteurController : MonoBehaviour
 
     private int i_compteur;
 
-
+    private void Awake()
+    {
+        setNbreLucioles(12);
+    }
     /*private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha3))

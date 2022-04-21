@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Pause : MonoBehaviour
 {
-    public GameObject menuPause;
+    public GameObject particules;
+
 
 
     private void Update()
@@ -16,12 +18,21 @@ public class Pause : MonoBehaviour
     }
     public void PauserJeu()
     {
+        GetComponent<Animator>().SetBool("EnPause", true);
         Time.timeScale = 0;
-        menuPause.SetActive(true);
-
+        Cursor.visible = true;
     }
     public void DepauserJeu()
     {
+        GetComponent<Animator>().SetBool("EnPause", false);
         Time.timeScale = 1;
+    }
+    public void activerParticules()
+    {
+        particules.SetActive(true);
+    }
+    public void desactiverParticules()
+    {
+        particules.SetActive(false);
     }
 }

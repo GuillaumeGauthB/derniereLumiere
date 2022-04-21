@@ -7,7 +7,7 @@ public class Inputs_Guillaume : MonoBehaviour
 {
     /* Attaques physique et de tir du personnage
       Par : Guillaume Gauthier-Benoit
-      Dernière modification : 03/04/2022
+      Derni?re modification : 03/04/2022
     */
 
     public int
@@ -90,11 +90,10 @@ public class Inputs_Guillaume : MonoBehaviour
             flecheViser.SetActive(false);
         }
     }
-
     // Fonction qui gere l'attaque corps a corps du personnage
     public void AttaquePhysique(InputAction.CallbackContext context)
     {
-        // Lorsque la touche est appuyée...
+        // Lorsque la touche est appuy?e...
         if (context.started)
         {
             // Trigger l'animation (a faire)
@@ -119,56 +118,25 @@ public class Inputs_Guillaume : MonoBehaviour
     // Fonction qui gere le debut du "visage" du tir de lucioles ansi que son tir
     public void DeclencherTir(InputAction.CallbackContext context)
     {
-        // Lorsque le bouton est relaché...
+        // Lorsque le bouton est relach?...
         if (context.canceled)
         {
             
             // Creer une variable empechant les deplacements lorsque le mode de tir est activer
             declencherTir = true;
-            // Changer le map du personnage à TirLucioles
+            // Changer le map du personnage ? TirLucioles
             playerInput.SwitchCurrentActionMap("TirLucioles");
         }
-    }
-
-    // Fonction qui gere le "visage" du tir de luciole
-    public void AttaqueTirViser(InputAction.CallbackContext context)
-    {
-        //Debug.Log(playerInput.currentControlScheme);
-        //Debug.Log(context);
-        // Faire apparaitre le line renderer qui va servir de viseur
-        //c_lineRenderer.enabled = true;
-        // Sauvegarder la valeur dans le monde de la position de la souris
-        //v_sourisPosition = Camera.main.ScreenToWorldPoint(context.ReadValue<Vector2>());
-        // Dessiner l'origine du viseur
-        //c_lineRenderer.SetPosition(0, gameObject.transform.position);
-
-        // Prendre la direction de la souris et le normalizer
-        //v_deplacementCible = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y) - new Vector2(v_sourisPosition.x, v_sourisPosition.y);
-        //v_deplacementCible = v_deplacementCible.normalized * -1;
-        // Dessiner la position finale du viseur
-        //c_lineRenderer.SetPosition(1, v_sourisPosition);
-
-        // Si le joueur joue avec le clavier...
-        /*if (GetComponent<Joueur_Script>().modeSouris)
-        {
-            // Prendre la direction de la souris et le normalizer
-            v_deplacementCible = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y) - new Vector2(v_sourisPosition.x, v_sourisPosition.y);
-            v_deplacementCible = v_deplacementCible.normalized * -1;
-            // Dessiner la position finale du viseur
-            c_lineRenderer.SetPosition(1, v_sourisPosition);
-        }
-        flecheViser.transform.rotation = Quaternion.LookRotation(Vector3.forward, v_deplacementCible);
-        flecheViser.transform.rotation *= Quaternion.Euler(0, 0, 90);*/
     }
 
     // Fonction qui gere l'annulation du tir durant son "visage"
     public void AnnulerTirViser(InputAction.CallbackContext context)
     {
-        // Si le bouton est laché...
+        // Si le bouton est lach?...
         if (context.canceled)
         {
             declencherTir = false;
-            // Changer la map au mouvement et désactiver le viseur
+            // Changer la map au mouvement et d?sactiver le viseur
             playerInput.SwitchCurrentActionMap("Player");
             c_lineRenderer.enabled = false;
         }
@@ -177,7 +145,7 @@ public class Inputs_Guillaume : MonoBehaviour
     // Fonction qui tire la balle
     public void AttaqueTir(InputAction.CallbackContext context)
     {
-        // Lorsque le bouton est appuyé
+        // Lorsque le bouton est appuy?
         if (context.started)
         {
             GetComponent<AudioSource>().PlayOneShot(sonTir);
