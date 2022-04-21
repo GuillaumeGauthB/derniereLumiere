@@ -9,6 +9,10 @@ public class PouvoirUI : MonoBehaviour
     [Header("Délai entre utilisations du pouvoir")]
     public float delayPouvoir;
 
+    [Header("Coût Lucioles")]
+    public int coutUtilisation;
+    public GameObject compteurLucioles;
+
     [Header("Couleurs lueur")]
     public Color couleurPouvoir;
     public Color couleurPouvoirMidPoint;
@@ -47,10 +51,14 @@ public class PouvoirUI : MonoBehaviour
     //Fonction permettant activant l'animation des lanternes lors de l'utilisation d'un pouvoir
     public void utiliserPouvoir()
     {
-        i_currentImageCouleurPouvoir.color = couleurPouvoirUtilise;
-        peutUtiliserPouvoir = false;
-        c_coroutineAnimLueur = StartCoroutine(animLueur());
-
+        Debug.Log(compteurLucioles.GetComponent<LuciolesCompteurController>().getNbreLucioles());
+        if (compteurLucioles.GetComponent<LuciolesCompteurController>().getNbreLucioles() >= coutUtilisation)
+        {
+            compteurLucioles.GetComponent<LuciolesCompteurController>().diminuerLucioles(coutUtilisation);
+            i_currentImageCouleurPouvoir.color = couleurPouvoirUtilise;
+            peutUtiliserPouvoir = false;
+            c_coroutineAnimLueur = StartCoroutine(animLueur());
+        }
     }
 
     // Animation de la lueur des lanternes lorsqu'elles sont utilisées
