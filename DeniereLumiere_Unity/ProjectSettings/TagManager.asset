@@ -10,6 +10,7 @@ TagManager:
   - checkpoint
   - limiteurCamera
   - tombe
+  - Perso
   layers:
   - Default
   - TransparentFX
