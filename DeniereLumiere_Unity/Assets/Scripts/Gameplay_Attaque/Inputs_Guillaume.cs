@@ -100,10 +100,20 @@ public class Inputs_Guillaume : MonoBehaviour
             // Trigger l'animation (a faire)
             // Activer le knockback de l'attaque
             gameObject.transform.Find("KnockbackAttaque").gameObject.SetActive(true);
+            if (!b_knockback)
+            {
+                b_knockback = true;
+                Invoke("DesactiverKnockback", 0.5f);
+            }
 
         }
     }
 
+    void DesactiverKnockback()
+    {
+        gameObject.transform.Find("KnockbackAttaque").gameObject.SetActive(false);
+        b_knockback = false;
+    }
     #region Tir
 
     // Fonction qui gere le debut du "visage" du tir de lucioles ansi que son tir
