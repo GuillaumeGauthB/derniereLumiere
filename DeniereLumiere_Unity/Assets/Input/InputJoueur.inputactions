@@ -2,6 +2,156 @@
     "name": "InputJoueur",
     "maps": [
         {
+            "name": "TirLucioles",
+            "id": "e1382296-a909-4f6c-9f0b-5d3b33868d00",
+            "actions": [
+                {
+                    "name": "Position Souris",
+                    "type": "Value",
+                    "id": "29c1b2fd-480f-4583-b489-5e2d3c71ab8e",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Tir",
+                    "type": "Button",
+                    "id": "165ca871-36c6-4e5a-ba29-ade70b3fb8b8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Annuler Tir",
+                    "type": "Button",
+                    "id": "4f5f0462-3fb4-47c2-b02b-ecb4d1166a0d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ChangerClavier",
+                    "type": "Button",
+                    "id": "f824336d-c6af-4e46-a16d-ba8ee54d3a58",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "ChangerManette",
+                    "type": "Button",
+                    "id": "59273020-8d23-417f-8b9a-bd2a9746cb10",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Position Manette",
+                    "type": "Value",
+                    "id": "8ab15790-7411-4e0d-8d89-3428995fa581",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "f9da9772-4f73-40cf-a354-3b3dc063680f",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Position Souris",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1c9cfe16-e1e6-4d7b-800c-be455923cb74",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Manette",
+                    "action": "Tir",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2f46c6d7-b0f6-44a2-a21c-cba95f87dc6d",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Tir",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f944f14e-760d-4604-9bb1-4ef979d323ad",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Clavier;Keyboard",
+                    "action": "Annuler Tir",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d63fea5e-c923-463b-b86d-586e04945706",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Manette;Gamepad",
+                    "action": "Annuler Tir",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fd1b8092-fe78-4dbc-b4c3-f119243622d5",
+                    "path": "<Keyboard>/anyKey",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangerClavier",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7ef9a41c-2172-4d00-9313-71da4d36a927",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangerManette",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e5b3f7aa-7479-47ce-bf61-0fab2ad5fbe6",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Position Manette",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
             "name": "Player",
             "id": "29192838-daa3-4fb7-9d7f-5f9ee2ca1685",
             "actions": [
@@ -13,6 +163,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "ChangerManette",
+                    "type": "Button",
+                    "id": "6a159ab3-d7cb-4ab5-8a75-8bdfa296892d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ChangerClavier",
+                    "type": "Button",
+                    "id": "120a735b-b904-4ec2-bfff-e06ae9316316",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Mouvement",
@@ -322,105 +490,26 @@
                     "action": "Enclencher Tir",
                     "isComposite": false,
                     "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "TirLucioles",
-            "id": "e1382296-a909-4f6c-9f0b-5d3b33868d00",
-            "actions": [
-                {
-                    "name": "Position Souris",
-                    "type": "Value",
-                    "id": "29c1b2fd-480f-4583-b489-5e2d3c71ab8e",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
                 },
-                {
-                    "name": "Tir",
-                    "type": "Button",
-                    "id": "165ca871-36c6-4e5a-ba29-ade70b3fb8b8",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Annuler Tir",
-                    "type": "Button",
-                    "id": "4f5f0462-3fb4-47c2-b02b-ecb4d1166a0d",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
                 {
                     "name": "",
-                    "id": "f1dd64c5-2cdc-42ed-8bf5-16ffe99515b9",
-                    "path": "<Mouse>/position",
+                    "id": "115c7c50-2b94-4725-91b1-4778ab15b135",
+                    "path": "<Keyboard>/anyKey",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Clavier;Keyboard",
-                    "action": "Position Souris",
+                    "groups": "",
+                    "action": "ChangerClavier",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "910417dd-bdb8-45b0-be37-23380deb1358",
-                    "path": "<Gamepad>/rightStick",
+                    "id": "05eb7cf0-a733-4dc8-9e68-5ffb094d0ed7",
+                    "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Manette;Gamepad",
-                    "action": "Position Souris",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "80dde9d8-8b98-454d-b66d-bf611fe4a2a3",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Clavier;Keyboard",
-                    "action": "Tir",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "1c9cfe16-e1e6-4d7b-800c-be455923cb74",
-                    "path": "<Gamepad>/rightTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Manette;Gamepad",
-                    "action": "Tir",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "f944f14e-760d-4604-9bb1-4ef979d323ad",
-                    "path": "<Mouse>/rightButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Clavier;Keyboard",
-                    "action": "Annuler Tir",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "d63fea5e-c923-463b-b86d-586e04945706",
-                    "path": "<Gamepad>/buttonEast",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Manette;Gamepad",
-                    "action": "Annuler Tir",
+                    "groups": "",
+                    "action": "ChangerManette",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -64,6 +64,8 @@ public class Joueur_Script : MonoBehaviour
 
     public GameObject doubleSautUIPouvoir;
     public GameObject dashUIPouvoir;
+
+    public bool modeSouris;
     
 
 
@@ -78,11 +80,14 @@ public class Joueur_Script : MonoBehaviour
         i_inputJoueur.Player.Saut.performed += Saut;
         i_inputJoueur.Player.Courrir.performed += Courrir;
         i_inputJoueur.Player.Accroupir.performed += Accroupir;
-
+        i_inputJoueur.Player.Dash.performed += Dash;
 
     }
     private void Update()
     {
+
+        Cursor.visible = false;
+
         // Verifier si le personnage est sur le sol
         b_estAuSol = Physics2D.OverlapCircle(checkSol.position, 0.3f, solLayer);
 
@@ -98,7 +103,8 @@ public class Joueur_Script : MonoBehaviour
     }
 
     private void FixedUpdate()
-    {   
+    {
+        //Debug.Log(f_movX);
         if (!estDash && !GetComponent<Inputs_Guillaume>().declencherTir)
         {
             /* permet de lire le input du new input system*/
@@ -234,9 +240,9 @@ public class Joueur_Script : MonoBehaviour
     // Fonction g?rant les dash
     public void Dash(InputAction.CallbackContext context)
     {
-        Debug.Log(f_movX);
+        //Debug.Log(f_movX);
         // Si le bouton est appuy?, qu'il peut dash, que le pouvoir est obtenu, et que son mouvement sur l'axe des x n'est pas 0...
-        if (context.started && b_dashPossible && b_dashObtenu && f_movX != 0)
+        if (context.performed && b_dashPossible && b_dashObtenu && f_movX != 0)
         {
             //faire le dash
             dashUIPouvoir.GetComponent<PouvoirUI>().utiliserPouvoir();
@@ -296,4 +302,21 @@ public class Joueur_Script : MonoBehaviour
         }
     }
 
+    public void ChangerClavier(InputAction.CallbackContext context)
+    {
+        // Si le bouton est appuy?, qu'il peut dash, que le pouvoir est obtenu, et que son mouvement sur l'axe des x n'est pas 0...
+        if (context.started)
+        {
+            modeSouris = true;
+        }
+    }
+
+    public void ChangerManette(InputAction.CallbackContext context)
+    {
+        // Si le bouton est appuy?, qu'il peut dash, que le pouvoir est obtenu, et que son mouvement sur l'axe des x n'est pas 0...
+        if (context.started)
+        {
+            modeSouris = false;
+        }
+    }
 }
