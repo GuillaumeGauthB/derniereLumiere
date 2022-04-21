@@ -55,6 +55,7 @@ public class Inputs_Guillaume : MonoBehaviour
     {
         if(playerInput.currentActionMap.ToString().Contains("Tir"))
         {
+            Debug.Log("jerome is mean to me");
             flecheViser.SetActive(true);
             Vector2 zoneViseSouris = i_inputJoueur.TirLucioles.PositionSouris.ReadValue<Vector2>();
             Vector2 zoneViseGamepad = i_inputJoueur.TirLucioles.PositionManette.ReadValue<Vector2>();

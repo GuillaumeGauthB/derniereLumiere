@@ -29,16 +29,9 @@ public class PouvoirUI : MonoBehaviour
     public bool peutUtiliserPouvoir;
 
     //Debug Inputs
-    private void Update()
+    private void FixedUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            utiliserPouvoir();
-        }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            resetPouvoir();
-        }
+        if (compteurLucioles.GetComponent<LuciolesCompteurController>().getNbreLucioles() < coutUtilisation) peutUtiliserPouvoir = false;
     }
 
 
