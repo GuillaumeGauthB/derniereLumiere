@@ -20,27 +20,19 @@ public class LuciolesProjectiles : MonoBehaviour
         {
             // Multiplier la direction par la vitesse
             v_destination = GameObject.Find("Beepo").gameObject.transform.GetComponent<Inputs_Guillaume>().v_deplacementCible * vitesse;
-        }*/
-        if (!GameObject.Find("Beepo").gameObject.transform.GetComponent<Joueur_Script>().modeSouris)
+        }
+        else
         {
             // Sinon, le déplacer avec la direction
             v_destination = new Vector2(GameObject.Find("Beepo").gameObject.transform.GetComponent<Inputs_Guillaume>().v_deplacementCible.x - gameObject.transform.position.x, GameObject.Find("Beepo").gameObject.transform.GetComponent<Inputs_Guillaume>().v_deplacementCible.y - gameObject.transform.position.y);
-        }
+        }*/
     }
 
     // Update is called once per frame
     void Update()
     {
         // Deplacer le projectile dans la direction du tir
-        if (GameObject.Find("Beepo").gameObject.transform.GetComponent<Joueur_Script>().modeSouris)
-        {
-            gameObject.GetComponent<Rigidbody2D>().velocity = v_destination;
-        }
-        else
-        {
-            gameObject.GetComponent<Rigidbody2D>().velocity = v_destination;
-            //gameObject.GetComponent<Rigidbody2D>().velocity *= 0.1f;
-        }
+        gameObject.GetComponent<Rigidbody2D>().velocity = v_destination;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

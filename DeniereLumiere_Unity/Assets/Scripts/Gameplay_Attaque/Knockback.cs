@@ -16,7 +16,6 @@ public class Knockback : MonoBehaviour
     private void Start()
     {
         g_parent = gameObject.transform.parent.gameObject; // Mettre le gameObject du parent dans g_parent
-        Invoke("DesactiverKnockback", 0.5f);
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -31,12 +30,12 @@ public class Knockback : MonoBehaviour
             if (v_posXEvP <= 0)
             {
                 // Pousser l'ennemi vers l'arrière
-                other.GetComponent<Rigidbody2D>().velocity += new Vector2(-2, 0);
+                other.GetComponent<Rigidbody2D>().velocity += new Vector2(-5, 0);
             }
             else
             {
                 // Sinon, le pousser vers l'avant
-                other.GetComponent<Rigidbody2D>().velocity += new Vector2(2, 0);
+                other.GetComponent<Rigidbody2D>().velocity += new Vector2(5, 0);
             }
             
             // Déterminer la position générale en y de l'ennemi
@@ -46,12 +45,12 @@ public class Knockback : MonoBehaviour
             if(v_posYEvP <= 0)
             {
                 // Le pousser vers le bas
-                other.GetComponent<Rigidbody2D>().velocity += new Vector2(0, -2);
+                other.GetComponent<Rigidbody2D>().velocity += new Vector2(0, -5);
             }
             else
             {
                 // Sinon, le pousser vers le haut
-                other.GetComponent<Rigidbody2D>().velocity += new Vector2(0, 2);
+                other.GetComponent<Rigidbody2D>().velocity += new Vector2(0, 5);
             }
 
         }
