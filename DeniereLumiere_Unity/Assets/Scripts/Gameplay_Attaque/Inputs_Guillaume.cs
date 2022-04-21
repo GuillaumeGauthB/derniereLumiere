@@ -30,6 +30,8 @@ public class Inputs_Guillaume : MonoBehaviour
     public AudioClip sonTir; // Variable permettant de jouer un son lorsque l'on tire
 
     private InputJoueur i_inputJoueur;
+
+    public GameObject tirLuciolesUIPouvoir;
     
 
     [Header("Pour autres scripts")]
@@ -55,7 +57,6 @@ public class Inputs_Guillaume : MonoBehaviour
     {
         if(playerInput.currentActionMap.ToString().Contains("Tir"))
         {
-            Debug.Log("jerome is mean to me");
             flecheViser.SetActive(true);
             Vector2 zoneViseSouris = i_inputJoueur.TirLucioles.PositionSouris.ReadValue<Vector2>();
             Vector2 zoneViseGamepad = i_inputJoueur.TirLucioles.PositionManette.ReadValue<Vector2>();
@@ -147,9 +148,10 @@ public class Inputs_Guillaume : MonoBehaviour
     public void AttaqueTir(InputAction.CallbackContext context)
     {
         // Lorsque le bouton est appuy?
-        if (context.started)
+        if (context.started && tirLuciolesUIPouvoir.GetComponent<PouvoirUI>().peutUtiliserPouvoir)
         {
             GetComponent<AudioSource>().PlayOneShot(sonTir);
+            tirLuciolesUIPouvoir.GetComponent<PouvoirUI>().utiliserPouvoir();
             // Cloner et activer la balle
             g_clone = Instantiate(projectile.gameObject, projectile.transform.position, c_lineRenderer.transform.rotation);
             g_clone.SetActive(true);
