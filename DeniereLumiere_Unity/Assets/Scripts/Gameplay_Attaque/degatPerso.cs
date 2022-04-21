@@ -38,9 +38,39 @@ public class degatPerso : MonoBehaviour
             SceneManager.LoadScene("MenuJeu");
         }
     }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        // Lorsque le personnage entre en collision avec un objet avec le tag boss ou ennemi...
+        if (collision.gameObject.tag == "ennemi" || collision.gameObject.tag == "boss")
+        {
+            // Le rendre temporairement invincible
+            if (!invincible)
+            {
+                viePerso--;
+                GetComponent<AudioSource>().PlayOneShot(sonDegats);
+                BarreDeVie.GetComponent<BarreDeVieController>().infligerDegatsBarreDeVie(10f);
+                invincible = true;
+                ChangerCouleurRouge();
+                Invoke("Invincibilite", 2);
+
+            }
+
+            // Donner du knockback au personnage dépendamment de la position du personnage vs l'ennemi, qui va se désactiver après 0.5 secondes
+            knockbackPerso = true;
+            Invoke("FinKnockback", 0.5f);
+            if (collision.gameObject.transform.position.x >= gameObject.transform.position.x)
+            {
+                gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(f_posXEvP * 100, 30f));
+            }
+            else
+            {
+                gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(-f_posXEvP * 100, 30f));
+            }
+        }
+    }
 
     // Fonction de collisions
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {   
         if(collision.gameObject.tag == "mort")
         {

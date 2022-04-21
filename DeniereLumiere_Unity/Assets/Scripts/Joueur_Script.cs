@@ -141,13 +141,16 @@ public class Joueur_Script : MonoBehaviour
 
         // Si le personnage est en train de dash...
         if (estDash)
-        {
+        {   
             // Le d?placer et faire diminuer le temps
             rb_Joueur.velocity = transform.right * f_directionDash * forceDash;
             presentTimerDash -= Time.deltaTime;
+            Physics.IgnoreLayerCollision(6, 7,true);
+
             // Si le temps est ?gal ? z?ro...
             if (presentTimerDash <= 0)
             {
+                Physics.IgnoreLayerCollision(6, 7,false);
                 // Arr?ter le dash et commencer le cooldown
                 estDash = false;
                 InvokeRepeating("Cooldown", 0, 1f);
@@ -244,7 +247,7 @@ public class Joueur_Script : MonoBehaviour
     {
         //Debug.Log(f_movX);
         // Si le bouton est appuy?, qu'il peut dash, que le pouvoir est obtenu, et que son mouvement sur l'axe des x n'est pas 0...
-        if (context.performed /*&& b_dashPossible*/ && b_dashObtenu && f_movX != 0 && dashUIPouvoir.GetComponent<PouvoirUI>().peutUtiliserPouvoir)
+        if (context.performed /*&& b_dashPossible*/ && b_dashObtenu && /*f_movX != 0 &&*/ dashUIPouvoir.GetComponent<PouvoirUI>().peutUtiliserPouvoir)
         {
             //faire le dash
             dashUIPouvoir.GetComponent<PouvoirUI>().utiliserPouvoir();
@@ -254,6 +257,18 @@ public class Joueur_Script : MonoBehaviour
             f_directionDash = f_movX;
             dashUIPouvoir.GetComponent<PouvoirUI>().peutUtiliserPouvoir = false;
             //b_dashPossible = false;
+            if (f_movX == 0)
+            {
+                if (sprite.GetComponent<SpriteRenderer>().flipX)
+                {
+                    f_directionDash = -1;
+                }
+                else
+                {
+                    f_directionDash = 1;
+                }
+                
+            }
         }
     }
 
