@@ -4723,6 +4723,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &706539793 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 133550152686563158, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+  m_PrefabInstance: {fileID: 964939775658198964}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &720964873
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14473,7 +14478,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7253312892810265962, guid: f174b2f331f8d486695efa137920e60d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -11.0000305
+      value: -11.000122
       objectReference: {fileID: 0}
     - target: {fileID: 7544633658619952840, guid: f174b2f331f8d486695efa137920e60d, type: 3}
       propertyPath: particules
@@ -16867,6 +16872,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 80
       objectReference: {fileID: 0}
+    - target: {fileID: 5961507230397248894, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+      propertyPath: menuPause
+      value: 
+      objectReference: {fileID: 706539793}
     - target: {fileID: 8790200798829193596, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
       propertyPath: cible
       value: 
@@ -16945,7 +16954,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1351166482239765014}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -28.7, y: -35.3, z: 0}
+  m_LocalPosition: {x: 5.1, y: 1.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
