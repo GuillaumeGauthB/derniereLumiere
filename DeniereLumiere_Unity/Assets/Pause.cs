@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Pause : MonoBehaviour
 {
-    public GameObject menuPause;
-
-
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -17,7 +14,7 @@ public class Pause : MonoBehaviour
     public void PauserJeu()
     {
         Time.timeScale = 0;
-        menuPause.SetActive(true);
+        gameObject.SetActive(true);
 
     }
     public void DepauserJeu()
