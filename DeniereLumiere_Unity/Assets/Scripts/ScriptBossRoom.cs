@@ -5,6 +5,7 @@ using UnityEngine;
 public class ScriptBossRoom : MonoBehaviour
 {
     public GameObject Boss;
+    public GameObject panelBossUI;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,8 +23,16 @@ public class ScriptBossRoom : MonoBehaviour
         if(collision.tag == "Player")
         {
             Boss.SetActive(true);
+            panelBossUI.SetActive(true);
             Destroy(gameObject, 2f);
         }
         
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            panelBossUI.SetActive(false);
+        }
     }
 }

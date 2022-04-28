@@ -44,7 +44,6 @@ public class PouvoirUI : MonoBehaviour
     //Fonction permettant activant l'animation des lanternes lors de l'utilisation d'un pouvoir
     public void utiliserPouvoir()
     {
-        Debug.Log(compteurLucioles.GetComponent<LuciolesCompteurController>().getNbreLucioles());
         if (compteurLucioles.GetComponent<LuciolesCompteurController>().getNbreLucioles() >= coutUtilisation)
         {
             compteurLucioles.GetComponent<LuciolesCompteurController>().diminuerLucioles(coutUtilisation);

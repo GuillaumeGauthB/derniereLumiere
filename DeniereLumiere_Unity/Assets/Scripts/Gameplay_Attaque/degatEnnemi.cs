@@ -13,6 +13,9 @@ public class degatEnnemi : MonoBehaviour
     public bool ennemiMort; // Le status de vie de l'ennemi
     public AudioClip sonMort;
 
+    [Header("BOSS SETTINGS")]
+    public GameObject barreDeVieUI;
+
     private void Start()
     {
         // Si on veut "automatiser" la vie des ennemis
@@ -39,6 +42,10 @@ public class degatEnnemi : MonoBehaviour
         {
             // lui enlever de la vie et d?truire le projectile
             ennemiVie -= 1;
+            if (barreDeVieUI != null)
+            {
+                barreDeVieUI.GetComponent<BarreDeVieController>().infligerDegatsBarreDeVie(100f/20f);
+            }
             Destroy(collision.gameObject);
             // Lorsque l'ennemi n'a plus de vie, le tuer
             if (ennemiVie <= 0)

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 573115125706144935}
   - component: {fileID: 573115125706144932}
   - component: {fileID: 573115125706144933}
-  - component: {fileID: 573115125706144934}
   - component: {fileID: 573115125706144953}
   - component: {fileID: 573115125706144954}
   - component: {fileID: 573115125706144955}
@@ -112,20 +111,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &573115125706144934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 573115125706144930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8bd9a9cdaa13464b8e8e567e1867b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bossAttaqueCooldown: 3
-  bossRangeClose: 7
 --- !u!50 &573115125706144953
 Rigidbody2D:
   serializedVersion: 4
