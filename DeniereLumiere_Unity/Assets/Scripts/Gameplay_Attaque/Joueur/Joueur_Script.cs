@@ -107,7 +107,7 @@ public class Joueur_Script : MonoBehaviour
     private void FixedUpdate()
     {
         //Debug.Log(f_movX);
-        if (!estDash && !GetComponent<Inputs_Guillaume>().declencherTir)
+        if (!estDash /*S&& !GetComponent<Inputs_Guillaume>().declencherTir*/)
         {
             /* permet de lire le input du new input system*/
             Vector2 inputVector = i_inputJoueur.Player.Mouvement.ReadValue<Vector2>();
@@ -175,7 +175,7 @@ public class Joueur_Script : MonoBehaviour
         if (context.performed)
         {
             // si le personnage est au sol et n'est pas accroupit...
-            if (b_estAuSol == true && !accroupir && !GetComponent<Inputs_Guillaume>().declencherTir)
+            if (b_estAuSol == true && !accroupir /*&& !GetComponent<Inputs_Guillaume>().declencherTir*/)
             {
                 // Faire sauter le personnage
                 rb_Joueur.AddForce(new Vector2(0, 1 * forceSaut));
@@ -228,7 +228,7 @@ public class Joueur_Script : MonoBehaviour
 
         // Si l'action est performee...
         Debug.Log(context.phase);
-        if (context.performed && !GetComponent<Inputs_Guillaume>().declencherTir)
+        if (context.performed /*&& !GetComponent<Inputs_Guillaume>().declencherTir*/)
         {
             // Activer ou desactiver l'accroupissement
             if (accroupir == false)

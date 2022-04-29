@@ -21,7 +21,7 @@ public class SpawnBoss : MonoBehaviour
         if(collision.gameObject.tag == "Perso")
         {
             Boss.SetActive(true);
-            Boss.GetComponent<Boss>().enabled = true;
+            Boss.GetComponent<BossAttaque>().enabled = true;
         }
         Destroy(gameObject);
     }
