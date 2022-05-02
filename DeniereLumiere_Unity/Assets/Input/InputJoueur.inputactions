@@ -152,6 +152,82 @@
             ]
         },
         {
+            "name": "Mort",
+            "id": "546d5850-0886-486a-baa9-7debb20829f9",
+            "actions": [
+                {
+                    "name": "LoadScene",
+                    "type": "Button",
+                    "id": "7fbc424d-1ecc-430c-a65b-c87833fa4e6f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "152fe9cc-202f-4968-bad7-e0aa3cabe010",
+                    "path": "<Keyboard>/anyKey",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LoadScene",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Dialogues",
+            "id": "5c5bb117-c970-4a3e-8042-6977f5502c8b",
+            "actions": [
+                {
+                    "name": "LireTexte",
+                    "type": "Button",
+                    "id": "784ddcd6-b2c3-453e-836a-ea00e16b92f6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SkipperTexte",
+                    "type": "Button",
+                    "id": "f50e2f34-db24-4e56-a513-9413270d4cc8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "890f56cd-8d06-424f-bcb9-b56ad4777e22",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LireTexte",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "512b97b8-4635-4fa0-9b78-de55d60db1db",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SkipperTexte",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
             "name": "Player",
             "id": "29192838-daa3-4fb7-9d7f-5f9ee2ca1685",
             "actions": [
