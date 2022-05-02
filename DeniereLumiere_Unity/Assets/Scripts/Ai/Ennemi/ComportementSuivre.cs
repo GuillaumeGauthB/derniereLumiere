@@ -9,7 +9,7 @@ public class ComportementSuivre : StateMachineBehaviour
      * Dernière modification: 07/04/22
      */
 
-    private Transform t_joueurPos; // le transform du joueur
+    private GameObject g_joueurPos; // le gameobject du joueur
     public float vitesse; // la vitesse de deplacement
 
     [Header("Distance avant que l'ennemi entre en surveillance")]
@@ -26,7 +26,7 @@ public class ComportementSuivre : StateMachineBehaviour
     {
         // Set les valeurs correctement
         i_layerMask = LayerMask.GetMask("Sol");
-        t_joueurPos = GameObject.Find("Beepo").transform;
+        g_joueurPos = GameObject.Find("Beepo");
         infoRaycast = Physics2D.Raycast(animator.transform.position, Vector2.down, 3, i_layerMask);
         if (infoRaycast)
         {
@@ -38,24 +38,27 @@ public class ComportementSuivre : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-    
 
-        // faire en sorte que l'ennemi suive le personnage
-        animator.transform.position = Vector2.MoveTowards(animator.transform.position, new Vector2(t_joueurPos.position.x, animator.transform.position.y), vitesse * Time.deltaTime);
-        
+
+        // Si les dialogues ne sont pas activees, faire en sorte que l'ennemi suive le personnage
+        if (!g_joueurPos.GetComponent<dialogues>().texteActivee)
+        {
+            animator.transform.position = Vector2.MoveTowards(animator.transform.position, new Vector2(g_joueurPos.transform.position.x, animator.transform.position.y), vitesse * Time.deltaTime);
+        }
+
         // Si le personnage s'éloigne trop loin de l'ennemi, le faire passer à l'état de surveillance
-        if (Vector2.Distance(animator.transform.position, t_joueurPos.position) > distancePersoEnnemiSurveillance)
+        if (Vector2.Distance(animator.transform.position, g_joueurPos.transform.position) > distancePersoEnnemiSurveillance)
         {
             animator.SetBool("estSuivre", false);
             animator.SetBool("estSurveille", false);
         }
 
         // Lorsque l'ennemi atteint une des extrémitées du sol, le garder à ce point et l'empêcher de continuer à avancer
-        if(v_tailleCollider.x <= animator.transform.position.x)
+        if (v_tailleCollider.x <= animator.transform.position.x)
         {
             animator.transform.position = new Vector2(v_tailleCollider.x, animator.transform.position.y);
         }
-        else if(v_tailleColliderNeg.x >= animator.transform.position.x)
+        else if (v_tailleColliderNeg.x >= animator.transform.position.x)
         {
             animator.transform.position = new Vector2(v_tailleColliderNeg.x, animator.transform.position.y);
         }

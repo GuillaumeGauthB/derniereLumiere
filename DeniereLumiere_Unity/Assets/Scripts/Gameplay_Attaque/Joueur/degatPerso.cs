@@ -13,8 +13,7 @@ public class degatPerso : MonoBehaviour
     public GameObject BarreDeVie;
     private float f_posXEvP; //position ennemi vs personnage en x
     public bool knockbackPerso, // valeurs boolean des effets
-        invincible,
-        mort;
+        invincible;
     public float viePerso; // vie initiale du personnage
     public AudioClip sonDegats;
     public Color couleurDegat,
@@ -30,13 +29,13 @@ public class degatPerso : MonoBehaviour
         // Lorsque la vie du personnage atteint 0 ou moins, le tuer
         if(viePerso <= 0)
         {
-            mort = true;
+            Joueur_Script.mort = true;
             
         }
-        if (mort == true)
-        {
-            SceneManager.LoadScene("MenuJeu");
-        }
+        //if (Joueur_Script.mort == true)
+        //{
+        //    SceneManager.LoadScene("MenuJeu");
+        //}
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -74,7 +73,7 @@ public class degatPerso : MonoBehaviour
     {   
         if(collision.gameObject.tag == "mort")
         {
-            mort = true;
+            Joueur_Script.mort = true;
         }
 
         // Lorsque le personnage entre en collision avec un objet avec le tag boss ou ennemi...

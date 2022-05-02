@@ -13,7 +13,7 @@ public class ComportementSurveillance : StateMachineBehaviour
     [Header("Distance avant que l'ennemi entre en poursuite")]
     public float distancePersoEnnemiSuivre; // Distance avant que l'ennemi entre en poursuite
 
-    public Transform t_joueurPos; // Transform du joueur
+    public GameObject g_joueurPos; // gameobject du joueur
     public float vitesse; // vitesse de l'ennemi
 
     private RaycastHit2D infoRaycast;   // raycast pour le sol
@@ -28,7 +28,7 @@ public class ComportementSurveillance : StateMachineBehaviour
     {
         // Setter les valeurs des variables
         i_layerMask = LayerMask.GetMask("Sol");
-        t_joueurPos = GameObject.Find("Beepo").transform;
+        g_joueurPos = GameObject.Find("Beepo");
         infoRaycast = Physics2D.Raycast(animator.transform.position, Vector2.down, 10000, i_layerMask);
         if (infoRaycast)
         {
@@ -42,24 +42,28 @@ public class ComportementSurveillance : StateMachineBehaviour
     {
         //Debug.Log(infoRaycast.collider.gameObject.layer);
 
-        // Si l'ennemi va dans sa direction originale, le déplacer dans cette direction, sinon, le déplacer dans la direction opposée
-        if (oriDirection)
+        // Si les dialogues ne sont pas activees, faire en sorte que l'ennemi suive le personnage
+        if (!g_joueurPos.GetComponent<dialogues>().texteActivee)
         {
-            animator.transform.position = Vector3.MoveTowards(animator.transform.position, new Vector3(v_tailleCollider.x, animator.transform.position.y, animator.transform.position.z), vitesse * Time.deltaTime);
-        }
-        else
-        {
-            animator.transform.position = Vector3.MoveTowards(animator.transform.position, new Vector3(v_tailleColliderNeg.x, animator.transform.position.y, animator.transform.position.z), vitesse * Time.deltaTime);
+            // Si l'ennemi va dans sa direction originale, le déplacer dans cette direction, sinon, le déplacer dans la direction opposée
+            if (oriDirection)
+            {
+                animator.transform.position = Vector3.MoveTowards(animator.transform.position, new Vector3(v_tailleCollider.x, animator.transform.position.y, animator.transform.position.z), vitesse * Time.deltaTime);
+            }
+            else
+            {
+                animator.transform.position = Vector3.MoveTowards(animator.transform.position, new Vector3(v_tailleColliderNeg.x, animator.transform.position.y, animator.transform.position.z), vitesse * Time.deltaTime);
+            }
         }
 
         // Lorsque le personnage est assez loin de l'ennemi, le mettre en idle
-       if (Vector2.Distance(animator.transform.position, t_joueurPos.position) >= distancePersoEnnemiIdle)
+        if (Vector2.Distance(animator.transform.position, g_joueurPos.transform.position) >= distancePersoEnnemiIdle)
         {
             animator.SetBool("estSurveille", false);
             animator.SetBool("estSuivre", false);
         }
-       // Ou lorsque le personnage est assez près, le mettre en mode de poursuite
-        else if(Vector2.Distance(animator.transform.position, t_joueurPos.position) <= distancePersoEnnemiSuivre)
+        // Ou lorsque le personnage est assez près, le mettre en mode de poursuite
+        else if (Vector2.Distance(animator.transform.position, g_joueurPos.transform.position) <= distancePersoEnnemiSuivre)
         {
             animator.SetBool("estSuivre", true);
         }
