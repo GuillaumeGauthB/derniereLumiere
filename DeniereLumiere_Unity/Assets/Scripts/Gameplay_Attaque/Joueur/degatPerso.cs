@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class degatPerso : MonoBehaviour
 {
-    /** Script de dÈg‚t du joueur
-     * CrÈÈ par Guillaume Gauthier-BenoÓt
-     * DerniËre modification: 07/04/22
+    /** Script de d√©g√¢t du joueur
+     * Cr√©√© par Guillaume Gauthier-Beno√Æt
+     * Derni√®re modification: 07/04/22
      */
 
     public GameObject BarreDeVie;
@@ -29,8 +29,9 @@ public class degatPerso : MonoBehaviour
         // Lorsque la vie du personnage atteint 0 ou moins, le tuer
         if(viePerso <= 0)
         {
-            Joueur_Script.mort = true;
-            
+
+            mort = true;
+
         }
         //if (Joueur_Script.mort == true)
         //{
@@ -51,10 +52,9 @@ public class degatPerso : MonoBehaviour
                 invincible = true;
                 ChangerCouleurRouge();
                 Invoke("Invincibilite", 2);
-
             }
 
-            // Donner du knockback au personnage dÈpendamment de la position du personnage vs l'ennemi, qui va se dÈsactiver aprËs 0.5 secondes
+            // Donner du knockback au personnage d√©pendamment de la position du personnage vs l'ennemi, qui va se d√©sactiver apr√®s 0.5 secondes
             knockbackPerso = true;
             Invoke("FinKnockback", 0.5f);
             if (collision.gameObject.transform.position.x >= gameObject.transform.position.x)
@@ -91,7 +91,7 @@ public class degatPerso : MonoBehaviour
                 
             }
 
-            // Donner du knockback au personnage dÈpendamment de la position du personnage vs l'ennemi, qui va se dÈsactiver aprËs 0.5 secondes
+            // Donner du knockback au personnage d√©pendamment de la position du personnage vs l'ennemi, qui va se d√©sactiver apr√®s 0.5 secondes
             knockbackPerso = true;
             Invoke("FinKnockback", 0.5f);
             if (collision.gameObject.transform.position.x >= gameObject.transform.position.x)
@@ -105,10 +105,20 @@ public class degatPerso : MonoBehaviour
         }
     }
 
-    // Fonction qui dÈsactive le knockback
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "coeur")
+        {
+            BarreDeVie.GetComponent<BarreDeVieController>().augmenterMaxBarreDeVie(10f);
+            BarreDeVie.GetComponent<BarreDeVieController>().soignerBarreDeVie(1000f);
+            Destroy(collision.gameObject);
+        }
+    }
+
+    // Fonction qui d√©sactive le knockback
     void FinKnockback()
     {
-        // DÈsactiver le knockback
+        // D√©sactiver le knockback
         knockbackPerso = false;
     }
 

@@ -17011,7 +17011,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5649241242418429255, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
   m_PrefabInstance: {fileID: 6676142498794342225}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1351166482239765015
+--- !u!114 &1351166482239765027
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -17023,16 +17023,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73236b4f6047dd046897d7b5261e718d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textbox: {fileID: 682916216}
-  textGameObject: {fileID: 682916217}
+  textbox: {fileID: 0}
+  textGameObject: {fileID: 0}
   sourceText: {fileID: 0}
-  declencherTexteGO: {fileID: 1567808461}
-  texteActivee: 0
-  uiDash: {fileID: 503181170}
-  uiTir: {fileID: 593102502}
-  uiTirLuciolesCount: {fileID: 1126379899}
-  uiStun: {fileID: 975906004}
-  uiDoubleSaut: {fileID: 2065389179}
+
 --- !u!1001 &1956479163475836541
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17403,6 +17397,18 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5649241242418429249, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649241242418429249, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649241242418429249, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649241242418429249, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.6
       objectReference: {fileID: 0}
@@ -17442,6 +17448,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5649241242418429249, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5649241242418429255, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
       propertyPath: m_Name
       value: Beepo
@@ -17454,6 +17464,38 @@ PrefabInstance:
       propertyPath: doubleSautUIPouvoir
       value: 
       objectReference: {fileID: 2065389179}
+    - target: {fileID: 5649241243863595745, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649241243863595745, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649241243863595745, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649241243863595745, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649241243863595746, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: m_Size.x
+      value: 3.3706257
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649241243863595746, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: m_Size.y
+      value: 3.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649241243863595746, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c8ba41f88880f2349a79cca904b0a0d6, type: 2}
+    - target: {fileID: 5649241243863595746, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
 --- !u!4 &6805169629222185943 stripped

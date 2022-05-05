@@ -111,8 +111,8 @@ TextureImporter:
         y: 54
         width: 308
         height: 302
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -132,8 +132,8 @@ TextureImporter:
         y: 54
         width: 327
         height: 297
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -149,12 +149,12 @@ TextureImporter:
       name: Atteri_Beepo_2
       rect:
         serializedVersion: 2
-        x: 746
-        y: 53
-        width: 362
-        height: 289
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 747
+        y: 54
+        width: 359
+        height: 291
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -170,12 +170,12 @@ TextureImporter:
       name: Atteri_Beepo_3
       rect:
         serializedVersion: 2
-        x: 1104
-        y: 55
+        x: 1475
+        y: 54
         width: 372
-        height: 283
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 278
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -191,12 +191,12 @@ TextureImporter:
       name: Atteri_Beepo_4
       rect:
         serializedVersion: 2
-        x: 1475
-        y: 52
+        x: 1843
+        y: 54
         width: 370
         height: 286
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -212,12 +212,12 @@ TextureImporter:
       name: Atteri_Beepo_5
       rect:
         serializedVersion: 2
-        x: 1845
-        y: 53
-        width: 367
-        height: 279
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 2213
+        y: 54
+        width: 359
+        height: 319
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -233,18 +233,18 @@ TextureImporter:
       name: Atteri_Beepo_6
       rect:
         serializedVersion: 2
-        x: 2212
-        y: 50
+        x: 1120
+        y: 52
         width: 353
-        height: 321
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e9f3084b9b04ab4baeb38f2e34f8062
+      spriteID: ed0455944e243d54bac5700b887f20a6
       internalID: 1217466801
       vertices: []
       indices: 
