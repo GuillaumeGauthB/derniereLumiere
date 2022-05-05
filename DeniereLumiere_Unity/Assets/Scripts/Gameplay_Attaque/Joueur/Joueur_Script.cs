@@ -42,10 +42,10 @@ public class Joueur_Script : MonoBehaviour
     private float f_vitesseMaximale; // La vitesse maximale de la marche ou de la cours
 
     /********Variables a Guillaume********/
-    public static bool doubleSautObtenu, // Variables determinant quels pouvoirs sont obtenus
-        dashObtenu,
-        stunObtenu,
-        tirObtenu;
+    public static bool doubleSautObtenu = true, // Variables determinant quels pouvoirs sont obtenus
+        dashObtenu = true,
+        stunObtenu = true,
+        tirObtenu = true;
     private bool b_doubleSautPossible, // Variables determinant si les differents pouvoirs peuvent etre utilises
         b_dashPossible = true,
         b_stunPossible;
@@ -286,6 +286,7 @@ public class Joueur_Script : MonoBehaviour
         if (collision.tag == "checkpoint")
         {
             checkpoint = transform.position;
+            collision.GetComponent<Animator>().SetTrigger("Save");
         }
         // Si le personnage entre en contact avec une zone de mort, on le place au checkpoint
         if (collision.tag == "tombe")

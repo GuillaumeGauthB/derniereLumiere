@@ -7,12 +7,12 @@ using UnityEngine.InputSystem;
 public class dialogues : MonoBehaviour
 {
     public Text textbox; // La boite de texte du jeu
-    public GameObject textGameObject; // Le gameObject contenant l'entièretée de la boite de dialogue
+    public GameObject textGameObject; // Le gameObject contenant l'enti?ret?e de la boite de dialogue
     private Coroutine c_textOnGoing; // La couroutine d'imprimation de texte
     public GameObject sourceText, // Le gameObject contenant les lignes que nous voulont imprimer
         declencherTexteGO; // Le gameObject du texte de declenchement de texte
-    int nb = 0; // Le numéro de la ligne qui est imprimée
-    int longueurTexte; // La quantité totale de ligne qui est imprimée
+    int nb = 0; // Le num?ro de la ligne qui est imprim?e
+    int longueurTexte; // La quantit? totale de ligne qui est imprim?e
     bool collisionTexte; // savoir si le personnage est en contact avec un objet contenant du texte
     InputJoueur i_inputJoueur; // le player input du joueur
     public bool texteActivee; // savoir si les dialogues sont activees
@@ -32,10 +32,10 @@ public class dialogues : MonoBehaviour
 
     private void Start()
     {
-        // Vider la boîte de dialogue
+        // Vider la bo?te de dialogue
         textbox.text = "";
     }
-    // La couroutine faisant apparaître les lettres de la ligne à imprimer
+    // La couroutine faisant appara?tre les lettres de la ligne ? imprimer
     IEnumerator texte(string[] test)
     {
         // On met la longueur du array moins 1 dans longueurTexte pour pouvoir comparer sa valeur avec nb dans le futur
@@ -43,10 +43,10 @@ public class dialogues : MonoBehaviour
         // On s'assure que la textbox est vide
         textbox.text = "";
 
-        // Pour faire apparaître chaque lettre une à la fois, on utilise un foreach pour chacun des charactères de la ligne à imprimer...
+        // Pour faire appara?tre chaque lettre une ? la fois, on utilise un foreach pour chacun des charact?res de la ligne ? imprimer...
         foreach (char i in test[nb].ToCharArray())
         {
-            // ... qu'on ajoute une à la fois dans la zone de texte avec un interval de 0.07 seconde entre chaque lettre
+            // ... qu'on ajoute une ? la fois dans la zone de texte avec un interval de 0.07 seconde entre chaque lettre
             textbox.text += i;
             yield return new WaitForSeconds(0.07f);
         }
@@ -55,18 +55,18 @@ public class dialogues : MonoBehaviour
     // Fonction permettant d'enclencher la lecture du texte
     public void LireTexte(InputAction.CallbackContext context)
     {
-        Debug.Log("owo uwu owo");
-        // Lorsque la fonction est appelée...
+        Debug.Log("lire texte");
+        // Lorsque la fonction est appel?e...
         if (context.started && collisionTexte)
         {
             declencherTexteGO.SetActive(false);
             texteActivee = true;
             Debug.Log("awa awa");
-            // Démarrer l'animation pour faire apparaître la boite de dialogue
+            // D?marrer l'animation pour faire appara?tre la boite de dialogue
             textGameObject.GetComponent<Animator>().SetBool("ouvertureTexte", true);
-            // Commencer la coroutine du texte une seconde après le début de l'animation
+            // Commencer la coroutine du texte une seconde apr?s le d?but de l'animation
             Invoke("CommencerCoroutine", 1f);
-            // Et changer le Action Map du joueur à "LectureTexte," pour l'empêcher de bouger lors de la  lecture
+            // Et changer le Action Map du joueur ? "LectureTexte," pour l'emp?cher de bouger lors de la  lecture
             GetComponent<PlayerInput>().SwitchCurrentActionMap("LectureTexte");
             //Time.timeScale = 0;
         }
@@ -76,33 +76,33 @@ public class dialogues : MonoBehaviour
     public void SkipperTexte(InputAction.CallbackContext context)
     {
 
-        // Lorsque la fonction est appelée...
+        // Lorsque la fonction est appel?e...
         if (context.canceled && collisionTexte)
         {
-            // ... et que le contenu imprimé n'est pas le même que celui qui devrait l'être...
+            // ... et que le contenu imprim? n'est pas le m?me que celui qui devrait l'?tre...
             if (textbox.text.ToString() != sourceText.GetComponent<ecritureTexte>().texte[nb])
             {
-                // Arrêter la coroutine et faire apparaître l'entièreté du texte
+                // Arr?ter la coroutine et faire appara?tre l'enti?ret? du texte
                 StopCoroutine(c_textOnGoing);
                 textbox.text = sourceText.GetComponent<ecritureTexte>().texte[nb];
             }
-            // ... et que le contenu imprimé est le même que celui qui devrait l'être et que le nombre de la ligne imprimée est plus petit que la quantité totale de lignes à imprimer......
+            // ... et que le contenu imprim? est le m?me que celui qui devrait l'?tre et que le nombre de la ligne imprim?e est plus petit que la quantit? totale de lignes ? imprimer......
             else if (textbox.text.ToString() == sourceText.GetComponent<ecritureTexte>().texte[nb] && nb < longueurTexte)
             {
-                // Changer de ligne à imprimer et recommencer la coroutine
+                // Changer de ligne ? imprimer et recommencer la coroutine
                 nb++;
                 CommencerCoroutine();
             }
-            // ... et que le contenu imprimé est le même que celui qui devrait l'être et que le nombre de la ligne imprimée est plus grand ou équal à la longueur totale de ligne à imprimer...
+            // ... et que le contenu imprim? est le m?me que celui qui devrait l'?tre et que le nombre de la ligne imprim?e est plus grand ou ?qual ? la longueur totale de ligne ? imprimer...
             else if (textbox.text.ToString() == sourceText.GetComponent<ecritureTexte>().texte[nb] && nb >= longueurTexte)
             {
                 // Changer l'action map de retour au mouvement
                 GetComponent<PlayerInput>().SwitchCurrentActionMap("Texte");
-                // Réinitialiser le numéro de la ligne en cours d'impression
+                // R?initialiser le num?ro de la ligne en cours d'impression
                 nb = 0;
-                // Vider la boîte de dialogue
+                // Vider la bo?te de dialogue
                 textbox.text = "";
-                // Et activer l'animation de fermeture de la boîte de dialogue
+                // Et activer l'animation de fermeture de la bo?te de dialogue
                 textGameObject.GetComponent<Animator>().SetBool("ouvertureTexte", false);
                 //Time.timeScale = 1;
                 texteActivee = false;
@@ -145,36 +145,32 @@ public class dialogues : MonoBehaviour
         }
     }
 
-    // La fonction commençant la coroutine
+    // La fonction commen?ant la coroutine
     void CommencerCoroutine()
     {
         // Commencer la coroutine et la mettre dans c_textOnGoing
         c_textOnGoing = StartCoroutine(texte(sourceText.GetComponent<ecritureTexte>().texte));
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.GetComponent<ecritureTexte>())
         {
             declencherTexteGO.SetActive(true);
         }
     }
-
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.GetComponent<ecritureTexte>())
         {
-            Debug.Log("awa awa");
             collisionTexte = true;
             sourceText = collision.gameObject;
         }
     }
-
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.GetComponent<ecritureTexte>())
         {
-            Debug.Log("owo");
             collisionTexte = false;
             sourceText = null;
             declencherTexteGO.SetActive(false);
