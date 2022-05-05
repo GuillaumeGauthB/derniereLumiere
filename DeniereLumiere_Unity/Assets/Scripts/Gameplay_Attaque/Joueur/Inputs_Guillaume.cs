@@ -7,7 +7,7 @@ public class Inputs_Guillaume : MonoBehaviour
 {
     /* Attaques physique et de tir du personnage
       Par : Guillaume Gauthier-Benoit
-      Dernière modification : 03/04/2022
+      Derni?re modification : 03/04/2022
     */
 
     public int
@@ -36,6 +36,7 @@ public class Inputs_Guillaume : MonoBehaviour
 
     [Header("Pour autres scripts")]
     public Vector2 v_deplacementCible; // Variable determinant la direction dans laquelle le projectile est tirer
+    public GameObject pouvoirTir;
 
     private void Awake()
     {
@@ -97,7 +98,7 @@ public class Inputs_Guillaume : MonoBehaviour
     // Fonction qui gere l'attaque corps a corps du personnage
     public void AttaquePhysique(InputAction.CallbackContext context)
     {
-        // Lorsque la touche est appuyée...
+        // Lorsque la touche est appuy?e...
         if (context.started)
         {
             // Trigger l'animation (a faire)
@@ -122,13 +123,13 @@ public class Inputs_Guillaume : MonoBehaviour
     // Fonction qui gere le debut du "visage" du tir de lucioles ansi que son tir
     public void DeclencherTir(InputAction.CallbackContext context)
     {
-        // Lorsque le bouton est relaché...
+        // Lorsque le bouton est relach?...
         if (context.canceled && Joueur_Script.tirObtenu)
         {
 
             // Creer une variable empechant les deplacements lorsque le mode de tir est activer
             declencherTir = true;
-            // Changer le map du personnage à TirLucioles
+            // Changer le map du personnage ? TirLucioles
             playerInput.SwitchCurrentActionMap("TirLucioles");
         }
     }
@@ -167,11 +168,11 @@ public class Inputs_Guillaume : MonoBehaviour
     // Fonction qui gere l'annulation du tir durant son "visage"
     public void AnnulerTirViser(InputAction.CallbackContext context)
     {
-        // Si le bouton est laché...
+        // Si le bouton est lach?...
         if (context.canceled)
         {
             declencherTir = false;
-            // Changer la map au mouvement et désactiver le viseur
+            // Changer la map au mouvement et d?sactiver le viseur
             playerInput.SwitchCurrentActionMap("Player");
             c_lineRenderer.enabled = false;
         }
@@ -180,14 +181,18 @@ public class Inputs_Guillaume : MonoBehaviour
     // Fonction qui tire la balle
     public void AttaqueTir(InputAction.CallbackContext context)
     {
-        // Lorsque le bouton est appuyé
+        // Lorsque le bouton est appuy?
         if (context.started && !GetComponent<dialogues>().texteActivee)
         {
-            sprite.GetComponent<Animator>().SetTrigger("Tir");
-            GetComponent<AudioSource>().PlayOneShot(sonTir);
-            // Cloner et activer la balle
-            g_clone = Instantiate(projectile.gameObject, projectile.transform.position, c_lineRenderer.transform.rotation);
-            g_clone.SetActive(true);
+            if (pouvoirTir.GetComponent<PouvoirUI>().peutUtiliserPouvoir)
+            {
+                pouvoirTir.GetComponent<PouvoirUI>().utiliserPouvoir();
+                sprite.GetComponent<Animator>().SetTrigger("Tir");
+                GetComponent<AudioSource>().PlayOneShot(sonTir);
+                // Cloner et activer la balle
+                g_clone = Instantiate(projectile.gameObject, projectile.transform.position, c_lineRenderer.transform.rotation);
+                g_clone.SetActive(true);
+            }
         }
     }
 
