@@ -42,12 +42,12 @@ public class Joueur_Script : MonoBehaviour
     private float f_vitesseMaximale; // La vitesse maximale de la marche ou de la cours
 
     /********Variables a Guillaume********/
-    public static bool b_doubleSautObtenu = true, // Variables determinant quels pouvoirs sont obtenus
-        b_dashObtenu = true,
-        b_stunObtenu = true,
-        b_tirObtenu;
+    public static bool doubleSautObtenu, // Variables determinant quels pouvoirs sont obtenus
+        dashObtenu,
+        stunObtenu,
+        tirObtenu;
     private bool b_doubleSautPossible, // Variables determinant si les differents pouvoirs peuvent etre utilises
-        //b_dashPossible = true,
+        b_dashPossible = true,
         b_stunPossible;
 
     public float forceDash, // Variables publics pertinentes pour l'utilisation du dash
@@ -66,8 +66,8 @@ public class Joueur_Script : MonoBehaviour
     public GameObject dashUIPouvoir;
 
     public bool modeSouris;
-    
 
+    static public bool mort;
 
     void Awake()
     {
@@ -81,8 +81,6 @@ public class Joueur_Script : MonoBehaviour
         i_inputJoueur.Player.Courrir.performed += Courrir;
         i_inputJoueur.Player.Accroupir.performed += Accroupir;
         i_inputJoueur.Player.Dash.performed += Dash;
-        //i_inputJoueur.Player.ChangerClavier += ChangerClavier;
-
 
     }
     private void Update()
@@ -107,7 +105,7 @@ public class Joueur_Script : MonoBehaviour
     private void FixedUpdate()
     {
         //Debug.Log(f_movX);
-        if (!estDash /*S&& !GetComponent<Inputs_Guillaume>().declencherTir*/)
+        if (!estDash && !GetComponent<dialogues>().texteActivee && !mort)
         {
             /* permet de lire le input du new input system*/
             Vector2 inputVector = i_inputJoueur.Player.Mouvement.ReadValue<Vector2>();
@@ -141,27 +139,24 @@ public class Joueur_Script : MonoBehaviour
 
         // Si le personnage est en train de dash...
         if (estDash)
-        {   
+        {
             // Le d?placer et faire diminuer le temps
             rb_Joueur.velocity = transform.right * f_directionDash * forceDash;
             presentTimerDash -= Time.deltaTime;
-            Physics.IgnoreLayerCollision(6, 7,true);
-
             // Si le temps est ?gal ? z?ro...
             if (presentTimerDash <= 0)
             {
-                Physics.IgnoreLayerCollision(6, 7,false);
                 // Arr?ter le dash et commencer le cooldown
                 estDash = false;
                 InvokeRepeating("Cooldown", 0, 1f);
             }
         }
         // Si le cooldown vaut moins que 0, que le personnage ne peut dash et a le pouvoir...
-        if (f_cooldownDash <= 0 /*&& !b_dashPossible*/ && b_dashObtenu && !dashUIPouvoir.GetComponent<PouvoirUI>().peutUtiliserPouvoir)
+        if (f_cooldownDash <= 0 && !b_dashPossible && dashObtenu && dashUIPouvoir.GetComponent<PouvoirUI>().peutUtiliserPouvoir)
         {
             // Rendre le dash possible, r?initialiser le temps de cooldown et arr?ter de le faire descendre
-            //b_dashPossible = true;
-            //dashUIPouvoir.GetComponent<PouvoirUI>().peutUtiliserPouvoir = true;
+            b_dashPossible = true;
+            dashUIPouvoir.GetComponent<PouvoirUI>().peutUtiliserPouvoir = true;
 
             f_cooldownDash = 1;
             CancelInvoke("Cooldown");
@@ -175,7 +170,7 @@ public class Joueur_Script : MonoBehaviour
         if (context.performed)
         {
             // si le personnage est au sol et n'est pas accroupit...
-            if (b_estAuSol == true && !accroupir /*&& !GetComponent<Inputs_Guillaume>().declencherTir*/)
+            if (b_estAuSol == true && !accroupir && !GetComponent<Inputs_Guillaume>().declencherTir && !GetComponent<dialogues>().texteActivee)
             {
                 // Faire sauter le personnage
                 rb_Joueur.AddForce(new Vector2(0, 1 * forceSaut));
@@ -183,7 +178,7 @@ public class Joueur_Script : MonoBehaviour
                 
             }
             // Si le personnage n'est pas sur le sol et peut faire un double saut...
-            else if (!b_estAuSol && b_doubleSautPossible && b_doubleSautObtenu)
+            else if (!b_estAuSol && b_doubleSautPossible && doubleSautObtenu && !GetComponent<dialogues>().texteActivee)
             {
                 //Utiliser le double saut dans le UI
                 doubleSautUIPouvoir.GetComponent<PouvoirUI>().utiliserPouvoir();
@@ -228,7 +223,7 @@ public class Joueur_Script : MonoBehaviour
 
         // Si l'action est performee...
         Debug.Log(context.phase);
-        if (context.performed /*&& !GetComponent<Inputs_Guillaume>().declencherTir*/)
+        if (context.performed && !GetComponent<Inputs_Guillaume>().declencherTir)
         {
             // Activer ou desactiver l'accroupissement
             if (accroupir == false)
@@ -247,7 +242,7 @@ public class Joueur_Script : MonoBehaviour
     {
         //Debug.Log(f_movX);
         // Si le bouton est appuy?, qu'il peut dash, que le pouvoir est obtenu, et que son mouvement sur l'axe des x n'est pas 0...
-        if (context.performed /*&& b_dashPossible*/ && b_dashObtenu && /*f_movX != 0 &&*/ dashUIPouvoir.GetComponent<PouvoirUI>().peutUtiliserPouvoir)
+        if (context.performed && b_dashPossible && dashObtenu && f_movX != 0)
         {
             //faire le dash
             dashUIPouvoir.GetComponent<PouvoirUI>().utiliserPouvoir();
@@ -256,6 +251,7 @@ public class Joueur_Script : MonoBehaviour
             rb_Joueur.velocity = Vector2.zero;
             f_directionDash = f_movX;
             dashUIPouvoir.GetComponent<PouvoirUI>().peutUtiliserPouvoir = false;
+
             a_Joueur.SetTrigger("Dash");
             //b_dashPossible = false;
             if (f_movX == 0)
@@ -270,6 +266,7 @@ public class Joueur_Script : MonoBehaviour
                 }
                 
             }
+
         }
     }
 
@@ -277,7 +274,7 @@ public class Joueur_Script : MonoBehaviour
     void Cooldown()
     {
         // Si le cooldown du dash est plus grand ou egal a 0 et que le dash n'est pas possible 
-        if (/*!b_dashPossible*/ !dashUIPouvoir.GetComponent<PouvoirUI>().peutUtiliserPouvoir && f_cooldownDash >= 0)
+        if (!b_dashPossible && f_cooldownDash >= 0)
         {
             // Diminuer la valeur du cooldown de dash
             f_cooldownDash -= 1;

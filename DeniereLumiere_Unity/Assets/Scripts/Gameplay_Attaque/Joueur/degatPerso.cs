@@ -5,16 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class degatPerso : MonoBehaviour
 {
-    /** Script de dÈg‚t du joueur
-     * CrÈÈ par Guillaume Gauthier-BenoÓt
-     * DerniËre modification: 07/04/22
+    /** Script de d√©g√¢t du joueur
+     * Cr√©√© par Guillaume Gauthier-Beno√Æt
+     * Derni√®re modification: 07/04/22
      */
 
     public GameObject BarreDeVie;
     private float f_posXEvP; //position ennemi vs personnage en x
     public bool knockbackPerso, // valeurs boolean des effets
-        invincible,
-        mort;
+        invincible;
     public float viePerso; // vie initiale du personnage
     public AudioClip sonDegats;
     public Color couleurDegat,
@@ -30,12 +29,14 @@ public class degatPerso : MonoBehaviour
         // Lorsque la vie du personnage atteint 0 ou moins, le tuer
         if(viePerso <= 0)
         {
+
             mort = true;
+
         }
-        if (mort == true)
-        {
-            SceneManager.LoadScene("MenuJeu");
-        }
+        //if (Joueur_Script.mort == true)
+        //{
+        //    SceneManager.LoadScene("MenuJeu");
+        //}
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -53,7 +54,7 @@ public class degatPerso : MonoBehaviour
                 Invoke("Invincibilite", 2);
             }
 
-            // Donner du knockback au personnage dÈpendamment de la position du personnage vs l'ennemi, qui va se dÈsactiver aprËs 0.5 secondes
+            // Donner du knockback au personnage d√©pendamment de la position du personnage vs l'ennemi, qui va se d√©sactiver apr√®s 0.5 secondes
             knockbackPerso = true;
             Invoke("FinKnockback", 0.5f);
             if (collision.gameObject.transform.position.x >= gameObject.transform.position.x)
@@ -72,7 +73,7 @@ public class degatPerso : MonoBehaviour
     {   
         if(collision.gameObject.tag == "mort")
         {
-            mort = true;
+            Joueur_Script.mort = true;
         }
 
         // Lorsque le personnage entre en collision avec un objet avec le tag boss ou ennemi...
@@ -90,7 +91,7 @@ public class degatPerso : MonoBehaviour
                 
             }
 
-            // Donner du knockback au personnage dÈpendamment de la position du personnage vs l'ennemi, qui va se dÈsactiver aprËs 0.5 secondes
+            // Donner du knockback au personnage d√©pendamment de la position du personnage vs l'ennemi, qui va se d√©sactiver apr√®s 0.5 secondes
             knockbackPerso = true;
             Invoke("FinKnockback", 0.5f);
             if (collision.gameObject.transform.position.x >= gameObject.transform.position.x)
@@ -114,10 +115,10 @@ public class degatPerso : MonoBehaviour
         }
     }
 
-    // Fonction qui dÈsactive le knockback
+    // Fonction qui d√©sactive le knockback
     void FinKnockback()
     {
-        // DÈsactiver le knockback
+        // D√©sactiver le knockback
         knockbackPerso = false;
     }
 

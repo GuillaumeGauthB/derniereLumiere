@@ -174,6 +174,82 @@ public partial class @InputJoueur : IInputActionCollection2, IDisposable
             ]
         },
         {
+            ""name"": ""Mort"",
+            ""id"": ""546d5850-0886-486a-baa9-7debb20829f9"",
+            ""actions"": [
+                {
+                    ""name"": ""LoadScene"",
+                    ""type"": ""Button"",
+                    ""id"": ""7fbc424d-1ecc-430c-a65b-c87833fa4e6f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""152fe9cc-202f-4968-bad7-e0aa3cabe010"",
+                    ""path"": ""<Keyboard>/anyKey"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LoadScene"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Dialogues"",
+            ""id"": ""5c5bb117-c970-4a3e-8042-6977f5502c8b"",
+            ""actions"": [
+                {
+                    ""name"": ""LireTexte"",
+                    ""type"": ""Button"",
+                    ""id"": ""784ddcd6-b2c3-453e-836a-ea00e16b92f6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SkipperTexte"",
+                    ""type"": ""Button"",
+                    ""id"": ""f50e2f34-db24-4e56-a513-9413270d4cc8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""890f56cd-8d06-424f-bcb9-b56ad4777e22"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LireTexte"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""512b97b8-4635-4fa0-9b78-de55d60db1db"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SkipperTexte"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
             ""name"": ""Player"",
             ""id"": ""29192838-daa3-4fb7-9d7f-5f9ee2ca1685"",
             ""actions"": [
@@ -1087,6 +1163,13 @@ public partial class @InputJoueur : IInputActionCollection2, IDisposable
         m_TirLucioles_ChangerClavier = m_TirLucioles.FindAction("ChangerClavier", throwIfNotFound: true);
         m_TirLucioles_ChangerManette = m_TirLucioles.FindAction("ChangerManette", throwIfNotFound: true);
         m_TirLucioles_PositionManette = m_TirLucioles.FindAction("Position Manette", throwIfNotFound: true);
+        // Mort
+        m_Mort = asset.FindActionMap("Mort", throwIfNotFound: true);
+        m_Mort_LoadScene = m_Mort.FindAction("LoadScene", throwIfNotFound: true);
+        // Dialogues
+        m_Dialogues = asset.FindActionMap("Dialogues", throwIfNotFound: true);
+        m_Dialogues_LireTexte = m_Dialogues.FindAction("LireTexte", throwIfNotFound: true);
+        m_Dialogues_SkipperTexte = m_Dialogues.FindAction("SkipperTexte", throwIfNotFound: true);
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Saut = m_Player.FindAction("Saut", throwIfNotFound: true);
@@ -1110,7 +1193,6 @@ public partial class @InputJoueur : IInputActionCollection2, IDisposable
         m_UI_RightClick = m_UI.FindAction("RightClick", throwIfNotFound: true);
         m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
-
     }
 
     public void Dispose()
@@ -1239,6 +1321,80 @@ public partial class @InputJoueur : IInputActionCollection2, IDisposable
         }
     }
     public TirLuciolesActions @TirLucioles => new TirLuciolesActions(this);
+
+    // Mort
+    private readonly InputActionMap m_Mort;
+    private IMortActions m_MortActionsCallbackInterface;
+    private readonly InputAction m_Mort_LoadScene;
+    public struct MortActions
+    {
+        private @InputJoueur m_Wrapper;
+        public MortActions(@InputJoueur wrapper) { m_Wrapper = wrapper; }
+        public InputAction @LoadScene => m_Wrapper.m_Mort_LoadScene;
+        public InputActionMap Get() { return m_Wrapper.m_Mort; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(MortActions set) { return set.Get(); }
+        public void SetCallbacks(IMortActions instance)
+        {
+            if (m_Wrapper.m_MortActionsCallbackInterface != null)
+            {
+                @LoadScene.started -= m_Wrapper.m_MortActionsCallbackInterface.OnLoadScene;
+                @LoadScene.performed -= m_Wrapper.m_MortActionsCallbackInterface.OnLoadScene;
+                @LoadScene.canceled -= m_Wrapper.m_MortActionsCallbackInterface.OnLoadScene;
+            }
+            m_Wrapper.m_MortActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @LoadScene.started += instance.OnLoadScene;
+                @LoadScene.performed += instance.OnLoadScene;
+                @LoadScene.canceled += instance.OnLoadScene;
+            }
+        }
+    }
+    public MortActions @Mort => new MortActions(this);
+
+    // Dialogues
+    private readonly InputActionMap m_Dialogues;
+    private IDialoguesActions m_DialoguesActionsCallbackInterface;
+    private readonly InputAction m_Dialogues_LireTexte;
+    private readonly InputAction m_Dialogues_SkipperTexte;
+    public struct DialoguesActions
+    {
+        private @InputJoueur m_Wrapper;
+        public DialoguesActions(@InputJoueur wrapper) { m_Wrapper = wrapper; }
+        public InputAction @LireTexte => m_Wrapper.m_Dialogues_LireTexte;
+        public InputAction @SkipperTexte => m_Wrapper.m_Dialogues_SkipperTexte;
+        public InputActionMap Get() { return m_Wrapper.m_Dialogues; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(DialoguesActions set) { return set.Get(); }
+        public void SetCallbacks(IDialoguesActions instance)
+        {
+            if (m_Wrapper.m_DialoguesActionsCallbackInterface != null)
+            {
+                @LireTexte.started -= m_Wrapper.m_DialoguesActionsCallbackInterface.OnLireTexte;
+                @LireTexte.performed -= m_Wrapper.m_DialoguesActionsCallbackInterface.OnLireTexte;
+                @LireTexte.canceled -= m_Wrapper.m_DialoguesActionsCallbackInterface.OnLireTexte;
+                @SkipperTexte.started -= m_Wrapper.m_DialoguesActionsCallbackInterface.OnSkipperTexte;
+                @SkipperTexte.performed -= m_Wrapper.m_DialoguesActionsCallbackInterface.OnSkipperTexte;
+                @SkipperTexte.canceled -= m_Wrapper.m_DialoguesActionsCallbackInterface.OnSkipperTexte;
+            }
+            m_Wrapper.m_DialoguesActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @LireTexte.started += instance.OnLireTexte;
+                @LireTexte.performed += instance.OnLireTexte;
+                @LireTexte.canceled += instance.OnLireTexte;
+                @SkipperTexte.started += instance.OnSkipperTexte;
+                @SkipperTexte.performed += instance.OnSkipperTexte;
+                @SkipperTexte.canceled += instance.OnSkipperTexte;
+            }
+        }
+    }
+    public DialoguesActions @Dialogues => new DialoguesActions(this);
 
     // Player
     private readonly InputActionMap m_Player;
@@ -1468,6 +1624,15 @@ public partial class @InputJoueur : IInputActionCollection2, IDisposable
         void OnChangerManette(InputAction.CallbackContext context);
         void OnPositionManette(InputAction.CallbackContext context);
     }
+    public interface IMortActions
+    {
+        void OnLoadScene(InputAction.CallbackContext context);
+    }
+    public interface IDialoguesActions
+    {
+        void OnLireTexte(InputAction.CallbackContext context);
+        void OnSkipperTexte(InputAction.CallbackContext context);
+    }
     public interface IPlayerActions
     {
         void OnSaut(InputAction.CallbackContext context);
@@ -1480,7 +1645,6 @@ public partial class @InputJoueur : IInputActionCollection2, IDisposable
         void OnDash(InputAction.CallbackContext context);
         void OnEnclencherTir(InputAction.CallbackContext context);
     }
-
     public interface IUIActions
     {
         void OnNavigate(InputAction.CallbackContext context);
