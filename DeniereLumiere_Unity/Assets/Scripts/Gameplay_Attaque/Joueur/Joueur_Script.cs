@@ -197,7 +197,7 @@ public class Joueur_Script : MonoBehaviour
     void Courrir(InputAction.CallbackContext context)
     {
         // Lorsque l'action est performee
-        Debug.Log(context.phase);
+        //Debug.Log(context.phase);
         if (context.performed)
         {
             // Si le personnage n'est pas en mode de course
@@ -222,7 +222,7 @@ public class Joueur_Script : MonoBehaviour
     {
 
         // Si l'action est performee...
-        Debug.Log(context.phase);
+        //Debug.Log(context.phase);
         if (context.performed && !GetComponent<Inputs_Guillaume>().declencherTir)
         {
             // Activer ou desactiver l'accroupissement
