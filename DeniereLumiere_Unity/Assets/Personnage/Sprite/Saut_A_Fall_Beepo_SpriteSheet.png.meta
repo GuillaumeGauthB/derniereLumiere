@@ -1,0 +1,1310 @@
+fileFormatVersion: 2
+guid: 4f2614dac23995e4a9e1504d0d351d13
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 2064
+        width: 283
+        height: 383
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd39612d4d1eefd4aadf8e31b2c8ba20
+      internalID: 741178785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 2064
+        width: 290
+        height: 381
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34ccd9b73f047744f977b1c1f4718035
+      internalID: -1443169776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 2064
+        width: 300
+        height: 376
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a94dbf0700cd4ac4ba35ca38012a6528
+      internalID: -461943907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 1132
+        y: 2064
+        width: 311
+        height: 370
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 093957635488ee14290306fe03c1e2a8
+      internalID: -1957298537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 1495
+        y: 2064
+        width: 321
+        height: 366
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e77709ff2981a648bf5fc627a371371
+      internalID: 397513916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 1858
+        y: 2064
+        width: 332
+        height: 359
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e48d9741e8566f940a2398f1140deb6f
+      internalID: 964170265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 2226
+        y: 2064
+        width: 337
+        height: 355
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7ed22dbca452bb4e86ed9d376bacc21
+      internalID: -1616763372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 2594
+        y: 2064
+        width: 339
+        height: 355
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 123e04d438783304cb9751e8c2c5adbf
+      internalID: -148788402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 2963
+        y: 2064
+        width: 339
+        height: 355
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0921d27ccc7b3074db5def33b939b1a6
+      internalID: -84048890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 3333
+        y: 2064
+        width: 337
+        height: 355
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9056c847c5165c144b3f071e667d984a
+      internalID: -1711637301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 3701
+        y: 2064
+        width: 339
+        height: 355
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4574dcb881c74744b8d35ab416b5aa7
+      internalID: 2027202833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 4070
+        y: 2064
+        width: 339
+        height: 355
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69298d5a845dad542b92c9c4ffc356cb
+      internalID: 1579177603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 1562
+        width: 337
+        height: 353
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f117334545018c2439ac503ebcf94bdd
+      internalID: -1895767005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 1561
+        width: 339
+        height: 354
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25f05cf431db04d439d4239dced579dc
+      internalID: -346384750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 1561
+        width: 339
+        height: 354
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5289ef72a7af5404ea893e01f513e49f
+      internalID: -860291486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 1119
+        y: 1562
+        width: 337
+        height: 353
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54ad412a9e3e6544eb3ec27549e9382d
+      internalID: -1116900758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 1487
+        y: 1561
+        width: 339
+        height: 354
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f75de5308b726c94991daa649b7bbea5
+      internalID: -857761433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 1561
+        width: 339
+        height: 354
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48c58d6289c04a44f950f97798fcb367
+      internalID: 560007758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 2226
+        y: 1562
+        width: 337
+        height: 353
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c13e14a7267764e45ace9676a39552be
+      internalID: -1128294835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 2594
+        y: 1561
+        width: 339
+        height: 354
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e7b875048b71664b8f1d8462466013b
+      internalID: -363456687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 2963
+        y: 1561
+        width: 339
+        height: 354
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 627960b7099a20e4ebbb5e8ba7d727e2
+      internalID: -567025790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 3333
+        y: 1562
+        width: 337
+        height: 353
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a96e711d0d8c96645a94b9beadf06fd6
+      internalID: 1867829737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 3701
+        y: 1561
+        width: 339
+        height: 354
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 840cfa25fa5d08245b654244d2274d4c
+      internalID: 1837629115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 4070
+        y: 1561
+        width: 339
+        height: 354
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ad91ff648f524c4dadb50b92edce8ef
+      internalID: 859477229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 1059
+        width: 337
+        height: 354
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0939f6a342797a478f42fd815a43d24
+      internalID: 1868807443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 1059
+        width: 339
+        height: 354
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c38db7310bd8aa408fbb1478ca4baeb
+      internalID: -1355697119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_26
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 1059
+        width: 339
+        height: 354
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61f7faf563372174185dd6d406156203
+      internalID: 543090709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_27
+      rect:
+        serializedVersion: 2
+        x: 1119
+        y: 1059
+        width: 337
+        height: 354
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 402e84a8b89e1f74581fea723928a4e9
+      internalID: -1436994387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_28
+      rect:
+        serializedVersion: 2
+        x: 1487
+        y: 1059
+        width: 339
+        height: 354
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3140d9773ab75c4991504f14ed33435
+      internalID: 1614548505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_29
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 1059
+        width: 339
+        height: 354
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad5f1bdb6791ee643851227fd32122c8
+      internalID: -1639722986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_30
+      rect:
+        serializedVersion: 2
+        x: 2226
+        y: 1059
+        width: 337
+        height: 354
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f27046ad0bfdae4da7287ae7df2a973
+      internalID: 938567525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_31
+      rect:
+        serializedVersion: 2
+        x: 2594
+        y: 1059
+        width: 339
+        height: 354
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba85d3b4d4a9d4f458690a76ef37cb1e
+      internalID: -1218881779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_32
+      rect:
+        serializedVersion: 2
+        x: 2963
+        y: 1059
+        width: 339
+        height: 354
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 192652d4b7dced741ab9ecdbf95662d7
+      internalID: -1596593764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_33
+      rect:
+        serializedVersion: 2
+        x: 3333
+        y: 1059
+        width: 337
+        height: 354
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f98994f83b196e47829ac1c870a4417
+      internalID: 15248401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_34
+      rect:
+        serializedVersion: 2
+        x: 3701
+        y: 1059
+        width: 339
+        height: 354
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3efbcc34a9151464b91fce390904e69e
+      internalID: 2133404394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_35
+      rect:
+        serializedVersion: 2
+        x: 4070
+        y: 1059
+        width: 339
+        height: 354
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25320798f11c32b4cbb6607d38247a24
+      internalID: -1312282070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_36
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 555
+        width: 337
+        height: 354
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edc19454256e8cb4e804678051cb62e4
+      internalID: -1484282089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_37
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 555
+        width: 339
+        height: 354
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1ee43cf1f13af34f93e60fb46e37e92
+      internalID: 725998405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_38
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 555
+        width: 339
+        height: 354
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fb110fa83ab02f44b4512ca345912ee
+      internalID: -1837248987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_39
+      rect:
+        serializedVersion: 2
+        x: 1119
+        y: 555
+        width: 337
+        height: 354
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fa8842775f1ad0408ca9026649793c0
+      internalID: -1002094365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_40
+      rect:
+        serializedVersion: 2
+        x: 1487
+        y: 555
+        width: 339
+        height: 354
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a22318973a6b2d44abb2edc2c70d50a8
+      internalID: -1564553801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_41
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 555
+        width: 339
+        height: 354
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88cb764425d950a44abb41908e3fbdff
+      internalID: -1410030538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_42
+      rect:
+        serializedVersion: 2
+        x: 2226
+        y: 555
+        width: 337
+        height: 354
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a133429bad0c4d4d872e47cf8a616ed
+      internalID: -456421217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_43
+      rect:
+        serializedVersion: 2
+        x: 2594
+        y: 555
+        width: 339
+        height: 354
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19b506fa5a9528642af173a42e9c4ad2
+      internalID: -1268473200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_44
+      rect:
+        serializedVersion: 2
+        x: 2963
+        y: 555
+        width: 339
+        height: 354
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df07bde1fb4f5ee4fa5bf351ee57d393
+      internalID: -649001117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_45
+      rect:
+        serializedVersion: 2
+        x: 3333
+        y: 555
+        width: 337
+        height: 354
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7268a2d937a851741beda7189e9e9dc0
+      internalID: -2132372628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_46
+      rect:
+        serializedVersion: 2
+        x: 3701
+        y: 555
+        width: 339
+        height: 354
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39af3968a85a98d4caead11a8373c4e8
+      internalID: 294879049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_47
+      rect:
+        serializedVersion: 2
+        x: 4070
+        y: 555
+        width: 339
+        height: 354
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28242e0fbf830b84eb77f7df1e237ca8
+      internalID: -1852091434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_48
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 53
+        width: 337
+        height: 354
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43656c295ac082745acd7bd396261878
+      internalID: -363979935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_49
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 53
+        width: 339
+        height: 354
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3669835088244f742b9af411a96388b6
+      internalID: 1103205415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_50
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 53
+        width: 339
+        height: 354
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e7c27d746b610944b70fe6690485cbb
+      internalID: 1887122482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_51
+      rect:
+        serializedVersion: 2
+        x: 1119
+        y: 53
+        width: 337
+        height: 354
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43310b449bbdd35438836d7664ee9097
+      internalID: -127388812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_52
+      rect:
+        serializedVersion: 2
+        x: 1487
+        y: 53
+        width: 339
+        height: 354
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecfb4ad8c09f2384e8dac3d0e5f35a7b
+      internalID: -927191086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saut_A_Fall_Beepo_SpriteSheet_53
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 53
+        width: 339
+        height: 354
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d465789025ffb246b6ae97410c22489
+      internalID: -1030593500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Saut_A_Fall_Beepo_SpriteSheet_44: -649001117
+      Saut_A_Fall_Beepo_SpriteSheet_27: -1436994387
+      Saut_A_Fall_Beepo_SpriteSheet_12: -1895767005
+      Saut_A_Fall_Beepo_SpriteSheet_32: -1596593764
+      Saut_A_Fall_Beepo_SpriteSheet_0: 741178785
+      Saut_A_Fall_Beepo_SpriteSheet_8: -84048890
+      Saut_A_Fall_Beepo_SpriteSheet_41: -1410030538
+      Saut_A_Fall_Beepo_SpriteSheet_16: -857761433
+      Saut_A_Fall_Beepo_SpriteSheet_48: -363979935
+      Saut_A_Fall_Beepo_SpriteSheet_3: -1957298537
+      Saut_A_Fall_Beepo_SpriteSheet_14: -860291486
+      Saut_A_Fall_Beepo_SpriteSheet_43: -1268473200
+      Saut_A_Fall_Beepo_SpriteSheet_11: 1579177603
+      Saut_A_Fall_Beepo_SpriteSheet_5: 964170265
+      Saut_A_Fall_Beepo_SpriteSheet_13: -346384750
+      Saut_A_Fall_Beepo_SpriteSheet_20: -567025790
+      Saut_A_Fall_Beepo_SpriteSheet_7: -148788402
+      Saut_A_Fall_Beepo_SpriteSheet_19: -363456687
+      Saut_A_Fall_Beepo_SpriteSheet_40: -1564553801
+      Saut_A_Fall_Beepo_SpriteSheet_4: 397513916
+      Saut_A_Fall_Beepo_SpriteSheet_42: -456421217
+      Saut_A_Fall_Beepo_SpriteSheet_2: -461943907
+      Saut_A_Fall_Beepo_SpriteSheet_49: 1103205415
+      Saut_A_Fall_Beepo_SpriteSheet_50: 1887122482
+      Saut_A_Fall_Beepo_SpriteSheet_51: -127388812
+      Saut_A_Fall_Beepo_SpriteSheet_38: -1837248987
+      Saut_A_Fall_Beepo_SpriteSheet_1: -1443169776
+      Saut_A_Fall_Beepo_SpriteSheet_22: 1837629115
+      Saut_A_Fall_Beepo_SpriteSheet_53: -1030593500
+      Saut_A_Fall_Beepo_SpriteSheet_23: 859477229
+      Saut_A_Fall_Beepo_SpriteSheet_18: -1128294835
+      Saut_A_Fall_Beepo_SpriteSheet_47: -1852091434
+      Saut_A_Fall_Beepo_SpriteSheet_33: 15248401
+      Saut_A_Fall_Beepo_SpriteSheet_26: 543090709
+      Saut_A_Fall_Beepo_SpriteSheet_24: 1868807443
+      Saut_A_Fall_Beepo_SpriteSheet_17: 560007758
+      Saut_A_Fall_Beepo_SpriteSheet_31: -1218881779
+      Saut_A_Fall_Beepo_SpriteSheet_21: 1867829737
+      Saut_A_Fall_Beepo_SpriteSheet_35: -1312282070
+      Saut_A_Fall_Beepo_SpriteSheet_29: -1639722986
+      Saut_A_Fall_Beepo_SpriteSheet_36: -1484282089
+      Saut_A_Fall_Beepo_SpriteSheet_6: -1616763372
+      Saut_A_Fall_Beepo_SpriteSheet_25: -1355697119
+      Saut_A_Fall_Beepo_SpriteSheet_45: -2132372628
+      Saut_A_Fall_Beepo_SpriteSheet_34: 2133404394
+      Saut_A_Fall_Beepo_SpriteSheet_9: -1711637301
+      Saut_A_Fall_Beepo_SpriteSheet_15: -1116900758
+      Saut_A_Fall_Beepo_SpriteSheet_46: 294879049
+      Saut_A_Fall_Beepo_SpriteSheet_52: -927191086
+      Saut_A_Fall_Beepo_SpriteSheet_30: 938567525
+      Saut_A_Fall_Beepo_SpriteSheet_39: -1002094365
+      Saut_A_Fall_Beepo_SpriteSheet_28: 1614548505
+      Saut_A_Fall_Beepo_SpriteSheet_37: 725998405
+      Saut_A_Fall_Beepo_SpriteSheet_10: 2027202833
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

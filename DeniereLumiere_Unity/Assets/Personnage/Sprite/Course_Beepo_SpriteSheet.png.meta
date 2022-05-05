@@ -1,0 +1,892 @@
+fileFormatVersion: 2
+guid: 1f37d68aaa4f9c94398b00a7e43f4909
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Course_Beepo_SpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 1060
+        width: 330
+        height: 353
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c01af5c87fa17a4a89151e5f450b0ce
+      internalID: -1027662383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Course_Beepo_SpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 1060
+        width: 331
+        height: 353
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d268963a378e354ba0f5331574a9acf
+      internalID: 1593809099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Course_Beepo_SpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 1060
+        width: 330
+        height: 355
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18309db89b48f564399554c15e0392da
+      internalID: 263249454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Course_Beepo_SpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 1123
+        y: 1060
+        width: 333
+        height: 357
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96889e4dbc8531548ae2d367d9681db8
+      internalID: -1754053685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Course_Beepo_SpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 1491
+        y: 1061
+        width: 335
+        height: 356
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d6b70abc858b204cb1ae696837cd4a9
+      internalID: -1916329761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Course_Beepo_SpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 1858
+        y: 1061
+        width: 335
+        height: 358
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44d64333af436534b9322f5fa826d6f6
+      internalID: 209003459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Course_Beepo_SpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 2226
+        y: 1061
+        width: 337
+        height: 360
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12df0ca13486a0941b2578fce277b2e8
+      internalID: -569520299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Course_Beepo_SpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 2593
+        y: 1063
+        width: 340
+        height: 358
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f1f5d2f2ee6d4d4fb355a8d05bcbf6d
+      internalID: -409747091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Course_Beepo_SpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 2961
+        y: 1063
+        width: 339
+        height: 358
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f344eee0ddeba3478c53647f7bc68a9
+      internalID: 1887093678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Course_Beepo_SpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 3333
+        y: 1060
+        width: 337
+        height: 355
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09ee5103c346f7b4cae5d70d25e50700
+      internalID: 1620970178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Course_Beepo_SpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 3707
+        y: 1058
+        width: 333
+        height: 350
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0139d0d59dfc51141a6f2c66a0897c8b
+      internalID: -119236274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Course_Beepo_SpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 4079
+        y: 1056
+        width: 328
+        height: 346
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76865423b78724a4e9dc99d06793b27d
+      internalID: 219084720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Course_Beepo_SpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 555
+        width: 328
+        height: 339
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1191cce729b6ed4d8bcea891355a596
+      internalID: -1518899808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Course_Beepo_SpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 554
+        width: 329
+        height: 333
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89119415588540b44bd2869568efd28f
+      internalID: -1676144049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Course_Beepo_SpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 554
+        width: 325
+        height: 327
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4aff6460fd768e4c945b5df1574cb0a
+      internalID: -814885519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Course_Beepo_SpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 1132
+        y: 555
+        width: 324
+        height: 322
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3063289fb15d5d469ff47267c3fa886
+      internalID: -1351743521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Course_Beepo_SpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 1504
+        y: 555
+        width: 322
+        height: 315
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34f96523f020ec84b92300e9434107d6
+      internalID: -1836745341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Course_Beepo_SpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 1876
+        y: 555
+        width: 318
+        height: 309
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad3c8b180cfa4e8449b5b6c68148b368
+      internalID: -2120238018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Course_Beepo_SpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 2241
+        y: 555
+        width: 322
+        height: 315
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3962af023f5042949937da87bcd1cc36
+      internalID: -1797002110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Course_Beepo_SpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 2609
+        y: 555
+        width: 324
+        height: 322
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4224984589fea8e4d9718b4a323d8b06
+      internalID: 143397870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Course_Beepo_SpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 2974
+        y: 557
+        width: 326
+        height: 328
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f417d0d019baf1b4e9ed94d2ca9d3c58
+      internalID: 1955488072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Course_Beepo_SpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 3342
+        y: 557
+        width: 328
+        height: 334
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d3016d87ca8348488612ae29ac6b1b6
+      internalID: 958576131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Course_Beepo_SpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 3709
+        y: 555
+        width: 331
+        height: 343
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d9fcede9f1769848b472bf38b323109
+      internalID: 121814290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Course_Beepo_SpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 4077
+        y: 555
+        width: 330
+        height: 350
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 928752d54aa411d46b69c7e10af9c6a5
+      internalID: -1391361553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Course_Beepo_SpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 51
+        width: 337
+        height: 357
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4462a01b40da82843950481bde50ba04
+      internalID: 1665387946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Course_Beepo_SpriteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 51
+        width: 342
+        height: 363
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e14f5b1c66646004ba4732327e76e7aa
+      internalID: -1838592472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Course_Beepo_SpriteSheet_26
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 51
+        width: 340
+        height: 365
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bc414ed8bd7fe140bb80a57d2ac810b
+      internalID: 1313242712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Course_Beepo_SpriteSheet_27
+      rect:
+        serializedVersion: 2
+        x: 1117
+        y: 51
+        width: 339
+        height: 363
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6755fdc14b2eb4240bd126129df6d0eb
+      internalID: 1292372243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Course_Beepo_SpriteSheet_28
+      rect:
+        serializedVersion: 2
+        x: 1489
+        y: 51
+        width: 337
+        height: 363
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03f0b16cf77c1794eb5f2cf62324eb41
+      internalID: -1690925461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Course_Beepo_SpriteSheet_29
+      rect:
+        serializedVersion: 2
+        x: 1858
+        y: 53
+        width: 336
+        height: 359
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff4ecfc3d75378d4b97e7fe04d4eec78
+      internalID: 1000747293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Course_Beepo_SpriteSheet_30
+      rect:
+        serializedVersion: 2
+        x: 2228
+        y: 53
+        width: 335
+        height: 359
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bad1be82a711c51439645406909446cd
+      internalID: -1973241005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Course_Beepo_SpriteSheet_31
+      rect:
+        serializedVersion: 2
+        x: 2600
+        y: 53
+        width: 333
+        height: 357
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26bea85ed81199a45ad667fe0c21f7ed
+      internalID: 1319563158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Course_Beepo_SpriteSheet_32
+      rect:
+        serializedVersion: 2
+        x: 2970
+        y: 53
+        width: 331
+        height: 357
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23728de2cf167ab40b96e1975a9ee000
+      internalID: -2012456109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Course_Beepo_SpriteSheet_33
+      rect:
+        serializedVersion: 2
+        x: 3339
+        y: 53
+        width: 331
+        height: 356
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8447a9fd8a2869f4984e357ca7b2cfe4
+      internalID: -312356337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Course_Beepo_SpriteSheet_34
+      rect:
+        serializedVersion: 2
+        x: 3709
+        y: 53
+        width: 331
+        height: 354
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdbae03f765447e4aa8c19e135de589a
+      internalID: 215004530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Course_Beepo_SpriteSheet_13: -1676144049
+      Course_Beepo_SpriteSheet_6: -569520299
+      Course_Beepo_SpriteSheet_7: -409747091
+      Course_Beepo_SpriteSheet_16: -1836745341
+      Course_Beepo_SpriteSheet_30: -1973241005
+      Course_Beepo_SpriteSheet_8: 1887093678
+      Course_Beepo_SpriteSheet_24: 1665387946
+      Course_Beepo_SpriteSheet_20: 1955488072
+      Course_Beepo_SpriteSheet_25: -1838592472
+      Course_Beepo_SpriteSheet_29: 1000747293
+      Course_Beepo_SpriteSheet_4: -1916329761
+      Course_Beepo_SpriteSheet_12: -1518899808
+      Course_Beepo_SpriteSheet_1: 1593809099
+      Course_Beepo_SpriteSheet_27: 1292372243
+      Course_Beepo_SpriteSheet_2: 263249454
+      Course_Beepo_SpriteSheet_34: 215004530
+      Course_Beepo_SpriteSheet_32: -2012456109
+      Course_Beepo_SpriteSheet_19: 143397870
+      Course_Beepo_SpriteSheet_22: 121814290
+      Course_Beepo_SpriteSheet_9: 1620970178
+      Course_Beepo_SpriteSheet_28: -1690925461
+      Course_Beepo_SpriteSheet_17: -2120238018
+      Course_Beepo_SpriteSheet_5: 209003459
+      Course_Beepo_SpriteSheet_18: -1797002110
+      Course_Beepo_SpriteSheet_26: 1313242712
+      Course_Beepo_SpriteSheet_33: -312356337
+      Course_Beepo_SpriteSheet_15: -1351743521
+      Course_Beepo_SpriteSheet_21: 958576131
+      Course_Beepo_SpriteSheet_31: 1319563158
+      Course_Beepo_SpriteSheet_14: -814885519
+      Course_Beepo_SpriteSheet_11: 219084720
+      Course_Beepo_SpriteSheet_3: -1754053685
+      Course_Beepo_SpriteSheet_10: -119236274
+      Course_Beepo_SpriteSheet_0: -1027662383
+      Course_Beepo_SpriteSheet_23: -1391361553
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -180,7 +180,7 @@ public class Joueur_Script : MonoBehaviour
                 // Faire sauter le personnage
                 rb_Joueur.AddForce(new Vector2(0, 1 * forceSaut));
                 a_Joueur.SetTrigger("Saut");
-                a_Joueur.SetBool("Atteri", false);
+                
             }
             // Si le personnage n'est pas sur le sol et peut faire un double saut...
             else if (!b_estAuSol && b_doubleSautPossible && b_doubleSautObtenu)
@@ -191,8 +191,8 @@ public class Joueur_Script : MonoBehaviour
                 rb_Joueur.AddForce(new Vector2(0, 1 * forceSaut));
                 b_doubleSautPossible = false;
                 doubleSautUIPouvoir.GetComponent<PouvoirUI>().peutUtiliserPouvoir = false;
-                a_Joueur.SetTrigger("Saut");
-                a_Joueur.SetBool("Atteri", false);
+                a_Joueur.SetTrigger("DoubleSaut");
+                
             }
         }
     }
@@ -256,6 +256,7 @@ public class Joueur_Script : MonoBehaviour
             rb_Joueur.velocity = Vector2.zero;
             f_directionDash = f_movX;
             dashUIPouvoir.GetComponent<PouvoirUI>().peutUtiliserPouvoir = false;
+            a_Joueur.SetTrigger("Dash");
             //b_dashPossible = false;
             if (f_movX == 0)
             {
@@ -282,19 +283,7 @@ public class Joueur_Script : MonoBehaviour
             f_cooldownDash -= 1;
         }
     }
-    /*void Courrir(InputAction.CallbackContext context)
-    {
-        Debug.Log(context.phase);
-        if (context.performed)
-        {
-            vitesseMaximale = vitesseMaximaleCourrir;
-            Debug.Log("course:True");
-        } else if (context.canceled)
-        {
-            Debug.Log("course:False");
-            vitesseMaximale = vitesseMaximaleMarche;
-        }
-    }*/
+   
 
     // Fonction d?tectant les collisions
     private void OnTriggerEnter2D(Collider2D collision)
@@ -311,11 +300,19 @@ public class Joueur_Script : MonoBehaviour
 
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
-        if (b_estAuSol == true)
+        if (b_estAuSol == true && a_Joueur.GetBool("Atteri") == false)
         {
             a_Joueur.SetBool("Atteri", true);
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Sol"))
+        {
+            a_Joueur.SetBool("Atteri", false);
         }
     }
 

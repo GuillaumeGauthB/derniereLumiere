@@ -31,7 +31,6 @@ public class degatPerso : MonoBehaviour
         if(viePerso <= 0)
         {
             mort = true;
-            
         }
         if (mort == true)
         {
@@ -52,7 +51,6 @@ public class degatPerso : MonoBehaviour
                 invincible = true;
                 ChangerCouleurRouge();
                 Invoke("Invincibilite", 2);
-
             }
 
             // Donner du knockback au personnage dépendamment de la position du personnage vs l'ennemi, qui va se désactiver après 0.5 secondes
@@ -103,6 +101,16 @@ public class degatPerso : MonoBehaviour
             {
                 gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(-f_posXEvP * 100, 30f));
             }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "coeur")
+        {
+            BarreDeVie.GetComponent<BarreDeVieController>().augmenterMaxBarreDeVie(10f);
+            BarreDeVie.GetComponent<BarreDeVieController>().soignerBarreDeVie(1000f);
+            Destroy(collision.gameObject);
         }
     }
 

@@ -1,0 +1,980 @@
+fileFormatVersion: 2
+guid: a7d1137fcdc2d5242a0e2ebf74b9fb2a
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Beepo_Dash_Sprite_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1561
+        width: 349
+        height: 355
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01167494d48e1d640b9608000fca56bf
+      internalID: -1212619707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beepo_Dash_Sprite_1
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 1559
+        width: 328
+        height: 357
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e03377daaf5557548a13b81c6c01de14
+      internalID: -1490390494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beepo_Dash_Sprite_2
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 1555
+        width: 329
+        height: 361
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcb78f24c2b87444988a9bb6b024b4f0
+      internalID: -356232605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beepo_Dash_Sprite_3
+      rect:
+        serializedVersion: 2
+        x: 1145
+        y: 1554
+        width: 328
+        height: 360
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c705084702e731148a6dfc2b9e76c81f
+      internalID: 637276205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beepo_Dash_Sprite_4
+      rect:
+        serializedVersion: 2
+        x: 1523
+        y: 1548
+        width: 325
+        height: 363
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 394e378d59f5d844aa8dcae20beeaed4
+      internalID: 2140043680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beepo_Dash_Sprite_5
+      rect:
+        serializedVersion: 2
+        x: 1882
+        y: 1553
+        width: 333
+        height: 361
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38ed3841f26ad7b4dbc802c25823b28c
+      internalID: -1090954284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beepo_Dash_Sprite_6
+      rect:
+        serializedVersion: 2
+        x: 2248
+        y: 1553
+        width: 337
+        height: 358
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e6e1cbb455a6e94c8487a7774d88016
+      internalID: 1027557834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beepo_Dash_Sprite_7
+      rect:
+        serializedVersion: 2
+        x: 2613
+        y: 1553
+        width: 341
+        height: 358
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e46cd6af68b2cf2408735063fc30c69e
+      internalID: -275999553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beepo_Dash_Sprite_8
+      rect:
+        serializedVersion: 2
+        x: 2979
+        y: 1553
+        width: 343
+        height: 358
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cb45d3aac2aa5647b40de019a62344a
+      internalID: 1734242389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beepo_Dash_Sprite_9
+      rect:
+        serializedVersion: 2
+        x: 3346
+        y: 1553
+        width: 346
+        height: 361
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8618c40635e4b7f408826e875ca2c284
+      internalID: -418485610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beepo_Dash_Sprite_10
+      rect:
+        serializedVersion: 2
+        x: 3713
+        y: 1553
+        width: 348
+        height: 367
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4c2d8abec22bb84095f53d2badea58c
+      internalID: 352456963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beepo_Dash_Sprite_11
+      rect:
+        serializedVersion: 2
+        x: 4085
+        y: 1553
+        width: 343
+        height: 363
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a0082381c4411947a0cb53819ee205e
+      internalID: -525529024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beepo_Dash_Sprite_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1049
+        width: 371
+        height: 361
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e7d3f6feb598ad46b1f475007afb80d
+      internalID: 884755188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beepo_Dash_Sprite_13
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 1049
+        width: 335
+        height: 359
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d9eaa700846079499d60af8bdd87516
+      internalID: -275488605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beepo_Dash_Sprite_14
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 1049
+        width: 329
+        height: 359
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18e25b49c69810c48b3e077623b6f482
+      internalID: 1573875555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beepo_Dash_Sprite_15
+      rect:
+        serializedVersion: 2
+        x: 1149
+        y: 1049
+        width: 329
+        height: 359
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4289d3b2be0329d4a862ac807d5097a3
+      internalID: 341788594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beepo_Dash_Sprite_16
+      rect:
+        serializedVersion: 2
+        x: 1521
+        y: 1049
+        width: 326
+        height: 361
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: feec6b5cae8fc764987e6765bde3c1bc
+      internalID: -1742753961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beepo_Dash_Sprite_17
+      rect:
+        serializedVersion: 2
+        x: 1891
+        y: 1049
+        width: 324
+        height: 361
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8e4a236e03c3f2499dbac1ade509ab3
+      internalID: 624369440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beepo_Dash_Sprite_18
+      rect:
+        serializedVersion: 2
+        x: 2258
+        y: 1049
+        width: 327
+        height: 361
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a3bf837611a3c841b271d083e2173fc
+      internalID: -1295211360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beepo_Dash_Sprite_19
+      rect:
+        serializedVersion: 2
+        x: 2624
+        y: 1049
+        width: 330
+        height: 359
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 271598ddb4ddc614ebf2d1edfc87bdb3
+      internalID: 1748441176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beepo_Dash_Sprite_20
+      rect:
+        serializedVersion: 2
+        x: 2987
+        y: 1049
+        width: 335
+        height: 359
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b09511bcbddb70142bf588bf07ec931c
+      internalID: -1333694322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beepo_Dash_Sprite_21
+      rect:
+        serializedVersion: 2
+        x: 3350
+        y: 1049
+        width: 342
+        height: 359
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b52f711fd174abe49b8d2d8f6a99e235
+      internalID: 687280737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beepo_Dash_Sprite_22
+      rect:
+        serializedVersion: 2
+        x: 3713
+        y: 1047
+        width: 348
+        height: 363
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1173629eaba55042b3e6f0473d7baf5
+      internalID: 444457460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beepo_Dash_Sprite_23
+      rect:
+        serializedVersion: 2
+        x: 4087
+        y: 1049
+        width: 341
+        height: 359
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53e82afd6ac3191478788566399e0a44
+      internalID: -1658546641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beepo_Dash_Sprite_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 547
+        width: 371
+        height: 359
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2410ddaf29b622346b2e3d9508803f54
+      internalID: -143812218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beepo_Dash_Sprite_25
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 547
+        width: 330
+        height: 359
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9173d03fe4f20b94c8c1aa2f1aa580bf
+      internalID: 520768262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beepo_Dash_Sprite_26
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 547
+        width: 326
+        height: 359
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11619112bb9707b4984fbd6dddcd6e41
+      internalID: -1022008922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beepo_Dash_Sprite_27
+      rect:
+        serializedVersion: 2
+        x: 1154
+        y: 547
+        width: 324
+        height: 360
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 507da68d969a7774dbb5bccc8e4082c2
+      internalID: -2064388391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beepo_Dash_Sprite_28
+      rect:
+        serializedVersion: 2
+        x: 1521
+        y: 547
+        width: 326
+        height: 359
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b21ab26ea743724399e4fd12dc324e5
+      internalID: -134970798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beepo_Dash_Sprite_29
+      rect:
+        serializedVersion: 2
+        x: 1887
+        y: 547
+        width: 328
+        height: 359
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a6593ed1c9812a468e51c51afffb842
+      internalID: -623895275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beepo_Dash_Sprite_30
+      rect:
+        serializedVersion: 2
+        x: 2252
+        y: 547
+        width: 333
+        height: 359
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80507348439b3a342be7323f3af6c30a
+      internalID: -301947611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beepo_Dash_Sprite_31
+      rect:
+        serializedVersion: 2
+        x: 2615
+        y: 547
+        width: 339
+        height: 359
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de3c1ef6fa7bcb746a9361fdbfd7176a
+      internalID: -664532909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beepo_Dash_Sprite_32
+      rect:
+        serializedVersion: 2
+        x: 2978
+        y: 547
+        width: 344
+        height: 362
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b248ded5ebc5ae24eb1c711c7bdafe51
+      internalID: 1583584432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beepo_Dash_Sprite_33
+      rect:
+        serializedVersion: 2
+        x: 3346
+        y: 547
+        width: 346
+        height: 364
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb34d04049404954ca3eff2cbf5e5370
+      internalID: 792671504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beepo_Dash_Sprite_34
+      rect:
+        serializedVersion: 2
+        x: 3716
+        y: 547
+        width: 345
+        height: 364
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a475f19d89decf4a91c010e30fa8685
+      internalID: 1334419740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beepo_Dash_Sprite_35
+      rect:
+        serializedVersion: 2
+        x: 4083
+        y: 547
+        width: 345
+        height: 366
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c800cb9392212348aa6d0fa0100fdd8
+      internalID: 1996101194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beepo_Dash_Sprite_36
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 44
+        width: 348
+        height: 366
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2049c682a777e4942b83310fed202649
+      internalID: 1771653620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beepo_Dash_Sprite_37
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 44
+        width: 348
+        height: 366
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4db3b2ef5e5ee4d428045ae1fd59e8c2
+      internalID: 1641270716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beepo_Dash_Sprite_38
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 44
+        width: 346
+        height: 366
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26c8cde0fb0a20d498537bf8c5ab262a
+      internalID: 1370720180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Beepo_Dash_Sprite_34: 1334419740
+      Beepo_Dash_Sprite_8: 1734242389
+      Beepo_Dash_Sprite_35: 1996101194
+      Beepo_Dash_Sprite_38: 1370720180
+      Beepo_Dash_Sprite_13: -275488605
+      Beepo_Dash_Sprite_1: -1490390494
+      Beepo_Dash_Sprite_20: -1333694322
+      Beepo_Dash_Sprite_36: 1771653620
+      Beepo_Dash_Sprite_4: 2140043680
+      Beepo_Dash_Sprite_28: -134970798
+      Beepo_Dash_Sprite_3: 637276205
+      Beepo_Dash_Sprite_32: 1583584432
+      Beepo_Dash_Sprite_11: -525529024
+      Beepo_Dash_Sprite_19: 1748441176
+      Beepo_Dash_Sprite_17: 624369440
+      Beepo_Dash_Sprite_2: -356232605
+      Beepo_Dash_Sprite_9: -418485610
+      Beepo_Dash_Sprite_12: 884755188
+      Beepo_Dash_Sprite_24: -143812218
+      Beepo_Dash_Sprite_6: 1027557834
+      Beepo_Dash_Sprite_26: -1022008922
+      Beepo_Dash_Sprite_22: 444457460
+      Beepo_Dash_Sprite_16: -1742753961
+      Beepo_Dash_Sprite_29: -623895275
+      Beepo_Dash_Sprite_31: -664532909
+      Beepo_Dash_Sprite_18: -1295211360
+      Beepo_Dash_Sprite_27: -2064388391
+      Beepo_Dash_Sprite_14: 1573875555
+      Beepo_Dash_Sprite_25: 520768262
+      Beepo_Dash_Sprite_33: 792671504
+      Beepo_Dash_Sprite_15: 341788594
+      Beepo_Dash_Sprite_5: -1090954284
+      Beepo_Dash_Sprite_37: 1641270716
+      Beepo_Dash_Sprite_23: -1658546641
+      Beepo_Dash_Sprite_7: -275999553
+      Beepo_Dash_Sprite_10: 352456963
+      Beepo_Dash_Sprite_21: 687280737
+      Beepo_Dash_Sprite_0: -1212619707
+      Beepo_Dash_Sprite_30: -301947611
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
