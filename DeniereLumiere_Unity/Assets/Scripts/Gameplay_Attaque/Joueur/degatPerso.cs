@@ -30,7 +30,7 @@ public class degatPerso : MonoBehaviour
         if(viePerso <= 0)
         {
 
-            mort = true;
+            Joueur_Script.mort = true;
 
         }
         //if (Joueur_Script.mort == true)
