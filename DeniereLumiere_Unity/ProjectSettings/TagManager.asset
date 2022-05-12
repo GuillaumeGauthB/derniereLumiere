@@ -11,6 +11,7 @@ TagManager:
   - limiteurCamera
   - tombe
   - coeur
+  - eventSystem
   layers:
   - Default
   - TransparentFX

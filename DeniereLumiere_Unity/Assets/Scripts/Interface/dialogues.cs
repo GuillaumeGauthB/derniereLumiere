@@ -35,6 +35,14 @@ public class dialogues : MonoBehaviour
         // Vider la bo?te de dialogue
         textbox.text = "";
     }
+
+    private void Update()
+    {
+        if(Time.timeScale == 0)
+        {
+            declencherTexteGO.SetActive(false);
+        }
+    }
     // La couroutine faisant appara?tre les lettres de la ligne ? imprimer
     IEnumerator texte(string[] test)
     {
@@ -57,7 +65,7 @@ public class dialogues : MonoBehaviour
     {
         Debug.Log("lire texte");
         // Lorsque la fonction est appel?e...
-        if (context.started && collisionTexte)
+        if (context.started && collisionTexte && Time.timeScale != 0)
         {
             declencherTexteGO.SetActive(false);
             texteActivee = true;
@@ -77,7 +85,7 @@ public class dialogues : MonoBehaviour
     {
 
         // Lorsque la fonction est appel?e...
-        if (context.canceled && collisionTexte)
+        if (context.canceled && collisionTexte && Time.timeScale != 0)
         {
             // ... et que le contenu imprim? n'est pas le m?me que celui qui devrait l'?tre...
             if (textbox.text.ToString() != sourceText.GetComponent<ecritureTexte>().texte[nb])
