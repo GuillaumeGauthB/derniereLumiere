@@ -50,6 +50,8 @@ public class degatEnnemi : MonoBehaviour
             // Lorsque l'ennemi n'a plus de vie, le tuer
             if (ennemiVie <= 0)
             {
+                Animator animationBoss = GetComponent<Animator>();
+                animationBoss.SetBool("Mort", true);
                 ennemiMort = true;
             
 

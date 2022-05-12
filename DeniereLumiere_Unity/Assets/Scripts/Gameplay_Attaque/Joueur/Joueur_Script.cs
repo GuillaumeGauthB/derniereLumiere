@@ -85,9 +85,6 @@ public class Joueur_Script : MonoBehaviour
     }
     private void Update()
     {
-
-        Cursor.visible = false;
-
         // Verifier si le personnage est sur le sol
         b_estAuSol = Physics2D.OverlapCircle(checkSol.position, 0.3f, solLayer);
 
@@ -104,6 +101,7 @@ public class Joueur_Script : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Cursor.visible = false;
         //Debug.Log(f_movX);
         if (!estDash && !GetComponent<dialogues>().texteActivee && !mort)
         {
