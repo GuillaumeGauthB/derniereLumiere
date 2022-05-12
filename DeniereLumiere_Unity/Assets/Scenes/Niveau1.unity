@@ -9523,11 +9523,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1126379899 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7253312892516528716, guid: f174b2f331f8d486695efa137920e60d, type: 3}
-  m_PrefabInstance: {fileID: 1830449394}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1132536121
 GameObject:
   m_ObjectHideFlags: 0
@@ -18201,10 +18196,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73236b4f6047dd046897d7b5261e718d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textbox: {fileID: 0}
-  textGameObject: {fileID: 0}
+  textbox: {fileID: 682916216}
+  textGameObject: {fileID: 682916217}
   sourceText: {fileID: 0}
-
+  declencherTexteGO: {fileID: 1567808461}
+  texteActivee: 0
+  uiDash: {fileID: 503181170}
+  uiTir: {fileID: 593102502}
+  uiTirLuciolesCount: {fileID: 1620038707}
+  uiStun: {fileID: 975906004}
+  uiDoubleSaut: {fileID: 2065389179}
 --- !u!1001 &1956479163475836541
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18735,11 +18736,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5649241242418429249, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -35.9
+      value: 12.2
       objectReference: {fileID: 0}
     - target: {fileID: 5649241242418429249, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -37.5
+      value: 0.93
       objectReference: {fileID: 0}
     - target: {fileID: 5649241242418429249, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -18785,6 +18786,34 @@ PrefabInstance:
       propertyPath: m_UIInputModule
       value: 
       objectReference: {fileID: 1583935137}
+    - target: {fileID: 5649241242418429256, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649241242418429256, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: m_ActionEvents.Array.data[25].m_ActionId
+      value: 7fbc424d-1ecc-430c-a65b-c87833fa4e6f
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649241242418429256, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: m_ActionEvents.Array.data[26].m_ActionId
+      value: 784ddcd6-b2c3-453e-836a-ea00e16b92f6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649241242418429256, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: m_ActionEvents.Array.data[27].m_ActionId
+      value: f50e2f34-db24-4e56-a513-9413270d4cc8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649241242418429256, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: m_ActionEvents.Array.data[25].m_ActionName
+      value: Mort/LoadScene[/Keyboard/anyKey]
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649241242418429256, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: m_ActionEvents.Array.data[26].m_ActionName
+      value: Dialogues/LireTexte[/Keyboard/w]
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649241242418429256, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: m_ActionEvents.Array.data[27].m_ActionName
+      value: Dialogues/SkipperTexte[/Keyboard/space]
+      objectReference: {fileID: 0}
     - target: {fileID: 5649241242418429261, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
       propertyPath: dashUIPouvoir
       value: 
@@ -18793,6 +18822,14 @@ PrefabInstance:
       propertyPath: doubleSautUIPouvoir
       value: 
       objectReference: {fileID: 2065389179}
+    - target: {fileID: 5649241242418429262, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: m_LinearDrag
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649241243863595745, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.29877892
+      objectReference: {fileID: 0}
     - target: {fileID: 5649241243863595745, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.5

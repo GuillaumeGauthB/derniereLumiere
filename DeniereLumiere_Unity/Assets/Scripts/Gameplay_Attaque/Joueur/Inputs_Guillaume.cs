@@ -66,7 +66,7 @@ public class Inputs_Guillaume : MonoBehaviour
 
             if (GetComponent<Joueur_Script>().modeSouris)
             {
-                Debug.Log(zoneViseSouris);
+                //Debug.Log(zoneViseSouris);
                 // Sauvegarder la valeur dans le monde de la position de la souris
                 v_sourisPosition = Camera.main.ScreenToWorldPoint(zoneViseSouris);
 
@@ -198,7 +198,7 @@ public class Inputs_Guillaume : MonoBehaviour
 
     public void ManetteTir(InputAction.CallbackContext context)
     {
-        Debug.Log("hahahahahahahahhahaAHHAAH");
+        
 
         //c_lineRenderer.enabled = true;
         // Sauvegarder la valeur dans le monde de la position de la souris
