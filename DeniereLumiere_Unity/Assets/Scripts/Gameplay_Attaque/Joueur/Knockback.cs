@@ -21,7 +21,7 @@ public class Knockback : MonoBehaviour
     private void OnTriggerStay2D(Collider2D other)
     {
         // Si le collider entre en collision avec un objet avec le tag ennemi...
-        if (other.tag == "ennemi")
+        if (other.tag == "ennemi" && other.GetComponent<Rigidbody2D>())
         {
             // Déterminer la position générale en x de l'ennemi
             v_posXEvP = other.transform.position.x - g_parent.transform.localPosition.x;

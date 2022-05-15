@@ -173,7 +173,7 @@ public class Joueur_Script : MonoBehaviour
                 // Faire sauter le personnage
                 rb_Joueur.AddForce(new Vector2(0, 1 * forceSaut));
                 a_Joueur.SetTrigger("Saut");
-                
+
             }
             // Si le personnage n'est pas sur le sol et peut faire un double saut...
             else if (!b_estAuSol && b_doubleSautPossible && doubleSautObtenu && !GetComponent<dialogues>().texteActivee)
@@ -185,7 +185,7 @@ public class Joueur_Script : MonoBehaviour
                 b_doubleSautPossible = false;
                 doubleSautUIPouvoir.GetComponent<PouvoirUI>().peutUtiliserPouvoir = false;
                 a_Joueur.SetTrigger("DoubleSaut");
-                
+
             }
         }
     }
@@ -262,7 +262,7 @@ public class Joueur_Script : MonoBehaviour
                 {
                     f_directionDash = 1;
                 }
-                
+
             }
 
         }
@@ -278,7 +278,7 @@ public class Joueur_Script : MonoBehaviour
             f_cooldownDash -= 1;
         }
     }
-   
+
 
     // Fonction d?tectant les collisions
     private void OnTriggerEnter2D(Collider2D collision)
