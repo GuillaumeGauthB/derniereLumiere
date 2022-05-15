@@ -8,8 +8,8 @@ using UnityEngine.SceneManagement;
 public class GestionnaireSceneMort : MonoBehaviour
 {
     /** Script de gestion du fade in et out de la scene de mort et de la mort dans niveau1
-     * Créé par Guillaume Gauthier-Benoît
-     * Dernière modification: 07/04/22
+     * Cr?? par Guillaume Gauthier-Beno?t
+     * Derni?re modification: 07/04/22
      */
     public GameObject lumiere, // le gameobject de la lumiere dans SceneMort
         fadeOut; // le gameobject du fadeout dans niveau1
@@ -29,9 +29,12 @@ public class GestionnaireSceneMort : MonoBehaviour
         normal = new Color(1, 1, 1, 0.3f);
         oriFade = new Color(0, 0, 0, 0);
         normalFade = new Color(0, 0, 0, 1);
-        etesMort.GetComponent<Animator>().enabled = false; //Desactiver les animator des elements dans SceneMort
-        cliquerSur.GetComponent<Animator>().enabled = false;
-        lumiere.gameObject.SetActive(false);
+        if(SceneManager.GetActiveScene().name == "SceneMort")
+        {
+            etesMort.GetComponent<Animator>().enabled = false; //Desactiver les animator des elements dans SceneMort
+            cliquerSur.GetComponent<Animator>().enabled = false;
+            lumiere.gameObject.SetActive(false);
+        }
     }
 
     // IEnumerator gerant les animations de fade in fade out

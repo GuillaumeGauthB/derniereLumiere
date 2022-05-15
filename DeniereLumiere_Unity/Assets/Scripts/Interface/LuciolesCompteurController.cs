@@ -8,14 +8,14 @@ public class LuciolesCompteurController : MonoBehaviour
     [Header("String Compteur Lucioles")]
     public TextMeshProUGUI compteurString;
 
-    private int MINIMUM_LUCIOLES = 0;
-    private int MAXIMUM_LUCIOLES = 12;
+    private const int MINIMUM_LUCIOLES = 0;
+    private const int MAXIMUM_LUCIOLES = 12;
 
     private int i_compteur;
 
     private void Awake()
     {
-        setNbreLucioles(12);
+        setNbreLucioles(8);
     }
     /*private void Update()
     {

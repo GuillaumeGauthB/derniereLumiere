@@ -10,6 +10,8 @@ TagManager:
   - checkpoint
   - limiteurCamera
   - tombe
+  - coeur
+  - eventSystem
   layers:
   - Default
   - TransparentFX
