@@ -1,0 +1,1420 @@
+fileFormatVersion: 2
+guid: cc31bba20ecb28d4182a5b1c9bb2a16f
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 2064
+        width: 337
+        height: 355
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ec8b5213c36d0841ae9d92934251dd8
+      internalID: -599489208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_1
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 2064
+        width: 336
+        height: 355
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ea4685deaaa0da45b3adea81fec89f4
+      internalID: -1626726925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_2
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 2064
+        width: 335
+        height: 357
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3745f24552db7b243a1766dfa84d2cef
+      internalID: 540413023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_3
+      rect:
+        serializedVersion: 2
+        x: 1121
+        y: 2064
+        width: 335
+        height: 357
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffec61fed42b29a41b4734b6896dcf86
+      internalID: 1243203507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_4
+      rect:
+        serializedVersion: 2
+        x: 1489
+        y: 2064
+        width: 335
+        height: 359
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 003d021f27075454d9e87420def6ccb7
+      internalID: 2109925382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_5
+      rect:
+        serializedVersion: 2
+        x: 1858
+        y: 2064
+        width: 335
+        height: 359
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba607fb81f422a541b4d0196573170f8
+      internalID: 1246834046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_6
+      rect:
+        serializedVersion: 2
+        x: 2228
+        y: 2064
+        width: 333
+        height: 361
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8408440b52e6d954993c4b470571f55a
+      internalID: 396101920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_7
+      rect:
+        serializedVersion: 2
+        x: 2598
+        y: 2064
+        width: 332
+        height: 361
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cb2803d9a03b9c42a73d66b88b9811a
+      internalID: -1975562624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_8
+      rect:
+        serializedVersion: 2
+        x: 2968
+        y: 2064
+        width: 330
+        height: 363
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec7019922f1413a4bad40174bc94e536
+      internalID: -1974675496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_9
+      rect:
+        serializedVersion: 2
+        x: 3335
+        y: 2064
+        width: 333
+        height: 363
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9ca8df5d43f1fc49b52f0e27a17f075
+      internalID: -1342638459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_10
+      rect:
+        serializedVersion: 2
+        x: 3705
+        y: 2064
+        width: 331
+        height: 365
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd1184fbb30deec4381532a4cc491fa2
+      internalID: -1181811581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_11
+      rect:
+        serializedVersion: 2
+        x: 4075
+        y: 2064
+        width: 330
+        height: 366
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a650838dd4537141ad4742ab62c4a7c
+      internalID: -2062109720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_12
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1561
+        width: 329
+        height: 367
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 362a2be239205af44bc3301639c9a963
+      internalID: 1831242851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_13
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1561
+        width: 330
+        height: 367
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0b116dd945263141b1cec294cffb1dc
+      internalID: -1313139550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_14
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 1562
+        width: 328
+        height: 368
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8805594da0b5d64428c6e3f3fb080c73
+      internalID: -785325273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_15
+      rect:
+        serializedVersion: 2
+        x: 1123
+        y: 1561
+        width: 329
+        height: 369
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ef16a594ee8cdb4492b5ca4bd811b51
+      internalID: -1316018506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_16
+      rect:
+        serializedVersion: 2
+        x: 1493
+        y: 1561
+        width: 326
+        height: 371
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d944ad88653a2c45bd4d673b1f9c863
+      internalID: -745267218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_17
+      rect:
+        serializedVersion: 2
+        x: 1863
+        y: 1562
+        width: 326
+        height: 370
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84de8be4c9ed8f840a8af9255086cea0
+      internalID: 164219953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_18
+      rect:
+        serializedVersion: 2
+        x: 2231
+        y: 1561
+        width: 327
+        height: 373
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cf44d9b55bfe2b4ba3507bd8b1ba5db
+      internalID: 2103171824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_19
+      rect:
+        serializedVersion: 2
+        x: 2600
+        y: 1561
+        width: 326
+        height: 373
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0b8bcf7e90e59e409456875e15d6b4c
+      internalID: -660735349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_20
+      rect:
+        serializedVersion: 2
+        x: 2970
+        y: 1562
+        width: 325
+        height: 374
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3cbc7e44ca2cd64696d1cc3c0f8c80e
+      internalID: 1395609840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_21
+      rect:
+        serializedVersion: 2
+        x: 3339
+        y: 1561
+        width: 325
+        height: 376
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b741598208129c4d9915acecd2c1617
+      internalID: -1767414881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_22
+      rect:
+        serializedVersion: 2
+        x: 3709
+        y: 1562
+        width: 323
+        height: 377
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 199beba41e3ff304baef8c888cd41213
+      internalID: -1392808397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_23
+      rect:
+        serializedVersion: 2
+        x: 4077
+        y: 1561
+        width: 324
+        height: 378
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f36b2fef702375a4abfb3d53d57e83ed
+      internalID: 861744987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_24
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 1059
+        width: 323
+        height: 378
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb10705c8c312fd45930b1b0ed4f9cc6
+      internalID: -1170322055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_25
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 1059
+        width: 322
+        height: 379
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bda3eb19bea0dd34694a6db674499aea
+      internalID: 562663053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_26
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 1059
+        width: 321
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 080b15a12fe634946b45d4fa0ecd370c
+      internalID: -85241684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_27
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 1059
+        width: 319
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7417656d68f18d547881d4ec4044236d
+      internalID: -1545697054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_28
+      rect:
+        serializedVersion: 2
+        x: 1497
+        y: 1059
+        width: 320
+        height: 382
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 746464a49e3aee243b0f23e8b698d3cc
+      internalID: 1421933902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_29
+      rect:
+        serializedVersion: 2
+        x: 1865
+        y: 1059
+        width: 320
+        height: 382
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fb00049a468d314db3b7790596fae73
+      internalID: -1077286193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_30
+      rect:
+        serializedVersion: 2
+        x: 2235
+        y: 1059
+        width: 319
+        height: 382
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36b7c0ed015c14c45b41918e536703e9
+      internalID: 540866099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_31
+      rect:
+        serializedVersion: 2
+        x: 2602
+        y: 1059
+        width: 322
+        height: 382
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a05e17443206d084f8a8407e87302cc5
+      internalID: 208099522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_32
+      rect:
+        serializedVersion: 2
+        x: 2972
+        y: 1059
+        width: 321
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2c58f17db5890646ac2f890d8be5dc0
+      internalID: -493908265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_33
+      rect:
+        serializedVersion: 2
+        x: 3340
+        y: 1059
+        width: 322
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d366ad49246c774d8b4bd67864949d4
+      internalID: 1254545830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_34
+      rect:
+        serializedVersion: 2
+        x: 3709
+        y: 1059
+        width: 322
+        height: 378
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 724c2aae1c724824bbe91cf02a6a459b
+      internalID: 378580503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_35
+      rect:
+        serializedVersion: 2
+        x: 4079
+        y: 1059
+        width: 322
+        height: 378
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e34d42abe39fe5747b49ec9c0326b0cd
+      internalID: -381551117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_36
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 555
+        width: 322
+        height: 378
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1030b12ece8f58144bca9548f10ba744
+      internalID: 547185306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_37
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 555
+        width: 323
+        height: 376
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ea77ca06ba9f9a429912966143f7a5b
+      internalID: 1123945699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_38
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 555
+        width: 323
+        height: 376
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0f4b06f263e8b7489ac65e55619ad6f
+      internalID: 1957018883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_39
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 555
+        width: 322
+        height: 374
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 567492f59e265ff4c844c46e102f3d4f
+      internalID: 1565727189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_40
+      rect:
+        serializedVersion: 2
+        x: 1497
+        y: 555
+        width: 322
+        height: 374
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4892e028b06fd7a4a97cb49fd97b98b6
+      internalID: 661273992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_41
+      rect:
+        serializedVersion: 2
+        x: 1867
+        y: 555
+        width: 322
+        height: 372
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e887c377b9128bf41802fa604dd8076f
+      internalID: -499547396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_42
+      rect:
+        serializedVersion: 2
+        x: 2237
+        y: 555
+        width: 322
+        height: 372
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aedc85bc1941a4d498a25ce0b7e730a6
+      internalID: -981275331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_43
+      rect:
+        serializedVersion: 2
+        x: 2605
+        y: 555
+        width: 323
+        height: 369
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3c1691487bead64fbd4e27a3968eea6
+      internalID: -1040660445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_44
+      rect:
+        serializedVersion: 2
+        x: 2974
+        y: 555
+        width: 323
+        height: 369
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc053b51b2af0c54ea2ead58d12028f0
+      internalID: -1372327185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_45
+      rect:
+        serializedVersion: 2
+        x: 3344
+        y: 555
+        width: 322
+        height: 369
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47dd082efa871874896c087ce040da84
+      internalID: -986843291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_46
+      rect:
+        serializedVersion: 2
+        x: 3713
+        y: 555
+        width: 323
+        height: 367
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0a8ba8c7f684084da344cbf910f3a97
+      internalID: 1929797369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_47
+      rect:
+        serializedVersion: 2
+        x: 4083
+        y: 555
+        width: 322
+        height: 367
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7a0cb7ddc75bb14caba68148ce95561
+      internalID: -1737731866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_48
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 53
+        width: 322
+        height: 365
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91f55bce68963e84c8203ea449d02f0b
+      internalID: -844113029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_49
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 53
+        width: 320
+        height: 363
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9491121b8dc36a4dbf25b778d345d1b
+      internalID: 1871413212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_50
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 53
+        width: 322
+        height: 363
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c12c864ce992c464cba18c3597dc7582
+      internalID: -1336516857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_51
+      rect:
+        serializedVersion: 2
+        x: 1130
+        y: 53
+        width: 324
+        height: 361
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f01606cfd7bf88469927652d37f609c
+      internalID: 1144328411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_52
+      rect:
+        serializedVersion: 2
+        x: 1497
+        y: 53
+        width: 327
+        height: 361
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 363694e862ecba04382e4eb6e672312b
+      internalID: -1753549000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_53
+      rect:
+        serializedVersion: 2
+        x: 1865
+        y: 53
+        width: 328
+        height: 359
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 451676f25cfcbac4db0e3a96c5724bff
+      internalID: -296034388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_54
+      rect:
+        serializedVersion: 2
+        x: 2232
+        y: 53
+        width: 331
+        height: 359
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 956be1a154af438458c0496560f8bcb1
+      internalID: -745238137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_55
+      rect:
+        serializedVersion: 2
+        x: 2600
+        y: 53
+        width: 332
+        height: 357
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 714380dcf9517b742a26d486a8ac2629
+      internalID: 1712196548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_56
+      rect:
+        serializedVersion: 2
+        x: 2968
+        y: 53
+        width: 332
+        height: 357
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1462b187b7d45474ebd7ea171383b54b
+      internalID: 382070449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_57
+      rect:
+        serializedVersion: 2
+        x: 3335
+        y: 53
+        width: 335
+        height: 355
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 799e761026faddf47bd325a0413cf717
+      internalID: -1080600946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Beepo_V2_58
+      rect:
+        serializedVersion: 2
+        x: 3703
+        y: 53
+        width: 337
+        height: 355
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79e699a108dc1ec42b19b568730de970
+      internalID: -284677554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Idle_Beepo_V2_41: -499547396
+      Idle_Beepo_V2_38: 1957018883
+      Idle_Beepo_V2_10: -1181811581
+      Idle_Beepo_V2_49: 1871413212
+      Idle_Beepo_V2_5: 1246834046
+      Idle_Beepo_V2_47: -1737731866
+      Idle_Beepo_V2_51: 1144328411
+      Idle_Beepo_V2_40: 661273992
+      Idle_Beepo_V2_2: 540413023
+      Idle_Beepo_V2_1: -1626726925
+      Idle_Beepo_V2_55: 1712196548
+      Idle_Beepo_V2_36: 547185306
+      Idle_Beepo_V2_22: -1392808397
+      Idle_Beepo_V2_57: -1080600946
+      Idle_Beepo_V2_32: -493908265
+      Idle_Beepo_V2_13: -1313139550
+      Idle_Beepo_V2_53: -296034388
+      Idle_Beepo_V2_9: -1342638459
+      Idle_Beepo_V2_35: -381551117
+      Idle_Beepo_V2_6: 396101920
+      Idle_Beepo_V2_12: 1831242851
+      Idle_Beepo_V2_30: 540866099
+      Idle_Beepo_V2_34: 378580503
+      Idle_Beepo_V2_8: -1974675496
+      Idle_Beepo_V2_4: 2109925382
+      Idle_Beepo_V2_14: -785325273
+      Idle_Beepo_V2_18: 2103171824
+      Idle_Beepo_V2_42: -981275331
+      Idle_Beepo_V2_29: -1077286193
+      Idle_Beepo_V2_48: -844113029
+      Idle_Beepo_V2_17: 164219953
+      Idle_Beepo_V2_25: 562663053
+      Idle_Beepo_V2_27: -1545697054
+      Idle_Beepo_V2_43: -1040660445
+      Idle_Beepo_V2_26: -85241684
+      Idle_Beepo_V2_0: -599489208
+      Idle_Beepo_V2_11: -2062109720
+      Idle_Beepo_V2_15: -1316018506
+      Idle_Beepo_V2_50: -1336516857
+      Idle_Beepo_V2_33: 1254545830
+      Idle_Beepo_V2_54: -745238137
+      Idle_Beepo_V2_46: 1929797369
+      Idle_Beepo_V2_37: 1123945699
+      Idle_Beepo_V2_56: 382070449
+      Idle_Beepo_V2_24: -1170322055
+      Idle_Beepo_V2_20: 1395609840
+      Idle_Beepo_V2_3: 1243203507
+      Idle_Beepo_V2_21: -1767414881
+      Idle_Beepo_V2_28: 1421933902
+      Idle_Beepo_V2_23: 861744987
+      Idle_Beepo_V2_31: 208099522
+      Idle_Beepo_V2_44: -1372327185
+      Idle_Beepo_V2_52: -1753549000
+      Idle_Beepo_V2_19: -660735349
+      Idle_Beepo_V2_58: -284677554
+      Idle_Beepo_V2_7: -1975562624
+      Idle_Beepo_V2_45: -986843291
+      Idle_Beepo_V2_39: 1565727189
+      Idle_Beepo_V2_16: -745267218
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
