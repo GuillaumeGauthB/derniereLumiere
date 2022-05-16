@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-/*Script cr?? par Jonathan Mores*/
-/*Derni?re modification 2022-03-09*/
+/*Script cree par Jonathan Mores*/
+/*Derni?re modification 2022-05-15*/
 public class Joueur_Script : MonoBehaviour
 {
     /* Script principal du personnage
