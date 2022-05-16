@@ -65,7 +65,7 @@ public class dialogues : MonoBehaviour
     {
         Debug.Log("lire texte");
         // Lorsque la fonction est appel?e...
-        if (context.started && collisionTexte && Time.timeScale != 0)
+        if (context.started && collisionTexte && Time.timeScale != 0 && !texteActivee)
         {
             declencherTexteGO.SetActive(false);
             texteActivee = true;
