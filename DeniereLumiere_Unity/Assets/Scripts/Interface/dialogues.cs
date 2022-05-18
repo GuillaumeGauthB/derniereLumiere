@@ -63,19 +63,17 @@ public class dialogues : MonoBehaviour
     // Fonction permettant d'enclencher la lecture du texte
     public void LireTexte(InputAction.CallbackContext context)
     {
-        Debug.Log("lire texte");
         // Lorsque la fonction est appel?e...
         if (context.started && collisionTexte && Time.timeScale != 0 && !texteActivee)
         {
             declencherTexteGO.SetActive(false);
             texteActivee = true;
-            Debug.Log("awa awa");
             // D?marrer l'animation pour faire appara?tre la boite de dialogue
             textGameObject.GetComponent<Animator>().SetBool("ouvertureTexte", true);
             // Commencer la coroutine du texte une seconde apr?s le d?but de l'animation
             Invoke("CommencerCoroutine", 1f);
             // Et changer le Action Map du joueur ? "LectureTexte," pour l'emp?cher de bouger lors de la  lecture
-            GetComponent<PlayerInput>().SwitchCurrentActionMap("LectureTexte");
+            GetComponent<PlayerInput>().SwitchCurrentActionMap("Dialogues");
             //Time.timeScale = 0;
         }
     }
@@ -105,7 +103,7 @@ public class dialogues : MonoBehaviour
             else if (textbox.text.ToString() == sourceText.GetComponent<ecritureTexte>().texte[nb] && nb >= longueurTexte)
             {
                 // Changer l'action map de retour au mouvement
-                GetComponent<PlayerInput>().SwitchCurrentActionMap("Texte");
+                GetComponent<PlayerInput>().SwitchCurrentActionMap("Player");
                 // R?initialiser le num?ro de la ligne en cours d'impression
                 nb = 0;
                 // Vider la bo?te de dialogue

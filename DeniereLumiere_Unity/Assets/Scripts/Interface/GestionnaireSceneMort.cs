@@ -101,7 +101,7 @@ public class GestionnaireSceneMort : MonoBehaviour
 
     public void ChangerScene(InputAction.CallbackContext context)
     {
-        Debug.Log("test");
+        
         // Lorsque le bouton est appuyer, changer de scenes
         if (SceneManager.GetActiveScene().name == "SceneMort")
         {

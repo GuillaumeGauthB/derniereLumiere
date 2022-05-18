@@ -64,6 +64,7 @@ public class Joueur_Script : MonoBehaviour
 
     public GameObject doubleSautUIPouvoir;
     public GameObject dashUIPouvoir;
+    private GameObject lastCheckpoint;
 
     public bool modeSouris;
 
@@ -286,8 +287,13 @@ public class Joueur_Script : MonoBehaviour
         // Si le personnage entre en collision avec un checkpoint, sauvegarder sa position
         if (collision.tag == "checkpoint")
         {
+            if (lastCheckpoint)
+            {
+                lastCheckpoint.GetComponent<Animator>().SetBool("Save", false);
+            }
             checkpoint = transform.position;
-            collision.GetComponent<Animator>().SetTrigger("Save");
+            lastCheckpoint = collision.gameObject;
+            collision.GetComponent<Animator>().SetBool("Save", true);
         }
         // Si le personnage entre en contact avec une zone de mort, on le place au checkpoint
         if (collision.tag == "tombe")
