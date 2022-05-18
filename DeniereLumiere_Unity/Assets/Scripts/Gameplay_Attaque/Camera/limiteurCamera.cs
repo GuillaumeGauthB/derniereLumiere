@@ -11,6 +11,8 @@ public class limiteurCamera : MonoBehaviour
     private float f_limiteNordLocale;
     private float f_limiteSudLocale;
 
+    public float zoomCamera = 5;
+
     private GameObject mainCamera;
 
 
@@ -28,6 +30,7 @@ public class limiteurCamera : MonoBehaviour
 
     public void setNouvellesLimitesGlobales()
     {
+        mainCamera.GetComponent<CameraController>().setNewZoom(zoomCamera);
         mainCamera.GetComponent<CameraController>().setNewLimits(
             f_limiteOuestLocale,
             f_limiteEstLocale,

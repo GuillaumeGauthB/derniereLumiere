@@ -28,7 +28,8 @@ public class CameraController : MonoBehaviour
     private float f_limiteNord;
     private float f_limiteSud;
 
-    private Coroutine transition;
+    private Coroutine transitionZone;
+    private Coroutine transitionZoom;
 
     private Transform t_cam;
 
@@ -88,13 +89,18 @@ public class CameraController : MonoBehaviour
         }
     }
 
+    public void setNewZoom(float zoom)
+    {
+        gameObject.GetComponent<Camera>().orthographicSize = zoom;
+    }
+
     public void setNewLimits(float ouest, float est, float nord, float sud)
     {
 
-         if (transition != null ) StopCoroutine(transition);
+         if (transitionZone != null ) StopCoroutine(transitionZone);
         Debug.Log("Nouvelles limites!");
 
-        transition = StartCoroutine(transitionZoneCamera(ouest, est, nord, sud));
+        transitionZone = StartCoroutine(transitionZoneCamera(ouest, est, nord, sud));
 
 
         
