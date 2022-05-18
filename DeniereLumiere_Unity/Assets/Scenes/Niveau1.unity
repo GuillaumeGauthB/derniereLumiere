@@ -18982,6 +18982,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1583935137}
     - target: {fileID: 5649241242418429261, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: sonDash
+      value: 
+      objectReference: {fileID: 8300000, guid: 5227d62b69e35624b8611d4886f9a3e5, type: 3}
+    - target: {fileID: 5649241242418429261, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: sonSaut
+      value: 
+      objectReference: {fileID: 8300000, guid: 40564363d6a6528409b0bec9e6d962c5, type: 3}
+    - target: {fileID: 5649241242418429261, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
       propertyPath: dashUIPouvoir
       value: 
       objectReference: {fileID: 503181170}
