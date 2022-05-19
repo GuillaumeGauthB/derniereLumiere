@@ -206,7 +206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distancePersoEnnemiIdle: 45
   distancePersoEnnemiSuivre: 8
-  t_joueurPos: {fileID: 0}
+  g_joueurPos: {fileID: 0}
   vitesse: 1
 --- !u!1102 &6953320311045877029
 AnimatorState:

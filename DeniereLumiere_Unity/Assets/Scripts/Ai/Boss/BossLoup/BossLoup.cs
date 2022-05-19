@@ -19,6 +19,7 @@ public class BossLoup : MonoBehaviour
     private int i_derniereAttaque; // la derniere attaque executee
     public GameObject sprite; // le sprite du boss
     public float distanceAttaquePhysique; // distance pour attaque physique
+    public GameObject collidersBossPiece; // les colliders de la piece du boss
     
     [Header("Changement de plateformes")]
     public GameObject[] setPlateformes; // tableau contenant les differents "sets" de plateformes
@@ -46,6 +47,12 @@ public class BossLoup : MonoBehaviour
     private void Start()
     {
         g_perso = GameObject.Find("Beepo");
+        Invoke("ActiverColliderBoss", 2f);
+    }
+
+    void ActiverColliderBoss()
+    {
+        collidersBossPiece.SetActive(true);
     }
 
     // IEnumerator gerant le cooldown de l'attaque
