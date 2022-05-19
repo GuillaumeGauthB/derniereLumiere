@@ -92,10 +92,14 @@ public class Joueur_Script : MonoBehaviour
         /* ================================================================================= Modifications Guillaume =====================================*/
 
         // Si le personnage est au sol, permettre un double saut
-        if (b_estAuSol && doubleSautUIPouvoir.GetComponent<PouvoirUI>().peutUtiliserPouvoir)
+        if (b_estAuSol)
         {
             a_Joueur.SetBool("estAuSol", true);
-            b_doubleSautPossible = true;
+            if (doubleSautUIPouvoir.GetComponent<PouvoirUI>().peutUtiliserPouvoir)
+            {
+                b_doubleSautPossible = true;
+            }
+            
         }
 
     }
@@ -320,7 +324,7 @@ public class Joueur_Script : MonoBehaviour
 
     public void ChangerClavier(InputAction.CallbackContext context)
     {
-        // Si le bouton est appuy?, qu'il peut dash, que le pouvoir est obtenu, et que son mouvement sur l'axe des x n'est pas 0...
+        
         if (context.started)
         {
             modeSouris = true;
@@ -329,7 +333,7 @@ public class Joueur_Script : MonoBehaviour
 
     public void ChangerManette(InputAction.CallbackContext context)
     {
-        // Si le bouton est appuy?, qu'il peut dash, que le pouvoir est obtenu, et que son mouvement sur l'axe des x n'est pas 0...
+        
         if (context.started)
         {
             modeSouris = false;

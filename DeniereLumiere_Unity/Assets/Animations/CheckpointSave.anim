@@ -90,20 +90,11 @@ AnimationClip:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: "pancarte/panneau1/LogoCheckpoint/\uC81C\uBAA9_\uC5C6\uB294_\uC544\uD2B8\uC6CC\uD06C-1/\uC81C\uBAA9_\uC5C6\uB294_\uC544\uD2B8\uC6CC\uD06C-2"
+    path: pancarte/panneau1/lanterne_lueur/Cercle/Crochet
     classID: 1
     script: {fileID: 0}
   m_PPtrCurves: []
@@ -122,7 +113,7 @@ AnimationClip:
       customType: 4
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 364511141
+      path: 881678422
       attribute: 2086281974
       script: {fileID: 0}
       typeID: 1
@@ -354,20 +345,11 @@ AnimationClip:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: "pancarte/panneau1/LogoCheckpoint/\uC81C\uBAA9_\uC5C6\uB294_\uC544\uD2B8\uC6CC\uD06C-1/\uC81C\uBAA9_\uC5C6\uB294_\uC544\uD2B8\uC6CC\uD06C-2"
+    path: pancarte/panneau1/lanterne_lueur/Cercle/Crochet
     classID: 1
     script: {fileID: 0}
   m_EulerEditorCurves:
