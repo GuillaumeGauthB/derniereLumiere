@@ -1559,7 +1559,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &175454813
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9906,11 +9906,22 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5826914809898477879, guid: 86c111b2426c74ca19a2c83ca59cf513, type: 3}
       propertyPath: texte.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5826914809898477879, guid: 86c111b2426c74ca19a2c83ca59cf513, type: 3}
       propertyPath: texte.Array.data[0]
-      value: Appuyez sur [Espace] ou (A) pour sauter
+      value: Je n'ai jamais vu une telle substance.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5826914809898477879, guid: 86c111b2426c74ca19a2c83ca59cf513, type: 3}
+      propertyPath: texte.Array.data[1]
+      value: "M\xEAme si elle semble \xEAtre liquide, il m\u2019est impossible de
+        passer \xE0 travers. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 5826914809898477879, guid: 86c111b2426c74ca19a2c83ca59cf513, type: 3}
+      propertyPath: texte.Array.data[2]
+      value: "Peut-\xEAtre que si j'\xE9tais assez rapide je pourrais tenter de passer
+        \xE0 travers, mais je ne pense pas qu\u2019un \xEAtre humain serait assez
+        rapide pour courir \xE0 travers. "
       objectReference: {fileID: 0}
     - target: {fileID: 8060169636361900766, guid: 86c111b2426c74ca19a2c83ca59cf513, type: 3}
       propertyPath: m_Name
@@ -16276,11 +16287,26 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5826914809898477879, guid: 86c111b2426c74ca19a2c83ca59cf513, type: 3}
       propertyPath: texte.Array.size
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5826914809898477879, guid: 86c111b2426c74ca19a2c83ca59cf513, type: 3}
       propertyPath: texte.Array.data[0]
-      value: Appuyez sur [Espace] ou (A) pour sauter
+      value: Je n'ai jamais vu une telle substance.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5826914809898477879, guid: 86c111b2426c74ca19a2c83ca59cf513, type: 3}
+      propertyPath: texte.Array.data[1]
+      value: "M\xEAme si elle semble \xEAtre liquide, il m\u2019est impossible de
+        passer \xE0 travers.  "
+      objectReference: {fileID: 0}
+    - target: {fileID: 5826914809898477879, guid: 86c111b2426c74ca19a2c83ca59cf513, type: 3}
+      propertyPath: texte.Array.data[2]
+      value: "Peut \xEAtre que si je serais assez rapide je pourrais tenter de passer
+        \xE0 travers, mais je ne pense pas qu\u2019un \xEAtre humain serait assez
+        rapide pour courir \xE0 travers"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5826914809898477879, guid: 86c111b2426c74ca19a2c83ca59cf513, type: 3}
+      propertyPath: texte.Array.data[3]
+      value: -Pasiphae
       objectReference: {fileID: 0}
     - target: {fileID: 8060169636361900766, guid: 86c111b2426c74ca19a2c83ca59cf513, type: 3}
       propertyPath: m_Name
@@ -18850,11 +18876,24 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5826914809898477879, guid: 86c111b2426c74ca19a2c83ca59cf513, type: 3}
       propertyPath: texte.Array.size
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5826914809898477879, guid: 86c111b2426c74ca19a2c83ca59cf513, type: 3}
       propertyPath: texte.Array.data[0]
-      value: Appuyez sur [Espace] ou (A) pour sauter
+      value: "Il semble y avoir plusieurs plateformes dans la for\xEAt c\xE9leste."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5826914809898477879, guid: 86c111b2426c74ca19a2c83ca59cf513, type: 3}
+      propertyPath: texte.Array.data[1]
+      value: Si seulement j'avais encore la vigueur de ma jeunesse, je pourrais appuyer
+        sur la barre d'ESPACE ou le bouton A pour...
+      objectReference: {fileID: 0}
+    - target: {fileID: 5826914809898477879, guid: 86c111b2426c74ca19a2c83ca59cf513, type: 3}
+      propertyPath: texte.Array.data[2]
+      value: ... sauter et atteindre ces plateformes.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5826914809898477879, guid: 86c111b2426c74ca19a2c83ca59cf513, type: 3}
+      propertyPath: texte.Array.data[3]
+      value: -Pasiphae
       objectReference: {fileID: 0}
     - target: {fileID: 8060169636361900766, guid: 86c111b2426c74ca19a2c83ca59cf513, type: 3}
       propertyPath: m_Name
@@ -20391,7 +20430,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8946859833150752238, guid: c6745e7bbbd8b1e4b8c2a8d1d1344fbb, type: 3}
       propertyPath: ennemiVie
-      value: 5
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8946859833150752238, guid: c6745e7bbbd8b1e4b8c2a8d1d1344fbb, type: 3}
       propertyPath: barreDeVieUI
