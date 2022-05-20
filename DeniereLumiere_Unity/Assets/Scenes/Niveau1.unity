@@ -11230,6 +11230,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9060118119166973261, guid: 64e10531ab42d42c185710b6841cf80f, type: 3}
   m_PrefabInstance: {fileID: 1250846566}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1273486178 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2633312405844758898, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+  m_PrefabInstance: {fileID: 964939775658198964}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1285534435
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12188,6 +12193,11 @@ PrefabInstance:
       objectReference: {fileID: 1620038707}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+--- !u!1 &1475592180 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 54633242429057022, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+  m_PrefabInstance: {fileID: 964939775658198964}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1491227801
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14107,6 +14117,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 3219006440821421439, guid: 598bcba30260ff9429f26d14e5cf1d1a, type: 3}
   m_PrefabInstance: {fileID: 1547330874}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1575909321 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7253312891493401191, guid: f174b2f331f8d486695efa137920e60d, type: 3}
+  m_PrefabInstance: {fileID: 1830449394}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1583935133
 GameObject:
@@ -19208,9 +19223,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5961507230397248894, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+      propertyPath: UIJeu
+      value: 
+      objectReference: {fileID: 1575909321}
+    - target: {fileID: 5961507230397248894, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
       propertyPath: menuPause
       value: 
       objectReference: {fileID: 706539793}
+    - target: {fileID: 5961507230397248894, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+      propertyPath: controleClavier
+      value: 
+      objectReference: {fileID: 1273486178}
+    - target: {fileID: 5961507230397248894, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+      propertyPath: controleManette
+      value: 
+      objectReference: {fileID: 1475592180}
     - target: {fileID: 5961507230397248894, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
       propertyPath: boutons.Array.size
       value: 3
