@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class EffetParallax : MonoBehaviour
 {
+    /**
+     * Classe qui permet de gerer l'effet parallax des backgrounds durant le jeu
+     * Codeurs : Jerome
+     * Derniere modification : 20/05/2022
+    */
     [Header("Cible à suivre par le backgound")]
     public GameObject cible;
     [Header("Position originale du background")]
