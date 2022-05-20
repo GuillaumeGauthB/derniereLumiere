@@ -597,6 +597,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Pauser",
+                    "type": "Button",
+                    "id": "beaa762a-80c9-4a36-84d2-da143a7f4391",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1136,6 +1145,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "ChangerClavier",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "160877fb-4ae5-4219-a2c5-de58e83b18a3",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Pauser",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "240a751d-848a-4f69-857d-d9931ef99847",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Pauser",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
