@@ -19890,6 +19890,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3933404947434059145, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: sonMort
+      value: 
+      objectReference: {fileID: 8300000, guid: 16432022457a54e439b0012a76fb1c2b, type: 3}
+    - target: {fileID: 3933404947434059145, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
       propertyPath: viePerso
       value: 10
       objectReference: {fileID: 0}
@@ -20013,6 +20017,14 @@ PrefabInstance:
       propertyPath: m_ActionEvents.Array.data[28].m_ActionName
       value: Player/Pauser[/XInputControllerWindows/start,/Keyboard/escape]
       objectReference: {fileID: 0}
+    - target: {fileID: 5649241242418429261, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: sonDash
+      value: 
+      objectReference: {fileID: 8300000, guid: 5227d62b69e35624b8611d4886f9a3e5, type: 3}
+    - target: {fileID: 5649241242418429261, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: sonSaut
+      value: 
+      objectReference: {fileID: 8300000, guid: 40564363d6a6528409b0bec9e6d962c5, type: 3}
     - target: {fileID: 5649241242418429261, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
       propertyPath: dashUIPouvoir
       value: 
