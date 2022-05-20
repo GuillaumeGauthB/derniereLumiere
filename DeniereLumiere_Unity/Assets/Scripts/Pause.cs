@@ -40,6 +40,7 @@ public class Pause : MonoBehaviour
     // Fonction qui permet de pauser le jeu et d'afficher le menu pause
     public void PauserJeu()
     {
+        //GameObject.Find("Beepo").GetComponent<dialogues>().texteActivee = true;
         UIJeu.SetActive(false);
         e_eventSystem.GetComponent<InputSystemUIInputModule>().enabled = true;
         GetComponent<Animator>().SetBool("EnPause", true);
@@ -54,6 +55,7 @@ public class Pause : MonoBehaviour
     // Fonction qui permet de depauser le jeu et d'enlever le menu pause
     public void DepauserJeu()
     {
+        //GameObject.Find("Beepo").GetComponent<dialogues>().texteActivee = false;
         UIJeu.SetActive(true);
         e_eventSystem.GetComponent<InputSystemUIInputModule>().enabled = false;
         GetComponent<Animator>().SetBool("EnPause", false);

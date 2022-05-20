@@ -799,6 +799,10 @@ PrefabInstance:
       propertyPath: compteurLucioles
       value: 
       objectReference: {fileID: 2038021700}
+    - target: {fileID: 7253312892810265962, guid: f174b2f331f8d486695efa137920e60d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -86.03906
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f174b2f331f8d486695efa137920e60d, type: 3}
 --- !u!1 &62723905 stripped
@@ -2348,6 +2352,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5961507230397248894, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+      propertyPath: UIJeu
+      value: 
+      objectReference: {fileID: 1424846229}
     - target: {fileID: 8790200798829193596, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
       propertyPath: cible
       value: 
@@ -13747,6 +13755,14 @@ PrefabInstance:
       propertyPath: BarreDeVie
       value: 
       objectReference: {fileID: 62723905}
+    - target: {fileID: 4560369205714923861, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: pouvoirTir
+      value: 
+      objectReference: {fileID: 62723907}
+    - target: {fileID: 4560369205858820197, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: vitesse
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4628365048662738355, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
       propertyPath: m_Name
       value: Beepo
@@ -13809,11 +13825,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5649241242418429249, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -42.4
+      value: 1.52
       objectReference: {fileID: 0}
     - target: {fileID: 5649241242418429249, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 51.7
+      value: 49.08
       objectReference: {fileID: 0}
     - target: {fileID: 5649241242418429255, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
       propertyPath: m_Name
@@ -14116,6 +14132,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1624327742333548075, guid: bbf22170f6d6c4365a99041564344961, type: 3}
   m_PrefabInstance: {fileID: 1420964325}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1424846229 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7253312891493401191, guid: f174b2f331f8d486695efa137920e60d, type: 3}
+  m_PrefabInstance: {fileID: 62723904}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1430756749
 GameObject:

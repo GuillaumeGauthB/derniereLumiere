@@ -198,7 +198,6 @@ public class Inputs_Guillaume : MonoBehaviour
 
     public void ManetteTir(InputAction.CallbackContext context)
     {
-        Debug.Log("hahahahahahahahhahaAHHAAH");
 
         //c_lineRenderer.enabled = true;
         // Sauvegarder la valeur dans le monde de la position de la souris
