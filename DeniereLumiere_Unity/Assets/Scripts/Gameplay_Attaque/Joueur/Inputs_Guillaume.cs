@@ -43,6 +43,10 @@ public class Inputs_Guillaume : MonoBehaviour
     {
         i_inputJoueur = new InputJoueur();
         i_inputJoueur.TirLucioles.Enable();
+        i_inputJoueur.TirLucioles.Tir.started += AttaqueTir;
+        i_inputJoueur.TirLucioles.AnnulerTir.started += AnnulerTirViser;
+        i_inputJoueur.TirLucioles.ChangerClavier.started += GetComponent<Joueur_Script>().ChangerClavier;
+        i_inputJoueur.TirLucioles.ChangerManette.started += GetComponent<Joueur_Script>().ChangerManette;
     }
 
     // Start is called before the first frame update
@@ -79,10 +83,10 @@ public class Inputs_Guillaume : MonoBehaviour
             }
             else
             {
-                Debug.Log(zoneViseGamepad);
+                Debug.Log(v_deplacementCible);
                 //Si le joueur joue avec une manette...
                 // Utiliser la position du curseur * 15 pour le tir et mettre la valeur de v_deplacement relative a la position du personnage
-                v_deplacementCibleM = gameObject.transform.position + new Vector3(zoneViseGamepad.x, zoneViseGamepad.y, 0f) * 15f;
+                v_deplacementCible = /*gameObject.transform.localPosition + */new Vector3(zoneViseGamepad.x, zoneViseGamepad.y, 0f) * 15f;
                 //v_deplacementCible = gameObject.transform.position + new Vector3(v_deplacementCible.x, v_deplacementCible.y, 0);
                 flecheViser.transform.rotation = Quaternion.LookRotation(Vector3.forward, zoneViseGamepad);
                 flecheViser.transform.rotation *= Quaternion.Euler(0, 0, 90);
@@ -124,10 +128,11 @@ public class Inputs_Guillaume : MonoBehaviour
     // Fonction qui gere le debut du "visage" du tir de lucioles ansi que son tir
     public void DeclencherTir(InputAction.CallbackContext context)
     {
+        Debug.Log("Declencher tir?");
         // Lorsque le bouton est relach?...
-        if (context.performed && Joueur_Script.tirObtenu)
+        if (context.canceled && Joueur_Script.tirObtenu)
         {
-
+            Debug.Log("Declencher tir!!!!");
             // Creer une variable empechant les deplacements lorsque le mode de tir est activer
             declencherTir = true;
             // Changer le map du personnage ? TirLucioles
@@ -170,7 +175,7 @@ public class Inputs_Guillaume : MonoBehaviour
     public void AnnulerTirViser(InputAction.CallbackContext context)
     {
         // Si le bouton est lach?...
-        if (context.canceled)
+        if (context.started)
         {
             declencherTir = false;
             // Changer la map au mouvement et d?sactiver le viseur

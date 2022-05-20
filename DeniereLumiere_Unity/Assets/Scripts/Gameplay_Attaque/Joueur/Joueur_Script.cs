@@ -85,6 +85,7 @@ public class Joueur_Script : MonoBehaviour
         i_inputJoueur.Player.Courrir.performed += Courrir;
         i_inputJoueur.Player.Accroupir.performed += Accroupir;
         i_inputJoueur.Player.Dash.performed += Dash;
+        i_inputJoueur.Player.EnclencherTir.canceled += GetComponent<Inputs_Guillaume>().DeclencherTir;
 
     }
     private void Update()
@@ -103,6 +104,7 @@ public class Joueur_Script : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //Debug.Log(tirObtenu);
         Cursor.visible = false;
         //Debug.Log(f_movX);
         if (!estDash && !GetComponent<dialogues>().texteActivee && !mort)

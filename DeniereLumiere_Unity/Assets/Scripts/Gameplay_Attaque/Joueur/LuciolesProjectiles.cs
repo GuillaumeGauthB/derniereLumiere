@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LuciolesProjectiles : MonoBehaviour
 {
@@ -10,7 +11,6 @@ public class LuciolesProjectiles : MonoBehaviour
     */
     private Vector2 v_destination; // Le déplacement du projectile
     public float vitesse; // La vitesse du projectile
-    private float vitesseManette = 0.1f;
 
     private void Awake()
     {
@@ -30,18 +30,29 @@ public class LuciolesProjectiles : MonoBehaviour
 
     private void Start()
     {
-        // Debug.Log(GameObject.Find("Beepo").gameObject.GetComponent<Joueur_Script>().modeSouris);
-        if (!GameObject.Find("Beepo").gameObject.GetComponent<Joueur_Script>().modeSouris)
+        if (SceneManager.GetActiveScene().name == "Niveau2")
         {
-            Debug.Log("mode manette");
-            // Multiplier la direction par la vitesse
-            v_destination = GameObject.Find("Beepo").gameObject.transform.GetComponent<Inputs_Guillaume>().v_deplacementCible * vitesseManette;
+            if (GameObject.Find("Beepo").gameObject.GetComponent<Joueur_Script>().modeSouris)
+            {
+                // Multiplier la direction par la vitesse
+                v_destination = GameObject.Find("Beepo").gameObject.transform.GetComponent<Inputs_Guillaume>().v_deplacementCible * (vitesse * 10);
+            }
+            else
+            {
+                v_destination = GameObject.Find("Beepo").gameObject.transform.GetComponent<Inputs_Guillaume>().v_deplacementCible * vitesse;
+            }
         }
         else
         {
-            Debug.Log("mode souris");
-            // Multiplier la direction par la vitesse
-            v_destination = GameObject.Find("Beepo").gameObject.transform.GetComponent<Inputs_Guillaume>().v_deplacementCibleM * (vitesse * 5);
+            if (GameObject.Find("Beepo").gameObject.GetComponent<Joueur_Script>().modeSouris)
+            {
+                // Multiplier la direction par la vitesse
+                v_destination = GameObject.Find("Beepo").gameObject.transform.GetComponent<Inputs_Guillaume>().v_deplacementCible * vitesse;
+            }
+            else
+            {
+                v_destination = GameObject.Find("Beepo").gameObject.transform.GetComponent<Inputs_Guillaume>().v_deplacementCible * (vitesse / 10);
+            }
         }
     }
 
