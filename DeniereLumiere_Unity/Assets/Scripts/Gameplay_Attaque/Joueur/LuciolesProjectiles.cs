@@ -30,16 +30,18 @@ public class LuciolesProjectiles : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log(GameObject.Find("Beepo").gameObject.GetComponent<Joueur_Script>().modeSouris);
+        // Debug.Log(GameObject.Find("Beepo").gameObject.GetComponent<Joueur_Script>().modeSouris);
         if (!GameObject.Find("Beepo").gameObject.GetComponent<Joueur_Script>().modeSouris)
         {
+            Debug.Log("mode manette");
             // Multiplier la direction par la vitesse
             v_destination = GameObject.Find("Beepo").gameObject.transform.GetComponent<Inputs_Guillaume>().v_deplacementCible * vitesseManette;
         }
         else
         {
+            Debug.Log("mode souris");
             // Multiplier la direction par la vitesse
-            v_destination = GameObject.Find("Beepo").gameObject.transform.GetComponent<Inputs_Guillaume>().v_deplacementCible * vitesse;
+            v_destination = GameObject.Find("Beepo").gameObject.transform.GetComponent<Inputs_Guillaume>().v_deplacementCible * (vitesse * 5);
         }
     }
 
