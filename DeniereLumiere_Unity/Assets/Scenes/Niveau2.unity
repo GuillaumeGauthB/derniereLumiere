@@ -2360,6 +2360,14 @@ PrefabInstance:
       propertyPath: UIJeu
       value: 
       objectReference: {fileID: 1424846229}
+    - target: {fileID: 5961507230397248894, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+      propertyPath: controleClavier
+      value: 
+      objectReference: {fileID: 251924374}
+    - target: {fileID: 5961507230397248894, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+      propertyPath: controleManette
+      value: 
+      objectReference: {fileID: 251924373}
     - target: {fileID: 8790200798829193596, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
       propertyPath: cible
       value: 
@@ -2438,6 +2446,16 @@ GameObject:
 --- !u!20 &251924372 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 8956440055148335652, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+  m_PrefabInstance: {fileID: 251924370}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &251924373 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 54633242429057022, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+  m_PrefabInstance: {fileID: 251924370}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &251924374 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2633312405844758898, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
   m_PrefabInstance: {fileID: 251924370}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &263477283

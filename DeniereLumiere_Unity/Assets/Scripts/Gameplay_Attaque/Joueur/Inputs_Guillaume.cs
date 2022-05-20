@@ -44,7 +44,7 @@ public class Inputs_Guillaume : MonoBehaviour
         i_inputJoueur = new InputJoueur();
         i_inputJoueur.TirLucioles.Enable();
         i_inputJoueur.TirLucioles.Tir.started += AttaqueTir;
-        i_inputJoueur.TirLucioles.AnnulerTir.started += AnnulerTirViser;
+        i_inputJoueur.TirLucioles.AnnulerTir.canceled += AnnulerTirViser;
         i_inputJoueur.TirLucioles.ChangerClavier.started += GetComponent<Joueur_Script>().ChangerClavier;
         i_inputJoueur.TirLucioles.ChangerManette.started += GetComponent<Joueur_Script>().ChangerManette;
     }
@@ -71,7 +71,6 @@ public class Inputs_Guillaume : MonoBehaviour
 
             if (GetComponent<Joueur_Script>().modeSouris)
             {
-                //Debug.Log(zoneViseSouris);
                 // Sauvegarder la valeur dans le monde de la position de la souris
                 v_sourisPosition = Camera.main.ScreenToWorldPoint(zoneViseSouris);
 
@@ -83,7 +82,6 @@ public class Inputs_Guillaume : MonoBehaviour
             }
             else
             {
-                Debug.Log(v_deplacementCible);
                 //Si le joueur joue avec une manette...
                 // Utiliser la position du curseur * 15 pour le tir et mettre la valeur de v_deplacement relative a la position du personnage
                 v_deplacementCible = /*gameObject.transform.localPosition + */new Vector3(zoneViseGamepad.x, zoneViseGamepad.y, 0f) * 15f;
@@ -125,59 +123,30 @@ public class Inputs_Guillaume : MonoBehaviour
     }
     #region Tir
 
+    public void ChangerDeclencherTir()
+    {
+        // Creer une variable empechant les deplacements lorsque le mode de tir est activer
+        declencherTir = !declencherTir;
+    }
     // Fonction qui gere le debut du "visage" du tir de lucioles ansi que son tir
     public void DeclencherTir(InputAction.CallbackContext context)
     {
-        Debug.Log("Declencher tir?");
         // Lorsque le bouton est relach?...
-        if (context.canceled && Joueur_Script.tirObtenu)
+        if (context.canceled && Joueur_Script.tirObtenu && !declencherTir)
         {
-            Debug.Log("Declencher tir!!!!");
-            // Creer une variable empechant les deplacements lorsque le mode de tir est activer
-            declencherTir = true;
+            Invoke("ChangerDeclencherTir", 0.1f);
             // Changer le map du personnage ? TirLucioles
             playerInput.SwitchCurrentActionMap("TirLucioles");
         }
-    }
-
-    // Fonction qui gere le "visage" du tir de luciole
-    public void AttaqueTirViser(InputAction.CallbackContext context)
-    {
-        //Debug.Log(playerInput.currentControlScheme);
-        //Debug.Log(context);
-        // Faire apparaitre le line renderer qui va servir de viseur
-        //c_lineRenderer.enabled = true;
-        // Sauvegarder la valeur dans le monde de la position de la souris
-        //v_sourisPosition = Camera.main.ScreenToWorldPoint(context.ReadValue<Vector2>());
-        // Dessiner l'origine du viseur
-        //c_lineRenderer.SetPosition(0, gameObject.transform.position);
-
-        // Prendre la direction de la souris et le normalizer
-        //v_deplacementCible = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y) - new Vector2(v_sourisPosition.x, v_sourisPosition.y);
-        //v_deplacementCible = v_deplacementCible.normalized * -1;
-        // Dessiner la position finale du viseur
-        //c_lineRenderer.SetPosition(1, v_sourisPosition);
-
-        // Si le joueur joue avec le clavier...
-        /*if (GetComponent<Joueur_Script>().modeSouris)
-        {
-            // Prendre la direction de la souris et le normalizer
-            v_deplacementCible = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y) - new Vector2(v_sourisPosition.x, v_sourisPosition.y);
-            v_deplacementCible = v_deplacementCible.normalized * -1;
-            // Dessiner la position finale du viseur
-            c_lineRenderer.SetPosition(1, v_sourisPosition);
-        }
-        flecheViser.transform.rotation = Quaternion.LookRotation(Vector3.forward, v_deplacementCible);
-        flecheViser.transform.rotation *= Quaternion.Euler(0, 0, 90);*/
     }
 
     // Fonction qui gere l'annulation du tir durant son "visage"
     public void AnnulerTirViser(InputAction.CallbackContext context)
     {
         // Si le bouton est lach?...
-        if (context.started)
+        if (context.canceled && declencherTir)
         {
-            declencherTir = false;
+            Invoke("ChangerDeclencherTir", 0.1f);
             // Changer la map au mouvement et d?sactiver le viseur
             playerInput.SwitchCurrentActionMap("Player");
             c_lineRenderer.enabled = false;
@@ -188,7 +157,7 @@ public class Inputs_Guillaume : MonoBehaviour
     public void AttaqueTir(InputAction.CallbackContext context)
     {
         // Lorsque le bouton est appuy?
-        if (context.started && !GetComponent<dialogues>().texteActivee)
+        if (context.started && !GetComponent<dialogues>().texteActivee && declencherTir)
         {
             if (pouvoirTir.GetComponent<PouvoirUI>().peutUtiliserPouvoir)
             {
