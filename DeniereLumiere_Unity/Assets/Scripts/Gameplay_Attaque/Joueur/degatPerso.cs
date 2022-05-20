@@ -18,6 +18,8 @@ public class degatPerso : MonoBehaviour
     public AudioClip sonDegats;
     public Color couleurDegat,
         couleurOri;
+    public AudioClip sonMort; // le son de mort du personnage
+    private bool faireUneFois;
 
     private void Start()
     {
@@ -27,10 +29,11 @@ public class degatPerso : MonoBehaviour
     void Update()
     {
         // Lorsque la vie du personnage atteint 0 ou moins, le tuer
-        if(viePerso <= 0)
+        if (viePerso <= 0 && !faireUneFois)
         {
-
+            GetComponent<AudioSource>().PlayOneShot(sonMort);
             Joueur_Script.mort = true;
+            faireUneFois = true;
 
         }
         //if (Joueur_Script.mort == true)
@@ -70,14 +73,14 @@ public class degatPerso : MonoBehaviour
 
     // Fonction de collisions
     private void OnCollisionStay2D(Collision2D collision)
-    {   
-        if(collision.gameObject.tag == "mort")
+    {
+        if (collision.gameObject.tag == "mort")
         {
             Joueur_Script.mort = true;
         }
 
         // Lorsque le personnage entre en collision avec un objet avec le tag boss ou ennemi...
-        if(collision.gameObject.tag == "ennemi" || collision.gameObject.tag == "boss")
+        if (collision.gameObject.tag == "ennemi" || collision.gameObject.tag == "boss")
         {
             // Le rendre temporairement invincible
             if (!invincible)
@@ -88,7 +91,7 @@ public class degatPerso : MonoBehaviour
                 invincible = true;
                 ChangerCouleurRouge();
                 Invoke("Invincibilite", 2);
-                
+
             }
 
             // Donner du knockback au personnage dépendamment de la position du personnage vs l'ennemi, qui va se désactiver après 0.5 secondes

@@ -5,7 +5,11 @@ using UnityEngine.UI;
 
 public class PouvoirUI : MonoBehaviour
 {
-
+    /**
+     * Classe qui permet de gerer les pouvoirs dans le UI
+     * Codeurs : Jerome
+     * Derniere modification : 20/05/2022
+    */
     [Header("Délai entre utilisations du pouvoir")]
     public float delayPouvoir;
 
@@ -28,7 +32,6 @@ public class PouvoirUI : MonoBehaviour
     [Header("Joueur peut ou pas utiliser le pouvoir")]
     public bool peutUtiliserPouvoir;
 
-    //Debug Inputs
     private void FixedUpdate()
     {
         if (compteurLucioles.GetComponent<LuciolesCompteurController>().getNbreLucioles() < coutUtilisation) peutUtiliserPouvoir = false;
@@ -44,10 +47,12 @@ public class PouvoirUI : MonoBehaviour
     //Fonction permettant activant l'animation des lanternes lors de l'utilisation d'un pouvoir
     public void utiliserPouvoir()
     {
+        // Si le joueur a le nombre suffisant de luciole, il peut utiliser le pouvoir
         if (compteurLucioles.GetComponent<LuciolesCompteurController>().getNbreLucioles() >= coutUtilisation)
         {
             compteurLucioles.GetComponent<LuciolesCompteurController>().diminuerLucioles(coutUtilisation);
             i_currentImageCouleurPouvoir.color = couleurPouvoirUtilise;
+            // Il ne peut pas utiliser le pouvoir tant que le cooldown n'est pas termine
             peutUtiliserPouvoir = false;
             c_coroutineAnimLueur = StartCoroutine(animLueur());
         }
@@ -66,7 +71,9 @@ public class PouvoirUI : MonoBehaviour
         }
 
         i_currentImageCouleurPouvoir.color = couleurPouvoir;
+        // On peut utiliser le pouvoir a nouveau
         peutUtiliserPouvoir = true;
+        // La couroutine est terminee
         b_coroutineEnCours = false;
         yield return new WaitForSeconds(0f);
     }
