@@ -57,6 +57,7 @@ public class Inputs_Guillaume : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(playerInput.currentActionMap);
         if (playerInput.currentActionMap.ToString().Contains("Tir") && !GetComponent<dialogues>().texteActivee)
         {
             flecheViser.SetActive(true);
@@ -124,7 +125,7 @@ public class Inputs_Guillaume : MonoBehaviour
     public void DeclencherTir(InputAction.CallbackContext context)
     {
         // Lorsque le bouton est relach?...
-        if (context.canceled && Joueur_Script.tirObtenu)
+        if (context.performed && Joueur_Script.tirObtenu)
         {
 
             // Creer une variable empechant les deplacements lorsque le mode de tir est activer

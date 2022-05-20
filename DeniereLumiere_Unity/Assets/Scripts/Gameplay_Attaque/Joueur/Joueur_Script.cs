@@ -9,7 +9,7 @@ public class Joueur_Script : MonoBehaviour
 {
     /* Script principal du personnage
       Par : Jonathan Mores et Guillaume Gauthier-Benoit
-      Derni?re modification : 03/04/2022
+      Derni?re modification : 18/05/2022
     */
 
     /***********GameObject***********/
@@ -42,6 +42,7 @@ public class Joueur_Script : MonoBehaviour
     private float f_vitesseMaximale; // La vitesse maximale de la marche ou de la cours
 
     /********Variables a Guillaume********/
+    [Header("Variables a Guillaume")]
     public static bool doubleSautObtenu = true, // Variables determinant quels pouvoirs sont obtenus
         dashObtenu = true,
         stunObtenu = true,
@@ -62,13 +63,15 @@ public class Joueur_Script : MonoBehaviour
 
     private Vector3 checkpoint; // La position du checkpoint
 
-    public GameObject doubleSautUIPouvoir;
-    public GameObject dashUIPouvoir;
-    private GameObject lastCheckpoint;
+    public GameObject doubleSautUIPouvoir; // le morceau de l'interface pour le double saut
+    public GameObject dashUIPouvoir; // le morceau de l'interface pour le dash
 
-    public bool modeSouris;
+    public bool modeSouris; // mode de jeu, clavier et souris ou manette
 
-    static public bool mort;
+    static public bool mort; // etat de mort du personnage
+
+    public AudioClip sonSaut; // son du saut et du double saut du personnage
+    public AudioClip sonDash; // son du dash du personnage
 
     void Awake()
     {
@@ -88,8 +91,6 @@ public class Joueur_Script : MonoBehaviour
     {
         // Verifier si le personnage est sur le sol
         b_estAuSol = Physics2D.OverlapCircle(checkSol.position, 0.3f, solLayer);
-
-        /* ================================================================================= Modifications Guillaume =====================================*/
 
         // Si le personnage est au sol, permettre un double saut
         if (b_estAuSol && doubleSautUIPouvoir.GetComponent<PouvoirUI>().peutUtiliserPouvoir)
@@ -157,7 +158,7 @@ public class Joueur_Script : MonoBehaviour
             b_dashPossible = true;
             dashUIPouvoir.GetComponent<PouvoirUI>().peutUtiliserPouvoir = true;
 
-            f_cooldownDash = 1;
+            f_cooldownDash = doubleSautUIPouvoir.GetComponent<PouvoirUI>().delayPouvoir;
             CancelInvoke("Cooldown");
         }
     }
@@ -174,6 +175,7 @@ public class Joueur_Script : MonoBehaviour
                 // Faire sauter le personnage
                 rb_Joueur.AddForce(new Vector2(0, 1 * forceSaut));
                 a_Joueur.SetTrigger("Saut");
+                GetComponent<AudioSource>().PlayOneShot(sonSaut);
 
             }
             // Si le personnage n'est pas sur le sol et peut faire un double saut...
@@ -186,7 +188,7 @@ public class Joueur_Script : MonoBehaviour
                 b_doubleSautPossible = false;
                 doubleSautUIPouvoir.GetComponent<PouvoirUI>().peutUtiliserPouvoir = false;
                 a_Joueur.SetTrigger("DoubleSaut");
-
+                GetComponent<AudioSource>().PlayOneShot(sonSaut);
             }
         }
     }
@@ -239,17 +241,19 @@ public class Joueur_Script : MonoBehaviour
     // Fonction g?rant les dash
     public void Dash(InputAction.CallbackContext context)
     {
-        //Debug.Log(f_movX);
         // Si le bouton est appuy?, qu'il peut dash, que le pouvoir est obtenu, et que son mouvement sur l'axe des x n'est pas 0...
-        if (context.performed && b_dashPossible && dashObtenu && f_movX != 0)
+        if (context.performed && b_dashPossible && dashObtenu && dashUIPouvoir.GetComponent<PouvoirUI>().peutUtiliserPouvoir && !GetComponent<Inputs_Guillaume>().declencherTir)
         {
-            //faire le dash
+            // Faire le dash
             dashUIPouvoir.GetComponent<PouvoirUI>().utiliserPouvoir();
             estDash = true;
             presentTimerDash = commencerTimerDash;
             rb_Joueur.velocity = Vector2.zero;
             f_directionDash = f_movX;
             dashUIPouvoir.GetComponent<PouvoirUI>().peutUtiliserPouvoir = false;
+
+            // Faire jouer le son du dash
+            GetComponent<AudioSource>().PlayOneShot(sonDash);
 
             a_Joueur.SetTrigger("Dash");
             //b_dashPossible = false;
@@ -287,13 +291,8 @@ public class Joueur_Script : MonoBehaviour
         // Si le personnage entre en collision avec un checkpoint, sauvegarder sa position
         if (collision.tag == "checkpoint")
         {
-            if (lastCheckpoint)
-            {
-                lastCheckpoint.GetComponent<Animator>().SetBool("Save", false);
-            }
             checkpoint = transform.position;
-            lastCheckpoint = collision.gameObject;
-            collision.GetComponent<Animator>().SetBool("Save", true);
+            collision.GetComponent<Animator>().SetTrigger("Save");
         }
         // Si le personnage entre en contact avec une zone de mort, on le place au checkpoint
         if (collision.tag == "tombe")
