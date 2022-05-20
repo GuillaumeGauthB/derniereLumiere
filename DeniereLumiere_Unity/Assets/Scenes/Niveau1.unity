@@ -3405,6 +3405,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Boss: {fileID: 573115125504805262}
   panelBossUI: {fileID: 312031379}
+  musiqueController: {fileID: 0}
+  musiqueBoss: {fileID: 0}
+  musiqueIdle: {fileID: 0}
 --- !u!61 &365423573
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5266,7 +5269,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4962867107849505134, guid: d89f5b185a7e4434ba0466bfa815c1cb, type: 3}
       propertyPath: m_Text
-      value: Appuyer sur W pour interagir
+      value: Appuyer sur E ou [Y] pour interagir
       objectReference: {fileID: 0}
     - target: {fileID: 4962867107849505134, guid: d89f5b185a7e4434ba0466bfa815c1cb, type: 3}
       propertyPath: m_FontData.m_Font
@@ -5299,6 +5302,10 @@ PrefabInstance:
     - target: {fileID: 4962867107849505135, guid: d89f5b185a7e4434ba0466bfa815c1cb, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -18.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 4962867107849505168, guid: d89f5b185a7e4434ba0466bfa815c1cb, type: 3}
+      propertyPath: m_Name
+      value: Texte Avant Dialogues
       objectReference: {fileID: 0}
     - target: {fileID: 4962867107885102542, guid: d89f5b185a7e4434ba0466bfa815c1cb, type: 3}
       propertyPath: m_SortingOrder
@@ -15953,7 +15960,7 @@ PrefabInstance:
       objectReference: {fileID: 1620038707}
     - target: {fileID: 7253312892516528716, guid: f174b2f331f8d486695efa137920e60d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7253312892810265962, guid: f174b2f331f8d486695efa137920e60d, type: 3}
       propertyPath: m_AnchoredPosition.x
