@@ -19,6 +19,7 @@ public class degatPerso : MonoBehaviour
     public Color couleurDegat,
         couleurOri;
     public AudioClip sonMort; // le son de mort du personnage
+    private bool faireUneFois;
 
     private void Start()
     {
@@ -28,10 +29,11 @@ public class degatPerso : MonoBehaviour
     void Update()
     {
         // Lorsque la vie du personnage atteint 0 ou moins, le tuer
-        if(viePerso <= 0)
+        if(viePerso <= 0 && !faireUneFois)
         {
             GetComponent<AudioSource>().PlayOneShot(sonMort);
             Joueur_Script.mort = true;
+            faireUneFois = true;
 
         }
         //if (Joueur_Script.mort == true)

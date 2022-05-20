@@ -18898,6 +18898,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3933404947434059145, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: sonMort
+      value: 
+      objectReference: {fileID: 8300000, guid: 16432022457a54e439b0012a76fb1c2b, type: 3}
+    - target: {fileID: 3933404947434059145, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
       propertyPath: viePerso
       value: 10
       objectReference: {fileID: 0}
