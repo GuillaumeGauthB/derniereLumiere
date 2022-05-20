@@ -19166,6 +19166,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 504386255839539527, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 964939775661595938, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
       propertyPath: m_SortingOrder
       value: 20
@@ -19185,6 +19189,26 @@ PrefabInstance:
     - target: {fileID: 1376890059398625256, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
       propertyPath: firstSelected
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1376890059398625259, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1376890059398625259, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 239964591}
+    - target: {fileID: 1376890059398625259, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 1376890059398625259, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1376890059398625259, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1376890059757551072, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
       propertyPath: sonMove
@@ -19254,6 +19278,14 @@ PrefabInstance:
       propertyPath: boutons.Array.data[2]
       value: 
       objectReference: {fileID: 1339665561}
+    - target: {fileID: 7018884181654329100, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 239964591}
+    - target: {fileID: 7018884181654329100, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
     - target: {fileID: 8790200798829193596, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
       propertyPath: cible
       value: 
