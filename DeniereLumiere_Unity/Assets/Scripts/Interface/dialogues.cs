@@ -32,7 +32,15 @@ public class dialogues : MonoBehaviour
 
     private void Start()
     {
-        // Vider la bo?te de dialogue
+        if (Joueur_Script.tirObtenu)
+        {
+            uiTir.SetActive(true);
+            uiTirLuciolesCount.SetActive(true);
+        }
+        if (Joueur_Script.doubleSautObtenu) uiDoubleSaut.SetActive(true);
+        if (Joueur_Script.stunObtenu) uiStun.SetActive(true);
+        if (Joueur_Script.dashObtenu) uiDash.SetActive(true);
+        // Vider la boite de dialogue
         textbox.text = "";
     }
 
