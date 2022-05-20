@@ -5,6 +5,11 @@ using TMPro;
 
 public class LuciolesCompteurController : MonoBehaviour
 {
+    /**
+     * Classe qui permet de gerer le compteur de lucioles
+     * Codeurs : Jerome
+     * Derniere modification : 1/04/2022
+    */
     [Header("String Compteur Lucioles")]
     public TextMeshProUGUI compteurString;
 
@@ -15,19 +20,8 @@ public class LuciolesCompteurController : MonoBehaviour
 
     private void Awake()
     {
-        setNbreLucioles(8);
+        setNbreLucioles(12);
     }
-    /*private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            ajouterLucioles(1);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            diminuerLucioles(1);
-        }
-    }*/
 
     // Fonction qui permet d'additioner de nouvelles lucioles au nombre déjà établi
     public void ajouterLucioles(int nbreLucioleAjoute)

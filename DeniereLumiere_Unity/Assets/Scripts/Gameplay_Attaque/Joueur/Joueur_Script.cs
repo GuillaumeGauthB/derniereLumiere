@@ -66,7 +66,7 @@ public class Joueur_Script : MonoBehaviour
     public GameObject doubleSautUIPouvoir; // le morceau de l'interface pour le double saut
     public GameObject dashUIPouvoir; // le morceau de l'interface pour le dash
 
-    public bool modeSouris; // mode de jeu, clavier et souris ou manette
+    public bool modeSouris = true; // mode de jeu, clavier et souris ou manette
 
     static public bool mort; // etat de mort du personnage
 
@@ -85,6 +85,7 @@ public class Joueur_Script : MonoBehaviour
         i_inputJoueur.Player.Courrir.performed += Courrir;
         i_inputJoueur.Player.Accroupir.performed += Accroupir;
         i_inputJoueur.Player.Dash.performed += Dash;
+        i_inputJoueur.Player.EnclencherTir.canceled += GetComponent<Inputs_Guillaume>().DeclencherTir;
 
     }
     private void Update()
@@ -103,6 +104,7 @@ public class Joueur_Script : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //Debug.Log(tirObtenu);
         Cursor.visible = false;
         //Debug.Log(f_movX);
         if (!estDash && !GetComponent<dialogues>().texteActivee && !mort)
@@ -167,10 +169,10 @@ public class Joueur_Script : MonoBehaviour
     void Saut(InputAction.CallbackContext context)
     {
         // Lorsque l'action est performee...
-        if (context.performed)
+        if (context.performed && !GetComponent<dialogues>().texteActivee && GameObject.Find("PanelPause").GetComponent<Pause>().peutDeplacer)
         {
             // si le personnage est au sol et n'est pas accroupit...
-            if (b_estAuSol == true && !accroupir && !GetComponent<Inputs_Guillaume>().declencherTir && !GetComponent<dialogues>().texteActivee)
+            if (b_estAuSol == true && !accroupir)
             {
                 // Faire sauter le personnage
                 rb_Joueur.AddForce(new Vector2(0, 1 * forceSaut));
@@ -179,7 +181,7 @@ public class Joueur_Script : MonoBehaviour
 
             }
             // Si le personnage n'est pas sur le sol et peut faire un double saut...
-            else if (!b_estAuSol && b_doubleSautPossible && doubleSautObtenu && !GetComponent<dialogues>().texteActivee)
+            else if (!b_estAuSol && b_doubleSautPossible && doubleSautObtenu)
             {
                 //Utiliser le double saut dans le UI
                 doubleSautUIPouvoir.GetComponent<PouvoirUI>().utiliserPouvoir();
@@ -242,7 +244,7 @@ public class Joueur_Script : MonoBehaviour
     public void Dash(InputAction.CallbackContext context)
     {
         // Si le bouton est appuy?, qu'il peut dash, que le pouvoir est obtenu, et que son mouvement sur l'axe des x n'est pas 0...
-        if (context.performed && b_dashPossible && dashObtenu && dashUIPouvoir.GetComponent<PouvoirUI>().peutUtiliserPouvoir)
+        if (context.performed && b_dashPossible && dashObtenu && dashUIPouvoir.GetComponent<PouvoirUI>().peutUtiliserPouvoir && !GetComponent<Inputs_Guillaume>().declencherTir)
         {
             // Faire le dash
             dashUIPouvoir.GetComponent<PouvoirUI>().utiliserPouvoir();

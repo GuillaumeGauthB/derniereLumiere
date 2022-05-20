@@ -619,6 +619,15 @@ public partial class @InputJoueur : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pauser"",
+                    ""type"": ""Button"",
+                    ""id"": ""beaa762a-80c9-4a36-84d2-da143a7f4391"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -1158,6 +1167,28 @@ public partial class @InputJoueur : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""ChangerClavier"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""160877fb-4ae5-4219-a2c5-de58e83b18a3"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Pauser"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""240a751d-848a-4f69-857d-d9931ef99847"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Pauser"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1731,6 +1762,7 @@ public partial class @InputJoueur : IInputActionCollection2, IDisposable
         m_Player_AttaquePhysique = m_Player.FindAction("Attaque Physique", throwIfNotFound: true);
         m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
         m_Player_EnclencherTir = m_Player.FindAction("Enclencher Tir", throwIfNotFound: true);
+        m_Player_Pauser = m_Player.FindAction("Pauser", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1958,6 +1990,7 @@ public partial class @InputJoueur : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_AttaquePhysique;
     private readonly InputAction m_Player_Dash;
     private readonly InputAction m_Player_EnclencherTir;
+    private readonly InputAction m_Player_Pauser;
     public struct PlayerActions
     {
         private @InputJoueur m_Wrapper;
@@ -1971,6 +2004,7 @@ public partial class @InputJoueur : IInputActionCollection2, IDisposable
         public InputAction @AttaquePhysique => m_Wrapper.m_Player_AttaquePhysique;
         public InputAction @Dash => m_Wrapper.m_Player_Dash;
         public InputAction @EnclencherTir => m_Wrapper.m_Player_EnclencherTir;
+        public InputAction @Pauser => m_Wrapper.m_Player_Pauser;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -2007,6 +2041,9 @@ public partial class @InputJoueur : IInputActionCollection2, IDisposable
                 @EnclencherTir.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEnclencherTir;
                 @EnclencherTir.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEnclencherTir;
                 @EnclencherTir.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEnclencherTir;
+                @Pauser.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPauser;
+                @Pauser.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPauser;
+                @Pauser.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPauser;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -2038,6 +2075,9 @@ public partial class @InputJoueur : IInputActionCollection2, IDisposable
                 @EnclencherTir.started += instance.OnEnclencherTir;
                 @EnclencherTir.performed += instance.OnEnclencherTir;
                 @EnclencherTir.canceled += instance.OnEnclencherTir;
+                @Pauser.started += instance.OnPauser;
+                @Pauser.performed += instance.OnPauser;
+                @Pauser.canceled += instance.OnPauser;
             }
         }
     }
@@ -2194,6 +2234,7 @@ public partial class @InputJoueur : IInputActionCollection2, IDisposable
         void OnAttaquePhysique(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
         void OnEnclencherTir(InputAction.CallbackContext context);
+        void OnPauser(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
