@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 { 
-    public void changerScene(string nomScene)
+    public void changerScene(string nomScene = "MenuJeu")
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(nomScene);
