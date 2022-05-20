@@ -7,13 +7,13 @@ public class Buisson : MonoBehaviour
     public GameObject compteurLuciole;
     private LuciolesCompteurController l_compteurLucioles;
     public ParticleSystem luciolesParticules;
-    private Animator animation;
+    private Animator animationBuisson;
 
     private int i_nbreLuciolesBuisson = 12;
 
     private void Start()
     {
-        animation = GetComponent<Animator>();
+        animationBuisson = GetComponent<Animator>();
         l_compteurLucioles = compteurLuciole.GetComponent<LuciolesCompteurController>();
         setParticulesBuisson(i_nbreLuciolesBuisson);
     }
@@ -31,7 +31,7 @@ public class Buisson : MonoBehaviour
         int currentNbreLucioles = l_compteurLucioles.getNbreLucioles();
         if (currentNbreLucioles != 12)
         {
-            animation.SetTrigger("Ramasse");
+            animationBuisson.SetTrigger("Ramasse");
             int nbreLuciolesARefill = 12 - currentNbreLucioles;
             if (nbreLuciolesARefill >= i_nbreLuciolesBuisson)
             {
