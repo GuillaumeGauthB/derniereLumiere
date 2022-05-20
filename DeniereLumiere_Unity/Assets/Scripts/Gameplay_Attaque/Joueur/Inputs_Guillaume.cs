@@ -35,7 +35,8 @@ public class Inputs_Guillaume : MonoBehaviour
 
 
     [Header("Pour autres scripts")]
-    public Vector2 v_deplacementCible; // Variable determinant la direction dans laquelle le projectile est tirer
+    public Vector2 v_deplacementCible,
+        v_deplacementCibleM; // Variable determinant la direction dans laquelle le projectile est tirer
     public GameObject pouvoirTir;
 
     private void Awake()
@@ -78,10 +79,10 @@ public class Inputs_Guillaume : MonoBehaviour
             }
             else
             {
-
+                Debug.Log(zoneViseGamepad);
                 //Si le joueur joue avec une manette...
                 // Utiliser la position du curseur * 15 pour le tir et mettre la valeur de v_deplacement relative a la position du personnage
-                v_deplacementCible = gameObject.transform.position + new Vector3(zoneViseGamepad.x, zoneViseGamepad.y, 0f) * 15f;
+                v_deplacementCibleM = gameObject.transform.position + new Vector3(zoneViseGamepad.x, zoneViseGamepad.y, 0f) * 15f;
                 //v_deplacementCible = gameObject.transform.position + new Vector3(v_deplacementCible.x, v_deplacementCible.y, 0);
                 flecheViser.transform.rotation = Quaternion.LookRotation(Vector3.forward, zoneViseGamepad);
                 flecheViser.transform.rotation *= Quaternion.Euler(0, 0, 90);

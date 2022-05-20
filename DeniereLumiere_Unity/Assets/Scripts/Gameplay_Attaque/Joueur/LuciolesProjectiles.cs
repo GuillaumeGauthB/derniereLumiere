@@ -41,7 +41,7 @@ public class LuciolesProjectiles : MonoBehaviour
         {
             Debug.Log("mode souris");
             // Multiplier la direction par la vitesse
-            v_destination = GameObject.Find("Beepo").gameObject.transform.GetComponent<Inputs_Guillaume>().v_deplacementCible * (vitesse * 5);
+            v_destination = GameObject.Find("Beepo").gameObject.transform.GetComponent<Inputs_Guillaume>().v_deplacementCibleM * (vitesse * 5);
         }
     }
 

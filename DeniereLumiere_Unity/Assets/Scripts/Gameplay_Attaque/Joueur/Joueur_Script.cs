@@ -170,7 +170,7 @@ public class Joueur_Script : MonoBehaviour
         if (context.performed)
         {
             // si le personnage est au sol et n'est pas accroupit...
-            if (b_estAuSol == true && !accroupir && !GetComponent<Inputs_Guillaume>().declencherTir && !GetComponent<dialogues>().texteActivee)
+            if (b_estAuSol == true && !accroupir && !GetComponent<dialogues>().texteActivee)
             {
                 // Faire sauter le personnage
                 rb_Joueur.AddForce(new Vector2(0, 1 * forceSaut));
