@@ -1402,6 +1402,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5268096790112748114, guid: d6ce0c3d87e324f0faf0be273f94ffe8, type: 3}
   m_PrefabInstance: {fileID: 5268096789962702708}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &152391277 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7253312892516528716, guid: f174b2f331f8d486695efa137920e60d, type: 3}
+  m_PrefabInstance: {fileID: 1830449394}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &165065581
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19321,7 +19326,7 @@ MonoBehaviour:
   texteActivee: 0
   uiDash: {fileID: 503181170}
   uiTir: {fileID: 593102502}
-  uiTirLuciolesCount: {fileID: 1620038707}
+  uiTirLuciolesCount: {fileID: 152391277}
   uiStun: {fileID: 1959045151}
   uiDoubleSaut: {fileID: 2065389179}
 --- !u!1001 &1956479163475836541
