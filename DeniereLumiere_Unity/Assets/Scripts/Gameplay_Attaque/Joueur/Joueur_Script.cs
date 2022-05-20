@@ -66,7 +66,7 @@ public class Joueur_Script : MonoBehaviour
     public GameObject doubleSautUIPouvoir; // le morceau de l'interface pour le double saut
     public GameObject dashUIPouvoir; // le morceau de l'interface pour le dash
 
-    public bool modeSouris; // mode de jeu, clavier et souris ou manette
+    public bool modeSouris = true; // mode de jeu, clavier et souris ou manette
 
     static public bool mort; // etat de mort du personnage
 
