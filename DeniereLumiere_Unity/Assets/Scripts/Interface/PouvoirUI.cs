@@ -34,7 +34,7 @@ public class PouvoirUI : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (compteurLucioles.GetComponent<LuciolesCompteurController>().getNbreLucioles() < coutUtilisation) peutUtiliserPouvoir = false;
+        if (compteurLucioles.GetComponent<LuciolesCompteurController>().getNbreLucioles() < coutUtilisation || b_coroutineEnCours) peutUtiliserPouvoir = false;
         else peutUtiliserPouvoir = true;
     }
 
