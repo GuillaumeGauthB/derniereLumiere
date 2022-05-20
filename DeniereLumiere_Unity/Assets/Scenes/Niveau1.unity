@@ -1007,9 +1007,41 @@ PrefabInstance:
       value: Buisson (4)
       objectReference: {fileID: 0}
     - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: tir
+      value: 
+      objectReference: {fileID: 593102502}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: dash
+      value: 
+      objectReference: {fileID: 503181170}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: stun
+      value: 
+      objectReference: {fileID: 1959045151}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: doubleJump
+      value: 
+      objectReference: {fileID: 2065389179}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
       propertyPath: compteurLuciole
       value: 
       objectReference: {fileID: 1620038707}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: pouvoirs.Array.data[0]
+      value: 
+      objectReference: {fileID: 593102502}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: pouvoirs.Array.data[1]
+      value: 
+      objectReference: {fileID: 503181170}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: pouvoirs.Array.data[2]
+      value: 
+      objectReference: {fileID: 2065389179}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: pouvoirs.Array.data[3]
+      value: 
+      objectReference: {fileID: 1959045151}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
 --- !u!1001 &58334008
@@ -8719,9 +8751,41 @@ PrefabInstance:
       value: Buisson (2)
       objectReference: {fileID: 0}
     - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: tir
+      value: 
+      objectReference: {fileID: 593102502}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: dash
+      value: 
+      objectReference: {fileID: 503181170}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: stun
+      value: 
+      objectReference: {fileID: 1959045151}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: doubleJump
+      value: 
+      objectReference: {fileID: 2065389179}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
       propertyPath: compteurLuciole
       value: 
       objectReference: {fileID: 1620038707}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: pouvoirs.Array.data[0]
+      value: 
+      objectReference: {fileID: 593102502}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: pouvoirs.Array.data[1]
+      value: 
+      objectReference: {fileID: 503181170}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: pouvoirs.Array.data[2]
+      value: 
+      objectReference: {fileID: 2065389179}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: pouvoirs.Array.data[3]
+      value: 
+      objectReference: {fileID: 1959045151}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
 --- !u!1001 &1030994259
@@ -12193,9 +12257,41 @@ PrefabInstance:
       value: Buisson (1)
       objectReference: {fileID: 0}
     - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: tir
+      value: 
+      objectReference: {fileID: 593102502}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: dash
+      value: 
+      objectReference: {fileID: 503181170}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: stun
+      value: 
+      objectReference: {fileID: 1959045151}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: doubleJump
+      value: 
+      objectReference: {fileID: 2065389179}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
       propertyPath: compteurLuciole
       value: 
       objectReference: {fileID: 1620038707}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: pouvoirs.Array.data[0]
+      value: 
+      objectReference: {fileID: 593102502}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: pouvoirs.Array.data[1]
+      value: 
+      objectReference: {fileID: 503181170}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: pouvoirs.Array.data[2]
+      value: 
+      objectReference: {fileID: 2065389179}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: pouvoirs.Array.data[3]
+      value: 
+      objectReference: {fileID: 1959045151}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
 --- !u!1 &1475592180 stripped
@@ -13972,9 +14068,41 @@ PrefabInstance:
       value: Buisson (6)
       objectReference: {fileID: 0}
     - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: tir
+      value: 
+      objectReference: {fileID: 593102502}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: dash
+      value: 
+      objectReference: {fileID: 503181170}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: stun
+      value: 
+      objectReference: {fileID: 1959045151}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: doubleJump
+      value: 
+      objectReference: {fileID: 2065389179}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
       propertyPath: compteurLuciole
       value: 
       objectReference: {fileID: 1620038707}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: pouvoirs.Array.data[0]
+      value: 
+      objectReference: {fileID: 593102502}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: pouvoirs.Array.data[1]
+      value: 
+      objectReference: {fileID: 503181170}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: pouvoirs.Array.data[2]
+      value: 
+      objectReference: {fileID: 2065389179}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: pouvoirs.Array.data[3]
+      value: 
+      objectReference: {fileID: 1959045151}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
 --- !u!1 &1545906165
@@ -14260,9 +14388,41 @@ PrefabInstance:
       value: Buisson (5)
       objectReference: {fileID: 0}
     - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: tir
+      value: 
+      objectReference: {fileID: 593102502}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: dash
+      value: 
+      objectReference: {fileID: 503181170}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: stun
+      value: 
+      objectReference: {fileID: 1959045151}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: doubleJump
+      value: 
+      objectReference: {fileID: 2065389179}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
       propertyPath: compteurLuciole
       value: 
       objectReference: {fileID: 1620038707}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: pouvoirs.Array.data[0]
+      value: 
+      objectReference: {fileID: 593102502}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: pouvoirs.Array.data[1]
+      value: 
+      objectReference: {fileID: 503181170}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: pouvoirs.Array.data[2]
+      value: 
+      objectReference: {fileID: 2065389179}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: pouvoirs.Array.data[3]
+      value: 
+      objectReference: {fileID: 1959045151}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
 --- !u!4 &1589293333 stripped
@@ -15353,9 +15513,41 @@ PrefabInstance:
       value: Buisson (3)
       objectReference: {fileID: 0}
     - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: tir
+      value: 
+      objectReference: {fileID: 593102502}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: dash
+      value: 
+      objectReference: {fileID: 503181170}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: stun
+      value: 
+      objectReference: {fileID: 1959045151}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: doubleJump
+      value: 
+      objectReference: {fileID: 2065389179}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
       propertyPath: compteurLuciole
       value: 
       objectReference: {fileID: 1620038707}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: pouvoirs.Array.data[0]
+      value: 
+      objectReference: {fileID: 593102502}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: pouvoirs.Array.data[1]
+      value: 
+      objectReference: {fileID: 503181170}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: pouvoirs.Array.data[2]
+      value: 
+      objectReference: {fileID: 2065389179}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: pouvoirs.Array.data[3]
+      value: 
+      objectReference: {fileID: 1959045151}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
 --- !u!1 &1717679440
@@ -19855,9 +20047,41 @@ PrefabInstance:
       value: Buisson
       objectReference: {fileID: 0}
     - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: tir
+      value: 
+      objectReference: {fileID: 593102502}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: dash
+      value: 
+      objectReference: {fileID: 503181170}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: stun
+      value: 
+      objectReference: {fileID: 1959045151}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: doubleJump
+      value: 
+      objectReference: {fileID: 2065389179}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
       propertyPath: compteurLuciole
       value: 
       objectReference: {fileID: 1620038707}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: pouvoirs.Array.data[0]
+      value: 
+      objectReference: {fileID: 593102502}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: pouvoirs.Array.data[1]
+      value: 
+      objectReference: {fileID: 503181170}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: pouvoirs.Array.data[2]
+      value: 
+      objectReference: {fileID: 2065389179}
+    - target: {fileID: 5147244718282587047, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
+      propertyPath: pouvoirs.Array.data[3]
+      value: 
+      objectReference: {fileID: 1959045151}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c70a670679f245c28ee6721eb255bf5, type: 3}
 --- !u!4 &5260068733437866063 stripped
