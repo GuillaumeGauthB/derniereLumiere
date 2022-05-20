@@ -73,6 +73,8 @@ public class Joueur_Script : MonoBehaviour
     public AudioClip sonSaut; // son du saut et du double saut du personnage
     public AudioClip sonDash; // son du dash du personnage
 
+    private bool b_estAuSolEnnemi;
+
     void Awake()
     {
         // Assignation des variables et des c# events
@@ -172,7 +174,7 @@ public class Joueur_Script : MonoBehaviour
         if (context.performed && !GetComponent<dialogues>().texteActivee && GameObject.Find("PanelPause").GetComponent<Pause>().peutDeplacer)
         {
             // si le personnage est au sol et n'est pas accroupit...
-            if (b_estAuSol == true && !accroupir)
+            if ((b_estAuSol == true || b_estAuSolEnnemi == true) && !accroupir)
             {
                 // Faire sauter le personnage
                 rb_Joueur.AddForce(new Vector2(0, 1 * forceSaut));
@@ -181,7 +183,7 @@ public class Joueur_Script : MonoBehaviour
 
             }
             // Si le personnage n'est pas sur le sol et peut faire un double saut...
-            else if (!b_estAuSol && b_doubleSautPossible && doubleSautObtenu)
+            else if (!b_estAuSol && b_doubleSautPossible && doubleSautObtenu && !b_estAuSolEnnemi)
             {
                 //Utiliser le double saut dans le UI
                 doubleSautUIPouvoir.GetComponent<PouvoirUI>().utiliserPouvoir();
@@ -309,6 +311,11 @@ public class Joueur_Script : MonoBehaviour
         {
             a_Joueur.SetBool("Atteri", true);
         }
+
+        if (collision.gameObject.tag == "ennemi")
+        {
+            b_estAuSolEnnemi = true;
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -316,6 +323,11 @@ public class Joueur_Script : MonoBehaviour
         if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Sol"))
         {
             a_Joueur.SetBool("Atteri", false);
+        }
+
+        if (collision.gameObject.tag == "ennemi")
+        {
+            b_estAuSolEnnemi = false;
         }
     }
 

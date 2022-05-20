@@ -123,10 +123,19 @@ public class Inputs_Guillaume : MonoBehaviour
     }
     #region Tir
 
-    public void ChangerDeclencherTir()
+    IEnumerator ChangerDeclencherTir(string type)
     {
+        yield return new WaitForSeconds(0.1f);
+        if(type == "declencher")
+        {
+            declencherTir = true;
+        }
+        else
+        {
+            declencherTir = false;
+        }
         // Creer une variable empechant les deplacements lorsque le mode de tir est activer
-        declencherTir = !declencherTir;
+        yield return null;
     }
     // Fonction qui gere le debut du "visage" du tir de lucioles ansi que son tir
     public void DeclencherTir(InputAction.CallbackContext context)
@@ -134,7 +143,7 @@ public class Inputs_Guillaume : MonoBehaviour
         // Lorsque le bouton est relach?...
         if (context.canceled && Joueur_Script.tirObtenu && !declencherTir)
         {
-            Invoke("ChangerDeclencherTir", 0.1f);
+            StartCoroutine(ChangerDeclencherTir("declencher"));
             // Changer le map du personnage ? TirLucioles
             playerInput.SwitchCurrentActionMap("TirLucioles");
         }
@@ -146,7 +155,7 @@ public class Inputs_Guillaume : MonoBehaviour
         // Si le bouton est lach?...
         if (context.canceled && declencherTir)
         {
-            Invoke("ChangerDeclencherTir", 0.1f);
+            StartCoroutine(ChangerDeclencherTir("fermer"));
             // Changer la map au mouvement et d?sactiver le viseur
             playerInput.SwitchCurrentActionMap("Player");
             c_lineRenderer.enabled = false;
@@ -156,9 +165,14 @@ public class Inputs_Guillaume : MonoBehaviour
     // Fonction qui tire la balle
     public void AttaqueTir(InputAction.CallbackContext context)
     {
+        Debug.Log("Contexte: " + context.phase);
+        Debug.Log("texteActivee: " + GetComponent<dialogues>().texteActivee);
+        Debug.Log("declencherTir: " + declencherTir);
+
         // Lorsque le bouton est appuy?
         if (context.started && !GetComponent<dialogues>().texteActivee && declencherTir)
         {
+            Debug.Log("test");
             if (pouvoirTir.GetComponent<PouvoirUI>().peutUtiliserPouvoir)
             {
                 pouvoirTir.GetComponent<PouvoirUI>().utiliserPouvoir();
