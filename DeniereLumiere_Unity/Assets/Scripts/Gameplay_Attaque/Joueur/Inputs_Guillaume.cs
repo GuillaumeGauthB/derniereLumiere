@@ -165,14 +165,10 @@ public class Inputs_Guillaume : MonoBehaviour
     // Fonction qui tire la balle
     public void AttaqueTir(InputAction.CallbackContext context)
     {
-        Debug.Log("Contexte: " + context.phase);
-        Debug.Log("texteActivee: " + GetComponent<dialogues>().texteActivee);
-        Debug.Log("declencherTir: " + declencherTir);
-
         // Lorsque le bouton est appuy?
         if (context.started && !GetComponent<dialogues>().texteActivee && declencherTir)
         {
-            Debug.Log("test");
+            Debug.Log(pouvoirTir.GetComponent<PouvoirUI>().peutUtiliserPouvoir);
             if (pouvoirTir.GetComponent<PouvoirUI>().peutUtiliserPouvoir)
             {
                 pouvoirTir.GetComponent<PouvoirUI>().utiliserPouvoir();

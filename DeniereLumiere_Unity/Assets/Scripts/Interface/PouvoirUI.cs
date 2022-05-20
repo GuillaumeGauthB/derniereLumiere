@@ -34,7 +34,8 @@ public class PouvoirUI : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (compteurLucioles.GetComponent<LuciolesCompteurController>().getNbreLucioles() < coutUtilisation) peutUtiliserPouvoir = false;
+        if (compteurLucioles.GetComponent<LuciolesCompteurController>().getNbreLucioles() < coutUtilisation || b_coroutineEnCours) peutUtiliserPouvoir = false;
+        else peutUtiliserPouvoir = true;
     }
 
 
@@ -50,6 +51,7 @@ public class PouvoirUI : MonoBehaviour
         // Si le joueur a le nombre suffisant de luciole, il peut utiliser le pouvoir
         if (compteurLucioles.GetComponent<LuciolesCompteurController>().getNbreLucioles() >= coutUtilisation)
         {
+            
             compteurLucioles.GetComponent<LuciolesCompteurController>().diminuerLucioles(coutUtilisation);
             i_currentImageCouleurPouvoir.color = couleurPouvoirUtilise;
             // Il ne peut pas utiliser le pouvoir tant que le cooldown n'est pas termine
