@@ -4380,6 +4380,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6805169629179704512, guid: 228133a6bbadf4ea988be0e69e04ffb8, type: 3}
   m_PrefabInstance: {fileID: 506509047}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &507147982 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7253312892817240566, guid: f174b2f331f8d486695efa137920e60d, type: 3}
+  m_PrefabInstance: {fileID: 1830449394}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &516191117 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 152868557007962547, guid: aadeb2251a825460eb356c87e90db5ea, type: 3}
@@ -10066,7 +10071,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5826914809898477879, guid: 86c111b2426c74ca19a2c83ca59cf513, type: 3}
       propertyPath: texte.Array.data[2]
-      value: "Peut \xEAtre que si je serais assez rapide je pourrais tenter de passer
+      value: "Peut \xEAtre que si j'\xE9tais assez rapide je pourrais tenter de passer
         \xE0 travers, mais je ne pense pas qu\u2019un \xEAtre humain serait assez
         rapide pour courir \xE0 travers."
       objectReference: {fileID: 0}
@@ -14178,7 +14183,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1583935133}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
   m_Name: 
@@ -15966,6 +15971,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7253312892350816444, guid: f174b2f331f8d486695efa137920e60d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 267.5268
+      objectReference: {fileID: 0}
     - target: {fileID: 7253312892422981604, guid: f174b2f331f8d486695efa137920e60d, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -15989,6 +15998,14 @@ PrefabInstance:
     - target: {fileID: 7253312892810265962, guid: f174b2f331f8d486695efa137920e60d, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -11.000122
+      objectReference: {fileID: 0}
+    - target: {fileID: 7253312892817240566, guid: f174b2f331f8d486695efa137920e60d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7253312892817240567, guid: f174b2f331f8d486695efa137920e60d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -263.16254
       objectReference: {fileID: 0}
     - target: {fileID: 7544633658619952840, guid: f174b2f331f8d486695efa137920e60d, type: 3}
       propertyPath: particules
@@ -16217,7 +16234,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5826914809898477879, guid: 86c111b2426c74ca19a2c83ca59cf513, type: 3}
       propertyPath: texte.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5826914809898477879, guid: 86c111b2426c74ca19a2c83ca59cf513, type: 3}
       propertyPath: texte.Array.data[0]
@@ -16230,15 +16247,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5826914809898477879, guid: 86c111b2426c74ca19a2c83ca59cf513, type: 3}
       propertyPath: texte.Array.data[2]
-      value: "Ceci est une des lanternes c\xE9lestes. La lanterne \u201CDASH\u201D
-        pour \xEAtre exact."
+      value: "Si j\u2019avais encore ma LANTERNE MAGIQUE je pourrais la fusionner
+        avec cette lanterne \u201CDASH\u201D et je pourrais appuyer sur la touche
+        F pour me d\xE9placer \xE0 une vitesse hallucinante gr\xE2ce aux lucioles. "
       objectReference: {fileID: 0}
     - target: {fileID: 5826914809898477879, guid: 86c111b2426c74ca19a2c83ca59cf513, type: 3}
       propertyPath: texte.Array.data[3]
-      value: "Si j\u2019aurais encore ma LANTERNE MAGIQUE je pourrais la fusionner
-        avec cette lanterne \u201CDASH\u201D et je pourrais appuyer sur la touche
-        F pour me d\xE9placer \xE0 une vitesse hallucinante gr\xE2ce \xE0 l\u2019aide
-        des lucioles. "
+      value: -Pasiphae
       objectReference: {fileID: 0}
     - target: {fileID: 5826914809898477879, guid: 86c111b2426c74ca19a2c83ca59cf513, type: 3}
       propertyPath: texte.Array.data[4]
@@ -17129,6 +17144,26 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7253312891493401195, guid: f174b2f331f8d486695efa137920e60d, type: 3}
   m_PrefabInstance: {fileID: 1830449394}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1939551375
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575909321}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 44b979dd70b7cdf46a32cb0594e59e1f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1945173221
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19088,13 +19123,13 @@ PrefabInstance:
     - target: {fileID: 5826914809898477879, guid: 86c111b2426c74ca19a2c83ca59cf513, type: 3}
       propertyPath: texte.Array.data[1]
       value: "Il y a longtemps la reine des lucioles r\xE9sidait au fond de ce labyrinthe
-        naturel, mais elle \xE0 disparu depuis que les cr\xE9atures de la nuit ont
-        pris possession de l\u2019endroit."
+        naturel, mais elle a disparu depuis que les cr\xE9atures de la nuit ont pris
+        possession de l\u2019endroit."
       objectReference: {fileID: 0}
     - target: {fileID: 5826914809898477879, guid: 86c111b2426c74ca19a2c83ca59cf513, type: 3}
       propertyPath: texte.Array.data[2]
       value: "Peu importe, en tant qu\u2019\xE9rudit, je veux seulement laisser des
-        notes pour les g\xE9n\xE9rations futures, peut \xEAtre que ces messages leurs
+        notes pour les g\xE9n\xE9rations futures, peut-\xEAtre que ces messages leurs
         seront utiles."
       objectReference: {fileID: 0}
     - target: {fileID: 5826914809898477879, guid: 86c111b2426c74ca19a2c83ca59cf513, type: 3}
@@ -19166,13 +19201,73 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 133550152686563159, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -587
+      objectReference: {fileID: 0}
     - target: {fileID: 504386255839539527, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 964939775661595937, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 964939775661595937, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 964939775661595938, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 964939775661595938, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
       propertyPath: m_SortingOrder
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 964939775661595939, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 964939775661595939, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 964939775661595939, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 964939775661595939, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 964939775661595939, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 964939775661595939, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 964939775661595939, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 964939775661595939, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 964939775661595939, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 964939775661595939, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 964939775661595939, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1376890059398625256, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
       propertyPath: sonMove
@@ -19246,6 +19341,10 @@ PrefabInstance:
       propertyPath: firstSelected
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5854535729646644022, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -91.79001
+      objectReference: {fileID: 0}
     - target: {fileID: 5961507230397248894, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
       propertyPath: UIJeu
       value: 
@@ -19254,6 +19353,14 @@ PrefabInstance:
       propertyPath: menuPause
       value: 
       objectReference: {fileID: 706539793}
+    - target: {fileID: 5961507230397248894, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+      propertyPath: UIPanelBoss
+      value: 
+      objectReference: {fileID: 312031379}
+    - target: {fileID: 5961507230397248894, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+      propertyPath: UIPanelJoueur
+      value: 
+      objectReference: {fileID: 507147982}
     - target: {fileID: 5961507230397248894, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
       propertyPath: controleClavier
       value: 
@@ -19278,6 +19385,10 @@ PrefabInstance:
       propertyPath: boutons.Array.data[2]
       value: 
       objectReference: {fileID: 1339665561}
+    - target: {fileID: 6609898567101183876, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -91.79001
+      objectReference: {fileID: 0}
     - target: {fileID: 7018884181654329100, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
@@ -19999,9 +20110,49 @@ PrefabInstance:
       value: Beepo
       objectReference: {fileID: 0}
     - target: {fileID: 5649241242418429256, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 964939775658198965}
+    - target: {fileID: 5649241242418429256, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
       propertyPath: m_UIInputModule
       value: 
       objectReference: {fileID: 1583935137}
+    - target: {fileID: 5649241242418429256, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649241242418429256, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: m_ActionEvents.Array.data[25].m_ActionId
+      value: 7fbc424d-1ecc-430c-a65b-c87833fa4e6f
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649241242418429256, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: m_ActionEvents.Array.data[26].m_ActionId
+      value: 784ddcd6-b2c3-453e-836a-ea00e16b92f6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649241242418429256, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: m_ActionEvents.Array.data[27].m_ActionId
+      value: f50e2f34-db24-4e56-a513-9413270d4cc8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649241242418429256, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: m_ActionEvents.Array.data[28].m_ActionId
+      value: beaa762a-80c9-4a36-84d2-da143a7f4391
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649241242418429256, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: m_ActionEvents.Array.data[25].m_ActionName
+      value: Mort/LoadScene[/Keyboard/anyKey]
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649241242418429256, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: m_ActionEvents.Array.data[26].m_ActionName
+      value: Dialogues/LireTexte[/Keyboard/e,/XInputControllerWindows/buttonNorth]
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649241242418429256, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: m_ActionEvents.Array.data[27].m_ActionName
+      value: Dialogues/SkipperTexte[/Keyboard/space,/XInputControllerWindows/buttonSouth]
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649241242418429256, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: m_ActionEvents.Array.data[28].m_ActionName
+      value: Player/Pauser[/XInputControllerWindows/start,/Keyboard/escape]
+      objectReference: {fileID: 0}
     - target: {fileID: 5649241242418429261, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
       propertyPath: dashUIPouvoir
       value: 

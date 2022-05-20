@@ -44,7 +44,8 @@ public class Pause : MonoBehaviour
     public void PauserJeu()
     {
         peutDeplacer = false; // Le joueur ne peut plus se deplacer
-        UIJeu.SetActive(false); // Le UI du jeu ne s'affiche plus
+        UIJeu.GetComponent<Animator>().SetBool("Pause", true);
+        //UIJeu.SetActive(false); // Le UI du jeu ne s'affiche plus
         e_eventSystem.GetComponent<InputSystemUIInputModule>().enabled = true; // On active les controles du UI
         GetComponent<Animator>().SetBool("EnPause", true); // Faire l'animation du menu pause
         Time.timeScale = 0; // On met en pause tous les elements du jeu
@@ -59,7 +60,8 @@ public class Pause : MonoBehaviour
     public void DepauserJeu()
     {
         peutDeplacer = true; // Le joueur peut se deplacer a nouveau
-        UIJeu.SetActive(true); // On reactive le UI du jeu
+        //UIJeu.SetActive(true); // On reactive le UI du jeu
+        UIJeu.GetComponent<Animator>().SetBool("Pause", false);
         e_eventSystem.GetComponent<InputSystemUIInputModule>().enabled = false; // On desactive les controles du UI
         GetComponent<Animator>().SetBool("EnPause", false); // On fait l'animation de fermeture du menu pause
         Time.timeScale = 1; // On remet le jeu en vitesse normale
