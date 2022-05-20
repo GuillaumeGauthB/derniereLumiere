@@ -76,7 +76,7 @@ public class GestionnaireSceneMort : MonoBehaviour
         // Lorsque la coroutine n'est pas en cours et que la lumiere n'est pas activee dans SceneMort OU que la coroutine n'est pas en cours et que le joueur est mort...
         if (SceneManager.GetActiveScene().name == "SceneMort")
         {
-            if (!coroutineEnCours && !lumiere.gameObject.active)
+            if (!coroutineEnCours && !lumiere.gameObject.activeInHierarchy)
             {
                 // Commencer la coroutine
                 StartCoroutine("AnimationFadeInFadeOut");
