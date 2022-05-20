@@ -6,7 +6,7 @@ using UnityEngine.EventSystems; // Librairie besoin pour utiliser les evenements
 /**
      * Classe qui permet de gerer tout ce qui touche aux boutons de jeu
      * Codeurs : Jerome
-     * Derniere modification : 25/04/2022
+     * Derniere modification : 19/05/2022
     */
 // La classe herite de plusieurs interfaces requisent pour detecter quand le joueur select un bouton, pointe un bouton, change de bouton et clique sur un bouton
 public class BoutonSelect : MonoBehaviour, ISelectHandler, IPointerEnterHandler, IMoveHandler, ISubmitHandler 

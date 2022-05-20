@@ -5,6 +5,11 @@ using UnityEngine.UI;
 
 public class BarreDeVieController : MonoBehaviour
 {
+    /**
+     * Classe qui permet de gerer les barres de vies
+     * Codeurs : Jerome
+     * Derniere modification : 1/04/2022
+    */
     [Header("Sliders à modifier")]
     public GameObject sliderVieMain;
     public GameObject sliderVieDelayed;
@@ -25,18 +30,6 @@ public class BarreDeVieController : MonoBehaviour
     {
         c_sliderVie = sliderVieMain.GetComponent<Slider>();
         c_sliderVieDelayed = sliderVieDelayed.GetComponent<Slider>();
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            soignerBarreDeVie(20);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            infligerDegatsBarreDeVie(20);
-        }
     }
 
     // Fonction utilisé pour faire l'animation de l'ajout de vie
