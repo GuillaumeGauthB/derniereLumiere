@@ -129,6 +129,7 @@ public class dialogues : MonoBehaviour
                 }
                 else if (sourceText.gameObject.name.Contains("ObtenirAttaqueLuciole") && !Joueur_Script.tirObtenu)
                 {
+                    Debug.Log("supposer activer le ui lucioles");
                     // Changer la valeure de la variable
                     Joueur_Script.tirObtenu = true;
                     // Activer le UI du pouvoir
