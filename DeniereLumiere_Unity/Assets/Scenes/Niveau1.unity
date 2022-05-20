@@ -20033,9 +20033,49 @@ PrefabInstance:
       value: Beepo
       objectReference: {fileID: 0}
     - target: {fileID: 5649241242418429256, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 964939775658198965}
+    - target: {fileID: 5649241242418429256, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
       propertyPath: m_UIInputModule
       value: 
       objectReference: {fileID: 1583935137}
+    - target: {fileID: 5649241242418429256, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649241242418429256, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: m_ActionEvents.Array.data[25].m_ActionId
+      value: 7fbc424d-1ecc-430c-a65b-c87833fa4e6f
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649241242418429256, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: m_ActionEvents.Array.data[26].m_ActionId
+      value: 784ddcd6-b2c3-453e-836a-ea00e16b92f6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649241242418429256, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: m_ActionEvents.Array.data[27].m_ActionId
+      value: f50e2f34-db24-4e56-a513-9413270d4cc8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649241242418429256, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: m_ActionEvents.Array.data[28].m_ActionId
+      value: beaa762a-80c9-4a36-84d2-da143a7f4391
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649241242418429256, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: m_ActionEvents.Array.data[25].m_ActionName
+      value: Mort/LoadScene[/Keyboard/anyKey]
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649241242418429256, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: m_ActionEvents.Array.data[26].m_ActionName
+      value: Dialogues/LireTexte[/Keyboard/e,/XInputControllerWindows/buttonNorth]
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649241242418429256, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: m_ActionEvents.Array.data[27].m_ActionName
+      value: Dialogues/SkipperTexte[/Keyboard/space,/XInputControllerWindows/buttonSouth]
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649241242418429256, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
+      propertyPath: m_ActionEvents.Array.data[28].m_ActionName
+      value: Player/Pauser[/XInputControllerWindows/start,/Keyboard/escape]
+      objectReference: {fileID: 0}
     - target: {fileID: 5649241242418429261, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
       propertyPath: dashUIPouvoir
       value: 
