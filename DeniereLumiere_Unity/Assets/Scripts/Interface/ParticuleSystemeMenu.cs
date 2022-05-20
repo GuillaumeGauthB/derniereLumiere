@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ParticuleSystemeMenu : MonoBehaviour
 {
-    /** Script de gestion du menu principal du jeu
+    /** Script de gestion du systeme de particules des differents menu
      * Cree par Jerome Trottier
      * Derniere modification: 14/04/22
      */
