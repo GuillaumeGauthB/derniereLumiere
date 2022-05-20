@@ -19,7 +19,8 @@ public class degatPerso : MonoBehaviour
     public Color couleurDegat,
         couleurOri;
     public AudioClip sonMort; // le son de mort du personnage
-    private bool faireUneFois;
+    private bool faireUneFois; // variable boolean pour
+    static public float vieTotale = 10; // la vie totale du personnage
 
     private void Start()
     {
@@ -85,7 +86,7 @@ public class degatPerso : MonoBehaviour
             // Le rendre temporairement invincible
             if (!invincible)
             {
-                viePerso--;
+                //viePerso--;
                 GetComponent<AudioSource>().PlayOneShot(sonDegats);
                 BarreDeVie.GetComponent<BarreDeVieController>().infligerDegatsBarreDeVie(10f);
                 invincible = true;
@@ -112,7 +113,9 @@ public class degatPerso : MonoBehaviour
     {
         if (collision.gameObject.tag == "coeur")
         {
-            BarreDeVie.GetComponent<BarreDeVieController>().augmenterMaxBarreDeVie(10f);
+            vieTotale += 3;
+            viePerso = vieTotale;
+            BarreDeVie.GetComponent<BarreDeVieController>().augmenterMaxBarreDeVie(30f);
             BarreDeVie.GetComponent<BarreDeVieController>().soignerBarreDeVie(1000f);
             Destroy(collision.gameObject);
         }

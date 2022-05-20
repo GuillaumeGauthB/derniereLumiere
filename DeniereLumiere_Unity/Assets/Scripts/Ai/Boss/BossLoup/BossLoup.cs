@@ -39,6 +39,9 @@ public class BossLoup : MonoBehaviour
         deplacementHaut, // avertissement de l'attaque en haut
         deplacementBas; // avertissement de l'attaque en bas
 
+    [Header("Attaque Corps a Corps")]
+    public GameObject[] collidersCorps;
+
     [Header("Sons")]
     public AudioClip sonChangementPlateforme, // les differents sons des attaques
         sonAttaqueCorps,
@@ -118,6 +121,7 @@ public class BossLoup : MonoBehaviour
         setPlateformes[i_plateformeActivee].gameObject.transform.GetChild(0).gameObject.SetActive(true);
         // Cloner l'attaque de luciole et enclencher son attaque
         g_attaqueLuciole_clone = Instantiate(attaqueLuciole, attaqueLuciole.transform.position, attaqueLuciole.transform.rotation);
+        g_attaqueLuciole_clone.transform.localScale = new Vector2(1, 1);
         g_attaqueLuciole_clone.SetActive(true);
         // commencer le cooldown de l'attaque
         StartCoroutine("Cooldown");
@@ -251,8 +255,9 @@ public class BossLoup : MonoBehaviour
         // desactiver les avertissements d'attaque
         deplacementBas.SetActive(false);
         deplacementHaut.SetActive(false);
-        // attendre une seconde
-        yield return new WaitForSeconds(1);
+        // si l'attaque est en bas...
+        if (i_attaqueDeplacementLocation == 1) yield return new WaitForSeconds(1); // attendre une seconde
+        else yield return new WaitForSeconds(2); // sinon attendre 2 secondes
         // flipper le sprite renderer
         sprite.GetComponent<SpriteRenderer>().flipX = !sprite.GetComponent<SpriteRenderer>().flipX;
         // reactiver le sprite renderer
@@ -286,13 +291,17 @@ public class BossLoup : MonoBehaviour
         // jouer le son de coup
         GetComponent<AudioSource>().PlayOneShot(sonAttaqueCorps);
         // activer les colliders
-        sprite.transform.GetChild(0).gameObject.GetComponent<BoxCollider2D>().enabled = true;
-        sprite.transform.GetChild(1).gameObject.GetComponent<BoxCollider2D>().enabled = true;
+        foreach (GameObject col in collidersCorps)
+        {
+            col.SetActive(true);
+        }
         // attendre la longueur de l'animation
         yield return new WaitForSeconds(sprite.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);
         // desactiver les colliders
-        sprite.transform.GetChild(0).gameObject.GetComponent<BoxCollider2D>().enabled = false;
-        sprite.transform.GetChild(1).gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        foreach (GameObject col in collidersCorps)
+        {
+            col.SetActive(false);
+        }
         // commencer le cooldown
         StartCoroutine("Cooldown");
         // arreter la coroutine
