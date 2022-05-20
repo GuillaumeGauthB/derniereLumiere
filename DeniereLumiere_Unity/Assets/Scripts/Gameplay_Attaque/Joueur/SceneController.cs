@@ -7,6 +7,7 @@ public class SceneController : MonoBehaviour
 { 
     public void changerScene(string nomScene)
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(nomScene);
     }
     public void quitterJeu()

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.UI;
 
 public class MenuJeu : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class MenuJeu : MonoBehaviour
     public GameObject cadre;
     public GameObject particules;
     public GameObject texteTitre;
+    public GameObject eventSystem;
     private void Start()
     {
         a_animator = GetComponent<Animator>();
@@ -21,6 +23,7 @@ public class MenuJeu : MonoBehaviour
     }
     private void ouvrirMenu()
     {
+        eventSystem.GetComponent<InputSystemUIInputModule>().enabled = true;
         a_animator.SetBool("afficherMenu", true);
     }
     public void activerCadre()

@@ -8,7 +8,7 @@ using UnityEngine.EventSystems; // Librairie besoin pour utiliser les evenements
      * Codeurs : Jerome
      * Derniere modification : 25/04/2022
     */
-public class BoutonSelect : MonoBehaviour, ISelectHandler, IPointerEnterHandler, IMoveHandler // Interfaces requisent pour utiliser la fonction OnSelect() et onDeselect()
+public class BoutonSelect : MonoBehaviour, ISelectHandler, IPointerEnterHandler, IMoveHandler, ISubmitHandler // Interfaces requisent pour utiliser la fonction OnSelect() et onDeselect()
 {
     public GameObject particules;
     public AudioSource audioCanvas;
@@ -21,14 +21,20 @@ public class BoutonSelect : MonoBehaviour, ISelectHandler, IPointerEnterHandler,
     {
         if (firstSelected)
         {
-            GameObject eventSystem = GameObject.FindGameObjectWithTag("eventSystem");
-            eventSystem.GetComponent<EventSystem>().SetSelectedGameObject(gameObject);
+            setBoutonSelect(gameObject);
         }
+    }
+    public void setBoutonSelect(GameObject boutonParDefaut)
+    {
+        GameObject eventSystem = GameObject.FindGameObjectWithTag("eventSystem");
+        eventSystem.GetComponent<EventSystem>().SetSelectedGameObject(boutonParDefaut);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        setBoutonSelect(gameObject);
         entrerSelect();
+        audioCanvas.PlayOneShot(sonMove);
     }
 
     public void OnMove(AxisEventData eventData)
@@ -39,8 +45,12 @@ public class BoutonSelect : MonoBehaviour, ISelectHandler, IPointerEnterHandler,
     // Fonction de Unity.EventSystems qui permet de détecter lorsque le gameobject est selectionné
     public void OnSelect(BaseEventData eventData)
     {
-        audioCanvas.PlayOneShot(sonSelect);
         entrerSelect();
+    }
+
+    public void OnSubmit(BaseEventData eventData)
+    {
+        audioCanvas.PlayOneShot(sonSelect);
     }
     // Active les icones lorsque la fonction est appelée
     public void entrerSelect()
@@ -53,4 +63,5 @@ public class BoutonSelect : MonoBehaviour, ISelectHandler, IPointerEnterHandler,
     {
         if (particules.activeInHierarchy) particules.GetComponent<ParticuleSystemeMenu>().setNouvellePosition(transform.position.y);
     }
+   
 }
