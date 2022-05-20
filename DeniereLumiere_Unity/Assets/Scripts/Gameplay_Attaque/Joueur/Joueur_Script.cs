@@ -169,10 +169,10 @@ public class Joueur_Script : MonoBehaviour
     void Saut(InputAction.CallbackContext context)
     {
         // Lorsque l'action est performee...
-        if (context.performed)
+        if (context.performed && !GetComponent<dialogues>().texteActivee && GameObject.Find("PanelPause").GetComponent<Pause>().peutDeplacer)
         {
             // si le personnage est au sol et n'est pas accroupit...
-            if (b_estAuSol == true && !accroupir && !GetComponent<dialogues>().texteActivee)
+            if (b_estAuSol == true && !accroupir)
             {
                 // Faire sauter le personnage
                 rb_Joueur.AddForce(new Vector2(0, 1 * forceSaut));
@@ -181,7 +181,7 @@ public class Joueur_Script : MonoBehaviour
 
             }
             // Si le personnage n'est pas sur le sol et peut faire un double saut...
-            else if (!b_estAuSol && b_doubleSautPossible && doubleSautObtenu && !GetComponent<dialogues>().texteActivee)
+            else if (!b_estAuSol && b_doubleSautPossible && doubleSautObtenu)
             {
                 //Utiliser le double saut dans le UI
                 doubleSautUIPouvoir.GetComponent<PouvoirUI>().utiliserPouvoir();
