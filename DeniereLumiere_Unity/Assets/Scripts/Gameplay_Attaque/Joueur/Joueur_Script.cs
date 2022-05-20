@@ -43,10 +43,10 @@ public class Joueur_Script : MonoBehaviour
 
     /********Variables a Guillaume********/
     [Header("Variables a Guillaume")]
-    public static bool doubleSautObtenu = true, // Variables determinant quels pouvoirs sont obtenus
-        dashObtenu = true,
-        stunObtenu = true,
-        tirObtenu = true;
+    public static bool doubleSautObtenu, // Variables determinant quels pouvoirs sont obtenus
+        dashObtenu,
+        stunObtenu,
+        tirObtenu;
     private bool b_doubleSautPossible, // Variables determinant si les differents pouvoirs peuvent etre utilises
         b_dashPossible = true,
         b_stunPossible;
