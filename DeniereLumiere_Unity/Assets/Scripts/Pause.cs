@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.UI;
 
 public class Pause : MonoBehaviour
 {
@@ -12,23 +13,35 @@ public class Pause : MonoBehaviour
     */
     //Particules du menu pause
     private bool b_enPause = false;
+
+    private GameObject e_eventSystem;
+    private GameObject joueur;
     public GameObject particules;
+    public GameObject UIJeu;
+
+    public GameObject controleManette;
+    public GameObject controleClavier;
 
     public List<GameObject> boutons = new List<GameObject>();
 
-    private void Update()
+    private void Awake()
     {
-        // Quand on appuie sur Escape, le jeu est mit en pause
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            if (!b_enPause) PauserJeu();
-            else DepauserJeu();
-        }
+        joueur = GameObject.FindGameObjectWithTag("Player");
+        e_eventSystem = GameObject.FindGameObjectWithTag("eventSystem");
+        InputJoueur i_inputJoueur = new InputJoueur();
+        i_inputJoueur.Player.Enable();
+        i_inputJoueur.Player.Pauser.performed += Pauser;
     }
-
+    void Pauser(InputAction.CallbackContext context)
+    {
+        if (!b_enPause) PauserJeu();
+        else DepauserJeu();
+    }
     // Fonction qui permet de pauser le jeu et d'afficher le menu pause
     public void PauserJeu()
     {
+        UIJeu.SetActive(false);
+        e_eventSystem.GetComponent<InputSystemUIInputModule>().enabled = true;
         GetComponent<Animator>().SetBool("EnPause", true);
         Time.timeScale = 0;
         foreach (var bouton in boutons)
@@ -41,6 +54,8 @@ public class Pause : MonoBehaviour
     // Fonction qui permet de depauser le jeu et d'enlever le menu pause
     public void DepauserJeu()
     {
+        UIJeu.SetActive(true);
+        e_eventSystem.GetComponent<InputSystemUIInputModule>().enabled = false;
         GetComponent<Animator>().SetBool("EnPause", false);
         Time.timeScale = 1;
         b_enPause = false;
@@ -54,5 +69,17 @@ public class Pause : MonoBehaviour
     public void desactiverParticules()
     {
         particules.SetActive(false);
+    }
+    public void AfficherControles()
+    {
+       if (joueur.GetComponent<Joueur_Script>().modeSouris)
+       {
+            controleClavier.SetActive(true);
+            controleManette.SetActive(false);
+        } else
+       {
+            controleManette.SetActive(true);
+            controleClavier.SetActive(false);
+        }
     }
 }
