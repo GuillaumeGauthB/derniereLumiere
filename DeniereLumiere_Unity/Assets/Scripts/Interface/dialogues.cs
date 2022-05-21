@@ -21,6 +21,7 @@ public class dialogues : MonoBehaviour
         uiTirLuciolesCount,
         uiStun,
         uiDoubleSaut;
+    private bool b_coroutineEnCours;
 
     private void Awake()
     {
@@ -58,7 +59,7 @@ public class dialogues : MonoBehaviour
         longueurTexte = test.Length - 1;
         // On s'assure que la textbox est vide
         textbox.text = "";
-
+        b_coroutineEnCours = true;
         // Pour faire appara?tre chaque lettre une ? la fois, on utilise un foreach pour chacun des charact?res de la ligne ? imprimer...
         foreach (char i in test[nb].ToCharArray())
         {
@@ -91,7 +92,7 @@ public class dialogues : MonoBehaviour
     {
 
         // Lorsque la fonction est appel?e...
-        if (context.canceled && collisionTexte && Time.timeScale != 0)
+        if (context.canceled && collisionTexte && Time.timeScale != 0 && b_coroutineEnCours)
         {
             // ... et que le contenu imprim? n'est pas le m?me que celui qui devrait l'?tre...
             if (textbox.text.ToString() != sourceText.GetComponent<ecritureTexte>().texte[nb])
@@ -114,6 +115,8 @@ public class dialogues : MonoBehaviour
                 GetComponent<PlayerInput>().SwitchCurrentActionMap("Player");
                 // R?initialiser le num?ro de la ligne en cours d'impression
                 nb = 0;
+                // Reinitialiser la valeur de b_coroutineEnCours
+                b_coroutineEnCours = false;
                 // Vider la bo?te de dialogue
                 textbox.text = "";
                 // Et activer l'animation de fermeture de la bo?te de dialogue
