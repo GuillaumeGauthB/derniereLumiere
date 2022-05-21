@@ -6,7 +6,7 @@ public class Knockback : MonoBehaviour
 {
     /* Knockback de l'attaque physique
       Par : Guillaume Gauthier-Benoit
-      Dernière modification : 14/03/2022
+      Dernière modification : 14/05/2022
     */
      private float v_posXEvP, // La position du vecteur Ennemi vs Personnage en X
        v_posYEvP; // Meme chose mais en Y

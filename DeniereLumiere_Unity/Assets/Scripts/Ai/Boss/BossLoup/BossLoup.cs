@@ -6,7 +6,7 @@ public class BossLoup : MonoBehaviour
 {
     /** Script de gestion du boss loup dans niveau 2
      * Créé par Guillaume Gauthier-Benoît
-     * Dernière modification: 09/05/22
+     * Dernière modification: 20/05/22
      */
 
     bool b_attaqueEnCours; // valeur boolean permettant de savoir si une attaque est en cours
@@ -40,7 +40,7 @@ public class BossLoup : MonoBehaviour
         deplacementBas; // avertissement de l'attaque en bas
 
     [Header("Attaque Corps a Corps")]
-    public GameObject[] collidersCorps;
+    public GameObject[] collidersCorps; // tableau contenant les colliders du corps du boss
 
     [Header("Sons")]
     public AudioClip sonChangementPlateforme, // les differents sons des attaques
@@ -49,12 +49,16 @@ public class BossLoup : MonoBehaviour
 
     private void Start()
     {
+        //Initaliser le personnage
         g_perso = GameObject.Find("Beepo");
+        // appeler AcctiverColliderBoss apres 2 secondes
         Invoke("ActiverColliderBoss", 2f);
     }
 
+    // Fonction enfermant le personnage avec le boss
     void ActiverColliderBoss()
     {
+        // Activer les colliders
         collidersBossPiece.SetActive(true);
     }
 
@@ -72,10 +76,15 @@ public class BossLoup : MonoBehaviour
     // IEnumerator gerant le changement de plateformes
     IEnumerator ChangementPlateforme()
     {
+        // jouer le son de l'attaque
         GetComponent<AudioSource>().PlayOneShot(sonChangementPlateforme);
+        // jouer l'animation
         sprite.GetComponent<Animator>().SetTrigger("attaque");
+        // attendre 0.25s
         yield return new WaitForSeconds(0.25f);
+        // jouer le son de coup sur le sol
         GetComponent<AudioSource>().PlayOneShot(sonAttaqueCorps);
+        // attendre la longueur de l'animation
         yield return new WaitForSeconds(sprite.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + 0.25f);
         // Pour toutes les groupes de plateformes dans setPlateformes...
         foreach(GameObject plateformeGroupe in setPlateformes)
@@ -132,6 +141,7 @@ public class BossLoup : MonoBehaviour
     // IEnumerator gerant l'attaque en saut
     IEnumerator AttaqueSaut()
     {
+        //jouer le son de l'attaque
         GetComponent<AudioSource>().PlayOneShot(sonAttaqueSaut);
         // desactiver le sprite du boss
         sprite.GetComponent<SpriteRenderer>().enabled = false;
@@ -150,7 +160,9 @@ public class BossLoup : MonoBehaviour
             // executer l'animation de gauche
             GetComponent<Animator>().SetTrigger("Saut");
         }
+        // attendre la longueur de l'animation
         yield return new WaitForSeconds(GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);
+        // jouer le son de collision au sol
         GetComponent<AudioSource>().PlayOneShot(sonAttaqueCorps);
         // attendre la longueur de l'animation + 0.5 seconde
         yield return new WaitForSeconds(0.5f);
@@ -164,7 +176,6 @@ public class BossLoup : MonoBehaviour
             // attendre 0.25s entre chaque pic
             yield return new WaitForSeconds(0.25f);
         }
-        //Debug.Log(picsDroit.Length);
         // attendre une seconde
         yield return new WaitForSeconds(1);
         // desactiver l'animation pour chacun d'entre eux
@@ -195,8 +206,6 @@ public class BossLoup : MonoBehaviour
     // IEnumerator gerant l'attaque deplacement
     IEnumerator AttaqueDeplacement()
     {
-        //gameObject.GetComponent<Animator>().enabled = true;
-        //b_animationEnCours = true;
 
         // choisir au hasard 1 ou 2
         i_attaqueDeplacementLocation = Random.Range(0, 3);

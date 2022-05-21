@@ -6,7 +6,7 @@ public class ComportementSuivre : StateMachineBehaviour
 {
     /** Script de poursuite des ennemis
      * Créé par Guillaume Gauthier-Benoît
-     * Dernière modification: 07/04/22
+     * Dernière modification: 01/05/22
      */
 
     private GameObject g_joueurPos; // le gameobject du joueur
@@ -28,6 +28,7 @@ public class ComportementSuivre : StateMachineBehaviour
         i_layerMask = LayerMask.GetMask("Sol");
         g_joueurPos = GameObject.Find("Beepo");
         infoRaycast = Physics2D.Raycast(animator.transform.position, Vector2.down, 3, i_layerMask);
+        // si le raycast touche au sol, calculer la taille du collider
         if (infoRaycast)
         {
             v_tailleCollider = infoRaycast.collider.bounds.extents + infoRaycast.collider.bounds.center - new Vector3(animator.GetComponent<Collider2D>().bounds.extents.x, 0, 0);
@@ -62,27 +63,5 @@ public class ComportementSuivre : StateMachineBehaviour
         {
             animator.transform.position = new Vector2(v_tailleColliderNeg.x, animator.transform.position.y);
         }
-        Debug.DrawRay(animator.transform.position, Vector2.down, Color.red);
     }
-
-
-
-
-    // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //   
-    //}
-
-    // OnStateMove is called right after Animator.OnAnimatorMove()
-    //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that processes and affects root motion
-    //}
-
-    // OnStateIK is called right after Animator.OnAnimatorIK()
-    //override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that sets up animation IK (inverse kinematics)
-    //}
 }

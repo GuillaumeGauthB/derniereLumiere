@@ -6,9 +6,8 @@ public class ComportementIdle : StateMachineBehaviour
 {
     /** Script du mode Idle des ennemis
      * Créé par Guillaume Gauthier-Benoît
-     * Dernière modification: 08/04/22
+     * Dernière modification: 29/04/22
      */
-
     private Transform t_joueurPos; // le transform du joueur
 
     [Header("Distance avant que l'ennemi entre en surveillance")]
@@ -30,22 +29,4 @@ public class ComportementIdle : StateMachineBehaviour
             animator.SetBool("estSurveille", true);
         }
     }
-
-    // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
-
-    // OnStateMove is called right after Animator.OnAnimatorMove()
-    //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that processes and affects root motion
-    //}
-
-    // OnStateIK is called right after Animator.OnAnimatorIK()
-    //override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that sets up animation IK (inverse kinematics)
-    //}
 }

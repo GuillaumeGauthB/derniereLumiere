@@ -12,6 +12,7 @@ public class MusiqueController : MonoBehaviour
     // Methode qui permet de changer la musique qui joue
     public void SetNouvelleMusique(AudioClip musique)
     {
+        // Jouer la musique
         gameObject.GetComponent<AudioSource>().clip = musique;
         gameObject.GetComponent<AudioSource>().Play();
     }

@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-/*Script cree par Jonathan Mores*/
-/*Derni?re modification 2022-05-15*/
 public class Joueur_Script : MonoBehaviour
 {
     /* Script principal du personnage
-      Par : Jonathan Mores et Guillaume Gauthier-Benoit
+      Par : Jonathan Mores, Jerome Trottier et Guillaume Gauthier-Benoit
       Derni?re modification : 18/05/2022
     */
 
@@ -73,7 +71,7 @@ public class Joueur_Script : MonoBehaviour
     public AudioClip sonSaut; // son du saut et du double saut du personnage
     public AudioClip sonDash; // son du dash du personnage
 
-    private bool b_estAuSolEnnemi;
+    private bool b_estAuSolEnnemi; // variable permettant de savoir si le personnage est sur un ennemi
 
     void Awake()
     {
@@ -110,9 +108,10 @@ public class Joueur_Script : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //Debug.Log(tirObtenu);
+        // faire disparaitree le curseur
         Cursor.visible = false;
-        //Debug.Log(f_movX);
+        
+        // si le personnage n'est ni mort, ni en dash et ni en lecture de dialogues...
         if (!estDash && !GetComponent<dialogues>().texteActivee && !mort)
         {
             /* permet de lire le input du new input system*/
@@ -202,7 +201,6 @@ public class Joueur_Script : MonoBehaviour
     }
 
     // La fonction gerant la course du personnage
-
     void Courrir(InputAction.CallbackContext context)
     {
         // Lorsque l'action est performee
@@ -311,11 +309,13 @@ public class Joueur_Script : MonoBehaviour
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
+        // si le personnage est au sol et que atteri dans l'animator est false, le rendre true
         if (b_estAuSol == true && a_Joueur.GetBool("Atteri") == false)
         {
             a_Joueur.SetBool("Atteri", true);
         }
 
+        // lorsque le personnage est sur l'ennemi, lui permettre de sauter
         if (collision.gameObject.tag == "ennemi")
         {
             b_estAuSolEnnemi = true;
@@ -324,29 +324,36 @@ public class Joueur_Script : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
+        // lorsque le personnage quitte le sol, mettre atterit a false
         if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Sol"))
         {
             a_Joueur.SetBool("Atteri", false);
         }
 
+        // si le personnage quitte la tete d'une ennemi, lui empecher de sauter
         if (collision.gameObject.tag == "ennemi")
         {
             b_estAuSolEnnemi = false;
         }
     }
 
+    // Prochaines fonctions sont la parce que le New Input System a eu une crise cardiaque pendant notre projet
+    // pas tres pertinent
+
+    // fonction permettant le changeant de manette a clavier et souris
     public void ChangerClavier(InputAction.CallbackContext context)
     {
-        
+        // aller en mode souris
         if (context.started)
         {
             modeSouris = true;
         }
     }
 
+    // fonction permettant le changement de clavier et souris a manette
     public void ChangerManette(InputAction.CallbackContext context)
     {
-        
+        // aller en mode manette
         if (context.started)
         {
             modeSouris = false;

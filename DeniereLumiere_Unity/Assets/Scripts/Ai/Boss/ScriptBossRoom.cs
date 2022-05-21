@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class ScriptBossRoom : MonoBehaviour
 {
+    /** Script principal du premier boss du jeu
+     * Cree par Jonathan Mores et Jerome Trottier
+     * Derniere modification: 20/05/22
+     */
+
     [Header("Le Boss")]
-    public GameObject Boss;
+    public GameObject Boss; // le boss
     [Header("UI")]
-    public GameObject panelBossUI;
+    public GameObject panelBossUI; // la vie du boss
     [Header("Musique")]
-    public GameObject musiqueController;
-    public AudioClip musiqueBoss;
-    public AudioClip musiqueIdle;
+    public GameObject musiqueController; // le controller de la musique du boss
+    public AudioClip musiqueBoss; // la musique du boss
+    public AudioClip musiqueIdle; // la musique autre que ccelle du boss
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -6,6 +6,10 @@ using UnityEngine.InputSystem;
 
 public class dialogues : MonoBehaviour
 {
+    /** Script principal du premier boss du jeu
+     * Cree par Jonathan Mores
+     * Derniere modification: 20/05/22
+     */
     public Text textbox; // La boite de texte du jeu
     public GameObject textGameObject; // Le gameObject contenant l'enti?ret?e de la boite de dialogue
     private Coroutine c_textOnGoing; // La couroutine d'imprimation de texte
@@ -16,15 +20,16 @@ public class dialogues : MonoBehaviour
     bool collisionTexte; // savoir si le personnage est en contact avec un objet contenant du texte
     InputJoueur i_inputJoueur; // le player input du joueur
     public bool texteActivee; // savoir si les dialogues sont activees
-    public GameObject uiDash,
+    public GameObject uiDash, //  les gameobjects du ui des pouvoirs
         uiTir,
         uiTirLuciolesCount,
         uiStun,
         uiDoubleSaut;
-    private bool b_coroutineEnCours;
+    private bool b_coroutineEnCours; // savoir si la coroutine est en cours
 
     private void Awake()
     {
+        // activer le playerinput
         i_inputJoueur = new InputJoueur();
         i_inputJoueur.Dialogues.Enable();
         i_inputJoueur.Dialogues.LireTexte.started += LireTexte;
@@ -33,6 +38,7 @@ public class dialogues : MonoBehaviour
 
     private void Start()
     {
+        // si un des pouvoirs est obtenu en entrant dans la scene, activer son ui
         if (Joueur_Script.tirObtenu)
         {
             uiTir.SetActive(true);
@@ -47,11 +53,13 @@ public class dialogues : MonoBehaviour
 
     private void Update()
     {
+        // si le temps est arreter, desactiver le texte d'interaction
         if(Time.timeScale == 0)
         {
             declencherTexteGO.SetActive(false);
         }
     }
+
     // La couroutine faisant appara?tre les lettres de la ligne ? imprimer
     IEnumerator texte(string[] test)
     {
@@ -172,6 +180,7 @@ public class dialogues : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // si on entre en contact avec un objet pouvant etre lu, permettre sa lecture
         if (collision.gameObject.GetComponent<ecritureTexte>())
         {
             declencherTexteGO.SetActive(true);
@@ -179,6 +188,7 @@ public class dialogues : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
+        // meme chose qu'en haut
         if (collision.gameObject.GetComponent<ecritureTexte>())
         {
             collisionTexte = true;
@@ -187,6 +197,7 @@ public class dialogues : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
+        // lorsque on sort de la collision avec l'objet lisible, ne pas permettre au joueur de le lire
         if (collision.gameObject.GetComponent<ecritureTexte>())
         {
             collisionTexte = false;

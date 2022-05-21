@@ -6,7 +6,7 @@ public class ComportementSurveillance : StateMachineBehaviour
 {
     /** Script de surveillance des ennemis
      * Créé par Guillaume Gauthier-Benoît
-     * Dernière modification: 07/04/22
+     * Dernière modification: 01/05/22
      */
     [Header("Distance avant que l'ennemi entre en idle")]
     public float distancePersoEnnemiIdle; // Distance avant que l'ennemi entre en idle
@@ -19,7 +19,7 @@ public class ComportementSurveillance : StateMachineBehaviour
     private RaycastHit2D infoRaycast;   // raycast pour le sol
     private Vector3 v_tailleCollider,   // les différentes extrémitées du sol
         v_tailleColliderNeg;
-    private int i_layerMask;
+    private int i_layerMask; // le layer du sol
 
     private bool oriDirection = true; // Valeur boolean pour savoir si l'ennemi va dans sa direction originale ou pas
 
@@ -30,6 +30,7 @@ public class ComportementSurveillance : StateMachineBehaviour
         i_layerMask = LayerMask.GetMask("Sol");
         g_joueurPos = GameObject.Find("Beepo");
         infoRaycast = Physics2D.Raycast(animator.transform.position, Vector2.down, 10000, i_layerMask);
+        // si l'ennemi touche au sol, calculer la taille du collider au sol
         if (infoRaycast)
         {
             v_tailleCollider = infoRaycast.collider.bounds.extents + infoRaycast.collider.bounds.center - new Vector3(animator.GetComponent<Collider2D>().bounds.extents.x, 0, 0);
@@ -79,44 +80,5 @@ public class ComportementSurveillance : StateMachineBehaviour
             animator.transform.position = new Vector2(v_tailleColliderNeg.x, animator.transform.position.y);
             oriDirection = true;
         }
-        Debug.DrawRay(animator.transform.position, Vector2.down, Color.red);
-
-
-
-        // Detection des collisions a droite et a gauche
-        /*if (infoRaycastDroit)
-        {
-            
-            if (infoRaycastDroit.collider.gameObject.layer == 3)
-            {
-                Debug.Log(infoRaycastDroit.collider.bounds.extents.x - infoRaycastDroit.collider.bounds.center.x);
-                animator.transform.position = new Vector3(infoRaycastDroit.collider.bounds.extents.x - infoRaycastDroit.collider.bounds.center.x + animator.GetComponent<Collider2D>().bounds.extents.x, 0, 0);
-            }
-        }
-        else if (infoRaycastGauche)
-        {
-            if (infoRaycastGauche.collider.gameObject.layer == 3)
-            {
-                animator.transform.position = new Vector3(infoRaycastGauche.collider.bounds.extents.x + infoRaycastGauche.collider.bounds.center.x - animator.GetComponent<Collider2D>().bounds.extents.x, 0, 0);
-            }
-        }*/
     }
-
-    // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //   
-    //}
-
-    // OnStateMove is called right after Animator.OnAnimatorMove()
-    //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that processes and affects root motion
-    //}
-
-    // OnStateIK is called right after Animator.OnAnimatorIK()
-    //override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that sets up animation IK (inverse kinematics)
-    //}
 }

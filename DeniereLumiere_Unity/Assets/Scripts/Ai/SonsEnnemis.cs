@@ -3,22 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SonsEnnemis : MonoBehaviour
-{   /************/
+{
+    /** Script qui joue les sons des ennemis
+     * Cree par Jonathan Mores
+     * Derniere modification: 29/04/22
+     */
+
+    // -------- Les sons
+    /************/
     public AudioClip son1;
     public AudioClip son2;
     public AudioClip son3;
     /************/
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void JoueSon1()
     {

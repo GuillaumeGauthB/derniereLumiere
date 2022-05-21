@@ -6,7 +6,7 @@ public class LuciolesBoss : MonoBehaviour
 {
     /** Script de gestion des lucioles ennemies du boss
      * Créé par Guillaume Gauthier-Benoît
-     * Dernière modification: 09/05/22
+     * Dernière modification: 14/05/22
      */
 
     private float vitesse = 3; // la vitesse des lucioles

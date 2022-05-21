@@ -6,8 +6,8 @@ public class Obstacle : MonoBehaviour
 {
     /**
      * Le script qui desactive le collider du mur quand on est en dash
-     * Par Guillaume, Jonathan et jerome
-     * Dernier modification: 25/04/22
+     * Par Guillaume
+     * Dernier modification: 05/05/22
      */
     private void OnCollisionStay2D(Collision2D collision)
     {
