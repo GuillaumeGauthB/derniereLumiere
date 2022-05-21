@@ -790,7 +790,7 @@ PrefabInstance:
       objectReference: {fileID: 2038021700}
     - target: {fileID: 7253312891993332475, guid: f174b2f331f8d486695efa137920e60d, type: 3}
       propertyPath: coutUtilisation
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7253312891993332475, guid: f174b2f331f8d486695efa137920e60d, type: 3}
       propertyPath: compteurLucioles
@@ -14824,7 +14824,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 16432022457a54e439b0012a76fb1c2b, type: 3}
     - target: {fileID: 3933404947434059145, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
       propertyPath: viePerso
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3933404947434059145, guid: 5af01f734307df64d913695e0c5659f8, type: 3}
       propertyPath: BarreDeVie
