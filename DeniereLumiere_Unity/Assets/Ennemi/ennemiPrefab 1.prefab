@@ -141,6 +141,9 @@ MonoBehaviour:
   ennemiVie: 2
   ennemiMort: 0
   sonMort: {fileID: 8300000, guid: 4d764d45172211b40bfa65fae607e862, type: 3}
+  ObjetAApparaitre: {fileID: 0}
+  animationMort: 0
+  barreDeVieUI: {fileID: 0}
 --- !u!50 &3219006440821421427
 Rigidbody2D:
   serializedVersion: 4

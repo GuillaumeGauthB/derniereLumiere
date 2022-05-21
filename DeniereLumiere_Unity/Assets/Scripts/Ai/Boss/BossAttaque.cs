@@ -21,7 +21,7 @@ public class BossAttaque : MonoBehaviour
     {
         // mettre les valeurs des variables
         a_AnimBoss = GetComponent<Animator>();
-        g_Perso = GameObject.FindWithTag("Perso");
+        g_Perso = GameObject.FindWithTag("Player");
         g_BouledeFeu = transform.GetChild(0).gameObject;
         g_RayonFeu = transform.GetChild(1).gameObject;
         // appeler une fonction a chaque 2 secondes avec un cooldown

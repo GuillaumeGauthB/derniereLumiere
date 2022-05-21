@@ -38,12 +38,7 @@ public class degatEnnemi : MonoBehaviour
             // Lorsque l'ennemi n'a plus de vie, le tuer
             if (ennemiVie <= 0)
             {
-                // joueur son animation de mort
-                if (animationMort == true)
-                {
-                    Animator animationBoss = GetComponent<Animator>();
-                    animationBoss.SetTrigger("Mort");
-                }
+                
                 // changer le status de l'ennemi
                 ennemiMort = true;
             
@@ -68,8 +63,19 @@ public class degatEnnemi : MonoBehaviour
                     ObjetAApparaitre.SetActive(true);
                 }
 
-                // Detruire l'ennemi apres 5 secondes
-                Destroy(gameObject, 5f);
+                // joueur son animation de mort
+                if (animationMort == true)
+                {
+                    Animator animationBoss = GetComponent<Animator>();
+                    animationBoss.SetTrigger("Mort");
+                    Destroy(gameObject, 2f);
+                }
+                else
+                {
+                    // Detruire l'ennemi tout de suite
+                    Destroy(gameObject);
+                }
+                
             }
         }
 

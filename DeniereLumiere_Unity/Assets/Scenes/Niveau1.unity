@@ -251,7 +251,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.26836228, y: -0.5995345}
+  m_Offset: {x: 0.4497121, y: -0.56799537}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -262,7 +262,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8287034, y: 1.0799379}
+  m_Size: {x: 1.7275633, y: 1.5214812}
   m_EdgeRadius: 0
 --- !u!114 &9011058
 MonoBehaviour:
@@ -21114,6 +21114,30 @@ PrefabInstance:
       propertyPath: audioCanvas
       value: 
       objectReference: {fileID: 706539799}
+    - target: {fileID: 1376890059757551075, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1376890059757551075, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1376890059757551075, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1693745664}
+    - target: {fileID: 1376890059757551075, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: changerScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 1376890059757551075, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: MenuJeu
+      objectReference: {fileID: 0}
+    - target: {fileID: 1376890059757551075, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3712812770068057979, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -80
@@ -21194,6 +21218,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
       value: SetActive
       objectReference: {fileID: 0}
+    - target: {fileID: 7018884181654329103, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+      propertyPath: particules
+      value: 
+      objectReference: {fileID: 239964591}
+    - target: {fileID: 7018884181654329103, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
+      propertyPath: audioCanvas
+      value: 
+      objectReference: {fileID: 706539799}
     - target: {fileID: 8790200798829193596, guid: dedc6dc3e91c847839b02bd11a8fe06b, type: 3}
       propertyPath: cible
       value: 

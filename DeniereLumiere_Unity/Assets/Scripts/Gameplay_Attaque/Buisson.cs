@@ -65,6 +65,7 @@ public class Buisson : MonoBehaviour
                 i_nbreLuciolesBuisson -= nbreLuciolesARefill;
                 setParticulesBuisson(i_nbreLuciolesBuisson);
             }
+            Invoke("RefillBuisson", 5f);
         }
     }
 
