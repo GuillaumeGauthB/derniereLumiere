@@ -26,7 +26,7 @@ Dans le niveau, l'utilsation d'une souris dans le menu pause n'est pas possible,
 
 ## Crédits:
 
-Art: Yeeun Kim
-Musique: Jérôme Trottier
-Son: Jonathan Mores, Jérôme Trottier et Guillaume Gauthier-Benoit
-Programmation: Jonathan Mores, Jérôme Trottier et Guillaume Gauthier-Benoit
+### Art: Yeeun Kim
+### Musique: Jérôme Trottier
+### Son: Jonathan Mores, Jérôme Trottier et Guillaume Gauthier-Benoit
+### Programmation: Jonathan Mores, Jérôme Trottier et Guillaume Gauthier-Benoit
