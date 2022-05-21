@@ -7,6 +7,14 @@ using UnityEngine.InputSystem;
 /*Dernière modification 2022-03-17*/
 public class Pouvoirs : MonoBehaviour
 {
+    /** Script backup
+     * Cree par Jonathan Mores et guillaume gauthier benoit
+     * Derniere modification: 29/04/22
+     */
+
+    // Backup pour joueur_script, pas pertinent
+
+
     private Rigidbody2D rbJoueur;
     private PlayerInput piJoueur;
     private InputJoueur inputJoueur;

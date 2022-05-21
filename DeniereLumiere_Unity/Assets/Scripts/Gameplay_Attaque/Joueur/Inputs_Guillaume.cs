@@ -37,10 +37,11 @@ public class Inputs_Guillaume : MonoBehaviour
     [Header("Pour autres scripts")]
     public Vector2 v_deplacementCible,
         v_deplacementCibleM; // Variable determinant la direction dans laquelle le projectile est tirer
-    public GameObject pouvoirTir;
+    public GameObject pouvoirTir; // objet du ui contenant la permission de tirer
 
     private void Awake()
     {
+        // regarder pour des inputs
         i_inputJoueur = new InputJoueur();
         i_inputJoueur.TirLucioles.Enable();
         i_inputJoueur.TirLucioles.Tir.started += AttaqueTir;
@@ -52,7 +53,6 @@ public class Inputs_Guillaume : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         c_lineRenderer = gameObject.GetComponent<LineRenderer>(); // Assigner le LineRenderer a c_lineRenderer
         playerInput = gameObject.GetComponent<PlayerInput>(); // Assigner le PlayerInput a playerInput
         c_lineRenderer.enabled = false; // Desactiver le LineRenderer
@@ -62,13 +62,15 @@ public class Inputs_Guillaume : MonoBehaviour
 
     private void Update()
     {
+        // si le personnage est dans l'action map du tir et que les dialogues ne sont pas activees
         if (playerInput.currentActionMap.ToString().Contains("Tir") && !GetComponent<dialogues>().texteActivee)
         {
+            // faire apparaitre la fleche et calculer les valeurs du visage manette et souris
             flecheViser.SetActive(true);
             Vector2 zoneViseSouris = i_inputJoueur.TirLucioles.PositionSouris.ReadValue<Vector2>();
             Vector2 zoneViseGamepad = i_inputJoueur.TirLucioles.PositionManette.ReadValue<Vector2>();
 
-
+            // si on joue sur souris, utiliser le mode de visage de souris, sinon, manette
             if (GetComponent<Joueur_Script>().modeSouris)
             {
                 // Sauvegarder la valeur dans le monde de la position de la souris
@@ -84,14 +86,14 @@ public class Inputs_Guillaume : MonoBehaviour
             {
                 //Si le joueur joue avec une manette...
                 // Utiliser la position du curseur * 15 pour le tir et mettre la valeur de v_deplacement relative a la position du personnage
-                v_deplacementCible = /*gameObject.transform.localPosition + */new Vector3(zoneViseGamepad.x, zoneViseGamepad.y, 0f) * 15f;
-                //v_deplacementCible = gameObject.transform.position + new Vector3(v_deplacementCible.x, v_deplacementCible.y, 0);
+                v_deplacementCible = new Vector3(zoneViseGamepad.x, zoneViseGamepad.y, 0f) * 15f;
                 flecheViser.transform.rotation = Quaternion.LookRotation(Vector3.forward, zoneViseGamepad);
                 flecheViser.transform.rotation *= Quaternion.Euler(0, 0, 90);
 
             }
 
         }
+        // sinon, desactiver la fleche
         else
         {
             flecheViser.SetActive(false);
@@ -101,12 +103,12 @@ public class Inputs_Guillaume : MonoBehaviour
     // Fonction qui gere l'attaque corps a corps du personnage
     public void AttaquePhysique(InputAction.CallbackContext context)
     {
-        // Lorsque la touche est appuy?e...
+        // Lorsque la touche est appuyee...
         if (context.started)
         {
-            // Trigger l'animation (a faire)
             // Activer le knockback de l'attaque
             gameObject.transform.Find("KnockbackAttaque").gameObject.SetActive(true);
+            // empecher le spam de l'attaque
             if (!b_knockback)
             {
                 b_knockback = true;
@@ -116,16 +118,21 @@ public class Inputs_Guillaume : MonoBehaviour
         }
     }
 
+    // fonction qui desactive le knockback
     void DesactiverKnockback()
     {
+        // desactiver le knockback
         gameObject.transform.Find("KnockbackAttaque").gameObject.SetActive(false);
         b_knockback = false;
     }
     #region Tir
 
+    // IEnumerator qui permet de changer entre mode tir et mode deplacement
     IEnumerator ChangerDeclencherTir(string type)
     {
+        // attendre 0.1s
         yield return new WaitForSeconds(0.1f);
+        // si le parametre est declencehr, declencherTir = true, sinon, false
         if(type == "declencher")
         {
             declencherTir = true;
@@ -134,15 +141,16 @@ public class Inputs_Guillaume : MonoBehaviour
         {
             declencherTir = false;
         }
-        // Creer une variable empechant les deplacements lorsque le mode de tir est activer
         yield return null;
     }
+
     // Fonction qui gere le debut du "visage" du tir de lucioles ansi que son tir
     public void DeclencherTir(InputAction.CallbackContext context)
     {
         // Lorsque le bouton est relach?...
         if (context.canceled && Joueur_Script.tirObtenu && !declencherTir)
         {
+            // changer le mode du personnage
             StartCoroutine(ChangerDeclencherTir("declencher"));
             // Changer le map du personnage ? TirLucioles
             playerInput.SwitchCurrentActionMap("TirLucioles");
@@ -155,6 +163,7 @@ public class Inputs_Guillaume : MonoBehaviour
         // Si le bouton est lach?...
         if (context.canceled && declencherTir)
         {
+            // changer le mode du personnage
             StartCoroutine(ChangerDeclencherTir("fermer"));
             // Changer la map au mouvement et d?sactiver le viseur
             playerInput.SwitchCurrentActionMap("Player");
@@ -165,12 +174,12 @@ public class Inputs_Guillaume : MonoBehaviour
     // Fonction qui tire la balle
     public void AttaqueTir(InputAction.CallbackContext context)
     {
-        // Lorsque le bouton est appuy?
+        // Lorsque le bouton est appuye et que le joueur peut tirer...
         if (context.started && !GetComponent<dialogues>().texteActivee && declencherTir)
         {
-            Debug.Log(pouvoirTir.GetComponent<PouvoirUI>().peutUtiliserPouvoir);
             if (pouvoirTir.GetComponent<PouvoirUI>().peutUtiliserPouvoir)
             {
+                // utiliser le pouvoir et le cooldown, ainsi que son animation et son son
                 pouvoirTir.GetComponent<PouvoirUI>().utiliserPouvoir();
                 sprite.GetComponent<Animator>().SetTrigger("Tir");
                 GetComponent<AudioSource>().PlayOneShot(sonTir);
@@ -181,14 +190,9 @@ public class Inputs_Guillaume : MonoBehaviour
         }
     }
 
+    // Fonction obsolete, qui est encore dans le code juste au cas
     public void ManetteTir(InputAction.CallbackContext context)
     {
-
-        //c_lineRenderer.enabled = true;
-        // Sauvegarder la valeur dans le monde de la position de la souris
-        //v_sourisPosition = Camera.main.ScreenToWorldPoint(context.ReadValue<Vector2>());
-        // Dessiner l'origine du viseur
-
 
         if (!GetComponent<Joueur_Script>().modeSouris)
         {

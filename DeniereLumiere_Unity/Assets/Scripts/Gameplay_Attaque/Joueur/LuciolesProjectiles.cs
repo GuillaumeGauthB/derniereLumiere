@@ -7,29 +7,14 @@ public class LuciolesProjectiles : MonoBehaviour
 {
     /* Projectiles de luciole
       Par : Guillaume Gauthier-Benoit
-      Dernière modification : 03/04/2022
+      Dernière modification : 19/05/2022
     */
     private Vector2 v_destination; // Le déplacement du projectile
     public float vitesse; // La vitesse du projectile
 
-    private void Awake()
-    {
-        
-        // Si le joueur joue avec un clavier...
-        /*if (GameObject.Find("Beepo").gameObject.transform.GetComponent<Inputs_Guillaume>().playerInput.currentControlScheme == "Keyboard")
-        {
-            // Multiplier la direction par la vitesse
-            v_destination = GameObject.Find("Beepo").gameObject.transform.GetComponent<Inputs_Guillaume>().v_deplacementCible * vitesse;
-        }
-        else
-        {
-            // Sinon, le déplacer avec la direction
-            v_destination = new Vector2(GameObject.Find("Beepo").gameObject.transform.GetComponent<Inputs_Guillaume>().v_deplacementCible.x - gameObject.transform.position.x, GameObject.Find("Beepo").gameObject.transform.GetComponent<Inputs_Guillaume>().v_deplacementCible.y - gameObject.transform.position.y);
-        }*/
-    }
-
     private void Start()
     {
+        // si le personnage est sur le niveau2, gerer la vitesse d'une maniere, dependamment du souris ou manette
         if (SceneManager.GetActiveScene().name == "Niveau2")
         {
             if (GameObject.Find("Beepo").gameObject.GetComponent<Joueur_Script>().modeSouris)
@@ -42,6 +27,7 @@ public class LuciolesProjectiles : MonoBehaviour
                 v_destination = GameObject.Find("Beepo").gameObject.transform.GetComponent<Inputs_Guillaume>().v_deplacementCible * vitesse;
             }
         }
+        // mm chose si il est dans niveau1
         else
         {
             if (GameObject.Find("Beepo").gameObject.GetComponent<Joueur_Script>().modeSouris)

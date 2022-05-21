@@ -5,22 +5,29 @@ using UnityEngine.InputSystem;
 
 public class Plateforme : MonoBehaviour
 {
-    private GameObject g_Joueur;
-    private Collider2D c_Collider;
-    private bool b_JoueurSurPlateforme;
-    private InputJoueur i_inputJoueur;
+    /** Script des plateformes
+     * Cree par Jonathan Mores
+     * Derniere modification: 05/05/22
+     */
+    private GameObject g_Joueur; // personnage
+    private Collider2D c_Collider; // collider de la plateforme
+    private bool b_JoueurSurPlateforme; // savoir si joueur sur plateforme
+    private InputJoueur i_inputJoueur; // player input
 
     // Start is called before the first frame update
     void Start()
     {
+        // initialiser les variables
         i_inputJoueur = new InputJoueur();
         c_Collider = GetComponent<Collider2D>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        // si on entre en collision avec le perso
         if (collision.gameObject.name.Contains("Beepo"))
         {
+            // et qu'il est en train de sauter, appeler la fonction
             g_Joueur = collision.gameObject;
             i_inputJoueur.Player.Enable();
             i_inputJoueur.Player.Saut.performed += passerSousPlateforme;
@@ -30,6 +37,7 @@ public class Plateforme : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
+        // si on sort du contact avec le perso, rapeller la fonction, parametres diff
         if (collision.gameObject.name.Contains("Beepo"))
         {
             i_inputJoueur.Player.Disable();
