@@ -44,7 +44,7 @@ public class Joueur_Script : MonoBehaviour
     public static bool doubleSautObtenu, // Variables determinant quels pouvoirs sont obtenus
         dashObtenu = false,
         stunObtenu,
-        tirObtenu = false;
+        tirObtenu = true;
     private bool b_doubleSautPossible, // Variables determinant si les differents pouvoirs peuvent etre utilises
         b_dashPossible = true,
         b_stunPossible;
@@ -63,6 +63,7 @@ public class Joueur_Script : MonoBehaviour
 
     public GameObject doubleSautUIPouvoir; // le morceau de l'interface pour le double saut
     public GameObject dashUIPouvoir; // le morceau de l'interface pour le dash
+    public GameObject SceneController;
 
     public bool modeSouris = true; // mode de jeu, clavier et souris ou manette
 
@@ -305,6 +306,12 @@ public class Joueur_Script : MonoBehaviour
         {
             transform.position = checkpoint;
 
+        }
+        if (collision.gameObject.name == "Reine"){
+            if (SceneController)
+            {
+                SceneController.GetComponent<SceneController>().changerScene("SceneFin");
+            }
         }
     }
     private void OnCollisionStay2D(Collision2D collision)

@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SceneMort.unity
     guid: 57f0598a3667c0b4a8b3b24f4f683d62
+  - enabled: 1
+    path: Assets/Scenes/SceneFin.unity
+    guid: d2172ece585dae54485d1c326d62651d
   m_configObjects: {}

@@ -22374,6 +22374,10 @@ PrefabInstance:
       propertyPath: CheckAnimMort
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8946859833150752238, guid: c6745e7bbbd8b1e4b8c2a8d1d1344fbb, type: 3}
+      propertyPath: animationMort
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6745e7bbbd8b1e4b8c2a8d1d1344fbb, type: 3}
 --- !u!4 &9090213239535687343 stripped

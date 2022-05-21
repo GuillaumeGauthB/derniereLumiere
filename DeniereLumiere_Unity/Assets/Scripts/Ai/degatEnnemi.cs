@@ -12,6 +12,8 @@ public class degatEnnemi : MonoBehaviour
     public float ennemiVie; // La vie de l'ennemi
     public bool ennemiMort; // Le status de vie de l'ennemi
     public AudioClip sonMort; // Le son de mort de l'ennemi
+    public GameObject ObjetAApparaitre;
+    public bool animationMort = false;
 
     [Header("BOSS SETTINGS")]
     public GameObject barreDeVieUI; // la barre de vie du boss
@@ -37,8 +39,11 @@ public class degatEnnemi : MonoBehaviour
             if (ennemiVie <= 0)
             {
                 // joueur son animation de mort
-                Animator animationBoss = GetComponent<Animator>();
-                animationBoss.SetBool("Mort", true);
+                if (animationMort == true)
+                {
+                    Animator animationBoss = GetComponent<Animator>();
+                    animationBoss.SetTrigger("Mort");
+                }
                 // changer le status de l'ennemi
                 ennemiMort = true;
             
@@ -57,7 +62,12 @@ public class degatEnnemi : MonoBehaviour
                 {
                     mon.enabled = false;
                 }
-                
+
+                if (ObjetAApparaitre)
+                {
+                    ObjetAApparaitre.SetActive(true);
+                }
+
                 // Detruire l'ennemi apres 5 secondes
                 Destroy(gameObject, 5f);
             }
