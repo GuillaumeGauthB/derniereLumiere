@@ -1,4 +1,4 @@
-# derniereLumiere
+# La Dernière Lumière
 
 ## Le jeu
 Notre jeu est un metroidvania 2D dans lequel notre personnage, Beepo, doit se battre contre des ennemis, gagner de nouveaux pouvoirs et combattre des bosses extraordinaire, tout cela dans l'intention de sauver la reine des lucioles, et pour ensuite finalement ramener la lumière dans le monde. 
