@@ -6,6 +6,7 @@ public class degatEnnemi : MonoBehaviour
 {
     /** Script de degat des ennemis
      * Cree par Guillaume Gauthier-Beno?t
+     * Modifications par Jonathan Mores
      * Derniere modification: 20/05/22
      */
 

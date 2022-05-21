@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public class dialogues : MonoBehaviour
 {
     /** Script principal du premier boss du jeu
-     * Cree par Jonathan Mores
+     * Cree par Guillaume Gauthier-Benoit
      * Derniere modification: 20/05/22
      */
     public Text textbox; // La boite de texte du jeu
