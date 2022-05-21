@@ -12,6 +12,7 @@ public class degatEnnemi : MonoBehaviour
     public float ennemiVie; // La vie de l'ennemi
     public bool ennemiMort; // Le status de vie de l'ennemi
     public AudioClip sonMort;
+    public bool CheckAnimMort = false;
 
     [Header("BOSS SETTINGS")]
     public GameObject barreDeVieUI;
@@ -66,10 +67,24 @@ public class degatEnnemi : MonoBehaviour
                 {
                     GetComponent<AudioSource>().PlayOneShot(sonMort);
                 }
-                gameObject.GetComponent<SpriteRenderer>().enabled = false;
-                gameObject.GetComponent<Collider2D>().enabled = false;
-                gameObject.GetComponent<Animator>().enabled = false;
-                Destroy(gameObject, 2f);
+                
+                var collidersEnnemi = gameObject.GetComponents<Collider2D>();
+                foreach (Collider2D mon in collidersEnnemi)
+                {
+                    mon.enabled = false;
+                }
+                
+                
+                if (CheckAnimMort == true)
+                {
+                    gameObject.GetComponent<Animator>().SetTrigger("Mort");
+                }
+                else
+                {
+                    gameObject.GetComponent<Animator>().enabled = false;
+                    gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                }
+                Destroy(gameObject, 5f);
             }
         }
 
