@@ -44,7 +44,7 @@ public class Joueur_Script : MonoBehaviour
     public static bool doubleSautObtenu, // Variables determinant quels pouvoirs sont obtenus
         dashObtenu = false,
         stunObtenu,
-        tirObtenu = true;
+        tirObtenu = false;
     private bool b_doubleSautPossible, // Variables determinant si les differents pouvoirs peuvent etre utilises
         b_dashPossible = true,
         b_stunPossible;
