@@ -7366,6 +7366,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: IndicateurDialogue (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8060169636361900766, guid: 86c111b2426c74ca19a2c83ca59cf513, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8251575632935915818, guid: 86c111b2426c74ca19a2c83ca59cf513, type: 3}
       propertyPath: m_Enabled
       value: 1

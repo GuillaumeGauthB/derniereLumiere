@@ -2820,7 +2820,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5292041883017365277, guid: c3fbf814831b34532ae6801cbbcfa380, type: 3}
       propertyPath: m_text
-      value: Controles
+      value: "Contr\xF4les"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3fbf814831b34532ae6801cbbcfa380, type: 3}
@@ -3942,8 +3942,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6, y: -26.1}
-  m_SizeDelta: {x: 569.63, y: 387.73}
+  m_AnchoredPosition: {x: -63.4, y: 65.4}
+  m_SizeDelta: {x: 344.53, y: 234.51}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1631999029
 MonoBehaviour:
@@ -4625,8 +4625,9 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1631999028}
+  - {fileID: 1981247466}
   m_Father: {fileID: 2104585110}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -4764,7 +4765,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1981247466
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4774,7 +4775,7 @@ RectTransform:
   m_GameObject: {fileID: 1981247465}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6386975, y: 0.6386975, z: 0.6386975}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1977685723}
@@ -4788,13 +4789,13 @@ RectTransform:
   - {fileID: 1330074031}
   - {fileID: 1003247255}
   - {fileID: 433480460}
-  m_Father: {fileID: 2104585110}
+  m_Father: {fileID: 1965910367}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -91.79, y: 0.000030517578}
-  m_SizeDelta: {x: -183.59, y: 0}
+  m_AnchoredPosition: {x: -85, y: -117}
+  m_SizeDelta: {x: -37.35, y: -27.27}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1981247467
 MonoBehaviour:
@@ -5035,7 +5036,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1253967393}
-  - {fileID: 1981247466}
   - {fileID: 1965910367}
   m_Father: {fileID: 1565664085}
   m_RootOrder: 5
